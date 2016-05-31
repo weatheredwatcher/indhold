@@ -1,0 +1,559 @@
+/* FONTS */
+	/* Lato Light */
+	@font-face {
+	    font-family: 'Lato';
+	    src: url('../fonts/lato-light-webfont.eot');
+	    src: url('../fonts/lato-light-webfont.eot?#iefix') format('embedded-opentype'),
+	         url('../fonts/lato-light-webfont.woff') format('woff'),
+	         url('../fonts/lato-light-webfont.ttf') format('truetype'),
+	         url('../fonts/lato-light-webfont.svg#latolight') format('svg');
+	    font-weight: 200;
+	    font-style: normal;
+	}
+	/* Lato Regular */
+	@font-face {
+	    font-family: 'Lato';
+	    src: url('../fonts/lato-regular-webfont.eot');
+	    src: url('../fonts/lato-regular-webfont.eot?#iefix') format('embedded-opentype'),
+	         url('../fonts/lato-regular-webfont.woff') format('woff'),
+	         url('../fonts/lato-regular-webfont.ttf') format('truetype'),
+	         url('../fonts/lato-regular-webfont.svg#latoregular') format('svg');
+	    font-weight: 300;
+	    font-style: normal;
+	}
+	/* Lato Bold */
+	@font-face {
+	    font-family: 'Lato';
+	    src: url('../fonts/lato-bold-webfont.eot');
+	    src: url('../fonts/lato-bold-webfont.eot?#iefix') format('embedded-opentype'),
+	         url('../fonts/lato-bold-webfont.woff') format('woff'),
+	         url('../fonts/lato-bold-webfont.ttf') format('truetype'),
+	         url('../fonts/lato-bold-webfont.svg#latobold') format('svg');
+	    font-weight: 500;
+	    font-style: normal;
+	}
+	
+	/* Lato Black */
+	@font-face {
+	    font-family: 'Lato';
+	    src: url('../fonts/lato-black-webfont.eot');
+	    src: url('../fonts/lato-black-webfont.eot?#iefix') format('embedded-opentype'),
+	         url('../fonts/lato-black-webfont.woff') format('woff'),
+	         url('../fonts/lato-black-webfont.ttf') format('truetype'),
+	         url('../fonts/lato-black-webfont.svg#latoblack') format('svg');
+	    font-weight: 700;
+	    font-style: normal;
+	}
+
+
+
+/* Preloader */
+
+	#preloader {
+	    position:fixed;
+	    top:0;
+	    left:0;
+	    width: 100%;
+	    height: 100%;
+	    background-color:#000000; /* change if the mask should have another color then white */
+	    z-index:6000; /* makes sure it stays on top */
+	    display: table;
+	}
+	.spinner {
+		position: relative;
+		width: 62px;
+		height: 30px;
+		text-align: center;
+		display: table-cell;
+		vertical-align: middle;
+	}
+	
+	.spinner > div {
+	  width: 18px;
+	  height: 18px;
+	  background-color: #FFFFFF;
+	
+	  border-radius: 100%;
+	  display: inline-block;
+	  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+	  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+	}
+	
+	.spinner .bounce1 {
+	  -webkit-animation-delay: -0.32s;
+	  animation-delay: -0.32s;
+	}
+	
+	.spinner .bounce2 {
+	  -webkit-animation-delay: -0.16s;
+	  animation-delay: -0.16s;
+	}
+	
+	@-webkit-keyframes sk-bouncedelay {
+	  0%, 80%, 100% { -webkit-transform: scale(0) }
+	  40% { -webkit-transform: scale(1.0) }
+	}
+	
+	@keyframes sk-bouncedelay {
+	  0%, 80%, 100% { 
+	    -webkit-transform: scale(0);
+	    transform: scale(0);
+	  } 40% { 
+	    -webkit-transform: scale(1.0);
+	    transform: scale(1.0);
+	  }
+	}
+
+
+
+
+
+html {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	background-color: #FFFFFF;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	font-family: Lato, Helvetica, sans-serif;
+}
+
+#modal {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,0.7);
+	width: 100%;
+	height: 100%;
+	z-index: 5000;
+}
+
+#welcomeMessage {
+	margin: 0 auto 0 auto;
+	background: #FFFFFF;
+	-webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+	padding: 30px 30px 40px 30px;
+	text-align: center;
+	display: none;
+}
+
+#welcomeMessage h1 {
+	margin-top:0;
+}
+
+#welcomeMessage p {
+	font-weight: 200;
+	margin-bottom: 25px; 
+}
+
+
+#tonearm {
+	position: absolute;
+	top: 1.1%;
+	left: 73.3%;
+	width: 21.5%;
+	height: 86%;
+	background-size: cover;
+    -ms-transform-origin: 47% 28.1%; /* IE 9 */
+    -webkit-transform-origin: 47% 28.1%; /* Chrome, Safari, Opera */
+    transform-origin: 47% 28.1%;
+    z-index: 1000;
+}
+
+#record {
+	position: absolute;
+	top: 3.9%;
+	left: 8.3%;
+	width: 70.74%;
+	height: 91.91%;
+	background-size: cover;
+}
+
+#pivot {
+	position: absolute;
+	top: 24.2%;
+	left: 82.4%;
+	width: 1.8%;
+	height: 2.3%;
+	background-size: cover;
+	z-index: 2000;
+}
+
+#spindle {
+	position: absolute;
+	top: 48.6%;
+	left: 42.3%;
+	width: 2.2%;
+	height: 2.8%;
+	background-size: cover;
+	z-index: 2000;
+}
+
+
+
+
+/* Play Button */
+
+	#playButton {
+	    display: block;
+	    margin: 0 auto 0 auto;
+	    -webkit-border-radius: 5px;
+	    -moz-border-radius: 5px;
+	    border-radius: 5px;
+	    -webkit-box-shadow:    0 8px 0 #509949, 0 15px 20px rgba(0, 0, 0, .35);
+	    -moz-box-shadow: 0 8px 0 #509949, 0 15px 20px rgba(0, 0, 0, .35);
+	    box-shadow: 0 8px 0 #509949, 0 15px 20px rgba(0, 0, 0, .35);
+	    -webkit-transition: -webkit-box-shadow .1s ease-in-out;
+	    -moz-transition: -moz-box-shadow .1s ease-in-out;
+	    -o-transition: -o-box-shadow .1s ease-in-out;
+	    transition: box-shadow .1s ease-in-out;
+	    font-size: 25px;
+	    color: #FFFFFF;
+	    letter-spacing: 1px;
+	    width: 70%;
+	}
+	
+	#playButton span {
+		width: 100%;
+		text-align: center;
+	    display: inline-block;
+	    padding: 15px 0px 12 0px;
+	    background-color: #6bc562;
+	    -webkit-border-radius: 5px;
+	    -moz-border-radius: 5px;
+	    border-radius: 5px;
+	    -webkit-box-shadow: inset 0 -1px 1px rgba(255, 255, 255, .15);
+	    -moz-box-shadow: inset 0 -1px 1px rgba(255, 255, 255, .15);
+	    box-shadow: inset 0 -1px 1px rgba(255, 255, 255, .15);
+	    line-height: 1;
+	    -webkit-transition: background-color .2s ease-in-out, -webkit-transform .1s ease-in-out;
+	    -moz-transition: background-color .2s ease-in-out, -moz-transform .1s ease-in-out;
+	    -o-transition: background-color .2s ease-in-out, -o-transform .1s ease-in-out;
+	    transition: background-color .2s ease-in-out, transform .1s ease-in-out;
+	}
+	
+	#playButton:hover span {
+	    background-color: #79d670;
+	}
+	
+	#playButton:active, #button:focus {
+	    -webkit-box-shadow:    0 8px 0 #509949, 0 12px 10px rgba(0, 0, 0, .3);
+	    -moz-box-shadow: 0 8px 0 #509949, 0 12px 10px rgba(0, 0, 0, .3);
+	    box-shadow:    0 8px 0 #509949, 0 12px 10px rgba(0, 0, 0, .3);
+	}
+	
+	#playButton:active span {
+	    -webkit-transform: translate(0, 4px);
+	    -moz-transform: translate(0, 4px);
+	    -o-transform: translate(0, 4px);
+	    transform: translate(0, 4px);
+	}
+
+/* WORKING QUERIES ----------- */
+
+/* Desktops and laptops and tablets ----------- */
+@media only screen  and (min-width : 768px) {
+	
+	/* Modal Styles */
+	#welcomeMessage .messageCue:after {
+		content: 'Testing: Tablet version';
+	}
+	
+	#welcomeMessage {
+		width: 350px;
+	}
+	
+	#welcomeMessage h1 {
+		font-size: 35px;
+	}
+	
+	#welcomeMessage p {
+		font-size: 20px;
+	}
+	
+	
+	/* Turntable */
+	#turntableContainer {
+		position: relative;
+		margin: 0 auto 0 auto;
+		width: 750px;
+		height: 577px;
+		background-image: url("../img/record-player.png");
+		background-size: cover;
+	}
+	
+	#spindle {
+		background-image: url("../img/spindle.png");
+	}
+	
+	#pivot {
+		background-image: url("../img/pivot.png");
+	}
+	
+	#tonearm {
+		background-image: url("../img/tonearm.png");
+	}
+	
+	#record {
+		background-image: url("../img/record.png");
+	}
+	
+}
+
+/* Large screens ----------- */
+@media only screen and (min-width : 1025px) {
+	
+	/* Modal Styles */
+	#welcomeMessage .messageCue:after {
+		content: 'Testing: Desktop version';
+	}
+	
+	#welcomeMessage {
+		width: 500px;
+	}
+	
+	#welcomeMessage h1 {
+		font-size: 30px;
+	}
+	
+	#welcomeMessage p {
+		line-height: 28px;
+		font-size: 20px;
+	}
+	
+	/* Turntable */
+	#turntableContainer {
+		position: relative;
+		margin: 0 auto 0 auto;
+		width: 1024px;
+		height: 792px;
+		background-image: url("../img/record-player.png");
+		background-size: cover;
+	}
+	
+	#record {
+		width: 727px !important;
+		height: 727px !important;
+	}
+	
+	#spindle {
+		background-image: url("../img/spindle.png");
+	}
+	
+	#pivot {
+		background-image: url("../img/pivot.png");
+	}
+	
+	#tonearm {
+		background-image: url("../img/tonearm.png");
+	}
+	
+	#record {
+		background-image: url("../img/record.png");
+	}
+	
+}
+
+
+
+
+
+/* IN PROGRESS QUERIES ----------- */
+
+
+
+
+
+/* Smartphones with pixel ratio of 2  */
+@media only screen and (min-device-width: 320px) and (max-device-height: 670px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+	/* Modal Styles */
+	#welcomeMessage .messageCue:after {
+		content: 'Testing: smartphones, px2';
+	}
+	
+	#welcomeMessage {
+		width: 200px;
+	}
+	
+	#welcomeMessage h1 {
+		font-size: 30px;
+	}
+	
+	#welcomeMessage p {
+		line-height: 28px;
+		font-size: 20px;
+	}
+}
+
+
+
+/* SPECIFIC DEVICE QUERIES ----------- */
+
+/* iPhone5 and 5s ----------- */
+@media only screen and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+	/* Modal Styles */
+	#welcomeMessage .messageCue:after {
+		content: 'Testing: iPhone5';
+	}
+	
+	#welcomeMessage {
+		width: 200px;
+	}
+	
+	#welcomeMessage h1 {
+		font-size: 30px;
+	}
+	
+	#welcomeMessage p {
+		line-height: 28px;
+		font-size: 20px;
+	}
+	
+	/* Turntable */
+	#turntableContainer {
+		position: absolute;
+		top: -768px;
+		left: -809px;
+		width: 1723px;
+		height: 1326px;
+		background-image: url("../img/record-player.png");
+		background-size: cover;
+		
+		/*rotate for smartphone */
+		-ms-transform: rotate(-45deg); /* IE 9 */
+		-webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    	transform: rotate(45);
+	}
+	
+	#spindle {
+		background-image: url("../img/spindle.png");
+	}
+	
+	#pivot {
+		background-image: url("../img/pivot.png");
+	}
+	
+	#tonearm {
+		background-image: url("../img/tonearm.png");
+	}
+	
+	#record {
+		background-image: url("../img/record.png");
+	}
+
+}
+
+/* iPhone 6 ----------- */
+@media only screen and (device-width: 375px) and (device-height: 667px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2){
+	/* Modal Styles */
+	#welcomeMessage .messageCue:after {
+		content: 'Testing: iPhone6';
+	}
+	
+	#welcomeMessage {
+		width: 200px;
+	}
+	
+	#welcomeMessage h1 {
+		font-size: 30px;
+	}
+	
+	#welcomeMessage p {
+		line-height: 28px;
+		font-size: 20px;
+	}
+	
+	/* Turntable */
+	#turntableContainer {
+		position: absolute;
+		top: -764px;
+		left: -815px;
+		width: 1723px;
+		height: 1326px;
+		background-image: url("../img/record-player.png");
+		background-size: cover;
+		
+		/*rotate for smartphone */
+		-ms-transform: rotate(-45deg); /* IE 9 */
+		-webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    	transform: rotate(45);
+	}
+	
+	#spindle {
+		background-image: url("../img/spindle.png");
+	}
+	
+	#pivot {
+		background-image: url("../img/pivot.png");
+	}
+	
+	#tonearm {
+		background-image: url("../img/tonearm.png");
+	}
+	
+	#record {
+		background-image: url("../img/record.png");
+	}
+}
+
+/* Galaxy S6 ----------- */
+@media only screen and (device-width: 360px) and (device-height: 640px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 4){
+	/* Modal Styles */
+	#welcomeMessage .messageCue:after {
+		content: 'Testing: Galaxy S6';
+	}
+	
+	#welcomeMessage {
+		width: 200px;
+	}
+	
+	#welcomeMessage h1 {
+		font-size: 30px;
+	}
+	
+	#welcomeMessage p {
+		line-height: 28px;
+		font-size: 20px;
+	}
+	
+	/* Turntable */
+	#turntableContainer {
+		position: absolute;
+		top: -694px;
+		left: -728px;
+		width: 1550px;
+		height: 1193px;
+		background-image: url("../img/record-player.png");
+		background-size: cover;
+		
+		/*rotate for smartphone */
+		-ms-transform: rotate(-45deg);
+		-webkit-transform: rotate(45deg); 
+    	transform: rotate(45);
+
+	}
+	
+	#spindle {
+		background-image: url("../img/spindle.png");
+	}
+	
+	#pivot {
+		background-image: url("../img/pivot.png");
+	}
+	
+	#tonearm {
+		background-image: url("../img/tonearm.png");
+	}
+	
+	#record {
+		background-image: url("../img/record.png");
+	}
+}
+

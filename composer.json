@@ -1,0 +1,18 @@
+{
+    "name": "weatheredwatcher/ew2016-mailer",
+    "authors": [
+        {
+            "name": "David Duggins",
+            "email": "weatheredwatcher@gmail.com"
+        }
+    ],
+    "require": {
+
+          "parsecsv/php-parsecsv": "0.4.5",
+          "hashids/hashids": "^1.0",
+          "silex/silex": "2.0.x-dev",
+        "doctrine/dbal": "~2.2",
+        "twig/twig": "^1.24"
+    
+    }
+}
