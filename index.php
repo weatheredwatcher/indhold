@@ -18,7 +18,7 @@ $app['debug'] = true;  //set to true to turn on debugging, otherwise error messa
 
 $app->get('/', function() use($app) {
 
-  return $app['twig']->render('index.twig', array('name' => 'Open Text Customer'));
+  return $app['twig']->render('index.twig', array('name' => ''));
 });
 
  $app->get('/{id}', function($id) use($app) { 
