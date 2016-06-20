@@ -1,0 +1,401 @@
+/* Lato Light */
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/lato-light-webfont.eot');
+    src: url('../fonts/lato-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/lato-light-webfont.woff') format('woff'),
+         url('../fonts/lato-light-webfont.ttf') format('truetype'),
+         url('../fonts/lato-light-webfont.svg#latolight') format('svg');
+    font-weight: 200;
+    font-style: normal;
+}
+/* Lato Regular */
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/lato-regular-webfont.eot');
+    src: url('../fonts/lato-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/lato-regular-webfont.woff') format('woff'),
+         url('../fonts/lato-regular-webfont.ttf') format('truetype'),
+         url('../fonts/lato-regular-webfont.svg#latoregular') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+/* Lato Bold */
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/lato-bold-webfont.eot');
+    src: url('../fonts/lato-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/lato-bold-webfont.woff') format('woff'),
+         url('../fonts/lato-bold-webfont.ttf') format('truetype'),
+         url('../fonts/lato-bold-webfont.svg#latobold') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* Lato Black */
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/lato-black-webfont.eot');
+    src: url('../fonts/lato-black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/lato-black-webfont.woff') format('woff'),
+         url('../fonts/lato-black-webfont.ttf') format('truetype'),
+         url('../fonts/lato-black-webfont.svg#latoblack') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+html {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000000;
+	color: #FFFFFF;
+	font-family: "Lato", Helvetica, sans-serif;
+}
+
+
+/* OVERALL CAROUSEL STYLES */
+
+#videoWall {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.slide {
+	width: 100%;
+	height: 100%;
+}
+
+
+
+/* LEADERBOARD STYLES */
+
+h1 {
+	font-weight: 200;
+	font-size: 5vh;
+	margin: 0;
+	padding: 0;
+}
+
+h2 {
+	font-weight: 800;
+	font-size: 2vh;
+	margin: 0;
+	padding: 0;
+	color: #666666;
+}
+
+#titleBlock {
+	height: 20%;
+}
+
+#titleBlock #headings {
+	margin-left: 3%;
+	margin-top: 3.5%;
+	float: left;
+}
+
+#titleBlock img {
+	margin-right: 3%;
+	margin-top: 3%;
+	float: right;
+	width: 30%;
+	height: auto;
+}
+
+#overallLeaderboard, #individualLeaderboard, #individualByTeamCarousel {
+	position: relative;
+	height: 80% !important;
+	width: 100%;
+}
+
+.rankings, .rankingsIndiv {
+	position: absolute;
+	top: 0;
+	left; 0;
+	color: #FFFFFF;
+	z-index: 3000;
+	height: 100%;
+	width: 100%;
+}
+
+.rankings span {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	height: 19.4%;
+	width: 9%;
+	margin-bottom: 5px;
+	font-size: 5vw;
+}
+
+.rowAlt{
+	position: absolute;
+	top: 0;
+	left; 0;
+	z-index: 500;
+	height: 100%;
+	width: 100%;
+}
+
+.rowAlt span {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	height: 19.4%;
+	width: 100%;
+	margin-bottom: 5px;
+}
+
+.teamRow {
+	display: block;
+	width: 100%;
+	height: 19.4% !important;
+	margin-bottom: 5px;
+	z-index: 1000;
+}
+
+.even {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.rank {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	float: left;
+	color: #FFFFFF;
+    height: 100%;
+    width: 9%;
+}
+
+.icon {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	float: left;
+	height: 100%;
+	width: 10%;
+	background-size: 60%;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+}
+
+.bl { background-image: url("../img/team-icon-BL.svg"); }
+.or { background-image: url("../img/team-icon-OR.svg"); }
+.gr { background-image: url("../img/team-icon-GR.svg"); }
+.tl { background-image: url("../img/team-icon-TL.svg"); }
+.pl { background-image: url("../img/team-icon-PL.svg"); }
+
+.teamName {
+	display:flex;
+	justify-content:flex-start;
+	align-items:center;
+	float: left;
+	height: 100%;
+	width: 41%;
+	font-size: 4vw;
+	font-weight: 200;
+}
+
+.points {
+	display:flex;
+	justify-content:flex-end;
+	align-items:center;
+	float: left;
+	height: 100%;
+	width: 40%;
+	font-size: 6vw;
+	box-sizing: border-box;
+	padding-right: 3%;
+}
+
+.blue 		{ background-color: #2dA3E0; }
+.orange 	{ background-color: #F37B00; }
+.green 		{ background-color: #8DC63F; }
+.teal 		{ background-color: #00A388; }
+.purple 	{ background-color: #A05FA6; }
+
+/* Individual by Team */
+
+.teamStats {
+	width: 100%;
+	height: 100%;
+}
+
+.teamScoreboard {
+	float: left;
+	width: 70%;
+	height: 100% !important;
+}
+
+.teamIcon {
+	float: left;
+	width: 30%;
+	height: 100%;
+	background-size: 80%;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-color: #000000
+}
+
+.rankingsIndiv span {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	height: 19.4%;
+	width: 9%;
+	margin-bottom: 5px;
+	font-size: 5vw;
+}
+
+.individualName {
+	display:flex;
+	justify-content:flex-start;
+	align-items:center;
+	float: left;
+	height: 100%;
+	width: 44%;
+	font-size: 3vw;
+	font-weight: 200;
+}
+
+.individual {
+	font-size: 6vh !important;
+}
+
+.indiv {
+	width: 12% !important;
+}
+
+.pointsIndiv {
+	width: 37% !important;	
+}
+
+
+/* VIDEO STYLES */
+
+.videoPlayer {
+	width: 100%    !important;
+	height: auto   !important;
+}
+
+/* SOCIAL WALL */
+
+#socialWallContainer {
+	position: relative;
+	height: 100% !important;
+	width: 100%;
+}
+
+.socialPost {
+	text-align: left;
+	width: 31.2%;
+	height: 30%;
+	margin: 0.75% 1% 0.75% 1%;
+	border-radius: 8px;
+	border: 2px solid;
+	float: left;
+	background-color: #191919;
+	background-position: 97% 3%;
+	background-size: 40px 40px;
+	background-repeat: no-repeat;
+	box-sizing: border-box;
+	color: #FFFFFF;
+	font-size: 1.5vw;
+	padding: 30px 50px 30px 30px;
+	line-height: 2vw;
+	overflow: hidden;
+}
+
+.socialPost:after{
+  content: ' ';
+  display: block;
+  background-color: #191919;
+  height: 30px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.socialPost span.name {
+	font-weight: 600;
+	display: block;
+	float: none;
+	margin-bottom: 2vh;
+}
+
+.socialPost span.message {
+	display: block;
+	font-weight: 200;
+	float: none;
+}
+
+.sourceTwitter {
+	background-image: url('../img/icon-twitter.svg');
+}
+
+.sourceOT {
+	background-image: url('../img/icon-ot.svg');
+}
+
+.photo {
+	height: 63% !important;
+}
+
+.socialPost img {
+	margin-top: 3%;
+	width: 104%;
+	height: auto;
+	padding-bottom: -3%
+}
+
+	/* Border styles */
+	.bluePost {
+		border-color: #2dA3E0;
+	}
+	.orangePost {
+		border-color: #F37B00;
+	}
+	.greenPost {
+		border-color: #8DC63F;
+	}
+	.tealPost {
+		border-color: #00A388;
+	}
+	.purplePost {
+		border-color: #A05FA6;
+	}
+	.noTeamPost {
+		border-color: #666666;
+	}
+	
+	/* Hashtag styles*/
+	.bluePost .hashtag {
+		color: #2dA3E0;
+	}
+	.orangePost .hashtag {
+		color: #F37B00;
+	}
+	.greenPost .hashtag {
+		color: #8DC63F;
+	}
+	.tealPost .hashtag {
+		color: #00A388;
+	}
+	.purplePost .hashtag {
+		color: #A05FA6;
+	}
+	.noTeamPost .hashtag {
+		color: #666666;
+	}
