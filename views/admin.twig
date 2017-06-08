@@ -1,0 +1,11 @@
+<h1>Admin</h1>
+<table border="1">
+	<tr><td>ID</td><td>Username</td><td>Password</td><td></td></tr>
+{% for user in users %}
+    <tr><td>{{user.id}}<td>{{ user.email }}</td><td>{{ user.password }}</td><td>Edit | Delete</td></tr>
+{% else %}
+    No users have been found.
+{% endfor %}
+
+</table>
+<a href="/admin/adduser">Add User </a>

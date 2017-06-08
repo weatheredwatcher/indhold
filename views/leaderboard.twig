@@ -1,0 +1,375 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Enterprise 2016 Video Wall</title>
+	
+	<!-- Scripts -->
+	<script src="/assets/leaderboard/js/jquery-1.9.1.min.js"></script>
+	<script src="/assets/leaderboard/js/functions.js"></script>
+	<script src="/assets/leaderboard/js/isotope.pkgd.min.js"></script>
+	<script src="/assets/leaderboard/js/packery-mode.pkgd.js"></script>
+	<script src="/assets/leaderboard/js/jquery.cycle2.min.js"></script>
+	<script src="/assets/leaderboard/js/jquery.cycle2.scrollVert.min.js"></script>
+	<script src="/assets/leaderboard/js/scoreboard.js"></script>
+	
+	<!-- CSS -->
+	<link rel="stylesheet" href="/assets/leaderboard/css/styles.css" />
+	
+</head>
+
+<body>
+	
+	<!-- Carousel Container for all slides on video wall -->
+	<div id="videoWall" data-cycle-fx="scrollHorz" data-cycle-slides="> div">
+		
+		
+		<!-- Overall Leaderboard -->
+		<div id="leaderboardOverall" class="slide" data-cycle-timeout="7000">
+			
+			<!-- Title -->
+			<div id="titleBlock">
+				
+				<div id="headings">
+					<h2>LEADERBOARD</h2>
+					<h1>Overall by Team</h1>
+				</div>
+				<img src="/assets/leaderboard/img/ew-games-logo.png" />
+				
+			</div>
+		
+			<div id="overallLeaderboard">
+				<div class="rankings">
+					<span>1</span>
+					<span>2</span>
+					<span>3</span>
+					<span>4</span>
+					<span>5</span>
+				</div>
+				<div class="rowAlt">
+					<span class="even"></span>
+					<span></span>
+					<span class="even"></span>
+					<span></span>
+					<span class="even"></span>
+				</div>
+				<div class="teamRow">
+					<span class="rank blue"></span>
+					<span class="icon bl"></span>
+					<span class="teamName">Team Blue</span>
+					<span class="points" id="blPoints"></span>
+				</div>
+				<div class="teamRow">
+					<span class="rank purple"></span>
+					<span class="icon pl"></span>
+					<span class="teamName">Team Purple</span>
+					<span class="points" id="plPoints"></span>
+				</div>
+				<div class="teamRow">
+					<span class="rank green"></span>
+					<span class="icon gr"></span>
+					<span class="teamName">Team Green</span>
+					<span class="points" id="grPoints"></span>
+				</div>
+				<div class="teamRow">
+					<span class="rank orange"></span>
+					<span class="icon or"></span>
+					<span class="teamName"> Team Orange</span>
+					<span class="points" id="orPoints"></span>
+				</div>
+				<div class="teamRow">
+					<span class="rank teal"></span>
+					<span class="icon tl"></span>
+					<span class="teamName"> Team Teal</span>
+					<span class="points" id="tlPoints"></span>
+				</div>
+			</div>
+			
+		</div><!-- End Overall Leaderboard -->
+		
+		
+		
+		<!-- Individual Leaderboard -->
+		<div id="leaderboardIndividual" class="slide" data-cycle-timeout="7000">
+			
+			<!-- Title -->
+			<div id="titleBlock">
+				
+				<div id="headings">
+					<h2>LEADERBOARD</h2>
+					<h1>Overall by Individual</h1>
+				</div>
+				<img src="/assets/leaderboard/img/ew-games-logo.png" />
+				
+			</div>
+		
+			<div id="individualLeaderboard">
+				<div class="rankings">
+					<span>1</span>
+					<span>2</span>
+					<span>3</span>
+					<span>4</span>
+					<span>5</span>
+				</div>
+				<div class="rowAlt">
+					<span class="even"></span>
+					<span></span>
+					<span class="even"></span>
+					<span></span>
+					<span class="even"></span>
+				</div>
+				
+			</div>
+			
+		</div><!-- End Overall Leaderboard -->
+		
+		
+		<div class="winnerDraw slide"  data-cycle-timeout="7000">
+			<img src="/assets/leaderboard/img/winner-draw3.png" />
+		</div>
+		
+		<div class="winnerDraw slide"  data-cycle-timeout="7000">
+			<img src="/assets/leaderboard/img/winner-draw4.png" />
+		</div>
+		
+		
+		
+		<!-- Team Individual Blue -->
+		<div class="leaderboardIndividualByTeam slide"  data-cycle-timeout="7000">
+			
+			<!-- Title -->
+			<div id="titleBlock">
+				
+				<div id="headings">
+					<h2>LEADERBOARD</h2>
+					<h1>Top Individuals on Team #BL</h1>
+				</div>
+				<img src="/assets/leaderboard/img/ew-games-logo.png" />
+				
+			</div>
+			
+				<!-- Start of Blue Team -->
+				<div class="teamStats">
+					<!-- Team Icon -->
+					<div class="teamIcon bl">
+					</div>
+					<!-- Team Scoreboard -->
+					<div id="blueScoreboard" class="teamScoreboard">
+						<div class="rankingsIndiv">
+							<span>1</span>
+							<span>2</span>
+							<span>3</span>
+							<span>4</span>
+							<span>5</span>-
+						</div>
+						<div class="rowAlt">
+							<span class="even"></span>
+							<span></span>
+							<span class="even"></span>
+							<span></span>
+							<span class="even"></span>
+						</div>
+					</div>
+				</div><!-- End of Blue Team -->
+		</div>
+		
+		
+		
+		
+		
+		<!-- Team Individual Green -->
+		<div class="leaderboardIndividualByTeam slide" class="slide"  data-cycle-timeout="7000">
+			
+			<!-- Title -->
+			<div id="titleBlock">
+				
+				<div id="headings">
+					<h2>LEADERBOARD</h2>
+					<h1>Top Individuals on Team #GR</h1>
+				</div>
+				<img src="/assets/leaderboard/img/ew-games-logo.png" />
+				
+			</div>
+			
+				<!-- Start of Green Team -->
+				<div class="teamStats">
+					<!-- Team Icon -->
+					<div class="teamIcon gr">
+					</div>
+					<!-- Team Scoreboard -->
+					<div id="greenScoreboard" class="teamScoreboard">
+						<div class="rankingsIndiv">
+							<span>1</span>
+							<span>2</span>
+							<span>3</span>
+							<span>4</span>
+							<span>5</span>
+						</div>
+						<div class="rowAlt">
+							<span class="even"></span>
+							<span></span>
+							<span class="even"></span>
+							<span></span>
+							<span class="even"></span>
+						</div>
+					</div>
+					
+				</div><!-- End of Green Team -->
+		</div>
+		
+		
+		
+		
+		<!-- Team Individual Teal -->
+		<div class="leaderboardIndividualByTeam slide"  data-cycle-timeout="7000">
+			
+			<!-- Title -->
+			<div id="titleBlock">
+				
+				<div id="headings">
+					<h2>LEADERBOARD</h2>
+					<h1>Top Individuals on Team #TL</h1>
+				</div>
+				<img src="/assets/leaderboard/img/ew-games-logo.png" />
+				
+			</div>
+			
+				<!-- Start of Teal Team -->
+				<div class="teamStats">
+					<!-- Team Icon -->
+					<div class="teamIcon tl">
+					</div>
+					<!-- Team Scoreboard -->
+					<div id="tealScoreboard" class="teamScoreboard">
+						<div class="rankingsIndiv">
+							<span>1</span>
+							<span>2</span>
+							<span>3</span>
+							<span>4</span>
+							<span>5</span>
+						</div>
+						<div class="rowAlt">
+							<span class="even"></span>
+							<span></span>
+							<span class="even"></span>
+							<span></span>
+							<span class="even"></span>
+						</div>
+											</div>
+					
+				</div><!-- End of Teal Team -->
+		</div>
+		
+		
+		
+		
+		<!-- Team Individual Orange -->
+		<div class="leaderboardIndividualByTeam slide"  data-cycle-timeout="7000">
+			
+			<!-- Title -->
+			<div id="titleBlock">
+				
+				<div id="headings">
+					<h2>LEADERBOARD</h2>
+					<h1>Top Individuals on Team #OR</h1>
+				</div>
+				<img src="/assets/leaderboard/img/ew-games-logo.png" />
+				
+			</div>
+			
+				<!-- Start of Orange Team -->
+				<div class="teamStats">
+					<!-- Team Icon -->
+					<div class="teamIcon or">
+					</div>
+					<!-- Team Scoreboard -->
+					<div id="orangeScoreboard" class="teamScoreboard">
+						<div class="rankingsIndiv">
+							<span>1</span>
+							<span>2</span>
+							<span>3</span>
+							<span>4</span>
+							<span>5</span>
+						</div>
+						<div class="rowAlt">
+							<span class="even"></span>
+							<span></span>
+							<span class="even"></span>
+							<span></span>
+							<span class="even"></span>
+						</div>
+											</div>
+					
+				</div><!-- End of Orange Team -->
+		</div>
+		
+		
+		
+		
+		<!-- Team Individual Purple -->
+		<div class="leaderboardIndividualByTeam slide" class="slide"  data-cycle-timeout="7000">
+			
+			<!-- Title -->
+			<div id="titleBlock">
+				
+				<div id="headings">
+					<h2>LEADERBOARD</h2>
+					<h1>Top Individuals on Team #PL</h1>
+				</div>
+				<img src="/assets/leaderboard/img/ew-games-logo.png" />
+				
+			</div>
+			
+				<!-- Start of Purple Team -->
+				<div class="teamStats">
+					<!-- Team Icon -->
+					<div class="teamIcon pl">
+					</div>
+					<!-- Team Scoreboard -->
+					<div id="purpleScoreboard" class="teamScoreboard">
+						<div class="rankingsIndiv">
+							<span>1</span>
+							<span>2</span>
+							<span>3</span>
+							<span>4</span>
+							<span>5</span>
+						</div>
+						<div class="rowAlt">
+							<span class="even"></span>
+							<span></span>
+							<span class="even"></span>
+							<span></span>
+							<span class="even"></span>
+						</div>
+											</div>
+					
+				</div><!-- End of Purple Team -->
+
+		</div>
+		
+		
+		<!-- Social Wall -->
+		<div id="socialWall" class="slide" data-cycle-timeout="12000" data-cycle-slides="> div">
+			
+			<img id="fadeBox" src="/assets/leaderboard/img/fade.png" />
+			
+			<div id="socialWallContainer">
+				
+			
+			</div>
+			
+		</div><!-- Social Wall -->
+		
+		<!-- Prize Loop 
+		<div id="prizeLoop" class="slide" data-cycle-timeout="0">
+			<video id="prizeLoopVideo" class="videoPlayer"> 
+			<source src="/assets/leaderboard/video/sponsorloop.mp4">
+		</div> -->
+		
+	</div>
+
+</body>
+
+</html>

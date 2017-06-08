@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>THE EW GAMES POINT AWARDER</title>
+	
+	<!-- Scripts -->
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<script src="js/functions.js"></script>
+	<script src="js/jquery.cycle2.min.js"></script>
+	<script src="js/jquery.cycle2.swipe.min.js"></script>
+	
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/styles.css" />
+	
+</head>
+
+<body>
+	
+	<!-- Title -->
+	<div id="titleBlock">
+		
+		
+	</div>
+	
+	<h1 class="welcome">
+		Hello {username}
+	</h1>
+	
+	<!-- Carousel Container for all slides on video wall -->
+	<div id="pointGiver" data-cycle-fx="scrollHorz" data-cycle-manual-speed="400" data-cycle-swipe=true data-cycle-slides="> div">
+			
+		
+			<div id="chooseATeam" class="slide" data-cycle-timeout="0">
+				
+				<h2 class="step">
+					Choose a team
+				</h2>
+
+				<div id="teamBlue" class="teamRow rowAlt" data-team="blue">
+					<span class="rank"></span>
+					<span class="icon"></span>
+					<span class="teamName">Team Blue</span>
+				</div>
+				<div id="teamPurple" class="teamRow" data-team="purple">
+					<span class="rank"></span>
+					<span class="icon"></span>
+					<span class="teamName">Team Purple</span>
+				</div>
+				<div id="teamGreen" class="teamRow rowAlt" data-team="green">
+					<span class="rank"></span>
+					<span class="icon"></span>
+					<span class="teamName">Team Green</span>
+				</div>
+				<div id="teamOrange" class="teamRow" data-team="orange">
+					<span class="rank"></span>
+					<span class="icon"></span>
+					<span class="teamName">Team Orange</span>
+				</div>
+				<div id="teamTeal" class="teamRow rowAlt" data-team="teal">
+					<span class="rank"></span>
+					<span class="icon"></span>
+					<span class="teamName">Team Teal</span>
+				</div>
+				
+			</div><!-- End Choose A Team -->
+			
+			
+			<div id="choosePoints" class="slide" data-cycle-timeout="0">
+				
+				<h2 class="step">
+					Select the number of points to award
+				</h2>
+				
+				<div id="points200" class="pointRow rowAlt" data-team=200>
+					<span class="pointValue">200 Points</span>
+				</div>
+				<div id="points500" class="pointRow" data-team=500>
+					<span class="pointValue">500 Points</span>
+				</div>
+				<div id="points1000" class="pointRow rowAlt" data-team=1000>
+					<span class="pointValue">1000 Points</span>
+				</div>
+				<div id="points2500" class="pointRow" data-team=2500>
+					<span class="pointValue">2500 Points</span>
+				</div>
+				<div id="points5000" class="pointRow rowAlt" data-team=5000>
+					<span class="pointValue">5000 Points</span>
+				</div>
+			
+				<!-- Submit button -->
+				<a href="#" id="awardPointsButton">Award Points</a>
+				
+			</div><!-- End Choose Points -->
+			
+	</div><!-- End Video Wall -->
+
+
+</body>
+
+</html>

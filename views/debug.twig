@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Enterprise 2016 Video Wall</title>
+	
+	<!-- Scripts -->
+	<script src="/assets/leaderboard/js/jquery-1.9.1.min.js"></script>
+	
+</head>
+
+<body>
+	
+
+
+</body>
+
+
+<script>
+	
+	$(document).ready(function () {
+	
+	var jqxhr = $.getJSON("http://4cfa725b.ngrok.io/get_scores")
+	    .done(function(response) {
+	      console.log( "success" );
+		  
+		 
+		  
+		  
+          var greenTeamLeaders = response.teamLeaders.Green;
+		  for (var i in greenTeamLeaders) {
+		      if (greenTeamLeaders.hasOwnProperty(i)) {
+				  console.log(greenTeamLeaders[i].name);
+				  console.log(greenTeamLeaders[i].total);
+		          
+		      }
+		  }
+	    })
+		
+	    .fail(function() {
+	      console.log( "error" );
+	    })
+	    .always(function() {
+	      console.log( "complete" );
+	    });
+		
+	
+	});
+</script>
+</html>

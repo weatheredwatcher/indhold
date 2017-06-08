@@ -1,0 +1,146 @@
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/lato-light-webfont.eot');
+    src: url('../fonts/lato-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/lato-light-webfont.woff') format('woff'),
+         url('../fonts/lato-light-webfont.ttf') format('truetype'),
+         url('../fonts/lato-light-webfont.svg#latolight') format('svg');
+    font-weight: 200;
+    font-style: normal;
+
+}
+
+/* Lato Regular */
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/lato-regular-webfont.eot');
+    src: url('../fonts/lato-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/lato-regular-webfont.woff') format('woff'),
+         url('../fonts/lato-regular-webfont.ttf') format('truetype'),
+         url('../fonts/lato-regular-webfont.svg#latoregular') format('svg');
+    font-weight: 300;
+    font-style: normal;
+
+}
+
+/* Lato Bold */
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/lato-bold-webfont.eot');
+    src: url('../fonts/lato-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/lato-bold-webfont.woff') format('woff'),
+         url('../fonts/lato-bold-webfont.ttf') format('truetype'),
+         url('../fonts/lato-bold-webfont.svg#latobold') format('svg');
+    font-weight: 500;
+    font-style: normal;
+
+}
+
+/* Lato Black */
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/lato-black-webfont.eot');
+    src: url('../fonts/lato-black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/lato-black-webfont.woff') format('woff'),
+         url('../fonts/lato-black-webfont.ttf') format('truetype'),
+         url('../fonts/lato-black-webfont.svg#latoblack') format('svg');
+    font-weight: 700;
+    font-style: normal;
+
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;	
+}
+
+body {
+	color: #FFF;
+	background-color: #000;
+	background: url('../img/background-ew2016.jpg') no-repeat center bottom fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: "Lato", Helvetica, Arial, sans-serif;
+	text-align: center;
+}
+
+#pageContainer {
+	height: 100%;
+    padding: 0;
+    margin: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#container {
+	text-align: center;
+	margin-top: 40px;
+}
+
+#logo {
+	width: 100%;
+	height: auto;
+	margin-bottom: 15px;
+}
+
+#appIcon {
+	width: 60%;
+	height: auto;
+}
+
+h1 {
+	font-weight: 400;
+}
+
+.storeBadge {
+	width: 70%;
+	height: auto;
+	margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+    #container {
+	    width: 40%;
+    }
+    h1 {
+	    font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    #container {
+	    width: 70%;
+    }
+    
+    h1 {
+	    font-size: 25px;
+    }
+}
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+    #container {
+	    width: 70%;
+    }
+    h1 {
+	    font-size: 20px;
+    }
+}
+
+
+

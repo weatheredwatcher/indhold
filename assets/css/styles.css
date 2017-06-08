@@ -50,9 +50,7 @@
 /* Preloader */
 
 	#preloader {
-	    position:fixed;
-	    top:0;
-	    left:0;
+		position: relative;
 	    width: 100%;
 	    height: 100%;
 	    background-color:#000000; /* change if the mask should have another color then white */
@@ -105,7 +103,7 @@
 	}
 
 
-
+/* Main Styles */
 
 
 html {
@@ -139,7 +137,7 @@ body {
 	-webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
-	padding: 30px 30px 40px 30px;
+	padding: 20px 20px 40px 20px;
 	text-align: center;
 	display: none;
 }
@@ -165,15 +163,21 @@ body {
     -webkit-transform-origin: 47% 28.1%; /* Chrome, Safari, Opera */
     transform-origin: 47% 28.1%;
     z-index: 1000;
+    -webkit-backface-visibility: hidden;
+    background-image: url("../img/tonearm.png");
 }
 
 #record {
 	position: absolute;
 	top: 3.9%;
-	left: 8.3%;
+	left: 8.40%;
 	width: 70.74%;
 	height: 91.91%;
 	background-size: cover;
+	-webkit-backface-visibility: hidden;
+	-ms-transform-origin: 50% 50%; /* IE 9 */
+    -webkit-transform-origin: 50% 50%; /* Chrome, Safari, Opera */
+    transform-origin: 50% 50%;
 }
 
 #pivot {
@@ -184,18 +188,65 @@ body {
 	height: 2.3%;
 	background-size: cover;
 	z-index: 2000;
+	background-image: url("../img/pivot.png");
 }
 
 #spindle {
 	position: absolute;
-	top: 48.6%;
-	left: 42.3%;
+	top: 48.8%;
+	left: 42.5%;
 	width: 2.2%;
 	height: 2.8%;
 	background-size: cover;
 	z-index: 2000;
+	background-image: url("../img/spindle.png");
 }
 
+
+/* unsed animation classes and keyframes */
+
+@-ms-keyframes rotate {
+  from {
+    -ms-transform: rotate(0deg);
+  }
+  to { 
+    -ms-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to { 
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to { 
+    transform: rotate(360deg);
+  }
+}
+
+
+.rotationClass {
+	-ms-animation-name: rotate; 
+    -ms-animation-duration: 3s; 
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function:linear;
+	-webkit-animation-name: rotate; 
+    -webkit-animation-duration: 3s; 
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function:linear;
+    animation-name: rotate; 
+    animation-duration: 3s; 
+    animation-iteration-count: infinite;
+    animation-timing-function:linear;
+}
 
 
 
@@ -217,7 +268,7 @@ body {
 	    font-size: 25px;
 	    color: #FFFFFF;
 	    letter-spacing: 1px;
-	    width: 70%;
+	    width: 60%;
 	}
 	
 	#playButton span {
@@ -256,14 +307,16 @@ body {
 	    transform: translate(0, 4px);
 	}
 
+
+
+
 /* WORKING QUERIES ----------- */
 
 /* Desktops and laptops and tablets ----------- */
-@media only screen  and (min-width : 768px) {
+@media only screen and (min-width: 768px) {
 	
-	/* Modal Styles */
 	#welcomeMessage .messageCue:after {
-		content: 'Testing: Tablet version';
+		content: 'Thanks for stopping by. Turn up the volume and press play to walk the digital line.';
 	}
 	
 	#welcomeMessage {
@@ -285,34 +338,24 @@ body {
 		margin: 0 auto 0 auto;
 		width: 750px;
 		height: 577px;
-		background-image: url("../img/record-player.png");
+		background-image: url("../img/record-player_desktop.jpg");
 		background-size: cover;
-	}
-	
-	#spindle {
-		background-image: url("../img/spindle.png");
-	}
-	
-	#pivot {
-		background-image: url("../img/pivot.png");
-	}
-	
-	#tonearm {
-		background-image: url("../img/tonearm.png");
+		-ms-transform: rotate(0deg);
+		-webkit-transform: rotate(0deg); 
+    	transform: rotate(0);
 	}
 	
 	#record {
-		background-image: url("../img/record.png");
+		background-image: url("../img/record_desktop.png");
 	}
 	
 }
 
 /* Large screens ----------- */
-@media only screen and (min-width : 1025px) {
+@media only screen and (min-width: 1025px) {
 	
-	/* Modal Styles */
 	#welcomeMessage .messageCue:after {
-		content: 'Testing: Desktop version';
+		content: 'Thanks for stopping by. Turn up the volume and press play to walk the digital line.';
 	}
 	
 	#welcomeMessage {
@@ -320,7 +363,7 @@ body {
 	}
 	
 	#welcomeMessage h1 {
-		font-size: 30px;
+		font-size: 25px;
 	}
 	
 	#welcomeMessage p {
@@ -334,48 +377,32 @@ body {
 		margin: 0 auto 0 auto;
 		width: 1024px;
 		height: 792px;
-		background-image: url("../img/record-player.png");
+		background-image: url("../img/record-player_desktop.jpg");
 		background-size: cover;
+		-ms-transform: rotate(0deg);
+		-webkit-transform: rotate(0deg); 
+    	transform: rotate(0);
 	}
 	
 	#record {
 		width: 727px !important;
 		height: 727px !important;
-	}
-	
-	#spindle {
-		background-image: url("../img/spindle.png");
-	}
-	
-	#pivot {
-		background-image: url("../img/pivot.png");
-	}
-	
-	#tonearm {
-		background-image: url("../img/tonearm.png");
-	}
-	
-	#record {
-		background-image: url("../img/record.png");
+		background-image: url("../img/record_desktop.png");
 	}
 	
 }
 
+/* Smartphones - Generic - Portrait - 1x */
+@media
+only screen and (-webkit-min-device-pixel-ratio: 1)      and (min-width: 320px) and (max-width: 500px) and (orientation: portrait),
+only screen and (   min--moz-device-pixel-ratio: 1)      and (min-width: 320px) and (max-width: 500px) and (orientation: portrait),
+only screen and (     -o-min-device-pixel-ratio: 1/1)    and (min-width: 320px) and (max-width: 500px) and (orientation: portrait),
+only screen and (        min-device-pixel-ratio: 1)      and (min-width: 320px) and (max-width: 500px) and (orientation: portrait),
+only screen and (                min-resolution: 96dpi) and (min-width: 320px) and (max-width: 500px) and (orientation: portrait),
+only screen and (                min-resolution: 1dppx)  and (min-width: 320px) and (max-width: 500px) and (orientation: portrait) { 
 
-
-
-
-/* IN PROGRESS QUERIES ----------- */
-
-
-
-
-
-/* Smartphones with pixel ratio of 2  */
-@media only screen and (min-device-width: 320px) and (max-device-height: 670px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
-	/* Modal Styles */
-	#welcomeMessage .messageCue:after {
-		content: 'Testing: smartphones, px2';
+  #welcomeMessage .messageCue:after {
+		content: 'Thanks for stopping by. Turn up the volume and press play to walk the digital line.';
 	}
 	
 	#welcomeMessage {
@@ -383,32 +410,7 @@ body {
 	}
 	
 	#welcomeMessage h1 {
-		font-size: 30px;
-	}
-	
-	#welcomeMessage p {
-		line-height: 28px;
-		font-size: 20px;
-	}
-}
-
-
-
-/* SPECIFIC DEVICE QUERIES ----------- */
-
-/* iPhone5 and 5s ----------- */
-@media only screen and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
-	/* Modal Styles */
-	#welcomeMessage .messageCue:after {
-		content: 'Testing: iPhone5';
-	}
-	
-	#welcomeMessage {
-		width: 200px;
-	}
-	
-	#welcomeMessage h1 {
-		font-size: 30px;
+		font-size: 25px;
 	}
 	
 	#welcomeMessage p {
@@ -423,38 +425,30 @@ body {
 		left: -809px;
 		width: 1723px;
 		height: 1326px;
-		background-image: url("../img/record-player.png");
+		background-image: url("../img/record-player_desktop.jpg");
 		background-size: cover;
 		
 		/*rotate for smartphone */
-		-ms-transform: rotate(-45deg); /* IE 9 */
+		-ms-transform: rotate(45deg); /* IE 9 */
 		-webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
     	transform: rotate(45);
 	}
 	
-	#spindle {
-		background-image: url("../img/spindle.png");
-	}
-	
-	#pivot {
-		background-image: url("../img/pivot.png");
-	}
-	
-	#tonearm {
-		background-image: url("../img/tonearm.png");
-	}
-	
 	#record {
-		background-image: url("../img/record.png");
+		background-image: url("../img/record_desktop.png");
 	}
-
 }
+/* Smartphones - Generic - Landscape - 1x */
+@media
+only screen and (-webkit-min-device-pixel-ratio: 1)      and (min-width: 480px) and (max-width: 767px) and (orientation: landscape),
+only screen and (   min--moz-device-pixel-ratio: 1)      and (min-width: 480px) and (max-width: 767px) and (orientation: landscape),
+only screen and (     -o-min-device-pixel-ratio: 1/1)    and (min-width: 480px) and (max-width: 767px) and (orientation: landscape),
+only screen and (        min-device-pixel-ratio: 1)      and (min-width: 480px) and (max-width: 767px) and (orientation: landscape),
+only screen and (                min-resolution: 96dpi) and (min-width: 480px) and (max-width: 767px) and (orientation: landscape),
+only screen and (                min-resolution: 1dppx)  and (min-width: 480px) and (max-width: 767px) and (orientation: landscape) { 
 
-/* iPhone 6 ----------- */
-@media only screen and (device-width: 375px) and (device-height: 667px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2){
-	/* Modal Styles */
-	#welcomeMessage .messageCue:after {
-		content: 'Testing: iPhone6';
+  #welcomeMessage .messageCue:after {
+		content: 'Thanks for stopping by. Turn up the volume and press play to walk the digital line.';
 	}
 	
 	#welcomeMessage {
@@ -462,7 +456,7 @@ body {
 	}
 	
 	#welcomeMessage h1 {
-		font-size: 30px;
+		font-size: 25px;
 	}
 	
 	#welcomeMessage p {
@@ -473,41 +467,40 @@ body {
 	/* Turntable */
 	#turntableContainer {
 		position: absolute;
-		top: -764px;
-		left: -815px;
+		top: -768px;
+		left: -809px;
 		width: 1723px;
 		height: 1326px;
-		background-image: url("../img/record-player.png");
+		background-image: url("../img/record-player_desktop.jpg");
 		background-size: cover;
 		
 		/*rotate for smartphone */
-		-ms-transform: rotate(-45deg); /* IE 9 */
+		-ms-transform: rotate(45deg); /* IE 9 */
 		-webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
     	transform: rotate(45);
 	}
 	
-	#spindle {
-		background-image: url("../img/spindle.png");
-	}
-	
-	#pivot {
-		background-image: url("../img/pivot.png");
-	}
-	
-	#tonearm {
-		background-image: url("../img/tonearm.png");
-	}
-	
 	#record {
-		background-image: url("../img/record.png");
+		background-image: url("../img/record_desktop.png");
 	}
 }
 
-/* Galaxy S6 ----------- */
-@media only screen and (device-width: 360px) and (device-height: 640px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 4){
-	/* Modal Styles */
-	#welcomeMessage .messageCue:after {
-		content: 'Testing: Galaxy S6';
+
+
+
+
+
+/* Smartphones - Generic - Portrait - 2x */
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 320px) and (max-width: 500px) and (orientation: portrait),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 320px) and (max-width: 500px) and (orientation: portrait),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 320px) and (max-width: 500px) and (orientation: portrait),
+only screen and (        min-device-pixel-ratio: 2)      and (min-width: 320px) and (max-width: 500px) and (orientation: portrait),
+only screen and (                min-resolution: 192dpi) and (min-width: 320px) and (max-width: 500px) and (orientation: portrait),
+only screen and (                min-resolution: 2dppx)  and (min-width: 320px) and (max-width: 500px) and (orientation: portrait) { 
+
+  #welcomeMessage .messageCue:after {
+		content: 'Thanks for stopping by. Turn up the volume and press play to walk the digital line.';
 	}
 	
 	#welcomeMessage {
@@ -515,7 +508,7 @@ body {
 	}
 	
 	#welcomeMessage h1 {
-		font-size: 30px;
+		font-size: 25px;
 	}
 	
 	#welcomeMessage p {
@@ -526,34 +519,449 @@ body {
 	/* Turntable */
 	#turntableContainer {
 		position: absolute;
-		top: -694px;
-		left: -728px;
-		width: 1550px;
-		height: 1193px;
-		background-image: url("../img/record-player.png");
+		top: -768px;
+		left: -809px;
+		width: 1723px;
+		height: 1326px;
+		background-image: url("../img/record-player_2x.jpg");
 		background-size: cover;
 		
 		/*rotate for smartphone */
-		-ms-transform: rotate(-45deg);
+		-ms-transform: rotate(45deg); /* IE 9 */
+		-webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    	transform: rotate(45);
+	}
+	
+	#record {
+		background-image: url("../img/record_2x.png");
+	}
+}
+/* Smartphones - Generic - Landscape - 2x */
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 480px) and (max-width: 767px) and (orientation: landscape),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 480px) and (max-width: 767px) and (orientation: landscape),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 480px) and (max-width: 767px) and (orientation: landscape),
+only screen and (        min-device-pixel-ratio: 2)      and (min-width: 480px) and (max-width: 767px) and (orientation: landscape),
+only screen and (                min-resolution: 192dpi) and (min-width: 480px) and (max-width: 767px) and (orientation: landscape),
+only screen and (                min-resolution: 2dppx)  and (min-width: 480px) and (max-width: 767px) and (orientation: landscape) { 
+
+  #welcomeMessage .messageCue:after {
+		content: 'Thanks for stopping by. Turn up the volume and press play to walk the digital line.';
+	}
+	
+	#welcomeMessage {
+		width: 200px;
+	}
+	
+	#welcomeMessage h1 {
+		font-size: 25px;
+	}
+	
+	#welcomeMessage p {
+		line-height: 28px;
+		font-size: 20px;
+	}
+	
+	/* Turntable */
+	#turntableContainer {
+		position: absolute;
+		top: -768px;
+		left: -809px;
+		width: 1723px;
+		height: 1326px;
+		background-image: url("../img/record-player_2x.jpg");
+		background-size: cover;
+		
+		/*rotate for smartphone */
+		-ms-transform: rotate(45deg); /* IE 9 */
+		-webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    	transform: rotate(45);
+	}
+	
+	#record {
+		background-image: url("../img/record_2x.png");
+	}
+}
+
+
+
+
+
+
+/* Smartphones - Generic - Portrait - 3x */
+@media
+only screen and (-webkit-min-device-pixel-ratio: 3)      and (min-width: 320px) and (max-width: 500px) and (orientation: portrait),
+only screen and (   min--moz-device-pixel-ratio: 3)      and (min-width: 320px) and (max-width: 500px) and (orientation: portrait),
+only screen and (     -o-min-device-pixel-ratio: 3/1)    and (min-width: 320px) and (max-width: 500px) and (orientation: portrait),
+only screen and (        min-device-pixel-ratio: 3)      and (min-width: 320px) and (max-width: 500px) and (orientation: portrait),
+only screen and (                min-resolution: 288dpi) and (min-width: 320px) and (max-width: 500px) and (orientation: portrait),
+only screen and (                min-resolution: 3dppx)  and (min-width: 320px) and (max-width: 500px) and (orientation: portrait) { 
+
+  #welcomeMessage .messageCue:after {
+		content: 'Thanks for stopping by. Turn up the volume and press play to walk the digital line.';
+	}
+	
+	#welcomeMessage {
+		width: 200px;
+	}
+	
+	#welcomeMessage h1 {
+		font-size: 25px;
+	}
+	
+	#welcomeMessage p {
+		line-height: 28px;
+		font-size: 20px;
+	}
+	
+	/* Turntable */
+	#turntableContainer {
+		position: absolute;
+		top: -728px;
+		left: -761px;
+		width: 1637px;
+		height: 1260px;
+		background-image: url("../img/record-player_2x.jpg");
+		background-size: cover;
+
+		-ms-transform: rotate(45deg);
+		-webkit-transform: rotate(45deg);
+    	transform: rotate(45);
+	}
+	
+	#record {
+		background-image: url("../img/record_2x.png");
+	}
+}
+/* Smartphones - Generic - Landscape - 3x */
+@media
+only screen and (-webkit-min-device-pixel-ratio: 3)      and (min-width: 480px) and (max-width: 767px) and (orientation: landscape),
+only screen and (   min--moz-device-pixel-ratio: 3)      and (min-width: 480px) and (max-width: 767px) and (orientation: landscape),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 480px) and (max-width: 767px) and (orientation: landscape),
+only screen and (        min-device-pixel-ratio: 2)      and (min-width: 480px) and (max-width: 767px) and (orientation: landscape),
+only screen and (                min-resolution: 192dpi) and (min-width: 480px) and (max-width: 767px) and (orientation: landscape),
+only screen and (                min-resolution: 3dppx)  and (min-width: 480px) and (max-width: 767px) and (orientation: landscape) { 
+
+  #welcomeMessage .messageCue:after {
+		content: 'Thanks for stopping by. Turn up the volume and press play to walk the digital line.';
+	}
+	
+	#welcomeMessage {
+		width: 200px;
+	}
+	
+	#welcomeMessage h1 {
+		font-size: 25px;
+	}
+	
+	#welcomeMessage p {
+		line-height: 28px;
+		font-size: 20px;
+	}
+	
+	/* Turntable */
+	#turntableContainer {
+		position: absolute;
+		top: -366px;
+		left: -866px;
+		width: 1640px;
+		height: 1220px;
+		background-image: url("../img/record-player_2x.jpg");
+		background-size: cover;
+		
+		/*rotate for smartphone */
+		-ms-transform: rotate(-45deg); /* IE 9 */
+		-webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
+    	transform: rotate(-45);
+	}
+	
+	#record {
+		background-image: url("../img/record_2x.png");
+	}
+}
+
+
+
+
+
+
+
+
+/* Smartphones - Generic - Portrait - 4x */
+@media
+only screen and (-webkit-min-device-pixel-ratio: 4)      and (min-width: 320px) and (max-width: 500px) and (orientation: portrait),
+only screen and (   min--moz-device-pixel-ratio: 4)      and (min-width: 320px) and (max-width: 500px) and (orientation: portrait),
+only screen and (     -o-min-device-pixel-ratio: 4/1)    and (min-width: 320px) and (max-width: 500px) and (orientation: portrait),
+only screen and (        min-device-pixel-ratio: 4)      and (min-width: 320px) and (max-width: 500px) and (orientation: portrait),
+only screen and (                min-resolution: 384dpi) and (min-width: 320px) and (max-width: 500px) and (orientation: portrait),
+only screen and (                min-resolution: 4dppx)  and (min-width: 320px) and (max-width: 500px) and (orientation: portrait) { 
+
+  #welcomeMessage .messageCue:after {
+		content: 'Thanks for stopping by. Turn up the volume and press play to walk the digital line.';
+	}
+	
+	#welcomeMessage {
+		width: 200px;
+	}
+	
+	#welcomeMessage h1 {
+		font-size: 25px;
+	}
+	
+	#welcomeMessage p {
+		line-height: 24px;
+		font-size: 20px;
+	}
+	
+	/* Turntable */
+	#turntableContainer {
+		position: absolute;
+		top: -390px;
+		left: -804px;
+		width: 1550px;
+		height: 1193px;
+		background-image: url("../img/record-player_2x.jpg");
+		background-size: cover;
+		
+		/*rotate for smartphone */
+		-ms-transform: rotate(45deg);
 		-webkit-transform: rotate(45deg); 
     	transform: rotate(45);
 
 	}
 	
-	#spindle {
-		background-image: url("../img/spindle.png");
+	#record {
+		background-image: url("../img/record_2x.png");
+	}
+
+
+}
+/* Smartphones - Generic - Landscape - 4x */
+@media
+only screen and (-webkit-min-device-pixel-ratio: 4)      and (min-width: 480px) and (max-width: 767px) and (orientation: landscape),
+only screen and (   min--moz-device-pixel-ratio: 4)      and (min-width: 480px) and (max-width: 767px) and (orientation: landscape),
+only screen and (     -o-min-device-pixel-ratio: 4/1)    and (min-width: 480px) and (max-width: 767px) and (orientation: landscape),
+only screen and (        min-device-pixel-ratio: 4)      and (min-width: 480px) and (max-width: 767px) and (orientation: landscape),
+only screen and (                min-resolution: 384dpi) and (min-width: 480px) and (max-width: 767px) and (orientation: landscape),
+only screen and (                min-resolution: 4dppx)  and (min-width: 480px) and (max-width: 767px) and (orientation: landscape) { 
+
+  #welcomeMessage .messageCue:after {
+		content: 'Thanks for stopping by. Turn up the volume and press play to walk the digital line.';
 	}
 	
-	#pivot {
-		background-image: url("../img/pivot.png");
+	#welcomeMessage {
+		width: 400px;
 	}
 	
-	#tonearm {
-		background-image: url("../img/tonearm.png");
+	#welcomeMessage h1 {
+		font-size: 25px;
+	}
+	
+	#welcomeMessage p {
+		line-height: 24px;
+		font-size: 20px;
+	}
+	
+	#turntableContainer {
+		position: absolute;
+		top: -390px;
+		left: -804px;
+		width: 1550px;
+		height: 1193px;
+		background-image: url("../img/record-player_2x.jpg");
+		background-size: cover;
+		
+		/*rotate for smartphone */
+		-ms-transform: rotate(-45deg);
+		-webkit-transform: rotate(-45deg); 
+    	transform: rotate(-45);
+
 	}
 	
 	#record {
-		background-image: url("../img/record.png");
+		background-image: url("../img/record_2x.png");
+	}
+
+
+}
+
+
+/* SPECIFIC DEVICES */
+
+
+
+
+
+/* iPhone 5 ----------- */
+/* Portrait */
+@media only screen and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+	/* Modal Styles */
+	#welcomeMessage .messageCue:after {
+		content: 'Thanks for stopping by. Turn up the volume and press play to walk the digital line.';
+	}
+	
+	#welcomeMessage {
+		width: 200px;
+	}
+	
+	#welcomeMessage h1 {
+		font-size: 25px;
+	}
+	
+	#welcomeMessage p {
+		line-height: 28px;
+		font-size: 20px;
+	}
+	
+	/* Turntable */
+	#turntableContainer {
+		position: absolute;
+		top: -768px;
+		left: -809px;
+		width: 1723px;
+		height: 1326px;
+		background-image: url("../img/record-player_2x.jpg");
+		background-size: cover;
+		
+		/*rotate for smartphone */
+		-ms-transform: rotate(45deg); /* IE 9 */
+		-webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    	transform: rotate(45);
+	}
+	
+	#record {
+		background-image: url("../img/record_2x.png");
+	}
+
+}
+/* Landscape */
+@media only screen and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+	/* Modal Styles */
+	#welcomeMessage .messageCue:after {
+		content: 'Thanks for stopping by. Turn up the volume and press play to walk the digital line.';
+	}
+	
+	#welcomeMessage {
+		margin-top: 30px !important;
+		width: 400px;
+	}
+	
+	#welcomeMessage h1 {
+		font-size: 25px;
+	}
+	
+	#welcomeMessage p {
+		line-height: 24px;
+		font-size: 20px;
+	}
+	
+	/* Turntable */
+	#turntableContainer {
+		position: absolute;
+		top: -434px;
+		left: -898px;
+		width: 1723px;
+		height: 1326px;
+		background-image: url("../img/record-player_2x.jpg");
+		background-size: cover;
+		
+		/*rotate for smartphone */
+		-ms-transform: rotate(-45deg); /* IE 9 */
+		-webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
+    	transform: rotate(-45);
+	}
+	
+	#record {
+		background-image: url("../img/record_2x.png");
+	}
+
+}
+
+
+
+
+/* iPhone 6 ----------- */
+/* Portrait */
+@media only screen and (device-width: 375px) and (device-height: 667px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+	/* Modal Styles */
+	#welcomeMessage .messageCue:after {
+		content: 'Thanks for stopping by. Turn up the volume and press play to walk the digital line.';
+	}
+	
+	#welcomeMessage {
+		width: 200px;
+	}
+	
+	#welcomeMessage h1 {
+		font-size: 25px;
+	}
+	
+	#welcomeMessage p {
+		line-height: 28px;
+		font-size: 20px;
+	}
+	
+	/* Turntable */
+	#turntableContainer {
+		position: absolute;
+		top: -756px;
+		left: -810px;
+		width: 1723px;
+		height: 1326px;
+		background-image: url("../img/record-player_2x.jpg");
+		background-size: cover;
+		
+		/*rotate for smartphone */
+		-ms-transform: rotate(45deg); /* IE 9 */
+		-webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    	transform: rotate(45);
+	}
+	
+	#record {
+		background-image: url("../img/record_2x.png");
 	}
 }
+/* Landscape */
+@media only screen and (device-width: 375px) and (device-height: 667px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+	/* Modal Styles */
+	#welcomeMessage .messageCue:after {
+		content: 'Thanks for stopping by. Turn up the volume and press play to walk the digital line.';
+	}
+	
+	#welcomeMessage {
+		width: 400px;
+		padding: 20px 20px 30px 20px !important;
+	}
+	
+	#welcomeMessage h1 {
+		font-size: 25px;
+	}
+	
+	#welcomeMessage p {
+		line-height: 28px;
+		font-size: 20px;
+	}
+	
+	/* Turntable */
+	#turntableContainer {
+		position: absolute;
+		top: -379px;
+		left: -888px;
+		width: 1723px;
+		height: 1326px;
+		background-image: url("../img/record-player_2x.jpg");
+		background-size: cover;
+		
+		/*rotate for smartphone */
+		-ms-transform: rotate(-45deg); 
+		-webkit-transform: rotate(-45deg); 
+    	transform: rotate(-45);
+    	
+	}
+	
+	#record {
+		background-image: url("../img/record_2x.png");
+	}
+}
+
 
