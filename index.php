@@ -32,9 +32,10 @@ $app = new ewApp(); //Silex\Application();
 require_once __DIR__.'/config/register.php';
 //load the controllers:
 //todo: create logic to loop controllers
-require_once __DIR__.'/controllers/LeaderboardController.php';
+require_once __DIR__.'/controllers/LeaderboardControllerProvider.php';
+require_once __DIR__.'/controllers/AdminControllerProvider.php';
 use Leaderboard;
-
+use Admin;
 $app['debug'] = true;  //set to true to turn on debugging, otherwise error messages are user friendly
 
 $app->get('/', function() use($app) {
@@ -43,86 +44,9 @@ $app->get('/', function() use($app) {
 });
 
 $app->mount('/leaderboard', new Leaderboard\LeaderboardControllerProvider());
-
-$app->match('/admin', function (Request $request) use ($app) {
-   
-	if (null === $user = $app['session']->get('user')) {
-	        return $app['twig']->render('login.twig');
-	    }
-	
-	if (isset($_POST['email'])){
-		
-	    $email = $_POST['email'];
-		$password = $_POST['password'];
-	    $sql = "SELECT id, password FROM users WHERE email = ? limit 1";
-	    $results = $app['dbs']['points']->executeQuery($sql, array($email));
-		
-	    $user = $results->fetch();
-	    $passworddb = $user['password'];
-	    $id = $user['id'];
-		if($password == $passworddb){
-	    
-}
-   
-}
-$app['session']->set('user', array('username' => $email, 'id' => $id));
-$users = "SELECT * FROM users";
-$return = $app['dbs']['points']->executeQuery($users);
- return $app['twig']->render('admin.twig', array('users' => $return));
-});
-
-$app->match('/admin/adduser', function (Request $request) use ($app) {
-	if (null === $user = $app['session']->get('user')) {
-	        return $app->redirect('/admin');
-	    }
-		$message = "Add User";
-		if (isset($_POST['email'])){
-			$email = $_POST['email'];
-			$password = $_POST['password'];
-			
-		    $sql = "insert into users (email, password) values (?, ?)";
-		   $app['dbs']['points']->executeQuery($sql, array($email, $password));
-		  $message = "$email has been added to the tool"; 
-		}
-			
-			
-return $app['twig']->render('adduser.twig', array('message' => $message));
-
-	
-
-});
-
-$app->match('/login', function (Request $request) use ($app) {
-   
-    
-	
-	if (isset($_POST['email']) && $_POST['email'] != ""){
-		
-	    $email = $_POST['email'];
-		$password = $_POST['password'];
-	    $sql = "SELECT id, password FROM users WHERE email = ? limit 1";
-	    $results = $app['dbs']['points']->executeQuery($sql, array($email));
-		
-	    $user = $results->fetch();
-	    $passworddb = $user['password'];
-	    $id = $user['id'];
-		if($password == $passworddb){
-	    $app['session']->set('user', array('username' => $email, 'id' => $id));
-	return $app->redirect('/points-app');
-} //end password check
-   
-}  //end if isset
- return $app['twig']->render('login.twig');
-});
-
-$app->get('/logout', function () use ($app){
+$app->mount('/admin', new Admin\AdminControllerProvider());
 
 
- $app['session']->clear();
- 
- return $app->redirect('/login');
-
-});
   
  	 
 $app->get('/points-app', function () use ($app) {
