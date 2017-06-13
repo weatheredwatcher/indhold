@@ -8,9 +8,9 @@
     ],
     "require": {
 
-          "parsecsv/php-parsecsv": "0.4.5",
-          "hashids/hashids": "^1.0",
-          "silex/silex": "2.0.x-dev",
+        "parsecsv/php-parsecsv": "0.4.5",
+        "hashids/hashids": "^1.0",
+        "silex/silex": "~2.0",
         "doctrine/dbal": "~2.2",
         "twig/twig": "^1.24",
         "symfony/form": "^3.1",
