@@ -23,14 +23,22 @@ class ewApp extends Application {
 }
 
 $app = new ewApp(); //Silex\Application();
+
+
 //load the Services (Database, Twig etc.)
 require_once __DIR__.'/config/register.php';
+//load the controllers:
+//todo: create logic to loop controllers
+require_once __DIR__.'/controllers/LeaderboardController.php';
+
 $app['debug'] = true;  //set to true to turn on debugging, otherwise error messages are user friendly
 
 $app->get('/', function() use($app) {
 
-  return $app['twig']->render('index.twig', array('name' => ''));
+  return "Home Page";
 });
+
+$app->mount('/leaderboard', $leaderboard);
 
 $app->match('/admin', function (Request $request) use ($app) {
    
@@ -377,45 +385,6 @@ $app->get('/get_posts', function() use($app) {
     return $app->json($arr);
 });
 
-$app->get('/leaderboard', function() use($app) {
-
-  return $app['twig']->render('leaderboard.twig');
-  
-  
-});
-
-$app->get('/mobile-leaderboards', function() use($app) {
-
-  return $app['twig']->render('mobile.twig');
-    
-});
-
-$app->get('/touch', function() use($app) {
-
-  return $app['twig']->render('touch.twig');
-});
-
- $app->get('/{id}', function($id) use($app) { 
-
-   //
-   // Here we prepare the SQL and execute with shortcut. mysql::executeQuery() 
-   // This method protects from mysql injection
-   //
-    $sql = "SELECT * FROM mailer WHERE hashID = ?";
-    $post = $app['dbs']['mailer']->executeQuery($sql, array($id));
-    $user = $post->fetch();
-    $name = $user['FirstName'];
-//
-    // $sql = "UPDATE posts SET value = ? WHERE id = ?";
-    //     $app['dbs']['mysql_write']->executeUpdate($sql, array('newValue', (int) $id));
-    $sql = "UPDATE mailer SET viewedOn = now() WHERE hashID = ?";
-   $app['dbs']['mailer']->executeUpdate($sql, array($id));
-
-    return $app['twig']->render('index.twig', array(
-                  'name' => $name,
-      )); 
- }); 
-
 
  
- $app->run();
+$app->run();
