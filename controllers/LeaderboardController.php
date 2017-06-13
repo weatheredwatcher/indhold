@@ -11,23 +11,34 @@
 * 
 */
 
+namespace Leaderboard;
 
-$leaderboard = $app['controllers_factory'];
+use Silex\Application;
+use Silex\Api\ControllerProviderInterface;
 
-$leaderboard->get('/', function() use($app) {
+class LeaderboardControllerProvider implements ControllerProviderInterface
+{
+    public function connect(Application $app)
+    {
+        // creates a new controller based on the default route
+        $controllers = $app['controllers_factory'];
 
-  return $app['twig']->render('leaderboard.twig');
-  
-  
-});
+        $controllers->get('/', function (Application $app) {
+            return $app['twig']->render('leaderboard.twig');
+        });
+        
+        $controllers->get('/mobile', function() use($app) {
 
-$leaderboard->get('/mobile', function() use($app) {
-
-  return $app['twig']->render('mobile.twig');
+          return $app['twig']->render('mobile.twig');
     
-});
+        });
 
-$leaderboard->get('/touch', function() use($app) {
+        $controllers->get('/touch', function() use($app) {
 
-  return $app['twig']->render('touch.twig');
-});
+          return $app['twig']->render('touch.twig');
+        });
+        
+
+        return $controllers;
+    }
+}

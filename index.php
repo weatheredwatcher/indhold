@@ -1,4 +1,7 @@
 <?php
+
+namespace EnterpriseWorld;
+
 // web/index.php
 require_once __DIR__.'/vendor/autoload.php';
 date_default_timezone_set('America/New_York');
@@ -30,6 +33,7 @@ require_once __DIR__.'/config/register.php';
 //load the controllers:
 //todo: create logic to loop controllers
 require_once __DIR__.'/controllers/LeaderboardController.php';
+use Leaderboard;
 
 $app['debug'] = true;  //set to true to turn on debugging, otherwise error messages are user friendly
 
@@ -38,7 +42,7 @@ $app->get('/', function() use($app) {
   return "Home Page";
 });
 
-$app->mount('/leaderboard', $leaderboard);
+$app->mount('/leaderboard', new Leaderboard\LeaderboardControllerProvider());
 
 $app->match('/admin', function (Request $request) use ($app) {
    
