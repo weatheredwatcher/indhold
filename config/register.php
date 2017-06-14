@@ -3,28 +3,20 @@
 
 			   $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
 			         'dbs.options' => array(
-			   		  'mailer' => array(
-			                       'driver'    => 'mysqli',
-			                       'host'      => '72.249.150.224',
-			                       'dbname'    => 'otewadmi_mailer',
-			                       'user'      => 'otewadmi_admin',
-			                       'password'  => '__otew2016__',
-			                       'charset'   => 'utf8mb4',
-			   				),
 			   				'points' => array(
 			                       'driver'    => 'mysqli',
-			                       'host'      => '72.249.150.224',
-			                       'dbname'    => 'otewadmi_points',
-			                       'user'      => 'otewadmi_admin',
-			                       'password'  => '__otew2016__',
+			                       'host'      => 'localhost',
+			                       'dbname'    => 'otewleaderboard',
+			                       'user'      => 'weatheredwatcher',
+			                       'password'  => 'password',
 			                       'charset'   => 'utf8mb4',
 			   				),
 				'tweets' => array(
                     'driver'    => 'mysqli',
-                    'host'      => '72.249.150.224',
-                    'dbname'    => 'otewadmi_tweets',
-                    'user'      => 'otewadmi_admin',
-                    'password'  => '__otew2016__',
+                    'host'      => 'localhost',
+                    'dbname'    => 'otew_tweets',
+                    'user'      => 'weatheredwatcher',
+                    'password'  => 'password',
                     'charset'   => 'utf8mb4',
 				),
 

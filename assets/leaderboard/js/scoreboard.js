@@ -25,7 +25,7 @@ function truncateName (name){
 
 function getPoints(team){
    
-    var jqxhr = $.getJSON(server_path + "/get_points/" + team )
+    var jqxhr = $.getJSON(server_path + "/api/get_points/" + team )
    
           .done(function(response) {
               console.log('this is points: ' + response.points);
@@ -35,7 +35,7 @@ function getPoints(team){
 }	
 function getScore(){
 	
-    var jqxhr = $.getJSON(server_path + "/get_scores")
+    var jqxhr = $.getJSON(server_path + "/api/get_scores")
   
           .done(function(response) {
           
@@ -221,7 +221,7 @@ for (var x in overallLeaders){
 function getPosts(){
 	
 
- var jqxhr = $.getJSON("http://otew.io/get_tweets")
+ var jqxhr = $.getJSON("http://otew.io/api/get_tweets")
       
  //  var jqhrt = $.getJSON("http://955832fa.ngrok.io/get_tweets")
                           .done(function(response){
@@ -252,7 +252,7 @@ function getPosts(){
                           });     
      
  
- var jqxhr = $.getJSON("http://otew.io/get_posts")
+ var jqxhr = $.getJSON("http://otew.io/api/get_posts")
  
  //       var jqxhr = $.getJSON("http://955832fa.ngrok.io/get_posts")
           .done(function(response) {

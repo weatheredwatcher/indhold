@@ -24,7 +24,7 @@ class PointsControllerProvider implements ControllerProviderInterface
         $controllers = $app['controllers_factory'];
 
        $controllers->get('/', function () use ($app) {
-   
+
 	if (null === $user = $app['session']->get('user')) {
 	       // return $app->redirect('/login');
 	       $user = ['id'=> 1, 'username' => 'weatheredwatcher'];
@@ -42,25 +42,24 @@ $controllers->match('postPoints', function () use ($app) {
 	$id = $points[2];
 	} else {
 		$score = $_POST['score'];
-		
 		switch ($_POST['team']) {
-    	
+
     	    case 'GR':
     	         $team = "green";
     	    break;
-    	      
+
     	    case 'TL':
     	         $team = "teal";
     	    break;
-    	    
+
     	    case 'BL':
     	         $team = "blue";
     	    break;
-    		
+
     		case 'PL':
     	         $team = "purple";
     	    break;
-    	    
+
     	    case 'OR':
     	        $team = "orange";
     	    break;
@@ -68,14 +67,13 @@ $controllers->match('postPoints', function () use ($app) {
 				$id    = 99;
 	}
     $sql = "insert into points (team, points, audit) values (?, ?, ?)";
-   $app['dbs']['points']->executeQuery($sql, array($team, $score, $id));
-	
+  $app['dbs']['points']->executeQuery($sql, array($team, $score, $id));
+
    $statusCode = 200;
           $response = array('status' => 'ok', 'code' => $statusCode, 'message' => 'Points Awarded.');
           return $app->json((object) $response, $statusCode);
 
 });
-        
 
         return $controllers;
     }
