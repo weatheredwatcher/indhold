@@ -49,7 +49,7 @@ $app['debug'] = true;  //set to true to turn on debugging, otherwise error messa
 
 $app->get('/', function() use($app) {
 
-  return "Home Page";
+    return $app['twig']->render('welcome.twig');
 });
 
 $app->mount('/leaderboard', new Leaderboard\LeaderboardControllerProvider());
