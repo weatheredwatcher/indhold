@@ -21,8 +21,8 @@ error_reporting(-1);
 //ErrorHandler::register();
 
 class ewApp extends Application {
-	
-	
+
+
 }
 
 $app = new ewApp(); //Silex\Application();
@@ -36,8 +36,10 @@ require_once __DIR__.'/controllers/LeaderboardControllerProvider.php';
 require_once __DIR__.'/controllers/AdminControllerProvider.php';
 require_once __DIR__.'/controllers/PointsControllerProvider.php';
 require_once __DIR__.'/controllers/APIControllerProvider.php';
+require_once __DIR__.'/controllers/DashboardControllerProvider.php';
 
 use Leaderboard;
+use Dashboard;
 use Admin;
 use Points;
 use API;
@@ -50,11 +52,12 @@ $app->get('/', function() use($app) {
 });
 
 $app->mount('/leaderboard', new Leaderboard\LeaderboardControllerProvider());
+$app->mount('/dashboard', new Dashboard\DashboardControllerProvider());
 $app->mount('/admin', new Admin\AdminControllerProvider());
 $app->mount('/points', new Points\PointsControllerProvider());
 $app->mount('/api', new API\APIControllerProvider());
-  
- 	 
+
+
 
 
 $app->get('/debug', function() use($app) {
@@ -65,5 +68,5 @@ $app->get('/debug', function() use($app) {
 
 
 
- 
+
 $app->run();
