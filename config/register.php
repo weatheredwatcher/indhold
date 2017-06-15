@@ -1,30 +1,32 @@
 
 			   <?php
-
+				 $dotenv = new Dotenv\Dotenv($_SERVER['DOCUMENT_ROOT']);
+		 		 $dotenv->load();
 			   $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
 			         'dbs.options' => array(
 			   				'points' => array(
 			                       'driver'    => 'mysqli',
-			                       'host'      => 'localhost',
-			                       'dbname'    => 'otewleaderboard',
-			                       'user'      => 'weatheredwatcher',
-			                       'password'  => 'password',
+			                       'host'      => getenv('MYSQL_HOST'),
+			                       'dbname'    => 'otew_points',
+			                       'user'      => getenv('MYSQL_USER'),
+			                       'password'  => getenv('MYSQL_PASSWORD'),
 			                       'charset'   => 'utf8mb4',
-			   				),
-				'tweets' => array(
-                    'driver'    => 'mysqli',
-                    'host'      => 'localhost',
-                    'dbname'    => 'otew_tweets',
-                    'user'      => 'weatheredwatcher',
-                    'password'  => 'password',
-                    'charset'   => 'utf8mb4',
-				),
+			   				             ),
+
+				        'tweets' => array(
+					                   'driver'    => 'mysqli',
+					                   'host'      => getenv('MYSQL_HOST'),
+					                   'dbname'    => 'otew_tweets',
+					                   'user'      => getenv('MYSQL_USER'),
+					                   'password'  => getenv('MYSQL_PASSWORD'),
+					                   'charset'   => 'utf8mb4',
+				                     ),
 
 			                    ),
 			                  ));
-			   
-			   
-	
+
+
+
 
 			   $app->register(new Silex\Provider\TwigServiceProvider(), array(
 			         'twig.path' => __DIR__.'/../views',
@@ -41,7 +43,7 @@
     			   'cookie_lifetime' => 216000,
 			   ));
 
-	
-	
+
+
 
 error_log( __DIR__.'/views');
