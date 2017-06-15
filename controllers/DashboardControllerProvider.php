@@ -60,6 +60,43 @@ class DashboardControllerProvider implements ControllerProviderInterface
 
                 });
 
+                $controllers->get('/users', function (Application $app) {
+
+                      if (null === $user = $app['session']->get('user')) {
+                	        return $app->redirect('/dashboard');
+                	    }
+
+                		    $sql = "select * from users";
+                		   $request = $app['dbs']['points']->fetchAll($sql);
+                        error_log(print_r($request, true));
+                       return $app['twig']->render('dashboard/users.twig', array('user' => $user, 'users' => $request));
+
+
+
+                });
+
+        $controllers->match('/adduser', function (Application $app) {
+
+              if (null === $user = $app['session']->get('user')) {
+        	        return $app->redirect('/dashboard');
+        	    }
+        		  $message = "Add User";
+        		  if (isset($_POST['email'])){
+        			  $email = $_POST['email'];
+        			  $password = $_POST['password'];
+
+        		    $sql = "insert into users (email, password) values (?, ?)";
+        		   $app['dbs']['points']->executeQuery($sql, array($email, $password));
+        		  $message = "$email has been added to the tool";
+        		}
+
+
+        return $app['twig']->render('adduser.twig', array('message' => $message, 'user' => $user));
+
+
+
+        });
+
 
   return $controllers;
     }
