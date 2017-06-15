@@ -34,7 +34,6 @@
 			   use Silex\Provider\FormServiceProvider;
 			   $app->register(new FormServiceProvider());
 
-
 			   $app->register(new Silex\Provider\LocaleServiceProvider());
 			   $app->register(new Silex\Provider\TranslationServiceProvider(), array(
 			       'locale_Fallbacks' => array('en'),
@@ -42,8 +41,3 @@
 			   $app->register(new Silex\Provider\SessionServiceProvider(), array(
     			   'cookie_lifetime' => 216000,
 			   ));
-
-
-
-
-error_log( __DIR__.'/views');
