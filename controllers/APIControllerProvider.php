@@ -57,6 +57,7 @@ class APIControllerProvider implements ControllerProviderInterface
         error_log(print_r($points_to_add, true));
    	    $headers = array();
 	    $headers[] = 'Content-Type: application/json';
+      //fixme: remember to add this key to the .env file
 	    $headers[] = 'x-ew-app-key: 4f5ab637-e266-4401-aef1-ae64ccce9e49';
 
         $ch = curl_init();
