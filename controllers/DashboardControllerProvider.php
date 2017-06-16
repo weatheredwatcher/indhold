@@ -106,7 +106,7 @@ class DashboardControllerProvider implements ControllerProviderInterface
                   return $app->redirect('/dashboard');
               }
 
-                $sql = "select * from points";
+                $sql = "select p.id, p.team, p.points, u.email, p.timestamp from points p left join users u on u.id=p.audit";
                $request = $app['dbs']['points']->fetchAll($sql);
                 error_log(print_r($request, true));
                return $app['twig']->render('dashboard/points.twig', array('user' => $user, 'points' => $request, 'version' => 'OpenText EW Leaderboard build:' . CustomTraits\ApplicationVersion::get()));
