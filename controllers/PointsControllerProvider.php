@@ -6,9 +6,9 @@
 *  Leaderboard Points App Code
 * @author David Duggins <dduggins@opentext.com>
 * @cannonical https://github.com/OpenText-DMG/otew-leaderboard
-* 
-* 
-* 
+*
+*
+*
 */
 
 namespace Points;
@@ -26,10 +26,10 @@ class PointsControllerProvider implements ControllerProviderInterface
        $controllers->get('/', function () use ($app) {
 
 	if (null === $user = $app['session']->get('user')) {
-	       // return $app->redirect('/login');
-	       $user = ['id'=> 1, 'username' => 'weatheredwatcher'];
-	    }
+	       return $app->redirect('/dashboard');
 
+	    }
+ 
     return $app['twig']->render('points.twig', array('user' => $user));
 });
 

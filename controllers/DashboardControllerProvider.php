@@ -14,6 +14,7 @@ namespace Dashboard;
 
 use Silex\Application;
 use Silex\Api\ControllerProviderInterface;
+use CustomTraits;
 
 class DashboardControllerProvider implements ControllerProviderInterface
 {
@@ -46,7 +47,7 @@ class DashboardControllerProvider implements ControllerProviderInterface
              return $app['twig']->render('dashboard/login.twig');
            } else {
 
-              return $app['twig']->render('dashboard/main.twig', array('user' => $user));
+              return $app['twig']->render('dashboard/main.twig', array('user' => $user, 'version' => 'OpenText EW Leaderboard build:' . CustomTraits\ApplicationVersion::get()));
            }
 
         });

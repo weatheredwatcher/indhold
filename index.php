@@ -38,12 +38,13 @@ require_once __DIR__.'/controllers/AdminControllerProvider.php';
 require_once __DIR__.'/controllers/PointsControllerProvider.php';
 require_once __DIR__.'/controllers/APIControllerProvider.php';
 require_once __DIR__.'/controllers/DashboardControllerProvider.php';
-
+require_once __DIR__.'/config/traits.php';
 use Leaderboard;
 use Dashboard;
 use Admin;
 use Points;
 use API;
+use CustomTraits;
 
 $app['debug'] = true;  //set to true to turn on debugging, otherwise error messages are user friendly
 
