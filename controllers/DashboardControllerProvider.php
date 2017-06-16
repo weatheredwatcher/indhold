@@ -38,7 +38,7 @@ class DashboardControllerProvider implements ControllerProviderInterface
 
 		        if($password == $passworddb){
 	                $app['session']->set('user', array('username' => $email, 'id' => $id));
-	                $app->redirect('/dashboard');
+	                $app->redirect($_SERVER['HTTP_REFERER']);
                 } //end password check
 
             }  //end if isset
@@ -70,7 +70,7 @@ class DashboardControllerProvider implements ControllerProviderInterface
                 		    $sql = "select * from users";
                 		   $request = $app['dbs']['points']->fetchAll($sql);
                         error_log(print_r($request, true));
-                       return $app['twig']->render('dashboard/users.twig', array('user' => $user, 'users' => $request));
+                       return $app['twig']->render('dashboard/users.twig', array('user' => $user, 'users' => $request, 'version' => 'OpenText EW Leaderboard build:' . CustomTraits\ApplicationVersion::get()));
 
 
 
@@ -92,11 +92,29 @@ class DashboardControllerProvider implements ControllerProviderInterface
         		}
 
 
-        return $app['twig']->render('adduser.twig', array('message' => $message, 'user' => $user));
+
+
+        return $app['twig']->render('adduser.twig', array('message' => $message, 'user' => $user, 'version' => 'OpenText EW Leaderboard build:' . CustomTraits\ApplicationVersion::get()));
 
 
 
         });
+
+        $controllers->get('/points', function (Application $app) {
+
+              if (null === $user = $app['session']->get('user')) {
+                  return $app->redirect('/dashboard');
+              }
+
+                $sql = "select * from points";
+               $request = $app['dbs']['points']->fetchAll($sql);
+                error_log(print_r($request, true));
+               return $app['twig']->render('dashboard/points.twig', array('user' => $user, 'points' => $request, 'version' => 'OpenText EW Leaderboard build:' . CustomTraits\ApplicationVersion::get()));
+
+
+
+        });
+
 
 
   return $controllers;
