@@ -29,7 +29,7 @@ class PointsControllerProvider implements ControllerProviderInterface
 	       return $app->redirect('/dashboard');
 
 	    }
- 
+
     return $app['twig']->render('points.twig', array('user' => $user));
 });
 
@@ -39,8 +39,9 @@ $controllers->match('postPoints', function () use ($app) {
 	$points = $_POST['points'];
 	$score = $points[0];
 	$team = $points[1];
-	$id = $points[2];
-	} else {
+  $id = $points[2];
+    $source = "PointsApp";}
+	 else {
 		$score = $_POST['score'];
 		switch ($_POST['team']) {
 
@@ -65,9 +66,10 @@ $controllers->match('postPoints', function () use ($app) {
     	    break;
 		}
 				$id    = 99;
-	}
-    $sql = "insert into points (team, points, audit) values (?, ?, ?)";
-  $app['dbs']['points']->executeQuery($sql, array($team, $score, $id));
+                $source = "Arcade";
+   } 
+    $sql = "insert into points (team, points, audit, source) values (?, ?, ?, ?)";
+  $app['dbs']['points']->executeQuery($sql, array($team, $score, $id, $source));
 
    $statusCode = 200;
           $response = array('status' => 'ok', 'code' => $statusCode, 'message' => 'Points Awarded.');

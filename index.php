@@ -64,7 +64,12 @@ $app->mount('/api', new API\APIControllerProvider());
 
 $app->get('/debug', function() use($app) {
 
-  return $app['twig']->render('debug.twig', array('name' => ''));
+  $sw = $app['dbs']['points']->getSchemaManager();
+
+  $databases = $sw->listDatabases();
+  return $app['twig']->render('debug.twig', array('database' => $databases));
+
+
 });
 
 

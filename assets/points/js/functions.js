@@ -35,17 +35,15 @@ $(document).ready(function() {
 	window.selectedTeam = "";
 
 	$('.teamRow').click(function() {
+			$('.teamRow').removeClass('selected');
+			$(this).addClass('selected');
+			window.selectedTeam = $(this).data('team');
 
-		if (window.selectedTeam = "individual"){
+	if (window.selectedTeam == "individual"){
 			var person = prompt("Please enter your name");
 			window.selectedTeam = person;
 			$('.teamRow').removeClass('selected');
 			$(this).addClass('selected');
-
-		}else {
-			$('.teamRow').removeClass('selected');
-			$(this).addClass('selected');
-			window.selectedTeam = $(this).data('team');
 
 		}
 		//console.log($(this).data('team'));
