@@ -120,7 +120,20 @@ class DashboardControllerProvider implements ControllerProviderInterface
 
         });
 
+        $controllers->get('/tweets', function (Application $app){
+          if (null === $user = $app['session']->get('user')) {
+                  return $app->redirect('/dashboard');
+              }
 
+               $queryBuilder = $app['dbs']['tweets']->createQueryBuilder();
+               $sql = $queryBuilder
+                          ->select('t.tweet_text', 't.created_at', 't.screen_name', 't.name', 'm.media')
+                          ->from('tweets', 't')
+                          ->join('t', 'tweet_media', 'm', 't.tweet_id = m.tweet_id');
+               $request = $app['dbs']['tweets']->fetchAll($sql);
+               return $app['twig']->render('dashboard/tweets.twig', array('user' => $user, 'tweets' => $request, 'version' => 'OpenText EW Leaderboard build:'. CustomTraits\ApplicationVersion::get()));
+
+        });
 
   return $controllers;
     }

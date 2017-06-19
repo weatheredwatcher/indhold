@@ -1,0 +1,100 @@
+{% extends "dashboard/dashboard.twig" %}
+
+{% block title %}Main Page{% endblock %}
+{% block head %}
+    {{ parent() }}
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css"/>
+ 
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+
+<script>
+$(document).ready(function() {
+    $('#mytable').DataTable();
+} );
+</script>
+{% endblock %}
+{% block content %}
+					<div class="row">
+
+
+				        <div class="col-md-12">
+				        <h4>Points Tables</h4>
+				        <div class="table-responsive">
+
+
+
+
+
+				              <table id="mytable" class="table table-bordred table-striped">
+
+				                   <thead>
+
+				                    <th>Content</th>
+                            <th>Created At</th>
+														 <th>Username</th>
+                             <th>Name</th>
+														 <th>Media</th>
+
+				                   </thead>
+				    <tbody>
+
+
+
+
+							{% for tweets in tweets %}
+
+				 <tr>
+				    <td>{{ tweets.tweet_text}}</td>
+				    <td>{{ tweets.created_at }}</td>
+
+				    <td>{{ tweets.screen_name }}</td>
+						 <td>{{ tweets.name }}</td>
+						  <td><img src="{{ tweets.media }}" height="50px" /></td>
+				    </tr>
+						{% else %}
+						No users have been found.
+						{% endfor %}
+
+
+				    </tbody>
+
+				</table>
+
+
+				        </div>
+					</div>
+				</div>
+
+
+				<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+				      <div class="modal-dialog">
+				    <div class="modal-content">
+				          <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+				        <h4 class="modal-title custom_align" id="Heading">Edit Your Detail</h4>
+				      </div>
+				          <div class="modal-body">
+				          <div class="form-group">
+				        <input class="form-control " type="text" placeholder="Mohsin">
+				        </div>
+				        <div class="form-group">
+
+				        <input class="form-control " type="text" placeholder="Irshad">
+				        </div>
+				        <div class="form-group">
+				        <textarea rows="2" class="form-control" placeholder="CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan"></textarea>
+
+
+				        </div>
+				      </div>
+				          <div class="modal-footer ">
+				        <button type="button" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span> Update</button>
+				      </div>
+				        </div>
+				    <!-- /.modal-content -->
+				  </div>
+				      <!-- /.modal-dialog -->
+			{% endblock %}
