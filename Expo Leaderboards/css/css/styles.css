@@ -1,0 +1,344 @@
+html {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	background: url("../img/ew-2017-background.jpg") #000000;
+	background-size: cover;
+	font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;
+}
+
+
+/* Header bar */
+header {
+	width: 100%;
+	height: 80px;
+	text-align: center;
+	box-sizing: border-box;
+	padding-top: 20px;
+	background-color: #FFFFFF;
+	position: fixed;
+	top: 0;
+	z-index: 100;
+}
+
+header img {
+	width: auto;
+	height: 45px;
+}
+
+
+/* Basic carousel slide styles */
+
+.cycle-slideshow {
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+}
+
+.cycle-slide {
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+}
+
+
+/* Pagination for carousel */
+.pager {
+	position: fixed;
+	width: 100%;
+	z-index: 100;
+	bottom: 0;
+	text-align: center;
+	font-size: 2.5vw;
+	color: rgba(255,255,255,0.5);
+	margin-bottom: 1.4%;
+}
+
+.pager span {
+	margin-right: 0.3%;
+}
+.cycle-pager-active {
+	color: rgba(255,255,255,1.0);
+}
+
+.leaderboard {
+	padding: 8% 5% 0 5%;
+}
+
+
+
+
+/* Leaderboard styles */
+
+h1 {
+	color: #FFFFFF;
+	font-size: 2vw;
+	font-weight: 700;
+	margin-top: 0;	
+	margin-bottom: 2%;	
+}
+
+.rows {
+	float: right;
+	width: 100%;
+	height: 75%;
+}
+
+
+.row {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: 19.4%;
+	color: #000000;
+	margin-bottom: 0.3%;
+}
+
+.row:nth-child(even) {
+	background-color: rgba(255,255,255,0.7);
+}
+
+.row:nth-child(odd) {
+	background-color: rgba(255,255,255,0.9);
+}
+
+
+.rank {
+	float: left;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 8.1%;
+	height: 100%;
+	font-weight: 700;
+	font-size: 2.5vw;
+	background-color: rgba(255,255,255,0.6);
+}
+
+.teamIcon {
+	display: flex;
+	height: 75%;
+	width: 10%;
+	background-position: center center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	
+}
+
+.name {
+	display: flex;
+	vertical-align: middle;
+	font-weight: 200;
+	font-size: 2.5vw;
+}
+
+.points {
+	display: flex;
+	margin-left: auto;
+	margin-right: 3%;
+	font-weight: 700;
+	font-size: 2.5vw;
+}
+	
+.red {
+	background-image: url("../img/team-icons/red.png");
+}
+.purple {
+	background-image: url("../img/team-icons/purple.png");
+}
+.grey {
+	background-image: url("../img/team-icons/grey.png");
+}
+.blue {
+	background-image: url("../img/team-icons/blue.png");
+}
+.teal {
+	background-image: url("../img/team-icons/teal.png");
+}
+
+
+/* Team Leaderboards */
+
+.leaderboard.team .teamIcon {
+	display: none;
+}
+
+.leaderboard.team .name {
+	margin-left: 2%;
+}
+
+.leaderboard.team .rows {
+	width: 83%;
+}
+
+.leaderboard.team .teamBadge {
+	float: left;
+	height: 39.1%;
+	width: 16.7%;
+	background-color: rgba(255,255,255,0.9);
+	background-position: center center;
+	background-size: 80% auto;
+	background-repeat: no-repeat;
+}
+
+#teamRed .teamBadge {
+	background-image: url("../img/team-icons/red.png");
+}
+
+#teamTeal .teamBadge {
+	background-image: url("../img/team-icons/teal.png");
+}
+
+#teamPurple .teamBadge {
+	background-image: url("../img/team-icons/purple.png");
+}
+
+#teamGrey .teamBadge {
+	background-image: url("../img/team-icons/grey.png");
+}
+
+#teamBlue .teamBadge {
+	background-image: url("../img/team-icons/blue.png");
+}
+
+/* Social Wall */
+
+#socialWall {
+	overflow: hidden;
+}
+
+#socialWall .fade {
+	position: absolute;
+	bottom: 0;
+	z-index: 100;
+	width: 100%;
+	height: 9%;
+	background-image: url("../img/fade.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+#socialWallContainer {
+	padding: 100px 0% 0% 0%;
+	position: relative;
+	height: 100% !important;
+	width: 100%;
+	z-index: 1;
+	box-sizing: border-box;
+}
+
+.socialPost {
+	text-align: left;
+    width: 15.6%;
+    margin: 0.5% 0.5% 0.7% 0.5%;
+    border-top: 6px solid;
+    float: left;
+    background-color: #FFFFFF;
+    background-position: 96% 10px;
+    background-size: 35px 35px;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    color: #000000;
+    font-size: 0.9vw;
+    padding: 12px 30px 10px 20px;
+    line-height: 1.2vw;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.socialPost span.username {
+	font-weight: 600;
+	display: block;
+	float: none;
+	margin-bottom: 1.5vh;
+}
+
+.socialPost span.message {
+	display: block;
+	font-weight: 200;
+	float: none;
+}
+
+.sourceTwitter {
+	background-image: url('../img/icon-twitter.svg');
+}
+
+.sourceOT {
+	background-image: url('../img/icon-ot.svg');
+}
+
+.socialPost img {
+    margin-top: 4%;
+    width: 104%;
+    height: auto;
+    padding-bottom: 1%;
+}
+
+	/* Border styles */
+	.bluePost {
+		border-color: #2E3D98;
+	}
+	.redPost {
+		border-color: #D92A32;
+	}
+	.greyPost {
+		border-color: #7E929F;
+	}
+	.tealPost {
+		border-color: #00B8BA;
+	}
+	.purplePost {
+		border-color: #4F3690;
+	}
+	.noTeamPost {
+		border-color: #FFFFFF;
+	}
+	
+	/* Hashtag styles*/
+	.bluePost .hashtag {
+		color: #2E3D98;
+		font-weight: bold;
+	}
+	.redPost .hashtag {
+		color: #D92A32;
+		font-weight: bold;
+	}
+	.greyPost .hashtag {
+		color: #7E929F;
+		font-weight: bold;
+	}
+	.tealPost .hashtag {
+		color: #00B8BA;
+		font-weight: bold;
+	}
+	.purplePost .hashtag {
+		color: #4F3690;
+		font-weight: bold;
+	}
+	.noTeamPost .hashtag {
+		color: #000000;
+		font-weight: bold;
+	}
+	
+/* Winner slides */
+
+.imgSlide {
+	box-sizing: border-box;
+	padding: 110px;
+	text-align: center;
+	
+}
+
+.imgSlide img {
+	width: 90%;
+	height: auto;
+}
+
