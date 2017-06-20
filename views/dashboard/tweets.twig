@@ -9,7 +9,7 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
-
+<script type="text/javascript" src="/assets/dashboard/tweets/js/functions.js"></script>
 <script>
 $(document).ready(function() {
     $('#mytable').DataTable();
@@ -21,7 +21,7 @@ $(document).ready(function() {
 
 
 				        <div class="col-md-12">
-				        <h4>Points Tables</h4>
+				        <h4>Tweets Tables</h4>
 				        <div class="table-responsive">
 
 
@@ -31,13 +31,13 @@ $(document).ready(function() {
 				              <table id="mytable" class="table table-bordred table-striped">
 
 				                   <thead>
-
+                            <th> ID </th>
 				                    <th>Content</th>
                             <th>Created At</th>
 														 <th>Username</th>
                              <th>Name</th>
 														 <th>Media</th>
-
+                             <th>Allowed</th>
 				                   </thead>
 				    <tbody>
 
@@ -47,15 +47,17 @@ $(document).ready(function() {
 							{% for tweets in tweets %}
 
 				 <tr>
+            <td> {{ tweets.tweet_id }} </td>
 				    <td>{{ tweets.tweet_text}}</td>
 				    <td>{{ tweets.created_at }}</td>
 
 				    <td>{{ tweets.screen_name }}</td>
 						 <td>{{ tweets.name }}</td>
 						  <td><img src="{{ tweets.media }}" height="50px" /></td>
-				    </tr>
+				      <td>{% if tweets.allow %}<a class="allowed" onClick="blockTweet('{{tweets.tweet_id}}')" href='#'>block</a> {% endif %} </td>
+            </tr>
 						{% else %}
-						No users have been found.
+						No tweets have been found.
 						{% endfor %}
 
 

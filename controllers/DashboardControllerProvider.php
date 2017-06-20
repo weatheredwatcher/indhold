@@ -100,6 +100,19 @@ class DashboardControllerProvider implements ControllerProviderInterface
 
         });
 
+       $controllers->match('/blacklist', function (Application $app){
+               	if(isset($_POST['data'])){
+
+                $sql = "update tweets set allow";
+                $app['dbs']['tweets']->executeQuery($flag);
+                }                
+          $statusCode = 200;
+          $response = array('status' => 'ok', 'code' => $statusCode, 'message' => 'Success');
+          return $app->json((object) $response, $statusCode);
+
+
+       });
+
         $controllers->get('/points', function (Application $app) {
 
               if (null === $user = $app['session']->get('user')) {
@@ -127,7 +140,7 @@ class DashboardControllerProvider implements ControllerProviderInterface
 
                $queryBuilder = $app['dbs']['tweets']->createQueryBuilder();
                $sql = $queryBuilder
-                          ->select('t.tweet_text', 't.created_at', 't.screen_name', 't.name', 'm.media')
+                          ->select('t.tweet_id, t.tweet_text', 't.created_at', 't.screen_name', 't.name', 'm.media', 't.allow')
                           ->from('tweets', 't')
                           ->join('t', 'tweet_media', 'm', 't.tweet_id = m.tweet_id');
                $request = $app['dbs']['tweets']->fetchAll($sql);
