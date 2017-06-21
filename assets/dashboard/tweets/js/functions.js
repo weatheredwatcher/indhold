@@ -25,9 +25,8 @@ $.ajax({
   dataType : 'json', // what type of data do we expect basedck from the server
   encode : true
 }).done(function(data) {
-
+location.reload();
 });
-$(this).text('unblock');
 
 }
 
@@ -39,6 +38,6 @@ $(this).text('unblock');
       data: { 'tweet_id': tweetID},
       dataType: 'json',
       encode: true
-    }).done(function(data) {done});
+    }).done(function(data) {  location.reload();});
 
   }
