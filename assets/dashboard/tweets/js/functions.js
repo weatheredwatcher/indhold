@@ -14,11 +14,31 @@ console.log('DOM LOADED');
 });
 
   function blockTweet(tweetID){
-    
+     console.log($(this).text())
      console.log(tweetID);
 
-    $.ajax(
-      url: 'dashobard/blacklist',
-      data: tweetID,
-    ).done(function(){ console.log('done') });
+$.ajax({
+  type : 'POST', // define the type of HTTP verb we want to use (POSTST for our form)
+
+  url : 'blacklist', // the url where we want to POST
+  data : { 'tweet_id': tweetID}, // our           data object
+  dataType : 'json', // what type of data do we expect basedck from the server
+  encode : true
+}).done(function(data) {
+
+});
+$(this).text('unblock');
+
+}
+
+  function unBlockTweet(tweetID){
+  
+    $.ajax({
+      type: 'POST',
+      url: 'whitelist',
+      data: { 'tweet_id': tweetID},
+      dataType: 'json',
+      encode: true
+    }).done(function(data) {done});
+
   }

@@ -101,17 +101,34 @@ class DashboardControllerProvider implements ControllerProviderInterface
         });
 
        $controllers->match('/blacklist', function (Application $app){
-               	if(isset($_POST['data'])){
+               	if(isset($_POST['tweet_id'])){
+                $tweet_id = $_POST['tweet_id'];
+                $sql = "update tweets set allow=false where tweet_id=$tweet_id";
+                $app['dbs']['tweets']->executeQuery($sql);
 
-                $sql = "update tweets set allow";
-                $app['dbs']['tweets']->executeQuery($flag);
-                }                
           $statusCode = 200;
           $response = array('status' => 'ok', 'code' => $statusCode, 'message' => 'Success');
           return $app->json((object) $response, $statusCode);
+                } 
 
+                return $app->json((object)  array('status' => 'error', 'code' => '200', 'message' => 'Failure'), 200);
 
        });
+
+        $controllers->match('/whitelist', function (Application $app){
+                if(isset($_POST['tweet_id'])){
+                  $tweet_id = $_POST['tweet_id'];
+                  $sql = "update tweets set allow=true where tweet_id=$tweet_id";
+                  $app['dbs']['tweets']->executeQuery($sql);
+
+                  $statusCode = 200;
+                  $response = array('status' => 'ok', 'code'=> $statusCode, 'message' => 'Success');
+                  return $app->json((object) $response, $statusCode);
+                }
+
+                return $app->json((object)  array('status' => 'error', 'code' => '200', 'message' => 'Failure'), 200);
+
+                });
 
         $controllers->get('/points', function (Application $app) {
 

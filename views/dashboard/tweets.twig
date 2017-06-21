@@ -54,7 +54,14 @@ $(document).ready(function() {
 				    <td>{{ tweets.screen_name }}</td>
 						 <td>{{ tweets.name }}</td>
 						  <td><img src="{{ tweets.media }}" height="50px" /></td>
-				      <td>{% if tweets.allow %}<a class="allowed" onClick="blockTweet('{{tweets.tweet_id}}')" href='#'>block</a> {% endif %} </td>
+				      <td>
+                  {% if tweets.allow %}
+
+                    <a class="allowed" onClick="blockTweet('{{tweets.tweet_id}}')" href='#'>block</a> 
+                  {% else %}
+                    <a class="allowed" onClick="unBlockTweet('{{tweets.tweet_id}}')" href='#'>unblock</a>
+                  {% endif %} 
+              </td>
             </tr>
 						{% else %}
 						No tweets have been found.
