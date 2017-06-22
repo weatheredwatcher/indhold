@@ -117,14 +117,13 @@ $(document).ready(function() {
 			
 			//DAVE, CALL AJAX POST FUNCTIONS HERE, ON CONFIRMATION OF SUCCESSFUL POST, CALL THESE FUNCTIONS:
 			var points = [(window.selectedPoints), (window.personsName), $('#user_id').val()];
-			alert("individual points posted");
 			console.log(points);
 			$.ajax({        
 			       type: "POST",
 			       url: "/postPointsIndividual",
 				   data: { points: points },
 			       success: function() {
-		   			alert('Points awarded successfully');
+		   			alert('Individual points awarded successfully');
 		   			resetInterface();
 			       }
 			});
@@ -133,14 +132,13 @@ $(document).ready(function() {
 		
 			//DAVE, CALL AJAX POST FUNCTIONS HERE, ON CONFIRMATION OF SUCCESSFUL POST, CALL THESE FUNCTIONS:
 			var points = [(window.selectedPoints), (window.selectedTeam), $('#user_id').val()];
-			alert("team points posted");
 			console.log(points);
 			$.ajax({        
 			       type: "POST",
 			       url: "/postPoints",
 				   data: { points: points },
 			       success: function() {
-		   			alert('Points awarded successfully');
+		   			alert('Team points awarded successfully');
 		   			resetInterface();
 			       }
 			});
