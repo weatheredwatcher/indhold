@@ -244,14 +244,14 @@ ORDER BY tweets.created_at DESC limit 9";
 });
 
 $controllers->get('/get_posts', function() use($app) {
-    
+
 	$headers = array();
 	$headers[] = 'Content-Type: application/json';
 	$headers[] = getenv('AW_APP_KEY').':'. getenv('AW_SECRET_TOKEN');
-    $headers[] = 'AW_EVENTS_EVENT_ID :'. getenv('AW_EVENTS_EVENT_ID');
+    $headers[] = 'AW_EVENTS_EVENT_ID:'. getenv('AW_EVENTS_EVENT_ID');
 
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL,"https://appworks.opentext.com/enterprise-world-service/api/v1/feed/latest");
+    curl_setopt($ch, CURLOPT_URL,"https://appworks.opentext.com/appworks-conference-service/api/v2/feed/latest");
 
 	curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
