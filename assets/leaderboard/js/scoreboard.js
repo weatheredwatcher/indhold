@@ -221,7 +221,7 @@ for (var x in overallLeaders){
 function getPosts(){
 	
 
- var jqxhr = $.getJSON("http://localhost:8080/api/get_tweets")
+ var jqxhr = $.getJSON(server_path + "/api/get_tweets")
       
  //  var jqhrt = $.getJSON("http://955832fa.ngrok.io/get_tweets")
                           .done(function(response){
@@ -251,7 +251,7 @@ function getPosts(){
                           });     
      
  
- var jqxhr = $.getJSON("http://localhost:8080/api/get_posts")
+ var jqxhr = $.getJSON(server_path +"/api/get_posts")
  
  //       var jqxhr = $.getJSON("http://955832fa.ngrok.io/get_posts")
           .done(function(response) {
