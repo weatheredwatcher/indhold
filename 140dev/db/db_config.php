@@ -8,10 +8,10 @@
 * @license GNU Public License
 * @version BETA 0.30
 */
-  $db_host = '72.249.150.224';
-  $db_user = 'otewadmi_admin';
-  $db_password = '__otew2016__';
-  $db_name = 'otewadmi_tweets'; 
+  $db_host = 'localhost';
+  $db_user = 'tweets';
+  $db_password = 'tweets';
+  $db_name = 'otew_tweets';
 	
 	// MySQL time zone setting to normalize dates
 	define('TIME_ZONE','America/New_York');
