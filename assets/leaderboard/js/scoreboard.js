@@ -34,32 +34,32 @@ function getPoints(team){
     
 }	
 function getScore(){
-	
+
     var jqxhr = $.getJSON(server_path + "/api/get_scores")
-  
+
           .done(function(response) {
-          
+
 		   //console.log(response);
-		   
-		
+
+
 		//$(team).text(data);
 //---Team Rankings:--
 		var teamLeaders = response.teamLeaders
 		console.log('set teamLeaders to response');
-       
+
          var greenTeamLeaders = teamLeaders.Green;
-		
+
 		console.log('set green team var');
 	  for (var i in greenTeamLeaders) {
 		  console.log('entered the loop');
 	      if (greenTeamLeaders.hasOwnProperty(i)) {
-    	      
+
 			  console.log(greenTeamLeaders[i].name);
 			  console.log(greenTeamLeaders[i].total);
 			  var name = truncateName(greenTeamLeaders[i].name);
 			   var board_id = "#greenrow" + i;
-		
-		
+
+
             if ($(board_id).length > 0){
                 $(board_id).remove();
                             }
@@ -67,21 +67,21 @@ function getScore(){
 			  $('#greenrow' + i).append('<span class="rank green"></span>');
 					$('#greenrow' + i).append('<span class="icon gr"></span>');
 					$('#greenrow' + i).append('<span class="teamName">'+ name +'</span>');
-					$('#greenrow' + i).append('<span class="points">'+ greenTeamLeaders[i].total +'</span>');			 
+					$('#greenrow' + i).append('<span class="points">'+ greenTeamLeaders[i].total +'</span>');
 	      }
 	  }
-	  
-	  
+
+
       var blueTeamLeaders = teamLeaders.Blue;
-	
+
   for (var i in blueTeamLeaders) {
       if (blueTeamLeaders.hasOwnProperty(i)) {
 		  console.log(blueTeamLeaders[i].name);
 		  console.log(blueTeamLeaders[i].total);
 		   var name = truncateName(blueTeamLeaders[i].name);
 		   var board_id = "#bluerow" + i;
-		
-		
+
+
             if ($(board_id).length > 0){
                 $(board_id).remove();
                             }
@@ -91,7 +91,7 @@ function getScore(){
 					$('#bluerow' + i).append('<span class="teamName">'+ name +'</span>');
 					$('#bluerow' + i).append('<span class="points">'+ blueTeamLeaders[i].total +'</span>');
 
-		 
+
       }
   }
 
@@ -102,20 +102,20 @@ for (var i in orangeTeamLeaders) {
 	  console.log(orangeTeamLeaders[i].name);
 	  console.log(orangeTeamLeaders[i].total);
 	 var board_id = "#orangerow" + i;
-	  var name = truncateName(orangeTeamLeaders[i].name);	
-		
+	  var name = truncateName(orangeTeamLeaders[i].name);
+
             if ($(board_id).length > 0){
                 $(board_id).remove();
                             }
-	 
+
 	   $('#orangeScoreboard').append('<div id="orangerow'+ i +'" class="teamRow">');
 			  $('#orangerow' + i).append('<span class="rank orange"></span>');
 					$('#orangerow' + i).append('<span class="icon or"></span>');
 					$('#orangerow' + i).append('<span class="teamName">'+ name +'</span>');
 					$('#orangerow' + i).append('<span class="points">'+ orangeTeamLeaders[i].total +'</span>');
-	 
+
     }
-}	
+}
 
     var purpleTeamLeaders = teamLeaders.Purple;
 
@@ -123,10 +123,10 @@ for (var i in purpleTeamLeaders) {
     if (purpleTeamLeaders.hasOwnProperty(i)) {
 	  console.log(purpleTeamLeaders[i].name);
 	  console.log(purpleTeamLeaders[i].total);
-	 
+
 	 var board_id = "#purplerow" + i;
 		var name = truncateName(purpleTeamLeaders[i].name);
-		
+
             if ($(board_id).length > 0){
                 $(board_id).remove();
                             }
@@ -135,8 +135,8 @@ for (var i in purpleTeamLeaders) {
 					$('#purplerow' + i).append('<span class="icon pl"></span>');
 					$('#purplerow' + i).append('<span class="teamName">'+ name +'</span>');
 					$('#purplerow' + i).append('<span class="points">'+ purpleTeamLeaders[i].total +'</span>');
-	 
-	 
+
+
     }
 }
 
@@ -146,10 +146,10 @@ for (var i in tealTeamLeaders) {
     if (tealTeamLeaders.hasOwnProperty(i)) {
 	  console.log(tealTeamLeaders[i].name);
 	  console.log(tealTeamLeaders[i].total);
-	  
+
 	  var board_id = "#tealrow" + i;
 		var name = truncateName(tealTeamLeaders[i].name);
-		
+
             if ($(board_id).length > 0){
                 $(board_id).remove();
                             }
@@ -158,20 +158,20 @@ for (var i in tealTeamLeaders) {
 					$('#tealrow' + i).append('<span class="icon tl"></span>');
 					$('#tealrow' + i).append('<span class="teamName">'+ name +'</span>');
 					$('#tealrow' + i).append('<span class="points">'+ tealTeamLeaders[i].total +'</span>');
-	 
+
     }
-}		
+}
 
 
-//--OVERALL--				
+//--OVERALL--
 
-$('#blPoints').text(response.overallScores.Blue);
-$('#grPoints').text(response.overallScores.Green);
-$('#tlPoints').text(response.overallScores.Teal);
-$('#orPoints').text(response.overallScores.Orange);
-$('#plPoints').text(response.overallScores.Purple);			
+$('#blPoints').attr("data-points", response.overallScores.Blue);
+$('#grPoints').attr("data-points", response.overallScores.Green);
+$('#tlPoints').attr("data-points", response.overallScores.Teal);
+$('#rdPoints').attr("data-points", response.overallScores.Red);
+$('#plPoints').attr("data-points", response.overallScores.Purple);
 
-console.log('OVERALL LEADERS');				
+console.log('OVERALL LEADERS');
 var overallLeaders = response.overallLeaders;
 console.log(overallLeaders);
 
@@ -184,7 +184,7 @@ for (var x in overallLeaders){
 		else if (overallLeaders[x].team == "Orange") { team = "orange"; icon = "or"; }
 		var board_id = "#teamrow" + x;
 		var name = truncateName(overallLeaders[x].name);
-		
+
             if ($(board_id).length > 0){
                 $(board_id).remove();
                             }
@@ -194,19 +194,19 @@ for (var x in overallLeaders){
             $('#teamrow' + x).append('<span class="teamName">'+ name +'</span>');
             $('#teamrow' + x).append('<span class="points">'+ overallLeaders[x].total +'</span>');
 
-		
-		
-		
+
+
+
 		//$('#individualLeaderboard').append('<div id="'+ board_id + '" class="teamRow">');
 	    //$('"#' + board_id + '"').append('<span class="rank ' + overallLeaders[x].team +'"></span>');
         //$('"#' + board_id + '"').append('<span class="icon ' + icon +'"></span>')
         //$('"#' + board_id + '"').append('<span class="individualName">' + overallLeaders[x].name + '</span>')
         //$('"#' + board_id + '"').append('<span class="points pointsIndiv">'+ overallLeaders[x].total +'</span>')
-		
+
 	}
 }
-           
-		   
+
+
            })
            .fail(function() {
              console.log( "error" );
@@ -221,7 +221,7 @@ for (var x in overallLeaders){
 function getPosts(){
 	
 
- var jqxhr = $.getJSON("http://otew.io/api/get_tweets")
+ var jqxhr = $.getJSON("http://localhost:8080/api/get_tweets")
       
  //  var jqhrt = $.getJSON("http://955832fa.ngrok.io/get_tweets")
                           .done(function(response){
@@ -235,15 +235,14 @@ function getPosts(){
           var timestamp = tweets[tweet].created_at;
           //var parts = timestamp.match(/(\d{2})\/(\d{2})\/(\d{4}) (\d{2}):(\d{2})/);
          // var unixtime = Date.UTC(+parts[3], parts[2]-1, +parts[1], +parts[4], +parts[5]);
-          
-          
+
          
           var teamname = "noTeamPost";
           if(tweets[tweet].image) {teamname = teamname + ' photo';}
           
          // console.log(unixtime);
-                            $('#socialWallContainer').append('<div class="socialPost ' + teamname + ' sourceTwitter" id="t' + tweet + '"data-timestamp="' + tweets[tweet].unixstamo   +'">');
-			  $(tweetID).append('<span class="name">' + tweets[tweet].screen_name + '</span>');
+			  $('#socialWallContainer').append('<div class="socialPost ' + teamname + ' sourceTwitter" id="t' + tweet + '"data-timestamp="' + tweets[tweet].unixstamo   +'">');
+			  $(tweetID).append('<span class="username">' + tweets[tweet].screen_name + '</span>');
 			  $(tweetID).append('<span class="message">' + tweets[tweet].tweet_text + '</span>');
              if(tweets[tweet].media){ $(tweetID).append('<img src='+ tweets[tweet].media +' alt="" />');}
 
@@ -252,7 +251,7 @@ function getPosts(){
                           });     
      
  
- var jqxhr = $.getJSON("http://otew.io/api/get_posts")
+ var jqxhr = $.getJSON("http://localhost:8080/api/get_posts")
  
  //       var jqxhr = $.getJSON("http://955832fa.ngrok.io/get_posts")
           .done(function(response) {

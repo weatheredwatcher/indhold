@@ -3,38 +3,26 @@ $(document).ready(function() {
 	/////////////////////////////
 	//Carousel
 	/////////////////////////////
-	
-	//initialize both carousels
-	var mainCarousel = $('#videoWall');
-	//var innerCarousel = $('#individualByTeamCarousel');
-	
-	//Main Carousel
-	mainCarousel.cycle({
-		fx: 'scrollHorz',
-		speed: 800,
-	});
 
-	
 	//keyboard functions for testing
-	$(document).keydown(function(e) {
-	    switch(e.which) {
-	        case 37: // left
-	        mainCarousel.cycle('prev');
-	        break;
-	
-	        case 39: // right
-	        mainCarousel.cycle('next');
-	        break;
-	
-	        default: return; // exit this handler for other keys
+	$(document).keyup(function (e) {
+	    if (e.keyCode == 39)
+	    {        
+	       $('.cycle-slideshow').cycle('next');
 	    }
-	    e.preventDefault(); // prevent the default action (scroll / move caret)
-	});	    
+	
+	    if (e.keyCode == 37)
+	    {
+	        $('.cycle-slideshow').cycle('prev');
+	    }
+
+	});
 	    
 	
 	/////////////////////////////
 	//LEADERBOARDS
 	/////////////////////////////
+	
 	
 	//Add commas to numbers
 	$.fn.digits = function(){ 
@@ -45,50 +33,123 @@ $(document).ready(function() {
 	//run this function when points get added
 	$(".points").digits();
 	
-	//Leaderboard sorting
-	var $container = [$('#overallLeaderboard'), $('#individualLeaderboard'), $('.teamScoreboard')];
 	
-	jQuery.each($container, function (j) {
-        this.isotope({
-        getSortData: {
-				number: '.points parseInt'
-		},
-		  	itemSelector: '.teamRow',
-		  	layoutMode: 'vertical',
-		  	sortBy: 'number',
-		  	sortAscending: false,
-		  	percentPosition: true,
-		  	columnWidth: 40
-        });
+	
+	
+	/* Move data attribute into points div */
+	
+	function duplicatePointsData() {
+		$('.row').each(function() {
+			var pointValue = $(this).attr('data-points');
+			$(this).find('.points').html(pointValue);
+			$(this).find('.points').digits();
+		});
+	}
+	
+	function reOrderRows() {
+		// define variables
+		var overallTeam = $("#overallTeam .rows .row");
+		var overallIndividual = $("#overallIndividual .rows .row");
+		var teamBlue = $("#teamBlue .rows .row");
+		var teamPurple = $("#teamPurple .rows .row");
+		var teamRed = $("#teamRed .rows .row");
+		var teamTeal = $("#teamTeal .rows .row");
+		var teamGrey = $("#teamGrey .rows .row");
+		
+		//sort all rows for each
+		overallTeam.sort(function(a, b){
+		    return $(b).data("points") - $(a).data("points");
+		});
+		overallIndividual.sort(function(a, b){
+		    return $(b).data("points") - $(a).data("points");
+		});
+		teamBlue.sort(function(a, b){
+		    return $(b).data("points") - $(a).data("points");
+		});
+		teamPurple.sort(function(a, b){
+		    return $(b).data("points") - $(a).data("points");
+		});
+		teamRed.sort(function(a, b){
+		    return $(b).data("points") - $(a).data("points");
+		});
+		teamTeal.sort(function(a, b){
+		    return $(b).data("points") - $(a).data("points");
+		});
+		teamGrey.sort(function(a, b){
+		    return $(b).data("points") - $(a).data("points");
+		});
+		
+		//output results
+		$("#overallTeam .rows").html(overallTeam);
+		$("#overallIndividual .rows").html(overallIndividual);
+		$("#teamBlue .rows").html(teamBlue);
+		$("#teamPurple .rows").html(teamPurple);
+		$("#teamRed .rows").html(teamRed);
+		$("#teamTeal .rows").html(teamTeal);
+		$("#teamGrey .rows").html(teamGrey);
+		
+		//renumber divs
+		var i = 1;
+		$('#overallTeam .rows .row .rank').each(function() {
+		    $(this).html(i++);
+		});
+		
+		var j = 1;
+		$('#overallIndividual .rows .row .rank').each(function() {
+		    $(this).html(j++);
+		});
+		
+		var k = 1;
+		$('#teamBlue .rows .row .rank').each(function() {
+		    $(this).html(k++);
+		});
+		
+		var l = 1;
+		$('#teamPurple .rows .row .rank').each(function() {
+		    $(this).html(l++);
+		});
+		
+		var m = 1;
+		$('#teamRed .rows .row .rank').each(function() {
+		    $(this).html(m++);
+		});
+		
+		var n = 1;
+		$('#teamTeal .rows .row .rank').each(function() {
+		    $(this).html(n++);
+		});
+		
+		var o = 1;
+		$('#teamGrey .rows .row .rank').each(function() {
+		    $(this).html(o++);
+		});
+		
+	}
 
-    });
+	//First Run
+	duplicatePointsData();
+	reOrderRows();
 	
-	//Update rankings on an interval
-	//Need to change this function to run only when text changes
-	setInterval(function(){ 
-		$('#overallLeaderboard').isotope('updateSortData').isotope();
-		$('#individualLeaderboard').isotope('updateSortData').isotope();
-		$('.teamScoreboard').isotope('updateSortData').isotope();
-	 }, 2000);
-	 
-	 
+	//Functions to loop to update scores
+	setInterval(function() {
+		reOrderRows();
+		duplicatePointsData();
+	}, 5000);
+
 	/////////////////////////////
 	//SOCIAL WALL
 	/////////////////////////////
-	function initSocialWall() {
-		$('#socialWallContainer').isotope({
-			  itemSelector: '.socialPost',
-			  getSortData: {
-			      timestamp: '[data-timestamp] parseInt'
-			  },
-			  layoutMode: 'packery',
-			  percentPosition: true,
-			  sortBy: 'timestamp',
-			  sortAscending: false
-	    });
-	}
-    
-
+	
+	$('#socialWallContainer').isotope({
+        getSortData: {
+				number: '[data-timestamp]'
+		},
+		  itemSelector: '.socialPost',
+		  layoutMode: 'packery',
+		  sortBy: 'number',
+		  sortAscending: false,
+		  percentPosition: true
+    });
     
     //Find hashtags and style appropriately
     
@@ -99,11 +160,7 @@ $(document).ready(function() {
 	    });
     }
     
-    setInterval(function() {
-	    $('span.message').each(function() {
-	        $(this).html(spanHashtags($(this).html()));
-	    });
-    }, 10000);
+    hashtag_regexp = /#([a-zA-Z0-9]+)/g;
 
 	function spanHashtags(text) {
 	    return text.replace(
@@ -113,83 +170,15 @@ $(document).ready(function() {
 	} 
 	
 	replaceHashTags();
-	 
-	
-	/////////////////////////////
-	//VIDEOS
-	/////////////////////////////
-
-	//Initialze Prize video
-	/*
-	var prizeLoopVideo = document.getElementById("prizeLoopVideo");
-	prizeLoopVideo.load();
-		
-	prizeLoopVideo.onended = function() {
-		mainCarousel.cycle('next');
-		reinitializeInner();
-	};
-	*/
-	
-	/* Init Data */
-	
-	getPosts();
-	getScore();
+    ////
+    getPosts();
+    getScore();
     setTimeout(function() {
-		initSocialWall();
-	}, 8000);
-	
-	setInterval(function() {
-		$(".points").digits();
-	}, 1000)
+        initSocialWall();
+    }, 8000);
 
+    setInterval(function() {
+        $(".points").digits();
+    }, 1000);
 	
-	//Please be kind rewind
-	function resetVideos() {
-		//prizeLoopVideo.currentTime = 0;
-	}
-	
-	//triggers on carousel function
-	mainCarousel.on( 'cycle-after', function(e, opts, curr, next) {
-	    
-	    
-	    //fetches the current slide of the main carousel
-	    var currentSlide = mainCarousel.data("cycle.opts").currSlide;
-	    
-	    //checks to see if current slide is leaderboards by team and pauses if true
-	    if(currentSlide == 0) { //Team Carousel Slide
-		   $('#socialWallContainer').isotope('destroy');
-		    $('#socialWallContainer').empty();
-		    getPosts();
-		    setTimeout(function() {
-				initSocialWall();
-			}, 8000);   
-	    }
-	    
-	    
-	    if(currentSlide == 7) {
-		    //$('#socialWallContainer').empty();
-		   	getScore();
-		   	
-		   	$.getJSON('http://otew.io/grab-tweets').error(function(){ console.log('error');}).complete(function(){ console.log('tweet points complete');});
-		}
-	    
-	});
-	
-	//Truncate last names
-	/*
-	setTimeout(function() {
-		$('#individualLeaderboard .teamName, .leaderboardIndividualByTeam .teamName').each(function() {
-			var person = $(this).text();
-			
-			var fullName = person.split(' '),
-				firstName = fullName[0],
-				lastInitial = fullName[fullName.length - 1].charAt(0);
-				
-			var truncatedName = firstName + ' ' + lastInitial;
-
-			console.log(truncatedName);
-		});
-	}, 5000);
-	*/
-
 });

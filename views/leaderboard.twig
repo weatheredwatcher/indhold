@@ -7,24 +7,38 @@
 	<title>Enterprise 2016 Video Wall</title>
 	
 	<!-- Scripts -->
-	<script src="/assets/leaderboard/js/jquery-1.9.1.min.js"></script>
+	<script src="/assets/leaderboard/js/jquery-3.2.1.min.js"></script>
 	<script src="/assets/leaderboard/js/functions.js"></script>
 	<script src="/assets/leaderboard/js/isotope.pkgd.min.js"></script>
 	<script src="/assets/leaderboard/js/packery-mode.pkgd.js"></script>
 	<script src="/assets/leaderboard/js/jquery.cycle2.min.js"></script>
 	<script src="/assets/leaderboard/js/jquery.cycle2.scrollVert.min.js"></script>
 	<script src="/assets/leaderboard/js/scoreboard.js"></script>
-	
+
+	<!-- Tyepkit -->
+	<script src="https://use.typekit.net/oae8zyf.js"></script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 	<!-- CSS -->
 	<link rel="stylesheet" href="/assets/leaderboard/css/styles.css" />
 	
 </head>
 
 <body>
-	
-	<!-- Carousel Container for all slides on video wall -->
-	<div id="videoWall" data-cycle-fx="scrollHorz" data-cycle-slides="> div">
-		
+
+<header><img src="/assets/leaderboard/img/ew-games-logo.png" alt="The EW Games" /></header>
+	<!-- Carousel Container for all slides on video wall
+	<div id="videoWall" data-cycle-fx="scrollHorz" data-cycle-slides="> div"> -->
+		<div class="cycle-slideshow" data-cycle-fx="scrollHorz" data-cycle-slides="> div" data-cycle-pager=".pager">
+
+		<!-- Social Wall -->
+		<div id="socialWall" class="slide" data-cycle-timeout="12000" data-cycle-slides="> div">
+
+			<div id="socialWallContainer">
+
+
+			</div>
+
+		</div><!-- Social Wall -->
 		
 		<!-- Overall Leaderboard -->
 		<div id="leaderboardOverall" class="slide" data-cycle-timeout="7000">
@@ -348,19 +362,6 @@
 				</div><!-- End of Purple Team -->
 
 		</div>
-		
-		
-		<!-- Social Wall -->
-		<div id="socialWall" class="slide" data-cycle-timeout="12000" data-cycle-slides="> div">
-			
-			<img id="fadeBox" src="/assets/leaderboard/img/fade.png" />
-			
-			<div id="socialWallContainer">
-				
-			
-			</div>
-			
-		</div><!-- Social Wall -->
 		
 		<!-- Prize Loop 
 		<div id="prizeLoop" class="slide" data-cycle-timeout="0">

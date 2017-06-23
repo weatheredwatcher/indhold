@@ -24,7 +24,7 @@ class LeaderboardControllerProvider implements ControllerProviderInterface
         $controllers = $app['controllers_factory'];
 
         $controllers->get('/', function (Application $app) {
-            return $app['twig']->render('leaderboard.twig');
+            return $app['twig']->render('index.html');
         });
         
         $controllers->get('/mobile', function() use($app) {
