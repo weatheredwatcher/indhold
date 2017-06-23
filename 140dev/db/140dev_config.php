@@ -12,10 +12,13 @@
 
 // OAuth settings for connecting to the Twitter streaming API
 // Fill in the values for a valid Twitter app
-define('TWITTER_CONSUMER_KEY','1ftGdh0A0UwR0PTw9M08CiYch');
-define('TWITTER_CONSUMER_SECRET','zyYz6tyymi2SCkrrMh2mcXQKzzAgRy4RVxI8KeLHwULW98Yi41');
-define('OAUTH_TOKEN','17375108-scMpW7B7CzcPiVVjXrPhXJyNv5sA33ZRGLK49wAVI');
-define('OAUTH_SECRET','i1kxZEa6wlpzgiNMl8Ozudooi1zG9qIYKLxVKSlWANvcN');
+
+Consumer Key (API Key)
+Consumer Secret (API Secret)
+define('TWITTER_CONSUMER_KEY','D6mY61Jq1Qlp0JWJzAgwge4p5');
+define('TWITTER_CONSUMER_SECRET','bKRait1JAVQ0H9xSk0NAyT31Gf9mTN9NzMNHVQ68fvtGP6dV7S');
+define('OAUTH_TOKEN','17375108-uOAg5tpKoWgULOjgNryU0eps6A3cJe3VzriKXZ3WE');
+define('OAUTH_SECRET','3nGTo7Ve2fcx6RgUnhL0LwBGiSNsEcYnHyRHOnRS5taUw');
 
 // Settings for monitor_tweets.php
 define('TWEET_ERROR_INTERVAL',10);
