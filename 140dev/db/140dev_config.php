@@ -13,8 +13,6 @@
 // OAuth settings for connecting to the Twitter streaming API
 // Fill in the values for a valid Twitter app
 
-Consumer Key (API Key)
-Consumer Secret (API Secret)
 define('TWITTER_CONSUMER_KEY','D6mY61Jq1Qlp0JWJzAgwge4p5');
 define('TWITTER_CONSUMER_SECRET','bKRait1JAVQ0H9xSk0NAyT31Gf9mTN9NzMNHVQ68fvtGP6dV7S');
 define('OAUTH_TOKEN','17375108-uOAg5tpKoWgULOjgNryU0eps6A3cJe3VzriKXZ3WE');
