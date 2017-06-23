@@ -57,11 +57,12 @@ class APIControllerProvider implements ControllerProviderInterface
         error_log(print_r($points_to_add, true));
    	    $headers = array();
 	    $headers[] = 'Content-Type: application/json';
-      //fixme: remember to add this key to the .env file
-	    $headers[] = 'x-ew-app-key: 4f5ab637-e266-4401-aef1-ae64ccce9e49';
+	    $headers[] = 'Content-Type: application/json';
+	    $headers[] = getenv('AW_APP_KEY').':'. getenv('AW_SECRET_TOKEN');
+	    $headers[] = 'AW_EVENTS_EVENT_ID:'. getenv('AW_EVENTS_EVENT_ID');
 
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL,"https://appworks.opentext.com/enterprise-world-service/api/v1/games/totals");
+        curl_setopt($ch, CURLOPT_URL,"https://appworks.opentext.com/appworks-conference-service/api/v2/games/totals");
 
 	    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 	    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
