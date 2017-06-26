@@ -9,8 +9,8 @@
 * @version BETA 0.30
 */
   $db_host = 'localhost';
-  $db_user = 'weatheredwatcher';
-  $db_password = 'password';
+  $db_user = 'tweets';
+  $db_password = 'tweets';
   $db_name = 'otew_tweets';
 	
 	// MySQL time zone setting to normalize dates
