@@ -236,7 +236,7 @@ error_log("Get the Tweets");
     $sql = "SELECT
 tweets.tweet_text, tweets.screen_name, tweets.created_at, UNIX_TIMESTAMP(created_at) AS unixstamo, tweet_media.media
 FROM tweets left join tweet_media on tweets.tweet_id = tweet_media.tweet_id
-ORDER BY tweets.created_at DESC limit 9";
+ORDER BY tweets.created_at DESC limit 15";
     $tweets = $app['dbs']['tweets']->fetchall($sql);
    error_log("Get the Posts");
    json_encode($tweets);

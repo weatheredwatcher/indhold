@@ -139,17 +139,18 @@ $(document).ready(function() {
 	/////////////////////////////
 	//SOCIAL WALL
 	/////////////////////////////
-	
-	$('#socialWallContainer').isotope({
-        getSortData: {
-				number: '[data-timestamp]'
-		},
-		  itemSelector: '.socialPost',
-		  layoutMode: 'packery',
-		  sortBy: 'number',
-		  sortAscending: false,
-		  percentPosition: true
-    });
+	function initSocialWall() {
+        $('#socialWallContainer').isotope({
+            getSortData: {
+                number: '[data-timestamp]'
+            },
+            itemSelector: '.socialPost',
+            layoutMode: 'packery',
+            sortBy: 'number',
+            sortAscending: false,
+            percentPosition: true
+        });
+    }
     
     //Find hashtags and style appropriately
     
