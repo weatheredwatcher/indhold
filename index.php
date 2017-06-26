@@ -15,8 +15,8 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 //use Symfony\Component\Debug\ErrorHandler;
 //use Symfony\Component\Debug\ExceptionHandler;
-ini_set('display_errors', 1);
-error_reporting(-1);
+ini_set('display_errors', 0);
+error_reporting(0);
 
 //ExceptionHandler::register();
 //ErrorHandler::register();

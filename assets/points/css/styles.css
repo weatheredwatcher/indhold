@@ -1,51 +1,5 @@
-/* Lato Light */
-@font-face {
-    font-family: 'Lato';
-    src: url('../fonts/lato-light-webfont.eot');
-    src: url('../fonts/lato-light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/lato-light-webfont.woff') format('woff'),
-         url('../fonts/lato-light-webfont.ttf') format('truetype'),
-         url('../fonts/lato-light-webfont.svg#latolight') format('svg');
-    font-weight: 200;
-    font-style: normal;
-}
-/* Lato Regular */
-@font-face {
-    font-family: 'Lato';
-    src: url('../fonts/lato-regular-webfont.eot');
-    src: url('../fonts/lato-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/lato-regular-webfont.woff') format('woff'),
-         url('../fonts/lato-regular-webfont.ttf') format('truetype'),
-         url('../fonts/lato-regular-webfont.svg#latoregular') format('svg');
-    font-weight: 300;
-    font-style: normal;
-}
-/* Lato Bold */
-@font-face {
-    font-family: 'Lato';
-    src: url('../fonts/lato-bold-webfont.eot');
-    src: url('../fonts/lato-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/lato-bold-webfont.woff') format('woff'),
-         url('../fonts/lato-bold-webfont.ttf') format('truetype'),
-         url('../fonts/lato-bold-webfont.svg#latobold') format('svg');
-    font-weight: 500;
-    font-style: normal;
-}
-
-/* Lato Black */
-@font-face {
-    font-family: 'Lato';
-    src: url('../fonts/lato-black-webfont.eot');
-    src: url('../fonts/lato-black-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/lato-black-webfont.woff') format('woff'),
-         url('../fonts/lato-black-webfont.ttf') format('truetype'),
-         url('../fonts/lato-black-webfont.svg#latoblack') format('svg');
-    font-weight: 700;
-    font-style: normal;
-}
-
-
 html {
+	font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
@@ -54,70 +8,165 @@ html {
 
 body {
 	margin: 0;
-	padding: 0;
+	padding: 85px 0;
 	width: 100%;
 	height: 100%;
 	background-color: #000000;
 	color: #FFFFFF;
-	font-family: "Lato", Helvetica, sans-serif;
-}
-
-body.login {
 	background: url('../img/background.jpg') no-repeat;
 	background-size: cover;
-	background-position: center bottom;
 }
+
+
+/* Points Awarder Screen */
+
+header {
+	width: 100%;
+	height: 65px;
+	background-color: #FFFFFF;
+	background-image: url("../img/ew-games-logo.png");
+	background-position: center center;
+	background-size: auto 50%;
+	background-repeat: no-repeat;
+	box-sizing: border-box;
+	position: fixed;
+	top: 0;
+}
+
+
+.primaryButton {
+	border-radius: 2px;
+	background-color: rgba(255,255,255,0.8);
+	box-sizing: border-box;
+	padding: 15px;
+	width: 80%;
+	color: #2E3D98;
+	font-weight: bold;
+	display: block;
+	text-decoration: none;
+	margin: 30px auto 30px auto;
+	text-align: center;
+}
+
+.primaryButton:active {
+	background-color: rgba(255,255,255,0.95);
+}
+
+.secondaryButton {
+	border-radius: 2px;
+	background-color: none;
+	box-sizing: border-box;
+	padding: 15px;
+	width: 80%;
+	color: #FFFFFF;
+	font-weight: bold;
+	display: block;
+	text-decoration: none;
+	margin: 30px auto 30px auto;
+	text-align: center;
+	border: 1px solid white;
+}
+.secondaryButton:active {
+	background-color: rgba(255,255,255,0.3);
+}
+
+#resetButton {
+	position: fixed;
+	bottom: 0;
+	left: 10%
+}
+
+#chooseType, #choosePerson {
+	padding-top: 40%;
+}
+
+#choosePoints, #chooseATeam {
+	padding-top: 10%;
+}
+
+
+#choosePerson input {
+	width: 80%;
+	font-size: 4vw;
+	color: #000000;
+	padding: 30px 20px 30px 20px;
+	box-sizing: border-box;
+	margin: 30px auto 30px auto;
+	display: block;
+	background-color: rgba(255,255,255,0.9);
+	border: 1px solid rgba(0,0,0,0.7);
+	text-align: center;
+}
+#choosePerson input::placeholder {
+	color: #cccccc;
+}
+
+
 
 
 /* OVERALL CAROUSEL STYLES */
 
 #pointGiver {
 	width: 100%;
-	height: 80%;
+	height: 75%;
 	overflow: hidden;
+	margin: 2% auto 0 auto;
 }
 
 .slide {
 	width: 100%;
 	height: 100% !important;
+	box-sizing: border-box;
 }
 
-#logoContainer {
-	margin-top: 10%;
-	width: 100%;
-	height: 40%;
-	background: url('../img/ew-games-crest.png') no-repeat;
-	background-size: contain;
-	background-position: center center;
-}
 
 #fieldsContainer {
 	width: 80%;
 	margin: 3% auto 6% auto;
-	background-color: rgba(40,40,40,0.7);
+	background-color: rgba(255,255,255,0.3);
 	padding: 5%;
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
-	border-radius: 6px;
+	border-radius: 3px;
 	box-sizing: border-box;
 }
 
+
+
+
 /* LEADERBOARD STYLES */
 
-h1.welcome {
+h1 {
 	font-weight: 500;
 	font-size: 3vh;
 	margin: 0;
 	padding: 0;
 	width: 100%;
-	height: 5%;
+	height: 50px;
 	text-align: center;
 	color: #FFFFFF;
+	top: 65px;
+	position: fixed;
+	background-color: rgba(46,61,152,0.3);
+	box-sizing: border-box;
+	padding-top: 10px;
 }
 
-h2.step {
+h3 {
+	font-weight: 500;
+	font-size: 5vh;
+	margin: 30px auto 40px auto;
+	padding: 0;
+	width: 80%;
+	text-align: center;
+	color: #FFFFFF;
+	box-sizing: border-box;
+	background: none;
+	display: block;
+}
+
+
+h2 {
 	font-weight: 200;
-	font-size: 2.75vh;
+	font-size: 3.5vh;
 	margin: 2% 0;
 	padding: 0;
 	width: 100%;
@@ -126,20 +175,10 @@ h2.step {
 	color: #FFFFFF;
 }
 
-#titleBlock {
-	margin-top: 5%; 
-	height: 13%;
-	width: 100%;
-	overflow: hidden;
-	background: url('../img/ew-games-logo.png') no-repeat;
-	background-position: center top;
-	background-size: auto 90%;
-}
-
 .teamRow {
 	display: block;
 	width: 100%;
-	height: 14% !important;
+	height: 12% !important;
 	margin-bottom: 5px;
 	z-index: 1000;
 }
@@ -147,7 +186,7 @@ h2.step {
 .pointRow {
 	display: block;
 	width: 100%;
-	height: 14% !important;
+	height: 12% !important;
 	margin-bottom: 5px;
 	z-index: 1000;
 	text-align: center;
@@ -191,17 +230,23 @@ h2.step {
 	background-repeat: no-repeat;
 }
 
-#teamBlue .rank 	{ background-color: #2dA3E0; }
-#teamGreen .rank 	{ background-color: #8DC63F; }
-#teamOrange .rank 	{ background-color: #F37B00; }
-#teamPurple .rank 	{ background-color: #A05FA6; }
-#teamTeal .rank 	{ background-color: #00A388; }
+.top {
+	margin-top: 30px;
+}
 
-#teamBlue .icon 	{ background-image: url("../img/team-icon-BL.svg"); }
-#teamGreen .icon 	{ background-image: url("../img/team-icon-GR.svg"); }
-#teamOrange .icon 	{ background-image: url("../img/team-icon-OR.svg"); }
-#teamPurple .icon 	{ background-image: url("../img/team-icon-PL.svg"); }
-#teamTeal .icon 	{ background-image: url("../img/team-icon-TL.svg"); }
+
+#teamBlue .rank 	{ background-color: #2E3D98; }
+#teamGrey .rank 	{ background-color: #7E929F; }
+#teamRed .rank 		{ background-color: #D92A32; }
+#teamPurple .rank 	{ background-color: #4F3690; }
+#teamTeal .rank 	{ background-color: #00B8BA; }
+
+#teamBlue .icon 	{ background-image: url("../img/team-icons/blue.png"); }
+#teamGrey .icon 	{ background-image: url("../img/team-icons/grey.png"); }
+#teamRed .icon 		{ background-image: url("../img/team-icons/red.png"); }
+#teamPurple .icon 	{ background-image: url("../img/team-icons/purple.png"); }
+#teamTeal .icon 	{ background-image: url("../img/team-icons/teal.png"); }
+
 
 .teamName {
 	display:flex;
@@ -230,18 +275,7 @@ h2.step {
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
-	background-color: #2da3e0;
-	color: #FFFFFF;
-	padding-top: 4%;
-	padding-bottom: 4%;
-	width: 75%;
-	font-size: 5vw;
-	font-weight: 600;
-	text-align: center;
-	margin-top: 400px;
+	margin-top: 300px;
 	-webkit-transition: margin-top 200ms ease-out;
     -moz-transition: margin-top 200ms ease-out;
     -o-transition: margin-top 200ms ease-out;
@@ -256,37 +290,35 @@ h2.step {
 }
 
 button[type="submit"] {
-	margin-left: auto;
-	margin-right: auto;
-	display: block;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
-	background-color: #2da3e0;
-	color: #FFFFFF;
-	padding-top: 4%;
-	padding-bottom: 4%;
-	width: 75%;
-	font-size: 5vw;
-	font-weight: 600;
-	text-align: center;
-    text-decoration: none;
-    border: 0;
+	font-size: 5vw !important;
+	padding: 10px 0 10px 0 !important;
+	border: none;
+    outline:none;
 }
 
 .visible {
-	margin-top: 3% !important;
+	margin-top: 20px !important;
 }
 
-/* Form elements */
+/* Login elements */
+
+
+#loginLogo {
+	width: 80%;
+	height: auto;
+	margin: 20% auto 0 auto;
+	display: block;
+	border: none;	
+}
+
 input[type="text"], input[type="password"] {
     background: no-repeat scroll;
-    background-size: 10% auto;
+    background-size: 8% auto;
     background-position: 3% center;
-	padding: 4% 2% 4% 18%;
-	background-color: #FFFFFF;
+	padding: 4% 2% 4% 14%;
+	background-color: rgba(255,255,255,0.9);
+	border: 1px solid rgba(0,0,0,0.7);
 	color: #000000;
-	border: 1px solid #333333;
 	width: 100%;
 	height: 5%;
 	text-align: left;

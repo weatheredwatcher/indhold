@@ -119,7 +119,7 @@ class APIControllerProvider implements ControllerProviderInterface
 
    }
 
-
+     error_log(print_r($arr, true));
     return $app->json($arr);
 });
 

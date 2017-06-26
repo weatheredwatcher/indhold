@@ -4,12 +4,13 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Point Awarder</title>
+	<title>THE EW GAMES POINT AWARDER</title>
 	
-	<!-- Tyepkit -->
-	<script src="https://use.typekit.net/oae8zyf.js"></script>
-	<script>try{Typekit.load({ async: true });}catch(e){}</script>
+	<!-- Scripts -->
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<script src="js/functions.js"></script>
+	<script src="js/jquery.cycle2.min.js"></script>
+	<script src="js/jquery.cycle2.swipe.min.js"></script>
 	
 	<!-- CSS -->
 	<link rel="stylesheet" href="css/styles.css" />
@@ -18,9 +19,12 @@
 
 <body class="login">
 	
-	<img id="loginLogo" src="img/ew-games-logo-inv.png" alt="" />
+	<div id="logoContainer">
+		
+		
+	</div>
 	
-	<h3>Point Awarder</h3>
+	<h1 class="welcome">Point Awarder</h1>
 	
 	<form id="loginForm" action="auth.php" method="get">
 		
@@ -29,7 +33,7 @@
 			<input id="password" type="password" name="password" placeholder="Password">
 		</div>
 		
-		<button type="submit" id="loginButton" class="primaryButton" value="Login" form="loginForm">Login</button>
+		<button type="submit" id="loginButton" value="Login" form="loginForm">Login</button>
 	
 	</form>
 

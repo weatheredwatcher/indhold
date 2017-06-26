@@ -9,8 +9,17 @@
  *
  * Last Modified Date: 2016-07-01
  */
-var server_path = "http://otew.io";
-//var server_path = "http://955832fa.ngrok.io"
+
+
+
+
+if (location.hostname === "localhost" || location.hostname === "127.0.0.1"){
+	var server_path = "http://localhost:8080";
+}
+	else {
+
+	var server_path = "http://otew.io";
+	}
 
 
 
@@ -38,9 +47,9 @@ function getScore(){
     var jqxhr = $.getJSON(server_path + "/api/get_scores")
 
           .done(function(response) {
-
-		   //console.log(response);
-
+           console.log("GETSCORES RESPONSE");
+		   console.log(response);
+           console.log(response.overallScores.Blue);
 
 		//$(team).text(data);
 //---Team Rankings:--
@@ -164,9 +173,9 @@ for (var i in tealTeamLeaders) {
 
 
 //--OVERALL--
-
+              console.log("overalls");
 $('#blPoints').attr("data-points", response.overallScores.Blue);
-$('#grPoints').attr("data-points", response.overallScores.Green);
+$('#grPoints').attr("data-points", response.overallScores.Grey);
 $('#tlPoints').attr("data-points", response.overallScores.Teal);
 $('#rdPoints').attr("data-points", response.overallScores.Red);
 $('#plPoints').attr("data-points", response.overallScores.Purple);
