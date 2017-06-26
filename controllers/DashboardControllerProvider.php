@@ -159,7 +159,7 @@ class DashboardControllerProvider implements ControllerProviderInterface
                $sql = $queryBuilder
                           ->select('t.tweet_id, t.tweet_text', 't.created_at', 't.screen_name', 't.name', 'm.media', 't.allow')
                           ->from('tweets', 't')
-                          ->join('t', 'tweet_media', 'm', 't.tweet_id = m.tweet_id');
+                          ->leftJoin('t', 'tweet_media', 'm', 't.tweet_id = m.tweet_id');
                $request = $app['dbs']['tweets']->fetchAll($sql);
                return $app['twig']->render('dashboard/tweets.twig', array('user' => $user, 'tweets' => $request, 'version' => 'OpenText EW Leaderboard build:'. CustomTraits\ApplicationVersion::get()));
 
