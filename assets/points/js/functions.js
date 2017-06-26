@@ -120,7 +120,7 @@ $(document).ready(function() {
 			console.log(points);
 			$.ajax({        
 			       type: "POST",
-			       url: "/postPointsIndividual",
+			       url: "/points/postPoints",
 				   data: { points: points },
 			       success: function() {
 		   			alert('Individual points awarded successfully');
@@ -135,7 +135,7 @@ $(document).ready(function() {
 			console.log(points);
 			$.ajax({        
 			       type: "POST",
-			       url: "/postPoints",
+			       url: "/points/postPoints",
 				   data: { points: points },
 			       success: function() {
 		   			alert('Team points awarded successfully');

@@ -26,48 +26,48 @@ class PointsControllerProvider implements ControllerProviderInterface
        $controllers->get('/', function () use ($app) {
 
 	if (null === $user = $app['session']->get('user')) {
-	       return $app->redirect('/dashboard');
+	       return $app->redirect('login');
 
 	    }
 
-    return $app['twig']->render('points.twig', array('user' => $user));
+    return $app['twig']->render('points/points.twig', array('user' => $user));
 });
 
-$controllers->match('postPoints', function () use ($app) {
+    $controllers->match('postPoints', function () use ($app) {
 
-	if(isset($_POST['points'])){
-	$points = $_POST['points'];
-	$score = $points[0];
-	$team = $points[1];
-  $id = $points[2];
-    $source = "PointsApp";}
-	 else {
-		$score = $_POST['score'];
-		switch ($_POST['team']) {
+	    if(isset($_POST['points'])){
+	    $points = $_POST['points'];
+	    $score = $points[0];
+	    $team = $points[1];
+        $id = $points[2];
+        $source = "PointsApp";}
+        else {
+		    $score = $_POST['score'];
+		    switch ($_POST['team']) {
 
-    	    case 'GR':
-    	         $team = "green";
-    	    break;
+    	        case 'GR':
+    	             $team = "green";
+    	        break;
 
-    	    case 'TL':
-    	         $team = "teal";
-    	    break;
+    	        case 'TL':
+    	             $team = "teal";
+    	        break;
 
-    	    case 'BL':
-    	         $team = "blue";
-    	    break;
+        	    case 'BL':
+        	         $team = "blue";
+    	        break;
 
-    		case 'PL':
-    	         $team = "purple";
-    	    break;
+        		case 'PL':
+        	         $team = "purple";
+    	        break;
 
-    	    case 'OR':
-    	        $team = "orange";
-    	    break;
-		}
+    	        case 'OR':
+    	            $team = "orange";
+    	        break;
+		    }
 				$id    = 99;
                 $source = "Arcade";
-   } 
+        }
     $sql = "insert into points (team, points, audit, source) values (?, ?, ?, ?)";
   $app['dbs']['points']->executeQuery($sql, array($team, $score, $id, $source));
 
@@ -76,6 +76,36 @@ $controllers->match('postPoints', function () use ($app) {
           return $app->json((object) $response, $statusCode);
 
 });
+
+    $controllers->match('/login', function () use ($app){
+
+        if (isset($_POST['Username']) && $_POST['Username'] != ""){
+
+            $email = $_POST['Username'];
+            $password = $_POST['Password'];
+            $sql = "SELECT id, password FROM users WHERE email = ? limit 1";
+            $results = $app['dbs']['points']->executeQuery($sql, array($email));
+
+            $user = $results->fetch();
+            $passworddb = $user['password'];
+            $id = $user['id'];
+
+            if($password == $passworddb){
+                $app['session']->set('user', array('username' => $email, 'id' => $id));
+                $app->redirect($_SERVER['HTTP_REFERER']);
+            } //end password check
+
+        }  //end if isset
+
+        if (null === $user = $app['session']->get('user')) {
+            return $app['twig']->render('points/login.twig');
+        } else {
+
+            return $app->redirect('/points');
+                    }
+
+
+    });
 
         return $controllers;
     }
