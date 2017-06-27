@@ -46,47 +46,44 @@ class APIControllerProvider implements ControllerProviderInterface
 
            // }
         $response = $app['dbs']['points']->fetchAll($sql);
-        error_log(print_r($response, true));
-        error_log("Get the Points");
+       // error_log(print_r($response, true));
+        //error_log("Get the Points");
        // while ($row = $response) {
       foreach ($response as $value){
-        error_log(print_r($value, true));
+       // error_log(print_r($value, true));
             $points_to_add[] = $value;
         }
 
-        error_log(print_r($points_to_add, true));
-   	    $headers = array();
-	    $headers[] = 'Content-Type: application/json';
-	    $headers[] = 'Content-Type: application/json';
-	    $headers[] = getenv('AW_APP_KEY').':'. getenv('AW_SECRET_TOKEN');
-	    $headers[] = 'AW_EVENTS_EVENT_ID:'. getenv('AW_EVENTS_EVENT_ID');
+       // error_log(print_r($points_to_add, true));
+           $headers = array();
+           $headers[] = 'Content-Type: application/json';
+           $headers[] = getenv('AW_APP_KEY').':'. getenv('AW_SECRET_TOKEN');
+           $headers[] = 'AW_EVENTS_EVENT_ID:'. getenv('AW_EVENTS_EVENT_ID');
 
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL,"https://appworks.opentext.com/appworks-conference-service/api/v2/games/totals");
+           $ch = curl_init();
+           //curl_setopt($ch, CURLOPT_URL,"https://appworks.opentext.com/appworks-conference-service/api/v2/feed/latest");
+           curl_setopt($ch, CURLOPT_URL,"https://appworks.opentext.com/appworks-conference-service/api/v2/games/totals");
 
-	    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-	    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+           curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+           curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 
-	    $server_output = curl_exec ($ch);
-        curl_close ($ch);
-	    $arr = json_decode($server_output, true);
+           $server_output = curl_exec ($ch);
 
-        //$tweetch = curl_init();
+           curl_close ($ch);
+           $arr = json_decode($server_output, true);
 
-        // curl_setopt($tweetch, CURLOPT_URL,"http://955832fa.ngrok.io/grab-tweets");
-        // $tweet_output = curl_exec ($tweetch);
-        //  curl_close ($ch);
-	    //$tweet_arr = json_decode($tweet_output, true);
-        //add scores to overallScores before we send to frontend
-    	//error_log( print_r($tweet_output['orange']));
+
+        error_log("curl call complete?");
+	    error_log(print_r($arr, true));
+
 	   $score = $arr['overallScores'];
 
         foreach($points_to_add as $value){
 
         switch($value['team']) {
 
-           case 'green':
-                        $arr['overallScores']['Green'] = $arr['overallScores']['Green'] + $value['total_points'];
+           case 'grey':
+                        $arr['overallScores']['Grey'] = $arr['overallScores']['Grey'] + $value['total_points'];
             break;
 
            case 'blue':
@@ -100,9 +97,9 @@ class APIControllerProvider implements ControllerProviderInterface
             break;
 
 
-           case 'orange':
+           case 'red':
 
-             $arr['overallScores']['Orange'] = $arr['overallScores']['Orange'] + $value['total_points'];
+             $arr['overallScores']['Red'] = $arr['overallScores']['Red'] + $value['total_points'];
             break;
 
 
@@ -112,31 +109,31 @@ class APIControllerProvider implements ControllerProviderInterface
             break;
 
             default:
-            error_log("Opps! something was missed!!");
+            //error_log(print_r($value, true) . ": Opps! something was missed!!");
 
        }
 
 
    }
 
-     error_log(print_r($arr, true));
+    // error_log(print_r($arr, true));
     return $app->json($arr);
 });
 
 $controllers->get('/grab-tweets', function() use($app) {
 
 
-        $green = "SELECT COUNT(tweet_id)*150 as green FROM `tweets` WHERE `tweet_id` IN (SELECT `tweet_id` FROM `tweet_tags` WHERE `tag` LIKE '%gr%')";
+        $grey = "SELECT COUNT(tweet_id)*150 as grey FROM `tweets` WHERE `tweet_id` IN (SELECT `tweet_id` FROM `tweet_tags` WHERE `tag` LIKE '%gr%')";
         $blue = "SELECT COUNT(tweet_id)*150 as blue FROM `tweets` WHERE `tweet_id` IN (SELECT `tweet_id` FROM `tweet_tags` WHERE `tag` LIKE '%bl%')";
         $teal = "SELECT COUNT(tweet_id)*150 as teal FROM `tweets` WHERE `tweet_id` IN (SELECT `tweet_id` FROM `tweet_tags` WHERE `tag` LIKE '%tl%')";
         $purple = "SELECT COUNT(tweet_id)*150 as purple FROM `tweets` WHERE `tweet_id` IN (SELECT `tweet_id` FROM `tweet_tags` WHERE `tag` LIKE '%pl%')";
-        $orange = "SELECT COUNT(tweet_id)*150 as orange FROM `tweets` WHERE `tweet_id` IN (SELECT `tweet_id` FROM `tweet_tags` WHERE `tag` LIKE '%or%')";
+        $red = "SELECT COUNT(tweet_id)*150 as red FROM `tweets` WHERE `tweet_id` IN (SELECT `tweet_id` FROM `tweet_tags` WHERE `tag` LIKE '%rd%')";
 
         //$mysqli = new mysqli('localhost', 'root', '', 'otewadmi_tweets');
       //  $mysqli = new mysqli('localhost', 'weatheredwatcher', 'password', 'otew_tweets');
 
         try {
-            $response = $app['dbs']['tweets']->fetchAll($green);
+            $response = $app['dbs']['tweets']->fetchAll($grey);
         }
         catch(DBALException $e){
             error_log($e->getMessage());
@@ -194,7 +191,7 @@ $controllers->get('/grab-tweets', function() use($app) {
         }
 
         try {
-            $response = $app['dbs']['tweets']->fetchAll($orange);
+            $response = $app['dbs']['tweets']->fetchAll($red);
         }
         catch(DBALException $e){
             error_log($e->getMessage());
@@ -236,7 +233,7 @@ error_log("Get the Tweets");
     $sql = "SELECT
 tweets.tweet_text, tweets.screen_name, tweets.created_at, UNIX_TIMESTAMP(created_at) AS unixstamo, tweet_media.media
 FROM tweets left join tweet_media on tweets.tweet_id = tweet_media.tweet_id
-ORDER BY tweets.created_at DESC limit 15";
+ORDER BY tweets.created_at DESC limit 9";
     $tweets = $app['dbs']['tweets']->fetchall($sql);
    error_log("Get the Posts");
    json_encode($tweets);

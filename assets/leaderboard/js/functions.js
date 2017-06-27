@@ -174,9 +174,7 @@ $(document).ready(function() {
     ////
     getPosts();
     getScore();
-    $.getJSON(server_path + '/api/grab-tweets').complete(function(){
-    	console.log('tweet points complete');
-    });
+
     setTimeout(function() {
         initSocialWall();
     }, 8000);

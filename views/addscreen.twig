@@ -1,0 +1,30 @@
+{% extends "dashboard/dashboard.twig" %}
+
+{% block title %}Main Page{% endblock %}
+{% block head %}
+    {{ parent() }}
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+{% endblock %}
+{% block content %}
+
+		      <div class="starter-template">
+		        <h1>Add Screen</h1>
+
+						<h2></h2>
+						<div class="wrapper">
+						<form action="#" method="post" name="Login_Form" class="form-signin">
+								<h3 class="form-signin-heading">{{message}}</h3>
+								<hr class="colorgraph"><br>
+
+								<input type="text" class="form-control" name="email" placeholder="Username" required="" autofocus="" />
+								<input type="password" class="form-control" name="password" placeholder="Password" required=""/>
+
+								<button class="btn btn-lg btn-primary btn-block"  name="Submit" value="submit" type="Submit">Add</button>
+						</form>
+
+            </div>
+
+		      </div>
+
+{% endblock %}

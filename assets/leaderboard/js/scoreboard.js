@@ -51,32 +51,47 @@ function getScore(){
 		   console.log(response);
            console.log(response.overallScores.Blue);
 
-		//$(team).text(data);
+              //--OVERALL--
+              console.log("overalls");
+              $('#blPoints').attr("data-points", response.overallScores.Blue);
+              console.log(response.overallScores.Blue);
+              $('#grPoints').attr("data-points", response.overallScores.Grey);
+              console.log(response.overallScores.Grey);
+              $('#tlPoints').attr("data-points", response.overallScores.Teal);
+              console.log(response.overallScores.Teal);
+              $('#rdPoints').attr("data-points", response.overallScores.Red);
+              console.log(response.overallScores.Red);
+              $('#plPoints').attr("data-points", response.overallScores.Purple);
+              console.log(response.overallScores.Purple);
+
+			//$(team).text(data);
 //---Team Rankings:--
 		var teamLeaders = response.teamLeaders
 		console.log('set teamLeaders to response');
 
-         var greenTeamLeaders = teamLeaders.Green;
+         var greyTeamLeaders = teamLeaders.Grey;
 
 		console.log('set green team var');
-	  for (var i in greenTeamLeaders) {
+	  for (var i in greyTeamLeaders) {
 		  console.log('entered the loop');
-	      if (greenTeamLeaders.hasOwnProperty(i)) {
+	      if (greyTeamLeaders.hasOwnProperty(i)) {
 
-			  console.log(greenTeamLeaders[i].name);
-			  console.log(greenTeamLeaders[i].total);
-			  var name = truncateName(greenTeamLeaders[i].name);
-			   var board_id = "#greenrow" + i;
+			  console.log(greyTeamLeaders[i].name);
+			  console.log(greyTeamLeaders[i].total);
+			  var name = truncateName(greyTeamLeaders[i].name);
+			   var board_id = "#greynrow" + i;
 
 
             if ($(board_id).length > 0){
                 $(board_id).remove();
                             }
-			  $('#greenScoreboard').append('<div id="greenrow'+ i +'" class="teamRow">');
-			  $('#greenrow' + i).append('<span class="rank green"></span>');
-					$('#greenrow' + i).append('<span class="icon gr"></span>');
-					$('#greenrow' + i).append('<span class="teamName">'+ name +'</span>');
-					$('#greenrow' + i).append('<span class="points">'+ greenTeamLeaders[i].total +'</span>');
+			  $('#teamGrey').append('<h1>Team Grey Rankings</h1>');
+			  $('#teamGrey').append('<div class="teamBadge"></div>');
+			  $('#teamGrey').append('<div class="row" id="row' + i +'" data-points="'+ greyTeamLeaders[i].total +'">');
+              $('#row' + i).append('<div class="rank">');
+              $('#row' + i).append('<div class="teamIcon">');
+              $('#row' + i).append('<div class="name">'+ name +'</div>');
+              $('#row' + i).append('<div class="points">');
 	      }
 	  }
 
@@ -127,7 +142,8 @@ for (var i in orangeTeamLeaders) {
 }
 
     var purpleTeamLeaders = teamLeaders.Purple;
-
+              $('#teamPurple').append('<h1>Team Purple Rankings</h1>');
+              $('#teamPurple').append('<div class="teamBadge"></div>');
 for (var i in purpleTeamLeaders) {
     if (purpleTeamLeaders.hasOwnProperty(i)) {
 	  console.log(purpleTeamLeaders[i].name);
@@ -139,13 +155,12 @@ for (var i in purpleTeamLeaders) {
             if ($(board_id).length > 0){
                 $(board_id).remove();
                             }
-	   $('#purpleScoreboard').append('<div id="purplerow'+ i +'" class="teamRow">');
-			  $('#purplerow' + i).append('<span class="rank purple"></span>');
-					$('#purplerow' + i).append('<span class="icon pl"></span>');
-					$('#purplerow' + i).append('<span class="teamName">'+ name +'</span>');
-					$('#purplerow' + i).append('<span class="points">'+ purpleTeamLeaders[i].total +'</span>');
-
-
+        $('#teamPurple').append('<div class="rows" id="purpleRow">');
+        $('#purpleRow').append('<div class="row" id="row' + i +'" data-points="'+ purpleTeamLeaders[i].total +'">');
+        $('#row' + i).append('<div class="rank">');
+        $('#row' + i).append('<div class="teamIcon">');
+        $('#row' + i).append('<div class="name">'+ name +'</div>');
+        $('#row' + i).append('<div class="points">');
     }
 }
 
@@ -172,13 +187,7 @@ for (var i in tealTeamLeaders) {
 }
 
 
-//--OVERALL--
-              console.log("overalls");
-$('#blPoints').attr("data-points", response.overallScores.Blue);
-$('#grPoints').attr("data-points", response.overallScores.Grey);
-$('#tlPoints').attr("data-points", response.overallScores.Teal);
-$('#rdPoints').attr("data-points", response.overallScores.Red);
-$('#plPoints').attr("data-points", response.overallScores.Purple);
+
 
 console.log('OVERALL LEADERS');
 var overallLeaders = response.overallLeaders;
@@ -188,20 +197,20 @@ for (var x in overallLeaders){
 	if(overallLeaders.hasOwnProperty(x)) {
 		if (overallLeaders[x].team == "Teal") { team = "teal"; icon = "tl"; }
 		else if (overallLeaders[x].team == "Purple") { team = "purple"; icon = "pl"; }
-		else if (overallLeaders[x].team == "Green" ){ team = "green"; icon = "gr"; }
+		else if (overallLeaders[x].team == "Grey" ){ team = "grey"; icon = "gr"; }
 		else if (overallLeaders[x].team == "Blue") { team = "blue"; icon = "bl"; }
-		else if (overallLeaders[x].team == "Orange") { team = "orange"; icon = "or"; }
+		else if (overallLeaders[x].team == "Red") { team = "red"; icon = "rd"; }
 		var board_id = "#teamrow" + x;
 		var name = truncateName(overallLeaders[x].name);
 
             if ($(board_id).length > 0){
                 $(board_id).remove();
                             }
-            $('#individualLeaderboard').append('<div id="teamrow'+ x +'" class="teamRow">');
-            $('#teamrow' + x).append('<span class="rank ' + team + '"></span>');
-            $('#teamrow' + x).append('<span class="icon ' + icon + '"></span>');
-            $('#teamrow' + x).append('<span class="teamName">'+ name +'</span>');
-            $('#teamrow' + x).append('<span class="points">'+ overallLeaders[x].total +'</span>');
+            $('#individualLeaderboard').append('<div id="teamRow' + x +'" class="row" data-points="'+ overallLeaders[x].total +'">');
+            $('#teamRow' + x).append('<div class="rank">');
+            $('#teamRow' + x).append('<div class="teamIcon ' + team + '">');
+            $('#teamRow' + x).append('<div class="name">' + name + '</div>');
+            $('#teamRow' + x).append('<div class="points">');
 
 
 

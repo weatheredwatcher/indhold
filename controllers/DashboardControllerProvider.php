@@ -100,6 +100,30 @@ class DashboardControllerProvider implements ControllerProviderInterface
 
         });
 
+        $controllers->match('/addscreen', function (Application $app) {
+
+            if (null === $user = $app['session']->get('user')) {
+                return $app->redirect('/dashboard');
+            }
+            $message = "Add User";
+            if (isset($_POST['email'])){
+                $email = $_POST['email'];
+                $password = $_POST['password'];
+
+                $sql = "insert into users (email, password) values (?, ?)";
+                $app['dbs']['points']->executeQuery($sql, array($email, $password));
+                $message = "$email has been added to the tool";
+            }
+
+
+
+
+            return $app['twig']->render('addscreen.twig', array('message' => $message, 'user' => $user, 'version' => 'OpenText EW Leaderboard build:' . CustomTraits\ApplicationVersion::get()));
+
+
+
+        });
+
        $controllers->match('/blacklist', function (Application $app){
                	if(isset($_POST['tweet_id'])){
                 $tweet_id = $_POST['tweet_id'];
@@ -171,13 +195,11 @@ class DashboardControllerProvider implements ControllerProviderInterface
                 return $app->redirect('/dashboard');
             }
 
-            //$queryBuilder = $app['dbs']['tweets']->createQueryBuilder();
-            //$sql = $queryBuilder
-              //  ->select('t.tweet_id, t.tweet_text', 't.created_at', 't.screen_name', 't.name', 'm.media', 't.allow')
-              //  ->from('tweets', 't')
-              //  ->join('t', 'tweet_media', 'm', 't.tweet_id = m.tweet_id');
-            //$request = $app['dbs']['tweets']->fetchAll($sql);
-            return $app['twig']->render('dashboard/leaderboard.twig', array('user' => $user, 'version' => 'OpenText EW Leaderboard build:'. CustomTraits\ApplicationVersion::get()));
+
+            $sql = "select * from leaderboard";
+
+            $request = $app['dbs']['points']->fetchAll($sql);
+            return $app['twig']->render('dashboard/leaderboard.twig', array('user' => $user, 'screens' => $request, 'version' => 'OpenText EW Leaderboard build:'. CustomTraits\ApplicationVersion::get()));
 
         });
 
