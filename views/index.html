@@ -133,14 +133,16 @@
 
 			
 		</div>
-		
+		{% for slide in slides %}
+
+
 		<div class="cycle-slide imgSlide" data-cycle-timeout="7000">
 			
-			<img src="/assets/leaderboard/img/winner-test.png" alt="" />
+			<img src="/uploads/{{ slide.image }}" alt="" />
 			
 		</div>
-		
-		
+
+		{% endfor %}
 	
 	</div><!-- End overall carousel container -->
 	

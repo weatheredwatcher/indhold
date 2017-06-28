@@ -6,3 +6,4 @@ composer.phar
 Dockerfile
 docker-compose.yml
 site.yml
+uploads/
