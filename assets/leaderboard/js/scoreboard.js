@@ -205,7 +205,7 @@ function getPosts(){
       
  //  var jqhrt = $.getJSON("http://955832fa.ngrok.io/get_tweets")
                           .done(function(response){
-                          
+
                             var tweets = response;
 
         for (var tweet in tweets){
@@ -234,11 +234,11 @@ function getPosts(){
  
  //       var jqxhr = $.getJSON("http://955832fa.ngrok.io/get_posts")
           .done(function(response) {
-	 
+
         var posts = response.posts
 
 	  for (var post in posts) {
-
+              var test = posts[post].content;
 			  var unixtime = posts[post].updated 
 			  unixtime = unixtime.toString().slice(0, -3);
 
