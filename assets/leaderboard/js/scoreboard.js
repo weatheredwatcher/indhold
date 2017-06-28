@@ -239,7 +239,7 @@ function getPosts(){
 
 	  for (var post in posts) {
               var test = posts[post].content;
-			  var unixtime = posts[post].updated 
+			  var unixtime = posts[post].created
 			  unixtime = unixtime.toString().slice(0, -3);
 
 			  if(posts[post].teamId){
@@ -252,7 +252,7 @@ function getPosts(){
 		      }
 			   
 			  $('#socialWallContainer').append('<div class="socialPost ' + teamname + ' sourceOT" id="' + post + '"data-timestamp="' + unixtime +'">');
-			  $('#'+ post).append('<span class="name">' + posts[post].creatorName + '</span>');
+			  $('#'+ post).append('<span class="username">' + posts[post].creatorName + '</span>');
 			  $('#'+ post).append('<span class="message">' + posts[post].content + '</span>');
 		if(posts[post].photo){ $('#' + post).append('<img src=https://appworks.opentext.com/'+ photoUrl +' alt="" />');}
 			   
