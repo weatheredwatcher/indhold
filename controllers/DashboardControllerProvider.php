@@ -105,24 +105,38 @@ class DashboardControllerProvider implements ControllerProviderInterface
             if (null === $user = $app['session']->get('user')) {
                 return $app->redirect('/dashboard');
             }
-            $message = "Add User";
-            if (isset($_POST['email'])){
-                $email = $_POST['email'];
-                $password = $_POST['password'];
+            $message = "Add Screen";
+            if (isset($_POST['submit'])){
 
-                $sql = "insert into users (email, password) values (?, ?)";
-                $app['dbs']['points']->executeQuery($sql, array($email, $password));
-                $message = "$email has been added to the tool";
+                $uploaddir = getenv('UPLOAD_PATH');
+                $uploadfile = $uploaddir . basename($_FILES['screen']['name']);
+                $file = $_FILES['screen']['name'];
+                $description = $_POST['description'];
+                $container = $_POST['container'];
+                $order = $_POST['order'];
+
+                echo '<pre>';
+                if (move_uploaded_file($_FILES['screen']['tmp_name'], $uploadfile)) {
+                    $message = "File is valid, and was successfully uploaded.";
+                    $sql = "insert into leaderboard (description, container, image, orderis) values (?, ?, ?, ?)";
+                    $app['dbs']['points']->executeQuery($sql, array($description, $container, $file, $order));
+                    $message = "The Screen has been added to the tool";
+
+                } else {
+                    $message = "Possible file upload attack!";
+                }
+
+
+
+
             }
-
-
-
 
             return $app['twig']->render('addscreen.twig', array('message' => $message, 'user' => $user, 'version' => 'OpenText EW Leaderboard build:' . CustomTraits\ApplicationVersion::get()));
 
 
 
         });
+
 
        $controllers->match('/blacklist', function (Application $app){
                	if(isset($_POST['tweet_id'])){
@@ -199,7 +213,7 @@ class DashboardControllerProvider implements ControllerProviderInterface
             $sql = "select * from leaderboard";
 
             $request = $app['dbs']['points']->fetchAll($sql);
-            return $app['twig']->render('dashboard/leaderboard.twig', array('user' => $user, 'screens' => $request, 'version' => 'OpenText EW Leaderboard build:'. CustomTraits\ApplicationVersion::get()));
+            return $app['twig']->render('dashboard/leaderboard.twig', array('user' => $user, 'path' => getenv('IMAGE_PATH'), 'screens' => $request, 'version' => 'OpenText EW Leaderboard build:'. CustomTraits\ApplicationVersion::get()));
 
         });
 

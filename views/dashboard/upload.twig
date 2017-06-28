@@ -1,0 +1,18 @@
+{% extends "dashboard/dashboard.twig" %}
+
+{% block title %}Main Page{% endblock %}
+{% block head %}
+    {{ parent() }}
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.js"></script>
+{% endblock %}
+{% block content %}
+    <b>{{message}}</b>
+    <form action="" method="post" {{ form_enctype(form) }}>
+        <fieldset>
+            <legend>File Upload</legend>
+            {{ form_widget(form) }}
+        </fieldset>
+        <input type="submit" name="Upload File" />
+    </form>
+
+{% endblock %}

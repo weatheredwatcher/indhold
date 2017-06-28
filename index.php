@@ -12,9 +12,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Debug\ErrorHandler;
+use Symfony\Component\Debug\ExceptionHandler;
 
-//use Symfony\Component\Debug\ErrorHandler;
-//use Symfony\Component\Debug\ExceptionHandler;
 ini_set('display_errors', 0);
 error_reporting(0);
 

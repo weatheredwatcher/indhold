@@ -8,23 +8,58 @@
 {% endblock %}
 {% block content %}
 
-		      <div class="starter-template">
-		        <h1>Add Screen</h1>
+	<div class="container">
+		<div class="row">
+            <h1>{{ message }}</h1>
+			<form enctype="multipart/form-data" class="form-horizontal" action="#" method="post">
+                    <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
+				<fieldset>
 
-						<h2></h2>
-						<div class="wrapper">
-						<form action="#" method="post" name="Login_Form" class="form-signin">
-								<h3 class="form-signin-heading">{{message}}</h3>
-								<hr class="colorgraph"><br>
+					<!-- Text input-->
+					<div class="control-group">
+						<label class="control-label" for="description">Description</label>
+						<div class="controls">
+							<input id="description" name="description" placeholder="Describe your screen" class="input-xlarge" type="text">
 
-								<input type="text" class="form-control" name="email" placeholder="Username" required="" autofocus="" />
-								<input type="password" class="form-control" name="password" placeholder="Password" required=""/>
+					</div>
 
-								<button class="btn btn-lg btn-primary btn-block"  name="Submit" value="submit" type="Submit">Add</button>
-						</form>
+					<!-- Textarea -->
+					<div class="control-group">
+						<label class="control-label" for="container">container</label>
+						<div class="controls">
+							<textarea id="container" name="container"></textarea>
+						</div>
+					</div>
 
-            </div>
+					<!-- File Button -->
+					<div class="control-group">
+						<label class="control-label" for="screen">Screen</label>
+						<div class="controls">
+							<input id="screen" name="screen" class="input-file" type="file">
+						</div>
+					</div>
 
-		      </div>
+					<!-- Text input-->
+					<div class="control-group">
+						<label class="control-label" for="order">Screen Order</label>
+						<div class="controls">
+							<input id="order" name="order" placeholder="Enter Screen Order" class="input-xlarge" type="text">
+
+						</div>
+					</div>
+
+					<!-- Button -->
+					<div class="control-group">
+						<label class="control-label" for="submit"></label>
+						<div class="controls">
+							<button id="submit" name="submit" class="btn btn-primary">Submit</button>
+						</div>
+					</div>
+
+				</fieldset>
+			</form>
+
+		</div>
+	</div>
 
 {% endblock %}
