@@ -106,7 +106,7 @@ class DashboardControllerProvider implements ControllerProviderInterface
                 return $app->redirect('/dashboard');
             }
             $message = "Add Screen";
-            if (isset($_POST['submit'])){
+            if (isset($_POST['submit'])) {
 
                 $uploaddir = getenv('UPLOAD_PATH');
                 $uploadfile = $uploaddir . basename($_FILES['screen']['name']);
@@ -115,19 +115,12 @@ class DashboardControllerProvider implements ControllerProviderInterface
                 $container = $_POST['container'];
                 $order = $_POST['order'];
 
-                echo '<pre>';
-                if (move_uploaded_file($_FILES['screen']['tmp_name'], $uploadfile)) {
-                    $message = "File is valid, and was successfully uploaded.";
-                    $sql = "insert into leaderboard (description, container, image, orderis) values (?, ?, ?, ?)";
-                    $app['dbs']['points']->executeQuery($sql, array($description, $container, $file, $order));
-                    $message = "The Screen has been added to the tool";
+                move_uploaded_file($_FILES['screen']['tmp_name'], $uploadfile);
+                $message = "Screen Added";
 
-                } else {
-                    $message = "Possible file upload attack!";
-                }
-
-
-
+                $sql = "insert into leaderboard (description, container, image, orderis) values (?, ?, ?, ?)";
+                $app['dbs']['points']->executeQuery($sql, array($description, $container, $file, $order));
+                $message = "The Screen has been added to the tool";
 
             }
 
@@ -209,6 +202,7 @@ class DashboardControllerProvider implements ControllerProviderInterface
                 return $app->redirect('/dashboard');
             }
 
+            $PATH = dirname(__FILE__);
 
             $sql = "select * from leaderboard";
 

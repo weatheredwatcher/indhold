@@ -26,7 +26,17 @@ class LeaderboardControllerProvider implements ControllerProviderInterface
         $controllers->get('/', function (Application $app) {
             return $app['twig']->render('index.html');
         });
-        
+
+        $controllers->get('/dyn', function (Application $app) {
+
+            $sql = "select * from leaderboard";
+
+            $request = $app['dbs']['points']->fetchAll($sql);
+
+            return $app['twig']->render('leaderboard-dyn.twig', array('screens' => $request,));
+        });
+
+
         $controllers->get('/mobile', function() use($app) {
 
           return $app['twig']->render('mobile.twig');
