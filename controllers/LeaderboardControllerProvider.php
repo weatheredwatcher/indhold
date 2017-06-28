@@ -25,14 +25,14 @@ class LeaderboardControllerProvider implements ControllerProviderInterface
 
         $controllers->get('/', function (Application $app) {
 
-            $sql = "select * from leaderboard";
+            $sql = "select * from leaderboard where active=TRUE";
 
             $request = $app['dbs']['points']->fetchAll($sql);
 
             return $app['twig']->render('index.html', array('slides' => $request,));
         });
 
-        
+
         $controllers->get('/mobile', function() use($app) {
 
           return $app['twig']->render('mobile.twig');

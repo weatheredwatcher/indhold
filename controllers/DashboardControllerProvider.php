@@ -211,6 +211,37 @@ class DashboardControllerProvider implements ControllerProviderInterface
 
         });
 
+        $controllers->match('/turn-off', function (Application $app){
+            if(isset($_POST['id'])){
+                $id = $_POST['id'];
+                $sql = "update leaderboard set active=false where id=$id";
+                $app['dbs']['points']->executeQuery($sql);
+
+                $statusCode = 200;
+                $response = array('status' => 'ok', 'code' => $statusCode, 'message' => 'Success');
+                return $app->json((object) $response, $statusCode);
+            }
+
+            return $app->json((object)  array('status' => 'error', 'code' => '200', 'message' => 'Failure'), 200);
+
+        });
+
+        $controllers->match('/turn-on', function (Application $app){
+            if(isset($_POST['id'])){
+                $id = $_POST['id'];
+                $sql = "update leaderboard set active=true where id=$id";
+                $app['dbs']['points']->executeQuery($sql);
+
+                $statusCode = 200;
+                $response = array('status' => 'ok', 'code'=> $statusCode, 'message' => 'Success');
+                return $app->json((object) $response, $statusCode);
+            }
+
+            return $app->json((object)  array('status' => 'error', 'code' => '200', 'message' => 'Failure'), 200);
+
+        });
+
+
 
         return $controllers;
     }
