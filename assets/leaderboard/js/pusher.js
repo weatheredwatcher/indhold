@@ -5,8 +5,9 @@ var pusher = new Pusher('dac400fc0f200416ae79', {
     encrypted: true
 });
 
-var channel = pusher.subscribe('my-channel');
-channel.bind('my-event', function(data) {
-    console.log('refreshing......')
+var channel = pusher.subscribe('otew-channel');
+channel.bind('ot-refresh', function(data) {
+    console.log('Opening can of Coke......');
+    console.log('Ah!............refreshing');
     location.reload();
 });

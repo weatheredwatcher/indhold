@@ -64,30 +64,7 @@ $app->mount('/api', new API\APIControllerProvider());
 
 
 
-$app->get('/pusher', function() use($app) {
 
-
-
-    $options = array(
-        'encrypted' => true
-    );
-    $pusher = new Pusher(
-        'dac400fc0f200416ae79',
-        'ec80fcdbaf62a9a54a1f',
-        '360459',
-        $options
-    );
-
-    $data['message'] = 'hello world';
-    $pusher->trigger('my-channel', 'my-event', $data);
-
-    $statusCode = 200;
-    $response = array('status' => 'ok', 'code' => $statusCode, 'message' => $twitter_points);
-    return $app->json((object) $response, $statusCode);
-
-
-
-});
 
 $app->get('/debug', function() use($app){
 

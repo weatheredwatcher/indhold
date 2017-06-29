@@ -16,7 +16,7 @@ namespace API;
 use Silex\Application;
 use Silex\Api\ControllerProviderInterface;
 use Doctrine\DBAL\DBALException;
-
+use Pusher;
 class APIControllerProvider implements ControllerProviderInterface
 {
     public function connect(Application $app)
@@ -262,6 +262,30 @@ $controllers->get('/get_posts', function() use($app) {
 
     return $app->json($arr);
 });
+
+        $controllers->get('/refresh', function() use($app) {
+
+
+
+            $options = array(
+                'encrypted' => true
+            );
+            $pusher = new Pusher(
+                'dac400fc0f200416ae79',
+                'ec80fcdbaf62a9a54a1f',
+                '360459',
+                $options
+            );
+
+            $data['message'] = 'refreshing!';
+            $pusher->trigger('otew-channel', 'ot-refresh', $data);
+            $statusCode = 200;
+            $response = array('status' => 'ok', 'code' => $statusCode, 'message' => $data);
+            return $app->json((object) $response, $statusCode);
+
+
+
+        });
 
         return $controllers;
     }
