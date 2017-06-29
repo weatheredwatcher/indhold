@@ -1,22 +1,27 @@
-<!DOCTYPE HTML>
-
-<html>
-
+<!DOCTYPE html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Enterprise 2016 Video Wall</title>
+	<title>Pusher Test</title>
+	<script src="https://js.pusher.com/4.0/pusher.min.js"></script>
+	<script>
 
-	<!-- Scripts -->
-	<script src="/assets/leaderboard/js/jquery-1.9.1.min.js"></script>
+        // Enable pusher logging - don't include this in production
+        Pusher.logToConsole = true;
 
+        var pusher = new Pusher('dac400fc0f200416ae79', {
+            encrypted: true
+        });
+
+        var channel = pusher.subscribe('my-channel');
+        channel.bind('my-event', function(data) {
+            alert(data.message);
+        });
+
+        var channel = pusher.subscribe('ot-refresh');
+        channel.bind('my-event', function(data) {
+            alert(data.message);
+        });
+	</script>
 </head>
-
 <body>
-    {% for database in database%}
-{{ database}}
-{% endfor%}
-
+<h1> Hello World!</h1>
 </body>
-
-
-</html>

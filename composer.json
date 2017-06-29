@@ -6,6 +6,17 @@
             "email": "weatheredwatcher@gmail.com"
         }
     ],
+
+    "autoload": {
+        "psr-0": {
+            "Admin": "controllers",
+            "API": "controllers",
+            "Dashboard": "controllers",
+            "Leaderboard": "controllers",
+            "Points": "controllers"
+
+        }
+    },
     "require": {
 
         "parsecsv/php-parsecsv": "0.4.5",
@@ -17,7 +28,8 @@
         "symfony/twig-bridge": "^3.1",
         "symfony/translation": "^3.1",
         "abraham/twitteroauth": "^0.6.4",
-        "vlucas/phpdotenv": "^2.4"
+        "vlucas/phpdotenv": "^2.4",
+        "pusher/pusher-php-server": "^2.6"
     
     }
 }

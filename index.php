@@ -33,18 +33,20 @@ $app = new ewApp(); //Silex\Application();
 require_once __DIR__.'/config/register.php';
 //load the controllers:
 //todo: create logic to loop controllers
+
 require_once __DIR__.'/controllers/LeaderboardControllerProvider.php';
 require_once __DIR__.'/controllers/AdminControllerProvider.php';
 require_once __DIR__.'/controllers/PointsControllerProvider.php';
 require_once __DIR__.'/controllers/APIControllerProvider.php';
 require_once __DIR__.'/controllers/DashboardControllerProvider.php';
-require_once __DIR__.'/config/traits.php';
+require_once __DIR__.'/vendor/pusher/pusher-php-server/lib/Pusher.php';
+
 use Leaderboard;
 use Dashboard;
 use Admin;
 use Points;
 use API;
-use CustomTraits;
+use Pusher;
 
 $app['debug'] = true;  //set to true to turn on debugging, otherwise error messages are user friendly
 
@@ -62,14 +64,34 @@ $app->mount('/api', new API\APIControllerProvider());
 
 
 
-$app->get('/debug', function() use($app) {
-
-  $sw = $app['dbs']['points']->getSchemaManager();
-
-  $databases = $sw->listDatabases();
-  return $app['twig']->render('debug.twig', array('database' => $databases));
+$app->get('/pusher', function() use($app) {
 
 
+
+    $options = array(
+        'encrypted' => true
+    );
+    $pusher = new Pusher(
+        'dac400fc0f200416ae79',
+        'ec80fcdbaf62a9a54a1f',
+        '360459',
+        $options
+    );
+
+    $data['message'] = 'hello world';
+    $pusher->trigger('my-channel', 'my-event', $data);
+
+    $statusCode = 200;
+    $response = array('status' => 'ok', 'code' => $statusCode, 'message' => $twitter_points);
+    return $app->json((object) $response, $statusCode);
+
+
+
+});
+
+$app->get('/debug', function() use($app){
+
+    return $app['twig']->render('debug.twig');
 });
 
 
