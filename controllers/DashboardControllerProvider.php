@@ -108,7 +108,7 @@ class DashboardControllerProvider implements ControllerProviderInterface
             $message = "Add Screen";
             if (isset($_POST['submit'])) {
 
-                $uploaddir = getenv('UPLOAD_PATH');
+                $uploaddir = getenv('IMAGE_PATH');
                 $uploadfile = $uploaddir . basename($_FILES['screen']['name']);
                 $file = $_FILES['screen']['name'];
                 $description = $_POST['description'];
