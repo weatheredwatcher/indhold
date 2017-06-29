@@ -107,7 +107,7 @@ class DashboardControllerProvider implements ControllerProviderInterface
             }
             $message = "Add Screen";
             if (isset($_POST['submit'])) {
-                var_dump(print_r($_FILES, true));
+                
                 $uploaddir = '/uploads/' //getenv('UPLOAD_PATH');
                 $uploadfile = $uploaddir . basename($_FILES['screen']['name']);
                 $file = $_FILES['screen']['name'];
@@ -116,11 +116,11 @@ class DashboardControllerProvider implements ControllerProviderInterface
                 $order = $_POST['order'];
 
                 move_uploaded_file($_FILES['screen']['tmp_name'], $uploadfile);
-                $message = $uploadfile . " Screen Added";
+
 
                 $sql = "insert into leaderboard (description, container, image, orderis) values (?, ?, ?, ?)";
                 $app['dbs']['points']->executeQuery($sql, array($description, $container, $file, $order));
-                $message = "The Screen has been added to the tool";
+                $message = $uploadfile . " Screen Added";
 
             }
 
