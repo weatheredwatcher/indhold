@@ -280,7 +280,35 @@ $controllers->get('/get_posts', function() use($app) {
             $data['message'] = 'refreshing!';
             $pusher->trigger('otew-channel', 'ot-refresh', $data);
             $statusCode = 200;
-            $response = array('status' => 'ok', 'code' => $statusCode, 'message' => $data);
+            $response = array('status' => 'ok', 'code' => $statusCode, $data);
+            return $app->json((object) $response, $statusCode);
+
+
+
+        });
+
+        $controllers->get('/reload', function() use($app) {
+
+            //Sucuri Clear Cache Call.
+
+            $url = "https://waf.sucuri.net/api?k=63429a43b77d84c073662f54d6e179d3&s=8d807ecec1824c867da4510dfbee74af&a=clearcache";
+
+            $headers = array();
+
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL,$url);
+
+            curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+
+            $data['message'] = curl_exec ($ch);
+
+            curl_close ($ch);
+
+
+
+            $statusCode = 200;
+            $response = array('status' => 'ok', 'code' => $statusCode, $data);
             return $app->json((object) $response, $statusCode);
 
 
