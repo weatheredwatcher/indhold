@@ -116,7 +116,7 @@ class DashboardControllerProvider implements ControllerProviderInterface
                 $order = $_POST['order'];
 
                 move_uploaded_file($_FILES['screen']['tmp_name'], $uploadfile);
-                $message = "Screen Added";
+                $message = $uploadfile . " Screen Added";
 
                 $sql = "insert into leaderboard (description, container, image, orderis) values (?, ?, ?, ?)";
                 $app['dbs']['points']->executeQuery($sql, array($description, $container, $file, $order));
