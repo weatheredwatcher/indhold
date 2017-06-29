@@ -277,7 +277,7 @@ $controllers->get('/get_posts', function() use($app) {
                 $options
             );
 
-            $data['message'] = 'refreshing!';
+            $data['message'] = 'Leaderboard is refreshing';
             $pusher->trigger('otew-channel', 'ot-refresh', $data);
             $statusCode = 200;
             $response = array('status' => 'ok', 'code' => $statusCode, $data);

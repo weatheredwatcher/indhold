@@ -1,0 +1,23 @@
+{% extends "dashboard/dashboard.twig" %}
+
+{% block title %}Main Page{% endblock %}
+{% block head %}
+    {{ parent() }}
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <script src="/assets/dashboard/js/admin.js"></script>
+{% endblock %}
+{% block content %}
+    <div class="starter-template">
+        <h1>Site Admin Tasks</h1>
+        <p class="lead">This page is for tasks and options that do not go anywhere else</p>
+    </div>
+
+    <div id="flash"></div>
+
+    <div>
+        <button name="refresh" value="refresh" onClick="refresh()">Refresh</button>
+        <button name="reload" value="reload" onClick="reload()">Reload</button>
+    </div>
+
+    
+{% endblock %}

@@ -29,15 +29,16 @@ class DashboardControllerProvider implements ControllerProviderInterface
 
 	            $email = $_POST['Username'];
 		        $password = $_POST['Password'];
-	            $sql = "SELECT id, password FROM users WHERE email = ? limit 1";
+	            $sql = "SELECT id, password, isAdmin FROM users WHERE email = ? limit 1";
 	            $results = $app['dbs']['points']->executeQuery($sql, array($email));
-
+                //@FIXME: set the query to return the complete user object and pass that as an array into the session instead of creating a new one
+                //@TODO: Abstract the authentication away from the ControllerServiceProvider
 	            $user = $results->fetch();
 	            $passworddb = $user['password'];
 	            $id = $user['id'];
-
+                $isAdmin = $user['isAdmin'];
 		        if($password == $passworddb){
-	                $app['session']->set('user', array('username' => $email, 'id' => $id));
+	                $app['session']->set('user', array('username' => $email, 'id' => $id, 'isAdmin' => $isAdmin));
 	                $app->redirect($_SERVER['HTTP_REFERER']);
                 } //end password check
 
@@ -47,7 +48,7 @@ class DashboardControllerProvider implements ControllerProviderInterface
              return $app['twig']->render('dashboard/login.twig');
            } else {
 
-              return $app['twig']->render('dashboard/main.twig', array('user' => $user, 'version' => 'OpenText EW Leaderboard build:' . CustomTraits\ApplicationVersion::get()));
+              return $app['twig']->render('dashboard/main.twig', array('user' => $user));
            }
 
         });
@@ -70,7 +71,7 @@ class DashboardControllerProvider implements ControllerProviderInterface
                 		    $sql = "select * from users";
                 		   $request = $app['dbs']['points']->fetchAll($sql);
                         error_log(print_r($request, true));
-                       return $app['twig']->render('dashboard/users.twig', array('user' => $user, 'users' => $request, 'version' => 'OpenText EW Leaderboard build:' . CustomTraits\ApplicationVersion::get()));
+                       return $app['twig']->render('dashboard/users.twig', array('user' => $user, 'users' => $request));
 
 
 
@@ -94,7 +95,7 @@ class DashboardControllerProvider implements ControllerProviderInterface
 
 
 
-        return $app['twig']->render('adduser.twig', array('message' => $message, 'user' => $user, 'version' => 'OpenText EW Leaderboard build:' . CustomTraits\ApplicationVersion::get()));
+        return $app['twig']->render('adduser.twig', array('message' => $message, 'user' => $user));
 
 
 
@@ -124,7 +125,7 @@ class DashboardControllerProvider implements ControllerProviderInterface
 
             }
 
-            return $app['twig']->render('addscreen.twig', array('message' => $message, 'user' => $user, 'version' => 'OpenText EW Leaderboard build:' . CustomTraits\ApplicationVersion::get()));
+            return $app['twig']->render('addscreen.twig', array('message' => $message, 'user' => $user));
 
 
 
@@ -175,7 +176,7 @@ class DashboardControllerProvider implements ControllerProviderInterface
               //$sql = "select p.id, p.team, p.points, u.email, p.source, p.timestamp from points p left join users u on u.id=p.audit";
                $request = $app['dbs']['points']->fetchAll($sql);
                 error_log(print_r($request, true));
-               return $app['twig']->render('dashboard/points.twig', array('user' => $user, 'points' => $request, 'version' => 'OpenText EW Leaderboard build:' . CustomTraits\ApplicationVersion::get()));
+               return $app['twig']->render('dashboard/points.twig', array('user' => $user, 'points' => $request));
 
 
 
@@ -192,7 +193,7 @@ class DashboardControllerProvider implements ControllerProviderInterface
                           ->from('tweets', 't')
                           ->leftJoin('t', 'tweet_media', 'm', 't.tweet_id = m.tweet_id');
                $request = $app['dbs']['tweets']->fetchAll($sql);
-               return $app['twig']->render('dashboard/tweets.twig', array('user' => $user, 'tweets' => $request, 'version' => 'OpenText EW Leaderboard build:'. CustomTraits\ApplicationVersion::get()));
+               return $app['twig']->render('dashboard/tweets.twig', array('user' => $user, 'tweets' => $request));
 
         });
 
@@ -207,7 +208,7 @@ class DashboardControllerProvider implements ControllerProviderInterface
             $sql = "select * from leaderboard";
 
             $request = $app['dbs']['points']->fetchAll($sql);
-            return $app['twig']->render('dashboard/leaderboard.twig', array('user' => $user, 'path' => getenv('IMAGE_PATH'), 'screens' => $request, 'version' => 'OpenText EW Leaderboard build:'. CustomTraits\ApplicationVersion::get()));
+            return $app['twig']->render('dashboard/leaderboard.twig', array('user' => $user, 'path' => getenv('IMAGE_PATH'), 'screens' => $request));
 
         });
 
@@ -241,6 +242,16 @@ class DashboardControllerProvider implements ControllerProviderInterface
 
         });
 
+        $controllers->match('/admin', function (Application $app) {
+
+            if (null === $user = $app['session']->get('user')) {
+                return $app->redirect('/dashboard');
+            }
+
+            return $app['twig']->render('dashboard/admin.twig', array('user' => $user));
+
+
+        });
 
 
         return $controllers;
