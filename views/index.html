@@ -31,8 +31,20 @@
 	
 	
 	<!-- Carousel -->
-	<div class="cycle-slideshow" data-cycle-fx="scrollHorz" data-cycle-slides="> div" data-cycle-pager=".pager">	
-		
+	<div class="cycle-slideshow" data-cycle-fx="scrollHorz" data-cycle-slides="> div" data-cycle-pager=".pager">
+
+		<!-- Award Slides -->
+		{% for slide in slides %}
+
+
+		<div class="cycle-slide imgSlide" data-cycle-timeout="7000">
+
+			<img src="/uploads/{{ slide.image }}" alt="" />
+
+		</div>
+
+		{% endfor %}
+		<!-- End Award Slides -->
 		
 		<!-- Social Wall -->
 		<div id="socialWall" class="cycle-slide" data-cycle-timeout="15000">
@@ -135,16 +147,7 @@
 
 			
 		</div>
-		{% for slide in slides %}
 
-
-		<div class="cycle-slide imgSlide" data-cycle-timeout="7000">
-			
-			<img src="/uploads/{{ slide.image }}" alt="" />
-			
-		</div>
-
-		{% endfor %}
 	
 	</div><!-- End overall carousel container -->
 	
