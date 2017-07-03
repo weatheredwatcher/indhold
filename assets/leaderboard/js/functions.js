@@ -134,10 +134,10 @@ $(document).ready(function() {
 	setInterval(function() {
 		reOrderRows();
 		duplicatePointsData();
-		getPosts();
-		getScore();
 
 	}, 5000);
+
+
 
 	/////////////////////////////
 	//SOCIAL WALL
