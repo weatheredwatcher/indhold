@@ -134,6 +134,9 @@ $(document).ready(function() {
 	setInterval(function() {
 		reOrderRows();
 		duplicatePointsData();
+		getPosts();
+		getScore();
+
 	}, 5000);
 
 	/////////////////////////////
@@ -168,8 +171,9 @@ $(document).ready(function() {
 	        hashtag_regexp,
 	        '<span class="hashtag">#$1</a>'
 	    );
-	} 
-	
+	}
+	new
+
 	replaceHashTags();
     ////
     getPosts();
@@ -182,5 +186,7 @@ $(document).ready(function() {
     setInterval(function() {
         $(".points").digits();
     }, 1000);
+
+
 	
 });
