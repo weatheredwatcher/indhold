@@ -123,11 +123,11 @@ class APIControllerProvider implements ControllerProviderInterface
 $controllers->get('/grab-tweets', function() use($app) {
 
 
-        $grey = "SELECT COUNT(tweet_id)*150 as grey FROM `tweets` WHERE `tweet_id` IN (SELECT `tweet_id` FROM `tweet_tags` WHERE `tag` LIKE '%gr%')";
-        $blue = "SELECT COUNT(tweet_id)*150 as blue FROM `tweets` WHERE `tweet_id` IN (SELECT `tweet_id` FROM `tweet_tags` WHERE `tag` LIKE '%bl%')";
-        $teal = "SELECT COUNT(tweet_id)*150 as teal FROM `tweets` WHERE `tweet_id` IN (SELECT `tweet_id` FROM `tweet_tags` WHERE `tag` LIKE '%tl%')";
-        $purple = "SELECT COUNT(tweet_id)*150 as purple FROM `tweets` WHERE `tweet_id` IN (SELECT `tweet_id` FROM `tweet_tags` WHERE `tag` LIKE '%pl%')";
-        $red = "SELECT COUNT(tweet_id)*150 as red FROM `tweets` WHERE `tweet_id` IN (SELECT `tweet_id` FROM `tweet_tags` WHERE `tag` LIKE '%rd%')";
+        $grey = "SELECT COUNT(tweet_id)*150 as grey FROM `tweets` WHERE `tweet_id` IN (SELECT `tweet_id` FROM `tweet_tags` WHERE `tag` LIKE 'gr')";
+        $blue = "SELECT COUNT(tweet_id)*150 as blue FROM `tweets` WHERE `tweet_id` IN (SELECT `tweet_id` FROM `tweet_tags` WHERE `tag` LIKE 'bl')";
+        $teal = "SELECT COUNT(tweet_id)*150 as teal FROM `tweets` WHERE `tweet_id` IN (SELECT `tweet_id` FROM `tweet_tags` WHERE `tag` LIKE 'tl')";
+        $purple = "SELECT COUNT(tweet_id)*150 as purple FROM `tweets` WHERE `tweet_id` IN (SELECT `tweet_id` FROM `tweet_tags` WHERE `tag` LIKE 'pl')";
+        $red = "SELECT COUNT(tweet_id)*150 as red FROM `tweets` WHERE `tweet_id` IN (SELECT `tweet_id` FROM `tweet_tags` WHERE `tag` LIKE 'rd')";
 
         //$mysqli = new mysqli('localhost', 'root', '', 'otewadmi_tweets');
       //  $mysqli = new mysqli('localhost', 'weatheredwatcher', 'password', 'otew_tweets');
