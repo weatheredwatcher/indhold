@@ -1,8 +1,25 @@
 $(document).ready(function() {	
 	
-	/////////////////////////////
-	//Carousel
-	/////////////////////////////
+	//INITIALIZE
+	
+	//get posts for social wall
+	getPosts();
+	
+	//get scores for leaderboards
+    getScore();
+	
+	//duplicate scores from data attribute and populate div
+	duplicatePointsData();
+	
+	//order rows with highest scores at top
+	reOrderRows();
+	
+	//Takes the scores and adds comma separators
+	$(".points").digits();
+	
+	
+	
+	//KEYBOARD NAVIGATION
 
 	//keyboard functions for testing
 	$(document).keyup(function (e) {
@@ -19,25 +36,23 @@ $(document).ready(function() {
 	});
 	    
 	
-	/////////////////////////////
-	//LEADERBOARDS
-	/////////////////////////////
+	// Dave Can we add these functions as a call back to your getScore(); function to execute when complete?
+	// reOrderRows();
+	// duplicatePointsData();
+	// $(".points").digits();
 	
+
+	//FUNCTIONS
 	
 	//Add commas to numbers
 	$.fn.digits = function(){ 
 	    return this.each(function(){ 
 	        $(this).text( $(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") ); 
 	    })
-	}
-	//run this function when points get added
-	$(".points").digits();
+	}	
 	
-	
-	
-	
-	/* Move data attribute into points div */
-	
+
+	// Move data attribute into points div
 	function duplicatePointsData() {
 		$('.row').each(function() {
 			var pointValue = $(this).attr('data-points');
@@ -46,6 +61,7 @@ $(document).ready(function() {
 		});
 	}
 	
+	// Reordder the rows with highest scores at top
 	function reOrderRows() {
 		// define variables
 		var overallTeam = $("#overallTeam .rows .row");
@@ -126,22 +142,10 @@ $(document).ready(function() {
 		
 	}
 
-	//First Run
-	duplicatePointsData();
-	reOrderRows();
-	
-	//Functions to loop to update scores
-	setInterval(function() {
-		reOrderRows();
-		duplicatePointsData();
-
-	}, 5000);
 
 
-
-	/////////////////////////////
 	//SOCIAL WALL
-	/////////////////////////////
+	
 	function initSocialWall() {
         $('#socialWallContainer').isotope({
             getSortData: {
@@ -173,20 +177,41 @@ $(document).ready(function() {
 	    );
 	}
 	new
-
 	replaceHashTags();
-    ////
-    getPosts();
-    getScore();
+   
 
     setTimeout(function() {
         initSocialWall();
     }, 8000);
 
-    setInterval(function() {
-        $(".points").digits();
-    }, 1000);
-
-
+    
+    
+    //Function to trigger based on slide
+    $('.cycle-slideshow').on('cycle-after', function() {
+	    
+	    //get current slide
+	    var currentSlide = $('.cycle-slideshow').data("cycle.opts").currSlide;
+	    //leaderboards starts on slide 0
+	    var firstLeaderboard = 0;
+	    //social wall is slide 7
+	    var socialWall = 7;
+	    
+	    
+	    if (currentSlide == firstLeaderboard) {
+		    
+		    //get posts while cycling through leaderboards
+		    getPosts();
+		    
+	    } else if (currentSlide == socialWall) {
+		    
+		    //get scores while on social wall
+		    getScore();
+		    
+	    } else {
+		    //do nothing
+	    }
+	    
+	});
+   
 	
 });
