@@ -4,36 +4,42 @@
 <meta charset="UTF-8">
 <meta nAMe="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no">
   
-<title>Enterprise World 2016</title>
+<title>Enterprise World 2017</title>
 
 	<!--Scripts-->
-	<script language="javascript" type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
-	<script language="javascript" type="text/javascript" src="js/velocity.js"></script>
-	<script language="javascript" type="text/javascript" src="js/jquery.onepage-scroll.min.js"></script>
-	<script language="javascript" type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-	<script language="javascript" type="text/javascript" src="js/jquery.cycle2.min.js"></script>
-	<script language="javascript" type="text/javascript" src="js/jquery.cycle2.scrollVert.js"></script>
-	<script language="javascript" type="text/javascript" src="js/jquery.idle-timer.js"></script>
-	<script language="javascript" type="text/javascript" src="js/jquery.cycle2.swipe.min.js"></script>
-	<script language="javascript" type="text/javascript" src="js/jquery-ui.js"></script>
-	<script language="javascript" type="text/javascript" src="js/taphold.js"></script>
-	<script language="javascript" type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
-	<script language="javascript" type="text/javascript" src="js/GALocalStorage.js"></script>
-	<script language="javascript" type="text/javascript" src="js/jquery.storageapi.js"></script>
-	<script language="javascript" type="text/javascript" src="js/taphold.js"></script>
-	<script language="javascript" type="text/javascript" src="js/jquery.mCustomScrollbar.js"></script>
-	<script language="javascript" type="text/javascript" src="js/jquery.color.js"></script>
-	<script language="javascript" type="text/javascript" src="js/mainFunctions.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+	<script type="text/javascript" src="js/velocity.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="js/jquery.cycle2.min.js"></script>
+	<script type="text/javascript" src="js/jquery.cycle2.scrollVert.js"></script>
+	<script type="text/javascript" src="js/jquery.idle-timer.js"></script>
+	<script type="text/javascript" src="js/jquery.cycle2.swipe.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.js"></script>
+	<script type="text/javascript" src="js/taphold.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
+	<script type="text/javascript" src="js/GALocalStorage.js"></script>
+	<script type="text/javascript" src="js/jquery.storageapi.js"></script>
+	<script type="text/javascript" src="js/taphold.js"></script>
+	<script type="text/javascript" src="js/jquery.mCustomScrollbar.js"></script>
+	<script type="text/javascript" src="js/jquery.color.js"></script>
+	<script type="text/javascript" src="js/mainFunctions.js"></script>
 	
 	<!--Stylesheet-->
 	<link rel="stylesheet" href="css/normalize.css" type="text/css" />
 	<link rel="stylesheet" href="css/styles.css" type="text/css" />
 	<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" type="text/css" />
 	
+	<!-- Tyepkit -->
+	<script src="https://use.typekit.net/oae8zyf.js"></script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script>
+	
 </head>
 
-<body>
+<body class="section-home">
 	
+	<img id="backgroundImage" class="blurBg" src="assets/ew-background.png" alt="" />
+	
+	<!-- Modal window -->
 	<div id="modal">
 		<div id="dialog">
 			<h5>Are you still there?</h5>
@@ -42,31 +48,809 @@
 		</div>
 	</div>
 	
+	
 	<!--Fixed Position Header-->
-	<div id="header">
+	<header>
 		
-		<!--Titles for each section-->
-		<div id="sectionHeader" class="cycle-slideshow" data-cycle-fx="scrollVert" data-cycle-slides="h1" data-cycle-speed="200" data-cycle-timeout=0>
-			<h1></h1>
-			<h1>Agenda</h1>
-			<h1>Venue Map</h1>
-			<h1>Enterprise Expo</h1>
-			<h1>Networking</h1>
-			<h1>Social</h1>
-			<h1>The EW Games</h1>
-			<h1>Sponsors</h1>
-		</div>
+		<img src="assets/opentext-ew-logo.png" class="logoHome" id="logo" />
 		
-		<!--Titles for each section--> 
-				
-		<div id="menuButton">
-			<span></span>
-			<span></span>
-			<span></span>
-		</div>
-		
-		<div id="homeButton">
+		<div id="sectionIndicator" class="sectionNames cycle-slideshow" data-cycle-slides="> div" data-cycle-timeout="0" data-cycle-fx="scrollVert" data-cycle-speed="500" data-cycle-paused="true">
 			
+			<div>&nbsp;</div>
+			<div>Agenda</div>
+			<div>Maps</div>
+			<div>Expo</div>
+			<div>Events</div>
+			<div>Social</div>
+			<div>EW Games</div>
+			<div>Sponsors</div>
+			
+		</div>
+		
+	</header>
+	
+	
+	
+	<!--Slide Out menu-->
+	<div id="slideMenu" class="closed">
+		
+		<ul class="mainmenu">
+			<li class="menuItem-agenda" data-id="section-agenda" data-index="1"><div class="notificationContainer notificationBadgeHome"></div><span>Agenda</span></li>
+			<li class="menuItem-maps" data-id="section-maps" data-index="2"><span>Maps</span></li>
+			<li class="menuItem-expo" data-id="section-expo" data-index="3"><span>Expo</span></li>
+			<li class="menuItem-events" data-id="section-events" data-index="4"><span>Events</span></li>
+			<li class="menuItem-social" data-id="section-social" data-index="5"><span>Social</span></li>
+			<li class="menuItem-ewgames" data-id="section-ewgames" data-index="6"><span>EW Games</span></li>
+			<li class="menuItem-sponsors" data-id="section-sponsors" data-index="7"><span>Sponsors</span></li>
+		</ul>
+
+	</div>
+	
+	
+	<div id="mainCarousel" class="sections" data-cycle-slides="> div" data-cycle-timeout="0" data-cycle-fx="fade" data-cycle-speed="500" >	
+		
+		
+		<!-- Slide 1 Container -->
+		<div id="section-home" class="outer currentSection">
+			
+			<div class="inner">
+				
+				<!-- Main Menu -->
+				<ul class="mainmenu">
+					<li class="menuItem-agenda" data-id="section-agenda" data-index="1"><div class="notificationContainer notificationBadgeHome"></div><span>Agenda</span></li>
+					<li class="menuItem-maps" data-id="section-maps" data-index="2"><span>Maps</span></li>
+					<li class="menuItem-expo" data-id="section-expo" data-index="3"><span>Expo</span></li>
+					<li class="menuItem-events" data-id="section-events" data-index="4"><span>Events</span></li>
+					<li class="menuItem-social" data-id="section-social" data-index="5"><span>Social</span></li>
+					<li class="menuItem-ewgames" data-id="section-ewgames" data-index="6"><span>EW Games</span></li>
+					<li class="menuItem-sponsors" data-id="section-sponsors" data-index="7"><span>Sponsors</span></li>
+				</ul>
+				
+			</div>
+			
+		</div>
+		
+		<!-- Slide 2 Container -->
+		<div id="section-agenda" class="outer">
+			
+			<div class="inner">
+				
+				<!-- Agenda Material design tabs -->
+			    <ul class="materialTabs">
+				  <li data-id="0" class="active">Home</li>
+				  <li data-id="1">Overview</li>
+				  <li data-id="2">Updates<div class="notificationContainer notificationBadgeMenu"></div></li>
+				  <li data-id="3">Saturday</li>
+				  <li data-id="4">Sunday</li>
+				  <li data-id="5">Monday</li>
+				  <li data-id="6">Tuesday</li>
+				  <li data-id="7">Wednesday</li>
+				  <li data-id="8">Thursday</li>
+				  <li data-id="9">Innovation Lab</li>
+				  <li data-id="10">Developer Lab</li>
+				  <li class="slider"></li>
+				</ul>
+
+				<hr class="rule">
+				
+				
+				<!-- Agenda Carousel -->
+				<div id="agendaCarousel" class="cycle-slideshow" data-cycle-slides="> div" data-cycle-timeout="0" data-cycle-fx="scrollHorz" data-cycle-speed="500">
+					
+					<!-- Home Carousel -->
+					<div class="noScroll">
+					Home
+					</div>
+					
+					<!-- Overview Carousel -->
+					<div class="noScroll">
+					Overview
+					</div>
+					
+					<!-- Updates Carousel -->
+					<div class="updatesFrame noScroll">
+						
+					</div>
+					
+					<!-- Saturday Carousel -->
+					<div class="">
+					
+						<table class="agendaTable">
+							<tr>
+								<th colspan="3">1:00PM &ndash; 2:50PM</th>
+							</tr>
+							<tr class="agendaRow">
+								<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
+								<td class="agendaCol cloudDescription">Energy and Utilities User Group Session</td>
+								<td class="agendaCol agendaLocation">Ryman Studio D/E</td>
+							</tr>
+							<tr class="agendaRow">
+								<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
+								<td class="agendaCol cloudDescription">Financial Services and Insurance Industry User Group</td>
+								<td class="agendaCol agendaLocation">Ryman Studio M/N/O</td>
+							</tr>
+							<tr class="agendaRow">
+								<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
+								<td class="agendaCol cloudDescription">Life Sciences, Health Science User Group</td>
+								<td class="agendaCol agendaLocation">Ryman Ballroom F</td>
+							</tr>
+							<tr class="agendaRow">
+								<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
+								<td class="agendaCol cloudDescription">Manufacturing, CPG, Metals, HiTech User Group</td>
+								<td class="agendaCol agendaLocation">Ryman Studio L</td>
+							</tr>
+							<tr class="agendaRow">
+								<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
+								<td class="agendaCol cloudDescription">Public Sector User Group</td>
+								<td class="agendaCol agendaLocation">Ryman Studio P/Q/R</td>
+							</tr>
+						</table>
+						
+						<table class="agendaTable">
+							<tr>
+								<th colspan="3">1:00PM &ndash; 2:50PM</th>
+							</tr>
+							<tr class="agendaRow">
+								<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
+								<td class="agendaCol cloudDescription">Energy and Utilities User Group Session</td>
+								<td class="agendaCol agendaLocation">Ryman Studio D/E</td>
+							</tr>
+							<tr class="agendaRow">
+								<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
+								<td class="agendaCol cloudDescription">Financial Services and Insurance Industry User Group</td>
+								<td class="agendaCol agendaLocation">Ryman Studio M/N/O</td>
+							</tr>
+							<tr class="agendaRow">
+								<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
+								<td class="agendaCol cloudDescription">Life Sciences, Health Science User Group</td>
+								<td class="agendaCol agendaLocation">Ryman Ballroom F</td>
+							</tr>
+							<tr class="agendaRow">
+								<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
+								<td class="agendaCol cloudDescription">Manufacturing, CPG, Metals, HiTech User Group</td>
+								<td class="agendaCol agendaLocation">Ryman Studio L</td>
+							</tr>
+							<tr class="agendaRow">
+								<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
+								<td class="agendaCol cloudDescription">Public Sector User Group</td>
+								<td class="agendaCol agendaLocation">Ryman Studio P/Q/R</td>
+							</tr>
+						</table>
+						
+						<table class="agendaTable">
+							<tr>
+								<th colspan="3">1:00PM &ndash; 2:50PM</th>
+							</tr>
+							<tr class="agendaRow">
+								<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
+								<td class="agendaCol cloudDescription">Energy and Utilities User Group Session</td>
+								<td class="agendaCol agendaLocation">Ryman Studio D/E</td>
+							</tr>
+							<tr class="agendaRow">
+								<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
+								<td class="agendaCol cloudDescription">Financial Services and Insurance Industry User Group</td>
+								<td class="agendaCol agendaLocation">Ryman Studio M/N/O</td>
+							</tr>
+							<tr class="agendaRow">
+								<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
+								<td class="agendaCol cloudDescription">Life Sciences, Health Science User Group</td>
+								<td class="agendaCol agendaLocation">Ryman Ballroom F</td>
+							</tr>
+							<tr class="agendaRow">
+								<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
+								<td class="agendaCol cloudDescription">Manufacturing, CPG, Metals, HiTech User Group</td>
+								<td class="agendaCol agendaLocation">Ryman Studio L</td>
+							</tr>
+							<tr class="agendaRow">
+								<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
+								<td class="agendaCol cloudDescription">Public Sector User Group</td>
+								<td class="agendaCol agendaLocation">Ryman Studio P/Q/R</td>
+							</tr>
+						</table>
+						
+						<table class="agendaTable">
+							<tr>
+								<th colspan="3">1:00PM &ndash; 2:50PM</th>
+							</tr>
+							<tr class="agendaRow">
+								<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
+								<td class="agendaCol cloudDescription">Energy and Utilities User Group Session</td>
+								<td class="agendaCol agendaLocation">Ryman Studio D/E</td>
+							</tr>
+							<tr class="agendaRow">
+								<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
+								<td class="agendaCol cloudDescription">Financial Services and Insurance Industry User Group</td>
+								<td class="agendaCol agendaLocation">Ryman Studio M/N/O</td>
+							</tr>
+							<tr class="agendaRow">
+								<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
+								<td class="agendaCol cloudDescription">Life Sciences, Health Science User Group</td>
+								<td class="agendaCol agendaLocation">Ryman Ballroom F</td>
+							</tr>
+							<tr class="agendaRow">
+								<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
+								<td class="agendaCol cloudDescription">Manufacturing, CPG, Metals, HiTech User Group</td>
+								<td class="agendaCol agendaLocation">Ryman Studio L</td>
+							</tr>
+							<tr class="agendaRow">
+								<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
+								<td class="agendaCol cloudDescription">Public Sector User Group</td>
+								<td class="agendaCol agendaLocation">Ryman Studio P/Q/R</td>
+							</tr>
+						</table>
+						
+						<table class="agendaTable">
+							<tr>
+								<th colspan="3">1:00PM &ndash; 2:50PM</th>
+							</tr>
+							<tr class="agendaRow">
+								<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
+								<td class="agendaCol cloudDescription">Energy and Utilities User Group Session</td>
+								<td class="agendaCol agendaLocation">Ryman Studio D/E</td>
+							</tr>
+							<tr class="agendaRow">
+								<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
+								<td class="agendaCol cloudDescription">Financial Services and Insurance Industry User Group</td>
+								<td class="agendaCol agendaLocation">Ryman Studio M/N/O</td>
+							</tr>
+							<tr class="agendaRow">
+								<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
+								<td class="agendaCol cloudDescription">Life Sciences, Health Science User Group</td>
+								<td class="agendaCol agendaLocation">Ryman Ballroom F</td>
+							</tr>
+							<tr class="agendaRow">
+								<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
+								<td class="agendaCol cloudDescription">Manufacturing, CPG, Metals, HiTech User Group</td>
+								<td class="agendaCol agendaLocation">Ryman Studio L</td>
+							</tr>
+							<tr class="agendaRow">
+								<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
+								<td class="agendaCol cloudDescription">Public Sector User Group</td>
+								<td class="agendaCol agendaLocation">Ryman Studio P/Q/R</td>
+							</tr>
+						</table>
+						
+						<table class="agendaTable">
+							<tr>
+								<th colspan="3">1:00PM &ndash; 2:50PM</th>
+							</tr>
+							<tr class="agendaRow">
+								<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
+								<td class="agendaCol cloudDescription">Energy and Utilities User Group Session</td>
+								<td class="agendaCol agendaLocation">Ryman Studio D/E</td>
+							</tr>
+							<tr class="agendaRow">
+								<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
+								<td class="agendaCol cloudDescription">Financial Services and Insurance Industry User Group</td>
+								<td class="agendaCol agendaLocation">Ryman Studio M/N/O</td>
+							</tr>
+							<tr class="agendaRow">
+								<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
+								<td class="agendaCol cloudDescription">Life Sciences, Health Science User Group</td>
+								<td class="agendaCol agendaLocation">Ryman Ballroom F</td>
+							</tr>
+							<tr class="agendaRow">
+								<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
+								<td class="agendaCol cloudDescription">Manufacturing, CPG, Metals, HiTech User Group</td>
+								<td class="agendaCol agendaLocation">Ryman Studio L</td>
+							</tr>
+							<tr class="agendaRow">
+								<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
+								<td class="agendaCol cloudDescription">Public Sector User Group</td>
+								<td class="agendaCol agendaLocation">Ryman Studio P/Q/R</td>
+							</tr>
+						</table>
+					
+					</div>
+					
+					<!-- Sunday Carousel -->
+					<div class="">
+					Sunday
+					</div>
+					
+					<!-- Monday Carousel -->
+					<div class="">
+					Monday
+					</div>
+					
+					<!-- Tuesday Carousel -->
+					<div class="">
+					Tuesday
+					</div>
+					
+					<!-- Wednesdsy Carousel -->
+					<div class="">
+					Wednesday
+					</div>
+					
+					<!-- Thursday Carousel -->
+					<div class="">
+					Thursday
+					</div>
+					
+					<!-- Developer Lab  -->
+					<div class="noScroll">
+					Developer Lab
+					</div>
+					
+					<!-- Innovation Lab  -->
+					<div class="noScroll">
+					Innovation Lab
+					</div>
+										
+				</div><!-- end agenda carousel -->
+				
+				
+			</div><!-- end inner -->
+			
+		</div><!-- end outer agenda -->
+		
+		<!-- Slide 3 Container -->
+		<div id="section-maps" class="outer">
+			
+			<div class="inner">
+				
+				<!-- You Are Here Marker -->	
+				<div id="youAreHere">
+					<span class="message">You are here</span>
+					<svg height="60" width="60">
+						<g>                 
+						    <circle cx="28" cy="28" r="28" fill="none" stroke="#D92A32" stroke-width="3" stroke-opacity="1.0">
+						        <animate attributeType="xml" attributeNAMe="r" from="0" to="28" dur="2s" repeatCount="indefinite" />  
+						        <animate attributeType="xml" attributeNAMe="stroke-opacity" from="1.0" to="0" dur="2s" repeatCount="indefinite" />  
+						    </circle>
+						    
+						    <circle cx="28" cy="28" r="28" fill="none" stroke="#D92A32" stroke-width="3" stroke-opacity="1.0">
+						        <animate attributeType="xml" attributeNAMe="r" from="0" to="28" dur="2s" begin="0.5s" repeatCount="indefinite" />  
+						        <animate attributeType="xml" attributeNAMe="stroke-opacity" from="1.0" to="0" dur="2s" begin="0.5s" repeatCount="indefinite" />  
+						    </circle>
+						    
+						    <circle cx="28" cy="28" r="28" fill="none" stroke="#D92A32" stroke-width="3" stroke-opacity="1.0">
+						        <animate attributeType="xml" attributeNAMe="r" from="0" to="28" dur="2s" begin="1s" repeatCount="indefinite" />  
+						        <animate attributeType="xml" attributeNAMe="stroke-opacity" from="1.0" to="0" dur="2s" begin="1s" repeatCount="indefinite" />  
+						    </circle>
+						    
+						    <circle cx="28" cy="28" r="5" fill="#D92A32" stroke="#D92A32">
+						    </circle>
+
+						</g>
+					</svg>
+				</div>
+				
+				<!-- Maps Material design tabs -->
+			    <ul class="materialTabs">
+				  <li data-id="0">Level 100</li>
+				  <li data-id="1">Level 200</li>
+				  <li data-id="2">Level 300</li>
+				  <li data-id="3">Level 400</li>
+				  <li data-id="4">Level 500</li>
+				  <li data-id="5">Level 600</li>
+				  <li data-id="6">Level 700</li>
+				  <li data-id="7">Level 800</li>
+				  <li data-id="8">Intercontinental</li>
+				  <li class="slider"></li>
+				</ul>
+
+				<hr class="rule">
+				
+				
+				<!-- Event Carousel -->
+				<div id="mapsCarousel" class="cycle-slideshow overlay" data-cycle-slides="> div" data-cycle-timeout="0" data-cycle-fx="scrollHorz" data-cycle-speed="500" data-cycle-swipe=true>
+					
+					
+					<!-- Level 100 -->
+					<div id="level100">
+						<h2>Level 100 <span>/</span> North building</h2>
+						<img src="assets/level100.png" alt="" />
+					</div>
+					
+					<!-- Level 200 -->
+					<div id="level200">
+						<h2>Level 200 <span>/</span> North building <span>/</span> Street level</h2>
+						<img src="assets/level200.png" alt="" />
+					</div>
+					
+					<!-- Level 300 -->
+					<div id="level300">
+						<h2>Level 300 <span>/</span> North building</h2>
+						<img src="assets/level300.png" alt="" />
+					</div>
+					
+					<!-- Level 400 -->
+					<div id="level400">
+						<h2>Level 400 <span>/</span> South building</h2>
+						<img src="assets/level400.png" alt="" />
+					</div>
+					
+					<!-- Level 500 -->
+					<div id="level500">
+						<h2>Level 500 <span>/</span> South building <span>/</span> Street level</h2>
+						<img src="assets/level500.png" alt="" />
+					</div>
+					
+					<!-- Level 600 -->
+					<div id="level600">
+						<h2>Level 600 <span>/</span> South building</h2>
+						<img src="assets/level600.png" alt="" />
+					</div>
+					
+					<!-- Level 700 -->
+					<div id="level700">
+						<h2>Level 700 <span>/</span> South building</h2>
+						<img src="assets/level700.png" alt="" />
+					</div>
+					
+					<!-- Level 800 -->
+					<div id="level800">
+						<h2>Level 800 <span>/</span> South building</h2>
+						<img src="assets/level800.png" alt="" />
+					</div>
+					
+					<!-- InterCon -->
+					<div id="levelHotel">
+						<h2>Intercontinental Hotel</h2>
+						<img src="assets/intercontential.png" alt="" />
+					</div>
+									
+				</div><!-- end maps carousel -->
+				
+			</div><!-- end inner -->
+
+			
+		</div>
+		
+		<!-- Slide 4 Container -->
+		<div id="section-expo" class="outer">
+			
+			<!-- Slide 1 -->
+			<div class="inner">
+				
+				
+				<!-- Expo booth pane -->
+				<div id="boothFinder">
+					
+					<!-- Expo Material design tabs -->
+				    <ul class="materialTabs">
+					  <li data-id="0">&nbsp;&nbsp;&nbsp;OpenText&nbsp;&nbsp;&nbsp;</li>
+					  <li data-id="1">&nbsp;&nbsp;&nbsp;Partners&nbsp;&nbsp;&nbsp;</li>
+					  <li class="slider"></li>
+					</ul>
+	
+					<hr class="rule">
+					
+					<!-- Lists of booths and pods in a carousel with two slides -->
+					<div id="listCarousel" class="cycle-slideshow" data-cycle-slides="> div" data-cycle-timeout="0" data-cycle-fx="scrollHorz" data-cycle-speed="500" data-cycle-swipe=true>
+						
+						<div id="otPods">
+							<table class="expoList">
+								<tr class="expoRow" data-number="401">
+									<td class="rowName">Simplified Application Development</td>
+								</tr>
+								<tr class="expoRow" data-number="402">
+									<td class="rowName">Case Management</td>
+								</tr>
+								<tr class="expoRow" data-number="412">
+									<td class="rowName">OpenText&trade; Content Suite 16</td>
+								</tr>
+								<tr class="expoRow" data-number="413">
+									<td class="rowName">Information Governance</td>
+								</tr>
+								<tr class="expoRow" data-number="414">
+									<td class="rowName">OpenText&trade; Extended ECM Platform</td>
+								</tr>
+								<tr class="expoRow" data-number="415">
+									<td class="rowName">Desktop and Microsoft&reg; Office 365&trade; Integrations</td>
+								</tr>
+								<tr class="expoRow" data-number="416">
+									<td class="rowName">Industry Solutions</td>
+								</tr>
+								<tr class="expoRow" data-number="201">
+									<td class="rowName">Create and Manage Better Web Experiences</td>
+								</tr>
+								<tr class="expoRow" data-number="202">
+									<td class="rowName">OpenText&trade; Communications Center Release 16: Next Generation CCM</td>
+								</tr>
+								<tr class="expoRow" data-number="303">
+									<td class="rowName">Introducing OpenText&trade; MediaBin and Hub Media</td>
+								</tr>
+								<tr class="expoRow" data-number="304">
+									<td class="rowName">Customer Insights from the Contact Center</td>
+								</tr>
+								<tr class="expoRow" data-number="305">
+									<td class="rowName">Introducing OpenText™ TeamSite 8 and OpenText&trade; Optimost</td>
+								</tr>
+								<tr class="expoRow" data-number="313">
+									<td class="rowName">Secure Information Exchange</td>
+								</tr>
+								<tr class="expoRow" data-number="314">
+									<td class="rowName">Supply Chain Intelligence</td>
+								</tr>
+								<tr class="expoRow" data-number="315">
+									<td class="rowName">Automate Procure to Pay</td>
+								</tr>
+								<tr class="expoRow" data-number="316">
+									<td class="rowName">B2B Integration and Managed Services</td>
+								</tr>
+								<tr class="expoRow" data-number="406">
+									<td class="rowName">Value Engineering &ndash; Transforming Your Digital Strategy</td>
+								</tr>
+								<tr class="expoRow" data-number="411">
+									<td class="rowName">OpenText&trade; Core</td>
+								</tr>
+								<tr class="expoRow" data-number="209">
+									<td class="rowName">eDOCS</td>
+								</tr>
+							</table>
+						</div><!-- 	End OT Pods -->
+						
+						<!-- Partner Pods -->
+						<div id="partnerPods">
+							<table class="expoList">
+								<tr class="expoRow" data-number="204">
+									<td class="rowName">Accenture Interactive</td>
+								</tr>
+								<tr class="expoRow" data-number="301">
+									<td class="rowName">Acheron Technologies</td>
+								</tr>
+								<tr class="expoRow" data-number="203">
+									<td class="rowName">Alitek</td>
+								</tr>
+								<tr class="expoRow" data-number="410">
+									<td class="rowName">AnswerModules</td>
+								</tr>
+								<tr class="expoRow" data-number="310">
+									<td class="rowName">AppTier</td>
+								</tr>
+								<tr class="expoRow" data-number="309">
+									<td class="rowName">capSpire</td>
+								</tr>
+								<tr class="expoRow" data-number="216">
+									<td class="rowName">Cassia Content Management</td>
+								</tr>
+								<tr class="expoRow" data-number="302">
+									<td class="rowName">Counterpoint Consulting</td>
+								</tr>
+								<tr class="expoRow" data-number="205">
+									<td class="rowName">EY</td>
+								</tr>
+								<tr class="expoRow" data-number="306">
+									<td class="rowName">Ezescan</td>
+								</tr>
+								<tr class="expoRow" data-number="210">
+									<td class="rowName">Fastman</td>
+								</tr>
+								<tr class="expoRow" data-number="405">
+									<td class="rowName">fme AG</td>
+								</tr>
+								<tr class="expoRow" data-number="207">
+									<td class="rowName">Global Cents</td>
+								</tr>
+								<tr class="expoRow" data-number="212">
+									<td class="rowName">Hybris Software &ndash; An SAP Company</td>
+								</tr>
+								<tr class="expoRow" data-number="308">
+									<td class="rowName">IQ Business Group</td>
+								</tr>
+								<tr class="expoRow" data-number="409">
+									<td class="rowName">KineMatik</td>
+								</tr>
+								<tr class="expoRow" data-number="312">
+									<td class="rowName">Mediawide</td>
+								</tr>
+								<tr class="expoRow" data-number="206">
+									<td class="rowName">OpenText Personalized Help</td>
+								</tr>
+								<tr class="expoRow" data-number="307">
+									<td class="rowName">PleaseTech</td>
+								</tr>
+								<tr class="expoRow" data-number="211">
+									<td class="rowName">ProcessNet</td>
+								</tr>
+								<tr class="expoRow" data-number="417">
+									<td class="rowName">Recommind</td>
+								</tr>
+								<tr class="expoRow" data-number="403">
+									<td class="rowName">Shinydocs</td>
+								</tr>
+								<tr class="expoRow" data-number="215">
+									<td class="rowName">Syntergy</td>
+								</tr>
+								<tr class="expoRow" data-number="208">
+									<td class="rowName">TerraLink</td>
+								</tr>
+								<tr class="expoRow" data-number="404">
+									<td class="rowName">Wertheim Global Solutions</td>
+								</tr>
+							</table>
+						</div><!-- 	End list of partner pods -->
+
+						
+						
+					</div><!-- 	End list carousel -->
+					
+					
+				</div><!-- End booth pane -->
+				
+				
+				<!-- Expo Map Container -->
+				<div id="expoMap" class="overlay">
+					
+					<!-- MARKER -->
+					<div id="marker">
+						<svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+							 viewBox="0 0 32.8 55" style="enable-background:new 0 0 32.8 55;" xml:space="preserve">
+						<style type="text/css">
+							.st0{fill:#D92A32;}
+							.st2{fill:none;stroke:#D92A32;;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+						</style>
+						<circle class="st2" cx="16.4" cy="16.6" r="13" />
+						<circle class="st0" cx="16.4" cy="16.6" r="9.3">
+							<animate attributeType="xml" attributeNAMe="r" from="0" to="9.3" dur="0.5s" repeatCount="indefinite" />  
+							  <animate attributeType="xml" attributeNAMe="fill-opacity" from="1.0" to="0" dur="0.5s" repeatCount="indefinite" />
+						</circle>
+						</svg>
+					</div>
+					
+					
+				</div><!-- End Expo Map Container -->
+				
+				
+			</div>
+			
+		</div>
+		
+		<!-- Slide 5 Container -->
+		<div id="section-events" class="outer">
+			
+			<!-- Slide 1 -->
+			<div class="inner">
+				
+				<!-- Agenda Material design tabs -->
+			    <ul class="materialTabs">
+				  <li data-id="0" class="active">Tuesday Night</li>
+				  <li data-id="1">Wednesday Night</li>
+				  <li data-id="2">Thursday Night</li>
+				  <li class="slider"></li>
+				</ul>
+
+				<hr class="rule">
+				
+				<!-- Event Carousel -->
+				<div id="eventsCarousel" class="cycle-slideshow" data-cycle-slides="> div" data-cycle-timeout="0" data-cycle-fx="scrollHorz" data-cycle-speed="500" data-cycle-swipe=true>
+					
+					<!-- Home Carousel -->
+					<div>
+					Tuesday
+					</div>
+					
+					<!-- Overview Carousel -->
+					<div>
+					Wednesday
+					</div>
+					
+					<!-- Saturday Carousel -->
+					<div>
+					Thursday
+					</div>
+
+										
+				</div><!-- end agenda carousel -->
+				
+				
+			</div>
+			
+		</div>
+		
+		<!-- Slide 6 Container -->
+		<div id="section-social" class="outer">
+			
+			<!-- Slide 1 -->
+			<div class="inner">
+				Social
+			</div>
+			
+		</div>
+		
+		<!-- Slide 7 Container -->
+		<div id="section-ewgames" class="outer">
+			
+			<!-- Slide 1 -->
+			<div class="inner">
+				
+				<!-- EW Games Material design tabs -->
+			    <ul class="materialTabs">
+				  <li data-id="0">Leaderboard</li>
+				  <li data-id="1">Teams</li>
+				  <li data-id="2">How to score</li>
+				  <li data-id="3">Prizes</li>
+				  <li data-id="4">Rules</li>
+				  <li class="slider"></li>
+				</ul>
+
+				<hr class="rule">
+				
+				<div id="ewGamesCarousel" class="cycle-slideshow overlay" data-cycle-slides="> div" data-cycle-timeout="0" data-cycle-fx="scrollHorz" data-cycle-speed="500" data-cycle-swipe=true>
+					
+					<div id="leaderboardFrame">
+						
+					</div>
+					
+					<div>
+						Teams
+					</div>
+					
+					<div>
+						How to score
+					</div>
+					
+					<div>
+						Prizes
+					</div>
+					
+					<div>
+						Rules
+					</div>
+					
+				</div>
+
+				
+			</div>
+			
+		</div>
+		
+		<!-- Slide 8 Container -->
+		<div id="section-sponsors" class="outer">
+			
+			<!-- Slide 1 -->
+			<div class="inner">
+				
+				<!-- Sponsor Material design tabs -->
+			    <ul class="materialTabs">
+				  <li data-id="0" class="active">Diamond</li>
+				  <li data-id="1">Emerald</li>
+				  <li data-id="2">Sapphire</li>
+				  <li data-id="3">Pod</li>
+				  <li data-id="4">Promotional</li>
+				  <li class="slider"></li>
+				</ul>
+				<hr class="rule">
+				
+				<!-- Sponsor Carousel -->
+				<div id="sponsorCarousel" class="cycle-slideshow" data-cycle-timeout="0" data-cycle-fx="scrollHorz" data-cycle-speed="500" data-cycle-swipe=true>
+					
+					<img src="assets/sponsors-diamond.png" alt="" />
+					<img src="assets/sponsors-emerald.png" alt="" />
+					<img src="assets/sponsors-sapphire.png" alt="" />
+					<img src="assets/sponsors-pod.png" alt="" />
+					<img src="assets/sponsors-promotional.png" alt="" />
+										
+				</div><!-- end agenda carousel -->
+				
+				
+				
+			</div>
+			
+		</div>
+		
+		
+		
+		
+	</div>
+	
+	
+	<!-- Footer with menu -->
+	<footer>
+		
+		<!-- Menu Button -->
+			<div id="menuButton">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		
+		<!-- Home Button -->
+		<div id="homeButton">
+
 			<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 				 viewBox="0 0 52 52" style="enable-background:new 0 0 52 52;" xml:space="preserve">
 			<style type="text/css">
@@ -75,2369 +859,12 @@
 			</style>
 			<polygon class="st1" points="29.2,39.1 29.2,32.7 22.8,32.7 22.8,39.1 16.9,39.1 16.9,26.7 12.2,26.7 26,12.9 39.8,26.7 35.1,26.7 
 				35.1,39.1 "/>
-			</svg>
-
-			
+			</svg>			
 		</div>
 
-	</div>
+		
+	</footer><!-- End Footer -->
 	
-	
-	<!--Slide Out menu-->
-	<div id="slideMenu" class="hide">
-		<ul>
-		<li><a href"#" data-index="1" class="sideMenuHome">Home</a></li>
-		<li><a href"#" data-index="2" class="sideMenuAgenda">Agenda<div class="notificationContainer notificationBadgeMenu"></div></a></li>
-		<li><a href"#" data-index="3" class="sideMenuVenueMap">Venue Map</a></li>
-		<li><a href"#" data-index="4" class="sideMenuEnterpriseExpo">Enterprise Expo</a></li>
-		<li><a href"#" data-index="5" class="sideMenuNetworking">Networking</a></li>
-		<li><a href"#" data-index="6" class="sideMenuSocial">Social</a></li>
-		<li><a href"#" data-index="7" class="sideMenuTeamTweet">The EW Games</a></li>
-		<li><a href"#" data-index="8" class="sideMenuSponsors">Sponsors</a></li>
-		</ul>
-	</div>
-	
-	<!--OTEW2015 Logo-->
-	<div id="ewlogo"><img src="assets/logo-otew2016.svg" border="0" alt="" /></div>
-		
-		
-		<article class="main">
-		
-		
-		<!--Home Section-->	
-		<section id="home" class="page1">
-			<div class="wrapper">
-				
-				<div id="ewtagline">
-				<img src="assets/logo-tagline-sta.svg" border="0" alt="" />
-				</div>
-				
-				<nav>
-				<ul id="homemenu">
-				<li id="homemenu-agenda" class="homescreen-button">			<a href"#" data-index="2"><div id="homemenu-agenda-icon" class="icon"></div><div class="notificationContainer notificationBadgeHome"></div>Agenda</a></li>
-				<li id="homemenu-venuemap" class="homescreen-button">		<a href"#" data-index="3"><div id="homemenu-venuemap-icon" class="icon"></div>		Venue Map</a></li>
-				<li id="homemenu-enterpriseexpo" class="homescreen-button">	<a href"#" data-index="4"><div id="homemenu-enterpriseexpo-icon" class="icon"></div>Enterprise Expo</a></li>
-				<li id="homemenu-networking" class="homescreen-button">		<a href"#" data-index="5"><div id="homemenu-networking-icon" class="icon"></div>	Networking</a></li>
-				<li id="homemenu-social" class="homescreen-button">			<a href"#" data-index="6"><div id="homemenu-social-icon" class="icon"></div>		Social</a></li>
-				<li id="homemenu-teamtweet" class="homescreen-button">		<a href"#" data-index="7"><div id="homemenu-teamtweet-icon" class="icon"></div>		The EW Games</a></li>
-				<li id="homemenu-sponsors" class="homescreen-button">		<a href"#" data-index="8"><div id="homemenu-sponsors-icon" class="icon"></div>		Sponsors</a></li>
-				</ul>
-				</nav>
-				
-			</div>
-		</section>
-		
-		
-		<!--Agenda Section-->	
-		<section id="sectionAgenda" class="page2">
-			<div class="wrapper">
-				
-			<!--Sidebar -->
-			<div class="sidebar">
-				<ul id="agendaMenu" class="subMenu">
-					<li><a href="#" id="agendaHome" data-agenda="0" class="subMenuSelected">Home</a></li>
-					<li><a href="#" id="agendaOverview" data-agenda="1">Overview</a></li>
-					<li><a href="#" id="agendaUpdates" data-agenda="2">Updates<div class="notificationContainer notificationBadgeMenu"></div></a></li>
-					<li><a href="#" id="agendaSaturday" data-agenda="3">Saturday</a></li>
-					<li><a href="#" id="agendaSunday" data-agenda="4">Sunday</a></li>
-					<li><a href="#" id="agendaMonday" data-agenda="5">Monday</a></li>
-					<li><a href="#" id="agendaTuesday" data-agenda="6">Tuesday</a></li>
-					<li><a href="#" id="agendaWednesday" data-agenda="7">Wednesday</a></li>
-					<li><a href="#" id="agendaThursday" data-agenda="8">Thursday</a></li>
-					<li><a href="#" id="agendaInnovationLab" data-agenda="9">Innovation Lab</a></li>
-					<li><a href="#" id="agendaDeveloper" data-agenda="10">Developer Lab</a></li>
-				</ul>
-			</div>
-			
-			<!--Content Area-->
-			<div class="contentContainer col6">
-				
-				<!-- Carousel with divs for scheduling -->
-				
-				<div id="carouselAgenda" class="cycle-slideshow" data-cycle-fx="scrollVert" data-cycle-slides="div.agendaSlide" data-cycle-speed="300" data-cycle-timeout=0>
-					<div class="agendaSlide noScroll">
-						<img src="assets/agenda-home.png" alt="" />
-					</div>
-					
-					<div class="agendaSlide noScroll">
-						<img src="assets/agenda-overview.png" alt="" />
-					</div>
-					
-					<div class="agendaSlide noScroll">
-						<iframe id="updateFrame"></iframe>
-					</div>
-					
-					<!-- Saturday -->
-					<div class="agendaSlide">
-						
-						<table class="agendaTable">
-							<tr>
-								<th colspan="3">Saturday, July 9</th>
-							</tr>
-							<tr class="agendaRow highlightBlue">
-								<td class="agendaCol agendaTime">7:00AM &ndash; 5:00PM</td>
-								<td class="agendaCol agendaDescription">REGISTRATION</td>
-								<td class="agendaCol agendaLocation">Delta Lobby</td>
-							</tr>
-							<tr class="agendaRow">
-								<td class="agendaCol agendaTime">8:00AM &ndash; 9:00AM</td>
-								<td class="agendaCol agendaDescription">TRAINING BREAKFAST</td>
-								<td class="agendaCol agendaLocation">Ryman Exhibit Hall</td>
-							</tr>
-							<tr class="agendaRow">
-								<td class="agendaCol agendaTime">9:00AM &ndash; 12:00PM</td>
-								<td class="agendaCol agendaDescription">TRAINING</td>
-								<td class="agendaCol agendaLocation">As posted</td>
-							</tr>
-							<tr class="agendaRow highlight">
-								<td class="agendaCol agendaTime">12:00PM &ndash; 1:00PM</td>
-								<td class="agendaCol agendaDescription">TRAINING LUNCH</td>
-								<td class="agendaCol agendaLocation">Ryman Exhibit Hall</td>
-							</tr>
-							<tr class="agendaRow">
-								<td class="agendaCol agendaTime">1:00PM &ndash; 5:00PM</td>
-								<td class="agendaCol agendaDescription">TRAINING</td>
-								<td class="agendaCol agendaLocation">As posted</td>
-							</tr>
-						</table>
-
-					</div>
-
-					<!-- Sunday -->
-					<div class="agendaSlide">
-						
-						<table class="agendaTable">
-							<tr>
-								<th colspan="3">Sunday, July 10</th>
-							</tr>
-							<tr class="agendaRow highlightBlue">
-								<td class="agendaCol agendaTime">7:00AM &ndash; 5:00PM</td>
-								<td class="agendaCol agendaDescription">REGISTRATION</td>
-								<td class="agendaCol agendaLocation">Delta Lobby</td>
-							</tr>
-							<tr class="agendaRow">
-								<td class="agendaCol agendaTime">8:00AM &ndash; 9:00AM</td>
-								<td class="agendaCol agendaDescription">TRAINING BREAKFAST</td>
-								<td class="agendaCol agendaLocation">Ryman Exhibit Hall</td>
-							</tr>
-							<tr class="agendaRow">
-								<td class="agendaCol agendaTime">9:00AM &ndash; 12:00PM</td>
-								<td class="agendaCol agendaDescription">TRAINING</td>
-								<td class="agendaCol agendaLocation">As posted</td>
-							</tr>
-							<tr class="agendaRow highlight">
-								<td class="agendaCol agendaTime">12:00PM &ndash; 1:00PM</td>
-								<td class="agendaCol agendaDescription">TRAINING LUNCH</td>
-								<td class="agendaCol agendaLocation">Ryman Exhibit Hall</td>
-							</tr>
-							<tr class="agendaRow">
-								<td class="agendaCol agendaTime">1:00PM &ndash; 5:00PM</td>
-								<td class="agendaCol agendaDescription">TRAINING</td>
-								<td class="agendaCol agendaLocation">As posted</td>
-							</tr>
-							<tr class="agendaRow">
-								<td class="agendaCol agendaTime">1:00PM &ndash; 5:00PM</td>
-								<td class="agendaCol agendaDescription">PARTNER SUMMIT BREAKOUTS</td>
-								<td class="agendaCol agendaLocation">As posted</td>
-							</tr>
-						</table>
-
-					</div>
-					
-					<div class="agendaSlide">
-						
-						<table class="agendaTable">
-							<tr>
-								<th colspan="3">Monday, July 11</th>
-							</tr>
-							<tr class="agendaRow highlightBlue">
-								<td class="agendaCol agendaTime">7:00AM &ndash; 7:00PM</td>
-								<td class="agendaCol agendaDescription">REGISTRATION</td>
-								<td class="agendaCol agendaLocation">Delta Lobby</td>
-							</tr>
-							<tr class="agendaRow highlight">
-								<td class="agendaCol agendaTime">7:30AM &ndash; 8:30AM</td>
-								<td class="agendaCol agendaDescription">PARTNER SUMMIT BREAKFAST</td>
-								<td class="agendaCol agendaLocation">Ryman Exhibit Hall</td>
-							</tr>
-							<tr class="agendaRow highlight">
-								<td class="agendaCol agendaTime">8:00AM &ndash; 9:00AM</td>
-								<td class="agendaCol agendaDescription">TRAINING BREAKFAST</td>
-								<td class="agendaCol agendaLocation">Ryman Exhibit Hall</td>
-							</tr>
-							<tr class="agendaRow">
-								<td class="agendaCol agendaTime">8:30AM &ndash; 10:30AM</td>
-								<td class="agendaCol agendaDescription">PARTNER SUMMIT GENERAL SESSION</td>
-								<td class="agendaCol agendaLocation">Presidential Ballroom</td>
-							</tr>
-							<tr class="agendaRow">
-								<td class="agendaCol agendaTime">9:00AM &ndash; 12:00PM</td>
-								<td class="agendaCol agendaDescription">TRAINING</td>
-								<td class="agendaCol agendaLocation">As posted</td>
-							</tr>
-							<tr class="agendaRow">
-								<td class="agendaCol agendaTime">9:00AM &ndash; 5:00PM</td>
-								<td class="agendaCol agendaDescription">INNOVATION LAB</td>
-								<td class="agendaCol agendaLocation">Delta Lobby</td>
-							</tr>
-							<tr class="agendaRow">
-								<td class="agendaCol agendaTime">12:00PM &ndash; 5:00PM</td>
-								<td class="agendaCol agendaDescription">DEVELOPER LAB</td>
-								<td class="agendaCol agendaLocation">Delta Lobby</td>
-							</tr>
-							<tr class="agendaRow highlight">
-								<td class="agendaCol agendaTime">12:00PM &ndash; 1:00PM</td>
-								<td class="agendaCol agendaDescription">TRAINING LUNCH</td>
-								<td class="agendaCol agendaLocation">Ryman Exhibit Hall</td>
-							</tr>
-							<tr class="agendaRow highlight">
-								<td class="agendaCol agendaTime">12:00PM &ndash; 1:00PM</td>
-								<td class="agendaCol agendaDescription">PARTNER SUMMIT LUNCH</td>
-								<td class="agendaCol agendaLocation">Ryman Exhibit Hall</td>
-							</tr>
-							<tr class="agendaRow">
-								<td class="agendaCol agendaTime">1:00PM &ndash; 5:00PM</td>
-								<td class="agendaCol agendaDescription">TRAINING</td>
-								<td class="agendaCol agendaLocation">As posted</td>
-							</tr>
-							<tr class="agendaRow">
-								<td class="agendaCol agendaTime">1:00PM &ndash; 5:00PM</td>
-								<td class="agendaCol agendaDescription">PARTNER SUMMIT BREAKOUTS</td>
-								<td class="agendaCol agendaLocation">As posted</td>
-							</tr>
-							<tr class="agendaRow">
-								<td class="agendaCol agendaTime">6:30PM &ndash; 7:00PM</td>
-								<td class="agendaCol agendaDescription">PARTNER APPRECIATION NIGHT TRANSPORTATION (partners only)</td>
-								<td class="agendaCol agendaLocation">Delta Portico</td>
-							</tr>
-							<tr class="agendaRow highlight">
-								<td class="agendaCol agendaTime">7:00PM &ndash; 10:00PM</td>
-								<td class="agendaCol agendaDescription">PARTNER APPRECIATION NIGHT (partners only)</td>
-								<td class="agendaCol agendaLocation">Wildhorse Saloon</td>
-							</tr>
-						</table>				
-						
-					</div>
-					
-					<div class="agendaSlide">
-						
-						<table class="agendaTable">
-							<tr>
-								<th colspan="3">Tuesday, July 12</th>
-							</tr>
-							<tr class="agendaRow highlightBlue">
-								<td class="agendaCol agendaTime">7:00AM &ndash; 8:00PM</td>
-								<td class="agendaCol agendaDescription">REGISTRATION</td>
-								<td class="agendaCol agendaLocation">Delta Lobby</td>
-							</tr>
-							<tr class="agendaRow highlight">
-								<td class="agendaCol agendaTime">7:30AM &ndash; 8:30AM</td>
-								<td class="agendaCol agendaDescription">CONFERENCE BREAKFAST</td>
-								<td class="agendaCol agendaLocation">Ryman Exhibit Hall</td>
-							</tr>
-							<tr class="agendaRow">
-								<td class="agendaCol agendaTime">8:30AM &ndash; 12:00PM</td>
-								<td class="agendaCol agendaDescription">GENERAL SESSION KEYNOTES</td>
-								<td class="agendaCol agendaLocation">Delta Ballroom</td>
-							</tr>
-							<tr class="agendaRow highlight">
-								<td class="agendaCol agendaTime">12:00PM &ndash; 1:00PM</td>
-								<td class="agendaCol agendaDescription">CONFERENCE LUNCH</td>
-								<td class="agendaCol agendaLocation">Ryman Exhibit Hall</td>
-							</tr>
-							<tr class="agendaRow">
-								<td class="agendaCol agendaTime">12:30PM &ndash; 5:30PM</td>
-								<td class="agendaCol agendaDescription">DEVELOPER LAB</td>
-								<td class="agendaCol agendaLocation">Delta Lobby</td>
-							</tr>
-							<tr class="agendaRow">
-								<td class="agendaCol agendaTime">1:00PM &ndash; 5:00PM</td>
-								<td class="agendaCol agendaDescription">INNOVATION LAB</td>
-								<td class="agendaCol agendaLocation">Delta Lobby</td>
-							</tr>
-							<tr class="agendaRow">
-								<td class="agendaCol agendaTime">1:00PM &ndash; 1:50PM</td>
-								<td class="agendaCol agendaDescription">CONFERENCE BREAKOUT SESSIONS AND USER GROUPS</td>
-								<td class="agendaCol agendaLocation">As Posted</td>
-							</tr>
-							<tr class="agendaRow">
-								<td class="agendaCol agendaTime">2:00PM &ndash; 2:50PM</td>
-								<td class="agendaCol agendaDescription">CONFERENCE BREAKOUT SESSIONS AND USER GROUPS</td>
-								<td class="agendaCol agendaLocation">As Posted</td>
-							</tr>
-							<tr class="agendaRow highlight">
-								<td class="agendaCol agendaTime">2:50AM &ndash; 3:20PM</td>
-								<td class="agendaCol agendaDescription">NETWORKING BREAK</td>
-								<td class="agendaCol agendaLocation">Outside Breakout Rooms</td>
-							</tr>
-							<tr class="agendaRow">
-								<td class="agendaCol agendaTime">3:20PM &ndash; 4:10PM</td>
-								<td class="agendaCol agendaDescription">CONFERENCE BREAKOUT SESSIONS</td>
-								<td class="agendaCol agendaLocation">As Posted</td>
-							</tr>
-							<tr class="agendaRow">
-								<td class="agendaCol agendaTime">4:20PM &ndash; 5:10PM</td>
-								<td class="agendaCol agendaDescription">CONFERENCE BREAKOUT SESSIONS</td>
-								<td class="agendaCol agendaLocation">As Posted</td>
-							</tr>
-							<tr class="agendaRow">
-								<td class="agendaCol agendaTime">5:20PM &ndash; 6:10PM</td>
-								<td class="agendaCol agendaDescription">CONFERENCE BREAKOUT SESSIONS</td>
-								<td class="agendaCol agendaLocation">As Posted</td>
-							</tr>
-							<tr class="agendaRow">
-								<td class="agendaCol agendaTime">6:00PM &ndash; 8:00PM</td>
-								<td class="agendaCol agendaDescription">INNOVATION LAB</td>
-								<td class="agendaCol agendaLocation">Delta Lobby</td>
-							</tr>
-							<tr class="agendaRow">
-								<td class="agendaCol agendaTime">6:00PM &ndash; 8:00PM</td>
-								<td class="agendaCol agendaDescription">DEVELOPER LAB</td>
-								<td class="agendaCol agendaLocation">Delta Lobby</td>
-							</tr>
-							<tr class="agendaRow highlight">
-								<td class="agendaCol agendaTime">5:00PM &ndash; 9:00PM</td>
-								<td class="agendaCol agendaDescription">ENTERPRISE WORLD KICKOFF AND WELCOME RECEPTION</td>
-								<td class="agendaCol agendaLocation">Delta Ballroom</td>
-							</tr>
-						</table>
-						
-						<br /><br />
-							
-							<h6>Tuesday Breakouts</h6>
-							
-							<br />
-							
-							<table class="breakoutTable">
-								<tr>
-									<th colspan="2">GENERAL SESSIONS: 8:30AM – 12:00PM, DELTA BALLROOM</th>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol agendaTime">Welcome:</td>
-									<td class="agendaCol agendaBreakoutDescription">
-									<strong>Adam Howatson,</strong><br />
-									OpenText CMO
-									</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol agendaTime">Opening Keynote:</td>
-									<td class="agendaCol agendaBreakoutDescription">
-									<strong>Mark Barrenechea,</strong><br />
-									OpenText CEO & CTO
-									</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol agendaTime">Keynote:</td>
-									<td class="agendaCol agendaBreakoutDescription">
-									<strong>Steve Murphy, </strong><br />
-									OpenText President<br />
-									<strong>Muhi Majzoub, </strong><br />
-									OpenText Executive Vice President of Engineering and Information Technology<br />
-									</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol agendaTime">Guest Speakers:</td>
-									<td class="agendaCol agendaBreakoutDescription">
-										<strong>Col. Chris Hadfield, </strong>Astronaut<br />
-										<strong>Craig Chu, </strong>Chief Information Officer, Asia, Westpac Banking Corporation<br />
-										<strong>Tara Mulrooney, </strong>Chief Technology Officer, Alberta Energy Regulator<br /> 
-										<strong>Tracy Costello, </strong>Chief Information Officer, Insure the Box
-									</td>
-								</tr>
-							</table>
-							
-							<br /><br />
-							
-							<table class="agendaTable">
-								<tr>
-									<th colspan="3">1:00PM &ndash; 1:50PM</th>
-								</tr>
-								<tr class="agendaRow extraPoints">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;" /></td>
-									<td class="agendaCol cloudDescription">ANA-209 Understanding Big Data Analytics</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom A/B</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;" /></td>
-									<td class="agendaCol cloudDescription">APP-300 AppWorks&mdash;An Evolution</td>
-									<td class="agendaCol agendaLocation">Ryman Studio A/B/C</td>
-								</tr>
-							</table>
-							
-							<br /><br />
-							
-							<table class="agendaTable">
-								<tr>
-									<th colspan="3">1:00PM &ndash; 2:50PM</th>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">Energy and Utilities User Group Session</td>
-									<td class="agendaCol agendaLocation">Ryman Studio D/E</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">Financial Services and Insurance Industry User Group</td>
-									<td class="agendaCol agendaLocation">Ryman Studio M/N/O</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">Life Sciences, Health Science User Group</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom F</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">Manufacturing, CPG, Metals, HiTech User Group</td>
-									<td class="agendaCol agendaLocation">Ryman Studio L</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">Public Sector User Group</td>
-									<td class="agendaCol agendaLocation">Ryman Studio P/Q/R</td>
-								</tr>
-							</table>
-							
-							<br /><br />
-							
-							<table class="agendaTable">
-								<tr>
-									<th colspan="3">2:00PM &ndash; 2:50PM</th>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;" /></td>
-									<td class="agendaCol cloudDescription">APP-200 Creating Your Own Mobile Brand</td>
-									<td class="agendaCol agendaLocation">Ryman Studio A/B/C</td>
-								</tr>
-								<tr class="agendaRow extraPoints">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">CLD-200 Enterprise Managed Services in the OpenText Cloud Deep Dive</td>
-									<td class="agendaCol agendaLocation">Ryman Studio A/B</td>
-								</tr>
-							</table>
-							
-							<br /><br />
-							
-							<table class="agendaTable">
-								<tr>
-									<th colspan="3">3:20PM &ndash; 4:10PM</th>
-								</tr>
-								<tr class="agendaRow extraPoints">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">APP-301 AppWorks Developer Tools</td>
-									<td class="agendaCol agendaLocation">Ryman Studio A/B/C</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">EGY-200 Controlled Engineering Records&mdash;From Capital Project Construction to Asset Operations</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom D/E</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">FNS-202 Compliance</td>
-									<td class="agendaCol agendaLocation">Ryman Studio M/N/O</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">LSC-200 Digital Disruption in the Life Sciences: What Lies Ahead?</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom F</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">MFG-200 How Will Digital Disruption Affect Manufacturing?</td>
-									<td class="agendaCol agendaLocation">Ryman Studio L</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">PBS-200 Trains, Planes, and Automobiles&mdash;How EIM Fuels Transport</td>
-									<td class="agendaCol agendaLocation">Ryman Studio P/Q/R</td>
-								</tr>
-							</table>
-							
-							<br /><br />
-							
-							<table class="agendaTable">
-								<tr>
-									<th colspan="3">4:20PM &ndash; 5:10PM</th>
-								</tr>
-								<tr class="agendaRow extraPoints">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">APP-302 Creating Great User Experiences</td>
-									<td class="agendaCol agendaLocation">Ryman Studio A/B/C</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">EGY-201 Allowing Users to Access Data in an Off-line State</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom D/E</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt=""/></td>
-									<td class="agendaCol cloudDescription">FNS-201 Digital Marketing in Insurance and Financial Services</td>
-									<td class="agendaCol agendaLocation">Ryman Studio M/N/O</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">LSC-201 Pharmaceutical Marketing in the Digital Age</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom F</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">MFG-201 Transforming Your Procurement Organization into a Strategic Partner Using BPM</td>
-									<td class="agendaCol agendaLocation">Ryman Studio L</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">PBS-203 Protecting Our People and Their Resources</td>
-									<td class="agendaCol agendaLocation">Ryman Studio P/Q/R</td>
-								</tr>
-							</table>
-							
-							<br /><br />
-							
-							<table class="agendaTable">
-								<tr>
-									<th colspan="3">5:20PM &ndash; 6:10PM</th>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">EGY-202 MFT – From Sneakernet to Courier to MFT: How to Save Your Time and Money</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom D/E</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">FNS-200 Business Networks for Financial Services and Insurance</td>
-									<td class="agendaCol agendaLocation">Ryman Studio M/N/O</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">LSC-202 Emerging Trends in Clinical Quality</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom F</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">MFG-202 - Building Increased Resilience into Global Manufacturing Supply Chains</td>
-									<td class="agendaCol agendaLocation">Ryman Studio L</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt=""/></td>
-									<td class="agendaCol cloudDescription">PBS-201 Streamlining Justice</td>
-									<td class="agendaCol agendaLocation">Ryman Studio P/Q/R</td>
-								</tr>
-							</table>
-						
-					</div>
-					
-					<div class="agendaSlide">
-							
-							<table class="agendaTable">
-								<tr>
-									<th colspan="3">Wednesday, July 13</th>
-								</tr>
-								<tr class="agendaRow highlightBlue">
-									<td class="agendaCol agendaTime">7:00AM &ndash; 7:00PM</td>
-									<td class="agendaCol agendaDescription">REGISTRATION</td>
-									<td class="agendaCol agendaLocation">Delta Lobby</td>
-								</tr>
-								<tr class="agendaRow highlight">
-									<td class="agendaCol agendaTime">7:00AM &ndash; 8:00AM</td>
-									<td class="agendaCol agendaDescription">CONFERENCE BREAKFAST</td>
-									<td class="agendaCol agendaLocation">Ryman Exhibit Hall</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol agendaTime">8:00AM &ndash; 6:00PM</td>
-									<td class="agendaCol agendaDescription">DEVELOPER LAB</td>
-									<td class="agendaCol agendaLocation">Delta Lobby</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol agendaTime">8:00AM &ndash; 6:30PM</td>
-									<td class="agendaCol agendaDescription">INNOVATION LAB</td>
-									<td class="agendaCol agendaLocation">Delta Lobby</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol agendaTime">8:00AM &ndash; 8:50AM</td>
-									<td class="agendaCol agendaDescription">CONFERENCE BREAKOUT SESSIONS</td>
-									<td class="agendaCol agendaLocation">As Posted</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol agendaTime">9:00AM &ndash; 9:50AM</td>
-									<td class="agendaCol agendaDescription">CONFERENCE BREAKOUT SESSIONS</td>
-									<td class="agendaCol agendaLocation">As Posted</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol agendaTime">9:45AM &ndash; 6:00PM</td>
-									<td class="agendaCol agendaDescription">ENTERPRISE EXPO</td>
-									<td class="agendaCol agendaLocation">Delta Ballroom</td>
-								</tr>
-								<tr class="agendaRow highlight">
-									<td class="agendaCol agendaTime">9:50AM &ndash; 10:20AM</td>
-									<td class="agendaCol agendaDescription">NETWORKING BREAK</td>
-									<td class="agendaCol agendaLocation">Delta Lobby</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol agendaTime">10:20AM &ndash; 11:10AM</td>
-									<td class="agendaCol agendaDescription">CONFERENCE BREAKOUT SESSIONS</td>
-									<td class="agendaCol agendaLocation">As Posted</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol agendaTime">11:20AM &ndash; 12:10PM</td>
-									<td class="agendaCol agendaDescription">CONFERENCE BREAKOUT SESSIONS</td>
-									<td class="agendaCol agendaLocation">As Posted</td>
-								</tr>
-								<tr class="agendaRow highlight">
-									<td class="agendaCol agendaTime">12:10PM &ndash; 1:10PM</td>
-									<td class="agendaCol agendaDescription">CONFERENCE LUNCH</td>
-									<td class="agendaCol agendaLocation">Ryman Exhibit Hall</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol agendaTime">1:10PM &ndash; 2:00PM</td>
-									<td class="agendaCol agendaDescription">CONFERENCE BREAKOUT SESSIONS</td>
-									<td class="agendaCol agendaLocation">As Posted</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol agendaTime">2:10PM &ndash; 3:00PM</td>
-									<td class="agendaCol agendaDescription">CONFERENCE BREAKOUT SESSIONS</td>
-									<td class="agendaCol agendaLocation">As Posted</td>
-								</tr>
-								<tr class="agendaRow highlight">
-									<td class="agendaCol agendaTime">3:00PM &ndash; 3:30PM</td>
-									<td class="agendaCol agendaDescription">NETWORKING BREAK</td>
-									<td class="agendaCol agendaLocation">Outside Breakout Rooms</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol agendaTime">3:30PM &ndash; 4:20PM</td>
-									<td class="agendaCol agendaDescription">CONFERENCE BREAKOUT SESSIONS</td>
-									<td class="agendaCol agendaLocation">As Posted</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol agendaTime">4:30PM &ndash; 5:20PM</td>
-									<td class="agendaCol agendaDescription">CONFERENCE BREAKOUT SESSIONS</td>
-									<td class="agendaCol agendaLocation">As Posted</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol agendaTime">5:30PM &ndash; 6:20PM</td>
-									<td class="agendaCol agendaDescription">CONFERENCE BREAKOUT SESSIONS</td>
-									<td class="agendaCol agendaLocation">As Posted</td>
-								</tr>
-							</table>
-								
-								
-							<br /><br />
-							
-							<div style="margin: 20px 0px 20px 20px">
-							<img src="assets/logo-sap.png" alt="" /> <span class="focus">FOCUS TRACK</span>
-							
-							<br /><br /><span class="tagline">Simplify. Run digital.</span>
-							</div>
-							
-							
-							<table class="agendaTable">
-								<tr>
-									<th colspan="3">Wednesday Breakout Session Highlights</th>
-								</tr>
-								<tr class="agendaRow ">
-									<td class="agendaCol agendaTime">8:00AM &ndash; 8:50AM</td>
-									<td class="agendaCol agendaDescription">SAP-113 New Innovations with SAP and OpenText &ndash; Overview and SAP-Track Orientation</td>
-									<td class="agendaCol agendaLocation">Ryman Studio P/Q/R</td>
-								</tr>
-								<tr class="agendaRow ">
-									<td class="agendaCol agendaTime">9:00AM &ndash; 9:50AM</td>
-									<td class="agendaCol agendaDescription">SAP-100 SAP Innovations by OpenText &ndash; Overview and Roadmap</td>
-									<td class="agendaCol agendaLocation">Ryman Studio P/Q/R</td>
-								</tr>
-								<tr class="agendaRow ">
-									<td class="agendaCol agendaTime">10:20AM &ndash; 11:10AM</td>
-									<td class="agendaCol agendaDescription">SAP-109 Digitizing the Enterprise &ndash; Am I Ahead or Behind the Curve?</td>
-									<td class="agendaCol agendaLocation">Ryman Studio P/Q/R</td>
-								</tr>
-								<tr class="agendaRow extraPoints">
-									<td class="agendaCol agendaTime">11:20AM &ndash; 12:10pm</td>
-									<td class="agendaCol agendaDescription">SAP-106 Ready for Digital. Omnichannel Solutions from SAP Hybris and OpenText</td>
-									<td class="agendaCol agendaLocation">Ryman Studio M/N/O</td>
-								</tr>
-								<tr class="agendaRow ">
-									<td class="agendaCol agendaTime">11:20AM &ndash; 12:10pm</td>
-									<td class="agendaCol agendaDescription">SAP-107 Hyper-Automation: Digitalization of Procure to Pay and Order to Cash</td>
-									<td class="agendaCol agendaLocation">Ryman Studio P/Q/R</td>
-								</tr>
-								<tr class="agendaRow ">
-									<td class="agendaCol agendaTime">2:10PM &ndash; 3:00PM</td>
-									<td class="agendaCol agendaDescription">SAP-101 Digitization and Automation of Information Flows &ndash; OpenText Business Center for SAP</td>
-									<td class="agendaCol agendaLocation">Ryman Studio M/N/O</td>
-								</tr>
-								<tr class="agendaRow ">
-									<td class="agendaCol agendaTime">2:10PM &ndash; 3:00PM</td>
-									<td class="agendaCol agendaDescription">SAP-105 Streamlining Critical Manufacturing and Asset Processes with SAP and ECM at FMCTI</td>
-									<td class="agendaCol agendaLocation">Ryman Studio P/Q/R</td>
-								</tr>
-								<tr class="agendaRow ">
-									<td class="agendaCol agendaTime">3:30PM &ndash; 4:20PM</td>
-									<td class="agendaCol agendaDescription">SAP-108 Ready for SAP Fiori. Taking the User Experience to the Next Level.</td>
-									<td class="agendaCol agendaLocation">Ryman Studio P/Q/R</td>
-								</tr>
-								<tr class="agendaRow ">
-									<td class="agendaCol agendaTime">4:30PM &ndash; 5:20PM</td>
-									<td class="agendaCol agendaDescription">SAP-200 OpenText Archive Center Overview and Use Cases</td>
-									<td class="agendaCol agendaLocation">Ryman Studio P/Q/R</td>
-								</tr>
-							</table>
-								
-							
-							<br /><br />
-							
-							<h6>Wednesday Breakouts</h6>
-							
-							<br /><br />
-							
-							<table class="agendaTable">
-								<tr>
-									<th colspan="3">8:00AM &ndash; 8:50AM</th>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">B2B-100 Assess Your B2B Maturity: Are You Leading or Lagging Behind Your Industry Peers?</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom D/E</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">B2B-211 Improving Vendor Compliance and Relationships Through Automated Deductions Management</td>
-									<td class="agendaCol agendaLocation">Ryman Studio D/E</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">BPM-202 Moving Up to Process Suite 16</td>
-									<td class="agendaCol agendaLocation">Ryman Studio L</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">BPM-203 How to Create an Invoice Capture Application in 30 Minutes</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom A/B</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">CEM-207 Fast-Track Sales from Contract to Digital Signature</td>
-									<td class="agendaCol agendaLocation">Ryman Studio M/N/O</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">ECM-203 Product Update: OpenText InfoFusion Platform and Applications</td>
-									<td class="agendaCol agendaLocation">Bayou C</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">ECM-219 How To: Effectively Monitoring Content Suite (and still getting a good night’s sleep)</td>
-									<td class="agendaCol agendaLocation">Ryman Studio A/B/C</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">EDC-101 eDOCS: The Larger Ecosystem</td>
-									<td class="agendaCol agendaLocation">Bayou E</td>
-								</tr>
-								<tr class="agendaRow extraPoints">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">EIM-201 Optimize Your Investment with OpenText Services Programs</td>
-									<td class="agendaCol agendaLocation">Bayou E</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">FAX-200 RightFax Implementation Best Practices</td>
-									<td class="agendaCol agendaLocation">Ryman Studio F/G</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">EIM-102 The H2O of Marketing</td>
-									<td class="agendaCol agendaLocation">Ryman Studio H/I</td>
-								</tr>
-							</table>
-							
-							<br /><br />
-							
-							<table class="agendaTable">
-								<tr>
-									<th colspan="3">8:00AM &ndash; 9:50AM</th>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">ANA-200 Practical Introduction to Analytics Suite</td>
-									<td class="agendaCol agendaLocation">Bayou A/B</td>
-								</tr>
-							</table>
-							
-							<br /><br />
-							
-							<table class="agendaTable">
-								<tr>
-									<th colspan="3">9:00AM &ndash; 9:50AM</th>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">B2B-101 B2B Outsourcing Top 5 Best Practices</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom D/E</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">B2B-212 Get a Handle on Document Exchange: Trends in Connectivity and Communications Protocols</td>
-									<td class="agendaCol agendaLocation">Ryman Studio D/E</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">BPM-100 Process Suite Strategy and Product Direction</td>
-									<td class="agendaCol agendaLocation">Ryman Studio L</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">CEM-208 Developing State of the Art Dynamic Templates for Communications</td>
-									<td class="agendaCol agendaLocation">Ryman Studio M/N/O</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">CEM-303 Going Headless: Using WEM Content in Other Applications</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom A/B</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">CLD-100 OpenText Cloud: Strategy, Offerings and Talk with the Experts</td>
-									<td class="agendaCol agendaLocation">Bayou D</td>
-								</tr>
-								<tr class="agendaRow extraPoints">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">ECM-204 Product Update: New Features and ECM Integration Available with OpenText Core</td>
-									<td class="agendaCol agendaLocation">Bayou C</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">ECM-214 How To: Troubleshoot Performance Issues Affecting Content Suite</td>
-									<td class="agendaCol agendaLocation">Ryman Studio A/B/C</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt=""/></td>
-									<td class="agendaCol cloudDescription">EDC-100 eDOCS Strategy and Product Direction</td>
-									<td class="agendaCol agendaLocation">Bayou E</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">EIM-200 We’re Here for You: How to Work with Customer Support and Resolve Your Issues Sooner</td>
-									<td class="agendaCol agendaLocation">Ryman Studio F/G</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt=""/></td>
-									<td class="agendaCol cloudDescription">FAX-201 Simplify and Save Money: Extend Faxing to the Cloud</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom C/F</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt=""/></td>
-									<td class="agendaCol cloudDescription">EIM-105 Achieve a Higher Level of User Adoption</td>
-									<td class="agendaCol agendaLocation">Ryman Studio H/I</td>
-								</tr>
-							</table>
-							
-							<br /><br />
-							
-							<table class="agendaTable">
-								<tr>
-									<th colspan="3">10:20AM &ndash; 11:10AM</th>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">ANA-105 Analytics: Riding the Next Wave</td>
-									<td class="agendaCol agendaLocation">Bayou D</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">B2B-208 Improve Your Supply Chain Performance with Supplier KPIs</td>
-									<td class="agendaCol agendaLocation">Ryman Studio F/G</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt=""/></td>
-									<td class="agendaCol cloudDescription">B2B-213 Manage Supply Chain Risk with Your Cloud-Based Integration Platform</td>
-									<td class="agendaCol agendaLocation">Ryman Studio D/E</td>
-								</tr>
-								<tr class="agendaRow extraPoints">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">BPM-101 Process Suite: Roadmap and Product Strategy</td>
-									<td class="agendaCol agendaLocation">Ryman Studio L</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">CEM-200 - Upgrade Considerations for Moving to OTMM v16</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom D/E</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">ECM-234 How To: Using Content Analytics to Optimize Information Governance</td>
-									<td class="agendaCol agendaLocation">Ryman Studio A/B/C</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">ECM-235 ECM Meets CRM – Content Management and Document Generation for Salesforce</td>
-									<td class="agendaCol agendaLocation">Ryman Studio M/N/O</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">EDC-200 Folders Centered Around You and How You Work</td>
-									<td class="agendaCol agendaLocation">Bayou E</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">EIM-101 Showrooms and Bargains – The Empowered Customer</td>
-									<td class="agendaCol agendaLocation">Ryman Studio H/I</td>
-								</tr>
-							</table>
-							
-							<br /><br />
-							
-							<table class="agendaTable">
-								<tr>
-									<th colspan="3">10:20AM &ndash; 12:10AM</th>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">ANA-201 Hands-On Workshop: Analyze the Customer</td>
-									<td class="agendaCol agendaLocation">Bayou A/B</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt=""/></td>
-									<td class="agendaCol cloudDescription">ECM-100 ECM Strategy and Product Direction: Re-Thinking ECM for the Digital Enterprise</td>
-									<td class="agendaCol agendaLocation">Bayou C</td>
-								</tr>
-							</table>
-
-							<br /><br />
-							
-							<table class="agendaTable">
-								<tr>
-									<th colspan="3">11:20AM &ndash; 12:10AM</th>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">ANA-305 Customizing OpenText Analytics for SaaS Operation</td>
-									<td class="agendaCol agendaLocation">Bayou D</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">B2B-201 Automate Procure to Pay with OpenText Active Applications</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom C/F</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">B2B-214 How to Digitize 100% of Your Trading Partners and Reduce Onboarding Time by 50%</td>
-									<td class="agendaCol agendaLocation">Ryman Studio D/E</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">CEM-101 Excellence in Customer Service: Marketing’s Secret Weapon</td>
-									<td class="agendaCol agendaLocation">Ryman Studio F/G</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">CEM-300 Best Practices and Tips for Scalable, Secure and Performance-Tuned Platform</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom A/B</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">ECM-300 How To: SDK Best Practices for Content Suite 16</td>
-									<td class="agendaCol agendaLocation">Ryman Studio A/B/C</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt=""/></td>
-									<td class="agendaCol cloudDescription">EDC-201 eDOCS Email Filing: Increase Productivity, Decrease Frustration &ndash; Making Sense of it All</td>
-									<td class="agendaCol agendaLocation">Bayou E</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">FAX-203 Roadmap Roundup: RightFax</td>
-									<td class="agendaCol agendaLocation">Ryman Studio L</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">EIM-100 Digital Transformation: Governance Still Matters</td>
-									<td class="agendaCol agendaLocation">Ryman Studio H/I</td>
-								</tr>
-							</table>
-							
-							<br /><br />
-							
-							<table class="agendaTable">
-								<tr>
-									<th colspan="3">1:10PM &ndash; 2:00PM</th>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">ANA-206 Designing High Performance Reports with iHub</td>
-									<td class="agendaCol agendaLocation">Bayou D</td>
-								</tr>
-								<tr class="agendaRow extraPoints">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt=""/></td>
-									<td class="agendaCol cloudDescription">B2B-105 From Zero to Hero: How MillerCoors Transformed Its Supply Chain</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom C/F</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt=""/></td>
-									<td class="agendaCol cloudDescription">B2B-202 Roadmap Roundup: B2B Managed Services</td>
-									<td class="agendaCol agendaLocation">Ryman Studio D/E</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">BPM-102 Information-Driven Design: A New Approach to Process Management</td>
-									<td class="agendaCol agendaLocation">Ryman Studio F/G</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">CEM-100 CEM Strategy and Product Direction: Designing a Continuous Digital Customer Experience</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom D/E</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">CEM-103 Accelerating Time to Market for Campaigns using OpenText Hub Media and OpenText MediaBin</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom A/B</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt=""/></td>
-									<td class="agendaCol cloudDescription">ECM-201 Product Update: Smart UI &ndash; Content Suite User Interface</td>
-									<td class="agendaCol agendaLocation">Bayou C</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">ECM-216 How To: Best Practices in Deploying Brava! within Content Suite</td>
-									<td class="agendaCol agendaLocation">Ryman Studio A/B/C</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">ECM-236 Product Update and Roadmap: AGA and Extended ECM for SharePoint</td>
-									<td class="agendaCol agendaLocation">Ryman Studio M/N/O</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">ECM-237 Putting the X in ECM &ndash; Extending ECM into Leading Business Applications</td>
-									<td class="agendaCol agendaLocation">Ryman Studio P/Q/R</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt=""/></td>
-									<td class="agendaCol cloudDescription">FAX-204 Using Capture Center to Integrate Faxes into Your Applications</td>
-									<td class="agendaCol agendaLocation">Ryman Studio L</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">ANA-108 Fact-Based Decision Making Using OpenText Analytics and Accenture Snippets Offering</td>
-									<td class="agendaCol agendaLocation">Ryman Studio H/I</td>
-								</tr>
-							</table>
-							
-							<br /><br />
-							
-							<table class="agendaTable">
-								<tr>
-									<th colspan="3">1:10PM &ndash; 3:00PM</th>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">ANA-202 Hands-On Workshop: Drive Engagement with Dashboards</td>
-									<td class="agendaCol agendaLocation">Bayou A/B</td>
-								</tr>
-							</table>
-							
-							<br /><br />
-							
-							<table class="agendaTable">
-								<tr>
-									<th colspan="3">2:10PM &ndash; 3:00PM</th>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">ANA-300 Best Practices: How to Deliver Reports and Dashboards with Analytics Designer</td>
-									<td class="agendaCol agendaLocation">Bayou D</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">B2B-104 Integration for Banks and Corporate Treasury</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom A/B</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">B2B-106 Adopting the Power of 'Marginal Gains' for Improved B2B Integration</td>
-									<td class="agendaCol agendaLocation">Ryman Studio D/E</td>
-								</tr>
-								<tr class="agendaRow extraPoints">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">BPM-213 It’s Time To Take A Low-Code Approach to BPM with Clay Richardson, Forrester Research</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom C/F</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">CEM-201 Strategies for a Sucessful DAM Implementation on a Cloud Platform</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom D/E</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">ECM-227 How To: Customizing the New Content Server User Interface with Perspective Manager</td>
-									<td class="agendaCol agendaLocation">Bayou C</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt=""/></td>
-									<td class="agendaCol cloudDescription">ECM-228 Product Update: OpenText Content Cloud 16</td>
-									<td class="agendaCol agendaLocation">Ryman Studio A/B/C</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">EDC-207 Engie’s Journey to Improved Collaboration with eDOCS</td>
-									<td class="agendaCol agendaLocation">Bayou E</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">FAX-205 Meet the Total RightFax Solution</td>
-									<td class="agendaCol agendaLocation">Ryman Studio L</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">ECM-104 xECM for Salesforce: Expanding the Enterprise Digital Journey</td>
-									<td class="agendaCol agendaLocation">Ryman Studio H/I</td>
-								</tr>
-							</table>
-							
-							<br /><br />
-							
-							<table class="agendaTable">
-								<tr>
-									<th colspan="3">3:30PM &ndash; 4:20PM</th>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">ANA-102 Diving into North Star's Sea of Data with OpenText Analytics</td>
-									<td class="agendaCol agendaLocation">Bayou A/B</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt=""/></td>
-									<td class="agendaCol cloudDescription">ANX-200 How Clinical Laboratories Support Lagging & Leading Edge Customer Technologies</td>
-									<td class="agendaCol agendaLocation">Ryman Studio F/G</td>
-								</tr>
-								<tr class="agendaRow extraPoints">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">B2B-107 Use Business Network Pervasive Integration to Kickstart Your IoT Initiative</td>
-									<td class="agendaCol agendaLocation">Ryman Studio D/E</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">CEM-215 Mining Customer Interactions for Marketing Insights</td>
-									<td class="agendaCol agendaLocation">Ryman Studio A/B/C</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">CEM-302 Web Content, Third Party Content and Navigation on Demand</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom A/B</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">ECM-103 Extended ECM for Oracle EBS &ndash; Roadmap and Innovation</td>
-									<td class="agendaCol agendaLocation">Ryman Studio M/N/O</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt=""/></td>
-									<td class="agendaCol cloudDescription">ECM-202 Product Update: Introducing Connected Workspaces</td>
-									<td class="agendaCol agendaLocation">Bayou C</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">ECM-232 Customer Panel: A Discussion on Upgrading to Content Suite 16</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom D/E</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">EDC-204 Best Practices in Designing your eDOCS DM Architecture</td>
-									<td class="agendaCol agendaLocation">Bayou E</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">FAX-206 OpenText Fax Support: Today and the Future</td>
-									<td class="agendaCol agendaLocation">Ryman Studio L</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">EIM-104 Taxonomy, Metadata, and Governance: The Keys to Successful Adoption</td>
-									<td class="agendaCol agendaLocation">Ryman Studio H/I</td>
-								</tr>
-							</table>
-							
-							<br /><br />
-							
-							<table class="agendaTable">
-								<tr>
-									<th colspan="3">3:30PM &ndash; 5:20PM</th>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">BPM-300 Simplified Application Development with Entity Modeling</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom C/F</td>
-								</tr>
-							</table>
-							
-							<br /><br />
-							
-							<table class="agendaTable">
-								<tr>
-									<th colspan="3">3:30PM &ndash; 5:20PM</th>
-								</tr>
-								<tr class="agendaRow extraPoints">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">ANA-103 Building Enterprise-Wide Applications with OpenText Analytics on Top of SAP HANA</td>
-									<td class="agendaCol agendaLocation">Bayou A/B</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">ANA-203 A Practical Use Case for BDA - Game of Thrones &ndash; Which Character Will Die in Season 7?</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom D/E</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">B2B-206 Active Catalogue and Your Data Synchronization Strategy</td>
-									<td class="agendaCol agendaLocation">Ryman Studio F/G</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">B2B-215 The New Experience: Business Network Customer Support Update</td>
-									<td class="agendaCol agendaLocation">Ryman Studio D/E</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">CEM-104 Use Testing and Personalization to Turn Digital Customer Experiences into Profit and Loyalty</td>
-									<td class="agendaCol agendaLocation">Ryman Studio H/I</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">CEM-301 Media Management &ndash; System Monitoring, Troubleshooting, and Logging</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom A/B</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">ECM-208 Product Update: What’s New in Enterprise Connect and Email Services</td>
-									<td class="agendaCol agendaLocation">Bayou C</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">ECM-215 How To: Best Practices for OTDS Installation and Configuration</td>
-									<td class="agendaCol agendaLocation">Ryman Studio A/B/C</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">ECM-229 How To: Demystifying Auto-Classification</td>
-									<td class="agendaCol agendaLocation">Bayou D</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">EDC-202 Inside Scoop: Popular eDOCS Utilities and Tools from the OpenText Developer Network</td>
-									<td class="agendaCol agendaLocation">Bayou E</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">FAX-207 Roadmap Roundup: OpenText Notifications</td>
-									<td class="agendaCol agendaLocation">Ryman Studio L</td>
-								</tr>
-							</table>
-							
-							<br /><br />
-							
-							<table class="agendaTable">
-								<tr>
-									<th colspan="3">5:30PM &ndash; 6:20PM</th>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">FAX-212 How to Harness the Digital Transformation in Healthcare</td>
-									<td class="agendaCol agendaLocation">Ryman Studio L</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">ANA-101 Creating a 360-Degree View of Your Customers with Big Data Analytics</td>
-									<td class="agendaCol agendaLocation">Ryman Studio L</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">ANA-207 How Dirty is Your Data? Data Cleansing with Big Data Analytics</td>
-									<td class="agendaCol agendaLocation">Bayou A/B</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">B2B-218 Tips and Tricks for Using Active Documents to Improve B2B Visibility</td>
-									<td class="agendaCol agendaLocation">Ryman Studio D/E</td>
-								</tr>
-								<tr class="agendaRow extraPoints">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">CEM-102 Simplifying Digital Experience Management with OpenText TeamSite 8</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom A/B</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">ECM-209 Product Update: What's New in Security Clearance, Records Management, and Physical Objects</td>
-									<td class="agendaCol agendaLocation">Bayou C</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">ECM-220 How To: Technical Insights into OTDS Authentication</td>
-									<td class="agendaCol agendaLocation">Ryman Studio A/B/C</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">EIM-202 How to Measure and Enhance User Adoption</td>
-									<td class="agendaCol agendaLocation">Ryman Studio F/G</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">ECM-102 Getting Ready for Your ECM Implementation</td>
-									<td class="agendaCol agendaLocation">Ryman Studio H/I</td>
-								</tr>
-							</table>
-
-
-					</div>
-					
-					<div class="agendaSlide">
-							
-							<table class="agendaTable">
-								<tr>
-									<th colspan="3">Thursday, July 14</th>
-								</tr>
-								<tr class="agendaRow highlightBlue">
-									<td class="agendaCol agendaTime">7:00AM &ndash; 7:00PM</td>
-									<td class="agendaCol agendaDescription">REGISTRATION</td>
-									<td class="agendaCol agendaLocation">Delta Lobby</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol agendaTime">7:00AM &ndash; 8:00AM</td>
-									<td class="agendaCol agendaDescription">CONFERENCE BREAKFAST</td>
-									<td class="agendaCol agendaLocation">Ryman Exhibit Hall</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol agendaTime">8:00AM &ndash; 5:00PM</td>
-									<td class="agendaCol agendaDescription">DEVELOPER LAB</td>
-									<td class="agendaCol agendaLocation">Delta Lobby</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol agendaTime">8:00AM &ndash; 5:30PM</td>
-									<td class="agendaCol agendaDescription">INNOVATION LAB</td>
-									<td class="agendaCol agendaLocation">Delta Lobby</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol agendaTime">8:00AM &ndash; 8:50AM</td>
-									<td class="agendaCol agendaDescription">CONFERENCE BREAKOUT SESSIONS</td>
-									<td class="agendaCol agendaLocation">As Posted</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol agendaTime">9:00AM &ndash; 9:50AM</td>
-									<td class="agendaCol agendaDescription">CONFERENCE BREAKOUT SESSIONS</td>
-									<td class="agendaCol agendaLocation">As Posted</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol agendaTime">9:45AM &ndash; 6:00PM</td>
-									<td class="agendaCol agendaDescription">ENTERPRISE EXPO</td>
-									<td class="agendaCol agendaLocation">Delta Ballroom</td>
-								</tr>
-								<tr class="agendaRow highlight">
-									<td class="agendaCol agendaTime">9:50AM &ndash; 10:20PM</td>
-									<td class="agendaCol agendaDescription">NETWORKING BREAK</td>
-									<td class="agendaCol agendaLocation">Delta Ballroom</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol agendaTime">10:20AM &ndash; 11:10AM</td>
-									<td class="agendaCol agendaDescription">CONFERENCE BREAKOUT SESSIONS</td>
-									<td class="agendaCol agendaLocation">As Posted</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol agendaTime">11:20AM &ndash; 12:10PM</td>
-									<td class="agendaCol agendaDescription">CONFERENCE BREAKOUT SESSIONS</td>
-									<td class="agendaCol agendaLocation">As Posted</td>
-								</tr>
-								<tr class="agendaRow highlight">
-									<td class="agendaCol agendaTime">12:10AM &ndash; 1:10PM</td>
-									<td class="agendaCol agendaDescription">CONFERENCE LUNCH</td>
-									<td class="agendaCol agendaLocation">Ryman Exhibit Hall</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol agendaTime">1:10PM &ndash; 2:00PM</td>
-									<td class="agendaCol agendaDescription">CONFERENCE BREAKOUT SESSIONS</td>
-									<td class="agendaCol agendaLocation">As Posted</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol agendaTime">2:10PM &ndash; 3:00PM</td>
-									<td class="agendaCol agendaDescription">CONFERENCE BREAKOUT SESSIONS</td>
-									<td class="agendaCol agendaLocation">As Posted</td>
-								</tr>
-								<tr class="agendaRow highlight">
-									<td class="agendaCol agendaTime">3:00PM &ndash; 3:30PM</td>
-									<td class="agendaCol agendaDescription">NETWORKING BREAK</td>
-									<td class="agendaCol agendaLocation">Outside Breakout Rooms</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol agendaTime">3:30PM &ndash; 4:20PM</td>
-									<td class="agendaCol agendaDescription">CONFERENCE BREAKOUT SESSIONS</td>
-									<td class="agendaCol agendaLocation">As Posted</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol agendaTime">4:30PM &ndash; 5:20PM</td>
-									<td class="agendaCol agendaDescription">CONFERENCE BREAKOUT SESSIONS</td>
-									<td class="agendaCol agendaLocation">As Posted</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol agendaTime">4:30PM &ndash; 6:00PM</td>
-									<td class="agendaCol agendaDescription">ENTERPRISE EXPO &ndash; CLOSING RECEPTION</td>
-									<td class="agendaCol agendaLocation">Delta Ballroom</td>
-								</tr>
-								<tr class="agendaRow highlight">
-									<td class="agendaCol agendaTime ">7:00PM &ndash; 9:30PM</td>
-									<td class="agendaCol agendaDescription">OFFSITE EVENT <em>(Show your badge to attend and valid photo ID to attend).</em><br />DOORS OPEN AT 7PM, SHOW STARTS AT 8:00PM</td>
-									<td class="agendaCol agendaLocation">Grand Ole Opry House</td>
-								</tr>
-							</table>
-							
-							<br /><br />
-							
-							<div style="margin: 20px 0px 20px 20px">
-							<img src="assets/logo-sap.png" alt="" /> <span class="focus">FOCUS TRACK</span>
-							
-							<br /><br /><span class="tagline">Simplify. Run digital.</span>
-							</div>
-							
-							
-							<table class="agendaTable">
-								<tr>
-									<th colspan="3">Thursday Breakout Session Highlights</th>
-								</tr>
-								<tr class="agendaRow extraPoints">
-									<td class="agendaCol agendaTime">8:00AM &ndash; 8:50AM</td>
-									<td class="agendaCol agendaDescription">SAP-202 SAP Extended ECM Solution Accelerators in Action at Devon Energy</td>
-									<td class="agendaCol agendaLocation">Ryman Studio P/Q/R</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol agendaTime">9:00AM &ndash; 9:50AM</td>
-									<td class="agendaCol agendaDescription">SAP-112 Business User-Driven Document Generation for Your ECM Platform: Presentation and Demo</td>
-									<td class="agendaCol agendaLocation">Ryman Studio P/Q/R</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol agendaTime">10:20AM &ndash; 11:10AM</td>
-									<td class="agendaCol agendaDescription">SAP-102 Extended ECM for SuccessFactors &ndash; The HR Content Management Platform</td>
-									<td class="agendaCol agendaLocation">Ryman Studio P/Q/R</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol agendaTime">11:20AM &ndash; 12:10pm</td>
-									<td class="agendaCol agendaDescription">SAP-104 Accounts Payable Workflow and Automation: Vendor Invoice Management Implementation and Use</td>
-									<td class="agendaCol agendaLocation">Ryman Studio M/N/O</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol agendaTime">1:00PM &ndash; 2:00pm</td>
-									<td class="agendaCol agendaDescription">SAP-110 Accelerating Digital Transformation in the Public Sector with Extended ECM for Government</td>
-									<td class="agendaCol agendaLocation">Ryman Studio P/Q/R</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol agendaTime">2:10PM &ndash; 3:00PM</td>
-									<td class="agendaCol agendaDescription">SAP-201 Fast-Track Sales from Quote to Signature</td>
-									<td class="agendaCol agendaLocation">Ryman Studio P/Q/R</td>
-								</tr>
-							</table>
-								
-							
-							<br /><br />
-							
-							<h6>Thursday Breakouts</h6>
-							
-							<br /><br />
-							
-				
-							</table>
-							
-							<br /><br />
-							
-							<table class="agendaTable">
-								<tr>
-									<th colspan="3">8:00AM &ndash; 8:50AM</th>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">ANA-208 Introducing Analytics Suite 16</td>
-									<td class="agendaCol agendaLocation">Ryman Studio D/E</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">ANA-301 Behind the Scenes of Election Tracker ’16 &ndash; Electiontracker.us</td>
-									<td class="agendaCol agendaLocation">Ryman Studio A/B/C</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" <2>	</2>/></td>
-									<td class="agendaCol cloudDescription">B2B-102 Simplify and Optimize Your SAP Implementation with B2B Managed Services</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom C/F</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">BPM-207 Global360 and Process Suite 16</td>
-									<td class="agendaCol agendaLocation">Ryman Studio L</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">BPM-208 Metastorm and Process Suite 16</td>
-									<td class="agendaCol agendaLocation">Ryman Studio F/G</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">CEM-202 Leveraging the New Adaptive Media Deliver Features in v16 to Publish Assets to Your WCM</td>
-									<td class="agendaCol agendaLocation">Ryman Studio M/N/O</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">ECM-205 How To: Utilizing ECM to Combat the Top 10 Risks to Information Security and Privacy</td>
-									<td class="agendaCol agendaLocation">Bayou C</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">ECM-210 Product Update: Advances in OpenText Engineering Document Management</td>
-									<td class="agendaCol agendaLocation">Bayou D</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">EDC-203 Getting from Here to There: Best Practices in Upgrading to eDOCS DM 16</td>
-									<td class="agendaCol agendaLocation">Bayou E</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">EIM-203 Implementing an OpenText EIM Center of Excellence</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom D/E</td>
-								</tr>
-							</table>
-							
-							<br /><br />
-							
-							<table class="agendaTable">
-								<tr>
-									<th colspan="3">8:00AM &ndash; 9:50AM</th>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">ECM-301 How To: Extended ECM Platform Developer Workshop</td>
-									<td class="agendaCol agendaLocation">Bayou A/B</td>
-								</tr>
-							</table>
-							
-							<br /><br />
-							
-							<table class="agendaTable">
-								<tr>
-									<th colspan="3">9:00AM &ndash; 9:50AM</th>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">ANA-302 How to Build Wearable Applications with the iHub REST API</td>
-									<td class="agendaCol agendaLocation">Bayou D</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">BPM-210 Process Suite as Your Orchestration Engine</td>
-									<td class="agendaCol agendaLocation">Ryman Studio D/E</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt=""/></td>
-									<td class="agendaCol cloudDescription">CEM-209 Lessons Learned in Communications Center</td>
-									<td class="agendaCol agendaLocation">Ryman Studio M/N/O</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">CEM-210 Creating Custom Widgets and Transformers in Media Management 16</td>
-									<td class="agendaCol agendaLocation">Ryman Studio F/G</td>
-								</tr>
-								<tr class="agendaRow extraPoints">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">CLD-201 Total Cost of Ownership Benefits of the Cloud</td>
-									<td class="agendaCol agendaLocation">Ryman Studio A/B/C</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">ECM-206 How To: Implementing the Information Governance Reference Model (IGRM) with Content Suite</td>
-									<td class="agendaCol agendaLocation">Ryman Studio L</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">ECM-224 How To: Enhancing the Performance and Scalability of Content Server Search and Index</td>
-									<td class="agendaCol agendaLocation">Bayou C</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt=""/></td>
-									<td class="agendaCol cloudDescription">EDC-206 eDOCS Online – Forget Google and Navigate Your Own Way to Success</td>
-									<td class="agendaCol agendaLocation">Bayou E</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt=""/></td>
-									<td class="agendaCol cloudDescription">EIM-204 OpenText and Success Factors: Transforming Talent Management</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom D/E</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">FAX-209 What's New in RightFax 10.6 Feature Pack 3</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom A/B</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">SAP-111 Maximizing the Value of SAP and OpenText</td>
-									<td class="agendaCol agendaLocation">Ryman Studio H/I</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">BPM-216 Success Story with Alberta Energy Regulator: Process Innovation for Strong Strategic Results</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom C/F</td>
-								</tr>
-							</table>
-							
-							<br /><br />
-							
-							<table class="agendaTable">
-								<tr>
-									<th colspan="3">10:20AM &ndash; 11:10AM</th>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">B2B-203 Roadmap Roundup: BizManager B2B Gateway</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom C/F</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">BPM-214 Accelerating Strategic Sourcing Performance with BPM</td>
-									<td class="agendaCol agendaLocation">Ryman Studio L</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">BPM-301 Extending Your Content Suite Capabilities with Process Suite</td>
-									<td class="agendaCol agendaLocation">Ryman Studio D/E</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">CEM-203 Data Gathering Strategies for CCM</td>
-									<td class="agendaCol agendaLocation">Ryman Studio M/N/O</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">CEM-211 Using WEM's New Templating Features</td>
-									<td class="agendaCol agendaLocation">Ryman Studio F/G</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">ECM-222 How To: Using Content Server Smart UI Design Principles to Create a Winning User Experience</td>
-									<td class="agendaCol agendaLocation">Bayou A/B</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">ECM-225 How To: The Distributed Agent Framework Explained</td>
-									<td class="agendaCol agendaLocation">Bayou D</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt=""/></td>
-									<td class="agendaCol cloudDescription">EDC-300 eDOCS API Fundamentals: Get the Lowdown</td>
-									<td class="agendaCol agendaLocation">Bayou E</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">FAX-210 RightFax Database Bootcamp (T-SQL)</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom A/B</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">ECM-101 The Deloitte Digital Toolkit and OpenText Content Server: Accelerating the Digital Journey</td>
-									<td class="agendaCol agendaLocation">Ryman Studio H/I</td>
-								</tr>
-							</table>
-							
-							<br /><br />
-							
-							<table class="agendaTable">
-								<tr>
-									<th colspan="3">10:20AM &ndash; 12:10PM</th>
-								</tr>
-								<tr class="agendaRow extraPoints2">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">ANA-106 Learn How Analytics R16 Adds Value to All OpenText Products!</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom D/E</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">ANA-204 Information Design and Data Visualization Best Practices</td>
-									<td class="agendaCol agendaLocation">Ryman Studio A/B/C</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">ECM-212 How To: Insights from the In-House Upgrade to Content Server 16 at OpenText</td>
-									<td class="agendaCol agendaLocation">Bayou C</td>
-								</tr>
-							</table>
-							
-							<br /><br />
-							
-							<table class="agendaTable">
-								<tr>
-									<th colspan="3">11:20AM &ndash; 12:10PM</th>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">B2B-204 Roadmap Roundup: Trading Grid Messaging Service</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom C/F</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">BPM-209 Process Intelligence and iHub: Visibility into Process Performance</td>
-									<td class="agendaCol agendaLocation">Ryman Studio D/E</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">BPM-212 Advanced Media Orchestration: Process Suite plus Experience Suite</td>
-									<td class="agendaCol agendaLocation">Ryman Studio L</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">CEM-204 Enhance OT Experience Analytics with Custom Insights</td>
-									<td class="agendaCol agendaLocation">Ryman Studio M/N/O</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">CEM-213 Application Integrations for WEM</td>
-									<td class="agendaCol agendaLocation">Ryman Studio F/G</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">ECM-213 Product Update: What’s New in Content Server and Office 365 Online</td>
-									<td class="agendaCol agendaLocation">Bayou A/B</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">ECM-217 How To: Content Server Workflows &dash; Advanced Techniques and Tricks</td>
-									<td class="agendaCol agendaLocation">Bayou D</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">EDC-205 Birds of a Feather: eDOCS Team Panel</td>
-									<td class="agendaCol agendaLocation">Bayou E</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">FAX-211 RightFax Upgrade and Migration Planning: The How-To Strategy for Success</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom A/B</td>
-								</tr>
-								<tr class="agendaRow extraPoints">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">ECM-105 Discover What Matters with Recommind’s Data Analytics</td>
-									<td class="agendaCol agendaLocation">Ryman Studio H/I</td>
-								</tr>
-							</table>
-							
-							<br /><br />
-							
-							<table class="agendaTable">
-								<tr>
-									<th colspan="3">1:10PM &ndash; 2:00PM</th>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">ANA-104 Verizon + OpenText Analytics = Sweet Music!</td>
-									<td class="agendaCol agendaLocation">Ryman Studio M/N/O</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">ANA-107 Accessibility Litigation: The Best Defense is a Good Offense</td>
-									<td class="agendaCol agendaLocation">Bayou D</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">B2B-207 Gain Supply Chain Intelligence with Trading Grid Analytics</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom C/F</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">B2B-217 Optimize Your B2B program with Supplier Information Management</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom H/I</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">BPM-204 Protect and Grow Program &ndash; Your Opportunity to Test Drive Process Suite</td>
-									<td class="agendaCol agendaLocation">Ryman Studio F/G</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">BPM-215 Advanced Case Management</td>
-									<td class="agendaCol agendaLocation">Ryman Studio L</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">CEM-205 Integration of Communications Center with Content Server</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom A/B</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">ECM-211 How To: Creating Solutions for Content Server with Content Intelligence</td>
-									<td class="agendaCol agendaLocation">Bayou C</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">ECM-223 How To: Top Questions You Need to Ask When Upgrading ECM to the Cloud</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom D/E</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">ECM-233 Customer Panel: Real World Stories of Transforming through ECM</td>
-									<td class="agendaCol agendaLocation">Ryman Studio A/B/C</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">FAX-208 RightFax Customer Panel: Peer Best Practice Sharing</td>
-									<td class="agendaCol agendaLocation">Ryman Studio A/B/C</td>
-								</tr>
-							</table>
-							
-							
-							<br /><br />
-							
-							<table class="agendaTable">
-								<tr>
-									<th colspan="3">3:30PM &ndash; 4:20PM</th>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">ANA-303 How to Harness REST API to Build Applications with Big Data Analytics</td>
-									<td class="agendaCol agendaLocation">Ryman Studio D/E</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">B2B-210 How to Comply with the Latest E-Invoicing Mandates in the US, France, Italy… and Globally</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom C/F</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">B2B-219 Using OpenText MFT for Secure, Compliant Large File Transfer</td>
-									<td class="agendaCol agendaLocation">Ryman Studio H/I</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">CEM-206 Communications Center 16 What's New and What's Coming (Roadmap)</td>
-									<td class="agendaCol agendaLocation">Ryman Studio M/N/O</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">CEM-214 Responsive Design and WEM</td>
-									<td class="agendaCol agendaLocation">Ryman Studio P/Q/R</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" /></td>
-									<td class="agendaCol cloudDescription">ECM-218 How To: Explore the Possibilities at the Enterprise Connect Roundtable</td>
-									<td class="agendaCol agendaLocation">Bayou E</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">ECM-221 How To: The Technical Side of Disaster Recovery for Content Suite</td>
-									<td class="agendaCol agendaLocation">Bayou D</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt=""></td>
-									<td class="agendaCol cloudDescription">ECM-231 Product Update: OpenText Certified Solutions for Azure</td>
-									<td class="agendaCol agendaLocation">Bayou C</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">EIM-205 ECM for Engineering Document Management</td>
-									<td class="agendaCol agendaLocation">Ryman Studio A/B/C</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">FAX-214 Configuring RightFax for High Availability, Disaster Recovery and Business Continuity</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom A/B</td>
-								</tr>
-							</table>
-							
-							<br /><br />
-							
-							<table class="agendaTable">
-								<tr>
-									<th colspan="3">3:30PM &ndash; 5:20PM</th>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt="" style="visibility: hidden;"/></td>
-									<td class="agendaCol cloudDescription">ANA-304 API Soup: IDAPI, JSAPI, REST API, IPSE, DEAPI????</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom D/E</td>
-								</tr>
-							</table>
-							
-							<br /><br />
-							
-							<table class="agendaTable">
-								<tr>
-									<th colspan="3">3:30PM &ndash; 5:20PM</th>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt=""/></td>
-									<td class="agendaCol cloudDescription">B2B-209 How to Achieve Global Shipment Visibility in Your Supply Chain</td>
-									<td class="agendaCol agendaLocation">Ryman Ballroom C/F</td>
-								</tr>
-								<tr class="agendaRow">
-									<td class="agendaCol cloudCol"><img src="assets/logo-otcloud.png" alt=""/></td>
-									<td class="agendaCol cloudDescription">CLD-202 Embracing the Cloud in the Public Sector</td>
-									<td class="agendaCol agendaLocation">Ryman Studio A/B/C</td>
-								</tr>
-							</table>
-						
-					</div>
-					
-					<div class="agendaSlide noScroll">
-						<img src="assets/innovation-lab.jpg" alt="" />
-					</div>
-					
-					<div class="agendaSlide noScroll">
-						<img src="assets/developer-lab.jpg" alt="" />
-					</div>
-					
-				</div>	
-				
-			</div>
-				
-			</div>
-		</section>
-		
-		
-		<!--Venue Map Section-->	
-		<section id="sectionVenueMap" class="page3">
-			<div class="wrapper">
-			
-			<!--Sidebar-->
-			<div class="sidebar">
-				
-				<!--Sub Head-->
-				<h2>Gaylord Opryland</h2>
-				<h3>Conference Center</h3>
-				
-				<!--Submenu-->
-				<ul id="venueMapMenu" class="subMenu">
-					<li id="level0">
-						<a href="#" data-map="0" class="subMenuSelected">
-							Level 0
-								<span class="indicatorIcon">
-								<svg height="15" width="15">
-									<g> 
-									<circle cx=“15” cy=“15” r=“15” fill="none" stroke="#ffff00" stroke-width="3" stroke-opacity="1.0">
-								        <animate attributeType="xml" attributeNAMe="r" from="0" to="15" dur="2s" repeatCount="indefinite" />  
-										<animate attributeType="xml" attributeNAMe="stroke-opacity" from="1.0" to="0" dur="2s"  repeatCount="indefinite" />  
-									</circle>
-							    
-									<circle cx=“15” cy=“15” r="5" fill="#ffff00" stroke="#ffff00">
-								    </circle>
-									</g>
-								</svg>
-								</span>
-						</a>
-					</li>
-					<li id="level2">
-						<a href="#" data-map="1">
-							Level 2
-							<span class="levelMarker indicatorIcon" >
-							<svg height="15" width="15">
-								<g> 
-								<circle cx=“15” cy=“15” r=“15” fill="none" stroke="#ffff00" stroke-width="3" stroke-opacity="1.0">
-							        <animate attributeType="xml" attributeNAMe="r" from="0" to="15" dur="2s" repeatCount="indefinite" />  
-									<animate attributeType="xml" attributeNAMe="stroke-opacity" from="1.0" to="0" dur="2s"  repeatCount="indefinite" />  
-								</circle>
-						    
-								<circle cx=“15” cy=“15” r="5" fill="#ffff00" stroke="#ffff00">
-							    </circle>
-								</g>
-							</svg>
-							</span>
-						</a>
-					</li>
-					<li id="levelMPres">
-						<a href="#" data-map="2">
-							Level M
-							<span class="subSubMenu">Presidential <br />& Delta Mezzanine</span>
-							<span class="indicatorIcon">
-							<svg height="15" width="15">
-								<g> 
-								<circle cx=“15” cy=“15” r=“15” fill="none" stroke="#ffff00" stroke-width="3" stroke-opacity="1.0">
-							        <animate attributeType="xml" attributeNAMe="r" from="0" to="15" dur="2s" repeatCount="indefinite" />  
-									<animate attributeType="xml" attributeNAMe="stroke-opacity" from="1.0" to="0" dur="2s"  repeatCount="indefinite" />  
-								</circle>
-						    
-								<circle cx=“15” cy=“15” r="5" fill="#ffff00" stroke="#ffff00">
-							    </circle>
-								</g>
-							</svg>
-							</span>
-						</a>
-					</li>
-					<li id="levelMMag">
-						<a href="#" data-map="3">
-							Level M
-							<span class="subSubMenu">Magnolia Mezzanine</span>
-							<span class="indicatorIcon">
-							<svg height="15" width="15">
-								<g> 
-								<circle cx=“15” cy=“15” r=“15” fill="none" stroke="#ffff00" stroke-width="3" stroke-opacity="1.0">
-							        <animate attributeType="xml" attributeNAMe="r" from="0" to="15" dur="2s" repeatCount="indefinite" />  
-									<animate attributeType="xml" attributeNAMe="stroke-opacity" from="1.0" to="0" dur="2s"  repeatCount="indefinite" />  
-								</circle>
-						    
-								<circle cx=“15” cy=“15” r="5" fill="#ffff00" stroke="#ffff00">
-							    </circle>
-								</g>
-							</svg>
-							</span>
-						</a>
-					</li>
-					<li id="levelAll">
-						<a href="#" data-map="4">
-							All Levels
-							<span class="indicatorIcon">
-							<svg height="15" width="15">
-								<g> 
-								<circle cx=“15” cy=“15” r=“15” fill="none" stroke="#ffff00" stroke-width="3" stroke-opacity="1.0">
-							        <animate attributeType="xml" attributeNAMe="r" from="0" to="15" dur="2s" repeatCount="indefinite" />  
-									<animate attributeType="xml" attributeNAMe="stroke-opacity" from="1.0" to="0" dur="2s"  repeatCount="indefinite" />  
-								</circle>
-						    
-								<circle cx=“15” cy=“15” r="5" fill="#ffff00" stroke="#ffff00">
-							    </circle>
-								</g>
-							</svg>
-							</span>
-						</a>
-					</li>
-				</ul>
-			</div>
-			
-			<!--Content Area-->
-			<div class="contentContainer col6" >
-				<!-- You Are Here Marker -->	
-				<div id="youAreHere">
-					<span class="message">YOU ARE HERE</span>
-					<svg height="60" width="60">
-						<g>                 
-						    <circle cx="28" cy="28" r="28" fill="none" stroke="#ffff00" stroke-width="3" stroke-opacity="1.0">
-						        <animate attributeType="xml" attributeNAMe="r" from="0" to="28" dur="2s" repeatCount="indefinite" />  
-						        <animate attributeType="xml" attributeNAMe="stroke-opacity" from="1.0" to="0" dur="2s" repeatCount="indefinite" />  
-						    </circle>
-						    
-						    <circle cx="28" cy="28" r="28" fill="none" stroke="#ffff00" stroke-width="3" stroke-opacity="1.0">
-						        <animate attributeType="xml" attributeNAMe="r" from="0" to="28" dur="2s" begin="0.5s" repeatCount="indefinite" />  
-						        <animate attributeType="xml" attributeNAMe="stroke-opacity" from="1.0" to="0" dur="2s" begin="0.5s" repeatCount="indefinite" />  
-						    </circle>
-						    
-						    <circle cx="28" cy="28" r="28" fill="none" stroke="#ffff00" stroke-width="3" stroke-opacity="1.0">
-						        <animate attributeType="xml" attributeNAMe="r" from="0" to="28" dur="2s" begin="1s" repeatCount="indefinite" />  
-						        <animate attributeType="xml" attributeNAMe="stroke-opacity" from="1.0" to="0" dur="2s" begin="1s" repeatCount="indefinite" />  
-						    </circle>
-						    
-						    <circle cx="28" cy="28" r="5" fill="#ffff00" stroke="#ffff00">
-						    </circle>
-
-						</g>
-					</svg>
-				</div>
-				
-				<!-- Carousel with different floors -->
-				<div id="carouselVenueMap" class="cycle-slideshow" data-cycle-fx="scrollVert" data-cycle-slides="img" data-cycle-speed="300" data-cycle-timeout=0>
-					<img src="assets/venuemap-level0.png" />
-					<img src="assets/venuemap-level2.png" />
-					<img src="assets/venuemap-levelM-1.png" />
-					<img src="assets/venuemap-levelM-2.png" />
-					<img src="assets/venuemap-all-levels.png" />
-				</div>		
-			</div>
-			
-			</div>
-		</section>
-		
-		
-		<!--Enterprise Expo Section-->	
-		<section id="sectionEnterpriseExpo" class="page4">
-			<div class="wrapper">
-						
-				<!--venue map container -->
-				<div id="expoMap" class="contentContainer col5" >
-				<div id="marker">
-					
-					<svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-						 viewBox="0 0 32.8 55" style="enable-background:new 0 0 32.8 55;" xml:space="preserve">
-					<style type="text/css">
-						.st0{fill:#ffff00;}
-						.st2{fill:none;stroke:#ffff00;;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-					</style>
-					<circle class="st2" cx="16.4" cy="16.6" r="13" />
-					<circle class="st0" cx="16.4" cy="16.6" r="9.3">
-						<animate attributeType="xml" attributeNAMe="r" from="0" to="9.3" dur="1s" repeatCount="indefinite" />  
-						  <animate attributeType="xml" attributeNAMe="fill-opacity" from="1.0" to="0" dur="1s" repeatCount="indefinite" />
-					</circle>
-					
-					</svg>
-					
-				</div>
-				</div>	
-				
-				
-				
-				<!-- Legend -->
-				
-				<div class="sidebarLegend">
-					<h4>Map Legend</h4>
-					<div class="legendContainer">
-						<img src="assets/legend.png" alt="" />
-					</div>
-				</div>
-				
-				
-				
-								<!-- sidebar container LEFT -->
-				<div class="sidebarLeft">
-					<h4>OpenText Pods & Booths</h4>
-					
-					<div id="otPods">
-					<table class="expoList">
-						<tr class="expoRow" data-number="401" data-suite="process">
-							<td class="rowName">Simplified Application Development</td>
-						</tr>
-						<tr class="expoRow" data-number="402" data-suite="process">
-							<td class="rowName">Case Management</td>
-						</tr>
-						<tr class="expoRow" data-number="412" data-suite="content">
-							<td class="rowName">OpenText&trade; Content Suite 16</td>
-						</tr>
-						<tr class="expoRow" data-number="413" data-suite="content">
-							<td class="rowName">Information Governance</td>
-						</tr>
-						<tr class="expoRow" data-number="414" data-suite="content">
-							<td class="rowName">OpenText&trade; Extended ECM Platform</td>
-						</tr>
-						<tr class="expoRow" data-number="415" data-suite="content">
-							<td class="rowName">Desktop and Microsoft&reg; Office 365&trade; Integrations</td>
-						</tr>
-						<tr class="expoRow" data-number="416" data-suite="content">
-							<td class="rowName">Industry Solutions</td>
-						</tr>
-						<tr class="expoRow" data-number="201" data-suite="experience">
-							<td class="rowName">Create and Manage Better Web Experiences</td>
-						</tr>
-						<tr class="expoRow" data-number="202" data-suite="experience">
-							<td class="rowName">OpenText&trade; Communications Center Release 16: Next Generation CCM</td>
-						</tr>
-						<tr class="expoRow" data-number="303" data-suite="experience">
-							<td class="rowName">Introducing OpenText&trade; MediaBin and Hub Media</td>
-						</tr>
-						<tr class="expoRow" data-number="304" data-suite="experience">
-							<td class="rowName">Customer Insights from the Contact Center</td>
-						</tr>
-						<tr class="expoRow" data-number="305" data-suite="experience">
-							<td class="rowName">Introducing OpenText™ TeamSite 8 and OpenText&trade; Optimost</td>
-						</tr>
-						<tr class="expoRow" data-number="313" data-suite="ix">
-							<td class="rowName">Secure Information Exchange</td>
-						</tr>
-						<tr class="expoRow" data-number="314" data-suite="ix">
-							<td class="rowName">Supply Chain Intelligence</td>
-						</tr>
-						<tr class="expoRow" data-number="315" data-suite="ix">
-							<td class="rowName">Automate Procure to Pay</td>
-						</tr>
-						<tr class="expoRow" data-number="316" data-suite="ix">
-							<td class="rowName">B2B Integration and Managed Services</td>
-						</tr>
-						<tr class="expoRow" data-number="406" data-suite="otcorp">
-							<td class="rowName">Value Engineering &ndash; Transforming Your Digital Strategy</td>
-						</tr>
-						<tr class="expoRow" data-number="411" data-suite="otcorp">
-							<td class="rowName">OpenText&trade; Core</td>
-						</tr>
-						<tr class="expoRow" data-number="209" data-suite="otcorp">
-							<td class="rowName">eDOCS</td>
-						</tr>
-					</table>
-					</div>
-					
-					
-				</div>
-				
-				
-				
-				<!-- sidebar container RIGHT -->
-				<div class="sidebarRight">
-					<h4>Partner Pods & Booths</h4>
-					
-					<div id="partnerPods">
-					<table class="expoList">
-						<tr class="expoRow" data-number="204">
-							<td class="rowName">Accenture Interactive</td>
-						</tr>
-						<tr class="expoRow" data-number="301">
-							<td class="rowName">Acheron Technologies</td>
-						</tr>
-						<tr class="expoRow" data-number="203">
-							<td class="rowName">Alitek</td>
-						</tr>
-						<tr class="expoRow" data-number="410">
-							<td class="rowName">AnswerModules</td>
-						</tr>
-						<tr class="expoRow" data-number="310">
-							<td class="rowName">AppTier</td>
-						</tr>
-						<tr class="expoRow" data-number="309">
-							<td class="rowName">capSpire</td>
-						</tr>
-						<tr class="expoRow" data-number="216">
-							<td class="rowName">Cassia Content Management</td>
-						</tr>
-						<tr class="expoRow" data-number="302">
-							<td class="rowName">Counterpoint Consulting</td>
-						</tr>
-						<tr class="expoRow" data-number="205">
-							<td class="rowName">EY</td>
-						</tr>
-						<tr class="expoRow" data-number="306">
-							<td class="rowName">Ezescan</td>
-						</tr>
-						<tr class="expoRow" data-number="210">
-							<td class="rowName">Fastman</td>
-						</tr>
-						<tr class="expoRow" data-number="405">
-							<td class="rowName">fme AG</td>
-						</tr>
-						<tr class="expoRow" data-number="207">
-							<td class="rowName">Global Cents</td>
-						</tr>
-						<tr class="expoRow" data-number="212">
-							<td class="rowName">Hybris Software &ndash; An SAP Company</td>
-						</tr>
-						<tr class="expoRow" data-number="308">
-							<td class="rowName">IQ Business Group</td>
-						</tr>
-						<tr class="expoRow" data-number="409">
-							<td class="rowName">KineMatik</td>
-						</tr>
-						<tr class="expoRow" data-number="312">
-							<td class="rowName">Mediawide</td>
-						</tr>
-						<tr class="expoRow" data-number="206">
-							<td class="rowName">OpenText Personalized Help</td>
-						</tr>
-						<tr class="expoRow" data-number="307">
-							<td class="rowName">PleaseTech</td>
-						</tr>
-						<tr class="expoRow" data-number="211">
-							<td class="rowName">ProcessNet</td>
-						</tr>
-						<tr class="expoRow" data-number="417">
-							<td class="rowName">Recommind</td>
-						</tr>
-						<tr class="expoRow" data-number="403">
-							<td class="rowName">Shinydocs</td>
-						</tr>
-						<tr class="expoRow" data-number="215">
-							<td class="rowName">Syntergy</td>
-						</tr>
-						<tr class="expoRow" data-number="208">
-							<td class="rowName">TerraLink</td>
-						</tr>
-						<tr class="expoRow" data-number="404">
-							<td class="rowName">Wertheim Global Solutions</td>
-						</tr>
-					</table>
-					</div>
-				</div>
-						
-				
-				
-				
-			</div>
-		</section>
-		
-		
-		<!--Enterprise Expo Section-->	
-		<section id="networking" class="page5">
-			<div class="wrapper">
-				<div class="contentContainer col7">
-					<img src="assets/networking.png" alt="" />
-				</div>
-			</div>
-		</section>
-		
-		
-		<!--Social Section-->	
-		<section id="sectionSocial" class="page6">
-			<div class="wrapper">
-				<div class="contentContainer col7">
-					<img src="assets/social.png" alt="" />
-				</div>
-			</div>
-		</section>
-		
-		
-		<!--TeAM Tweet Section-->	
-		<section id="sectionTeAMTweet" class="page6">
-			<div class="wrapper">
-			
-			<!--Sidebar -->
-			<div class="sidebar">
-				<ul id="tweetMenu" class="subMenu">
-					<li><a href="#" id="leaderboard" class="leaderboard" data-tweet="0" class="subMenuSelected">Leaderboards</a></li>
-					<li><a href="#" id="teams" data-tweet="1">Teams</a></li>
-					<li><a href="#" id="howtoscore" data-tweet="2">How to Score</a></li>
-					<li><a href="#" id="prizes" data-tweet="3">Prizes</a></li>
-					<li><a href="#" id="rules" data-tweet="4">Rules and Regs</a></li>
-				</ul>
-			</div>
-			
-			<!--Content Area-->
-			<div class="contentContainer col6" >
-				
-				<!-- Carousel with divs -->
-				<div id="carouselTeamTweet" class="cycle-slideshow" data-cycle-fx="scrollVert" data-cycle-slides="div.tweetSlide" data-cycle-speed="300" data-cycle-timeout=0>
-					<div class="tweetSlide">
-						<iframe id="twitterFrame"></iframe>
-					</div>
-					
-					<div class="tweetSlide">
-						<img src="assets/ewgames-teams.png" alt="" />
-					</div>
-					
-					<div class="tweetSlide">
-						<img src="assets/ewgames-score.png" alt="" />
-					</div>
-					
-					<div class="tweetSlide">
-						<img src="assets/ewgames-prizes.png" alt="" />
-					</div>
-					
-					<div class="tweetSlide">
-						<img src="assets/ewgames-rules.png" alt="" />
-					</div>
-				
-			</div>
-			
-			</div>
-		</section>
-		
-		<!--Enterprise Expo Section-->	
-		<section id="sectionSponsors" class="page8">
-			<div class="wrapper">
-				
-			<!--Sidebar -->
-			<div class="sidebar">
-				<ul id="sponsorsMenu" class="subMenu">
-					<li><a href="#" id="diamond" data-sponsor="0" class="subMenuSelected">Diamond</a></li>
-					<li><a href="#" id="emerald" data-sponsor="1">Emerald</a></li>
-					<li><a href="#" id="sapphire" data-sponsor="2">Sapphire</a></li>
-					<li><a href="#" id="pod" data-sponsor="3">Pod</a></li>
-					<li><a href="#" id="promotional" data-sponsor="4">Promotional</a></li>
-				</ul>
-			</div>
-			
-			<!--Content Area-->
-			<div class="contentContainer col6" >	
-				<div id="carouselSponsors" class="cycle-slideshow" data-cycle-fx="scrollVert" data-cycle-slides="img" data-cycle-speed="300" data-cycle-timeout=0>
-					<img src="assets/sponsors-diamond.png" />
-					<img src="assets/sponsors-emerald.png" />
-					<img src="assets/sponsors-sapphire.png" />
-					<img src="assets/sponsors-pod.png" />
-					<img src="assets/sponsors-promotional.png" />
-				</div>		
-			</div>
-				
-				
-			</div>
-		</section>
-		
-		
-		</article>	
 
 </body>
 
