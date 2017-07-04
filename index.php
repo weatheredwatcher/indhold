@@ -52,7 +52,7 @@ $app['debug'] = true;  //set to true to turn on debugging, otherwise error messa
 
 $app->get('/', function() use($app) {
 
-    return $app['twig']->render('welcome.twig');
+    return $app->redirect('http://opentext.com');
 });
 
 $app->mount('/leaderboard', new Leaderboard\LeaderboardControllerProvider());
