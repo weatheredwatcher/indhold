@@ -41,6 +41,9 @@ $(document).ready(function() {
 	// duplicatePointsData();
 	// $(".points").digits();
 	
+	// Dave Can we add these functions as a call back to your getPosts(); function to execute when complete?
+	// initSocialWall();
+	// replaceHashTags();
 
 	//FUNCTIONS
 	
@@ -177,14 +180,7 @@ $(document).ready(function() {
 	    );
 	}
 	new
-	replaceHashTags();
-   
-
-    setTimeout(function() {
-        initSocialWall();
-    }, 8000);
-
-    
+      
     
     //Function to trigger based on slide
     $('.cycle-slideshow').on('cycle-after', function() {
