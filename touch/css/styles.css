@@ -468,6 +468,14 @@ rippleDrop {  100% {
 
 /* Agenda */
 
+h3 {
+	font-weight: 100;
+	font-size: 40px;
+	color: #FFFFFF;
+	margin: 0 0 30px 0;	
+	padding: 0;	
+}
+
 #agendaCarousel {
 	width: 1682px;
 	height: 720px;
@@ -500,7 +508,7 @@ rippleDrop {  100% {
 
 .agendaTable th {
 	text-align: left;
-	font-size: 30px;
+	font-size: 20px;
 	font-weight: 200;
 	padding: 20px 10px 10px 0px;
 	color: #2E3D98;
@@ -512,7 +520,7 @@ rippleDrop {  100% {
 }
 
 .breakoutTable .agendaCol {
-	padding: 8px;
+	padding: 12px;
 }
 
 .agendaTime {
