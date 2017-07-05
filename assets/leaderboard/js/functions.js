@@ -5,7 +5,6 @@ $(document).ready(function() {
             $(this).text( $(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") );
         })
     };
-	//INITIALIZE
 	
 	//SOCIAL WALL
     window.startSocialWall = function() {
@@ -169,19 +168,9 @@ $(document).ready(function() {
 	    if (currentSlide == firstLeaderboard) {
 		    
 		    //get posts while cycling through leaderboards
+		    $('#socialWallContainer').isotope('destroy');
             $('#socialWallContainer').empty();
 		    getPosts();
-
-            $('#socialWallContainer').isotope({
-                getSortData: {
-                    number: '[data-timestamp]'
-                },
-                itemSelector: '.socialPost',
-                layoutMode: 'packery',
-                sortBy: 'number',
-                sortAscending: false,
-                percentPosition: true
-            });
             
             console.log('on after - initializing social wall while on first leaderboard');
 
