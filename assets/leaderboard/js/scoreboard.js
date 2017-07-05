@@ -40,9 +40,9 @@ function getPoints(team){
               return response.points;
           }).error(function(){console.log('error grabbing points');}).complete(function(){
 
-               duplicatePointsData();
-               $(".points").digits();
-               reOrderRows();
+              duplicatePointsData();
+              $(".points").digits();
+              reOrderRows();
               console.log('grabbing ' + team +' points is done now!')}) ;
     
 }	
