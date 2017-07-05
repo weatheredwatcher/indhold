@@ -1,5 +1,10 @@
-$(document).ready(function() {	
-	
+$(document).ready(function() {
+
+    $.fn.digits = function(){
+        return this.each(function(){
+            $(this).text( $(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") );
+        })
+    };
 	//INITIALIZE
 	
 	//get posts for social wall
@@ -38,21 +43,17 @@ $(document).ready(function() {
 	
 	// Dave Can we add these functions as a call back to your getScore(); function to execute when complete?
 	// reOrderRows();
-	// duplicatePointsData();
+	 //duplicatePointsData();
 	// $(".points").digits();
 	
 	// Dave Can we add these functions as a call back to your getPosts(); function to execute when complete?
-	// initSocialWall();
-	// replaceHashTags();
+//	initSocialWall();
+	//replaceHashTags();
 
 	//FUNCTIONS
 	
 	//Add commas to numbers
-	$.fn.digits = function(){ 
-	    return this.each(function(){ 
-	        $(this).text( $(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") ); 
-	    })
-	}	
+
 	
 
 	// Move data attribute into points div

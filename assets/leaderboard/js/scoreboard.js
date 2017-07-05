@@ -38,7 +38,12 @@ function getPoints(team){
    
           .done(function(response) {
               return response.points;
-          }).error(function(){console.log('error grabbing points');}).complete(function(){console.log('grabbing ' + team +' points is done now!')}) ;
+          }).error(function(){console.log('error grabbing points');}).complete(function(){
+
+               //reOrderRows();
+               //duplicatePointsData();
+              // $(".points").digits();
+              console.log('grabbing ' + team +' points is done now!')}) ;
     
 }	
 function getScore(){
@@ -270,6 +275,9 @@ function getPosts(){
              console.log( "error" );
            })
            .always(function() {
+
+               //initSocialWall();
+               //replaceHashTags();
              console.log( "complete" );
            });
 	
