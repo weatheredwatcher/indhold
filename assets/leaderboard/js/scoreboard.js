@@ -277,7 +277,11 @@ function getPosts(){
              console.log( "error" );
            })
            .always(function() {
-
+		   		
+		   	$('.socialPost').each(function() {
+				$(this).html($('span.message').html().replace(/#([^ ]+)/g, "<span class='hashtag'>#$1</span>"));
+			});
+		   		
                startSocialWall();
                
              console.log( "complete" );

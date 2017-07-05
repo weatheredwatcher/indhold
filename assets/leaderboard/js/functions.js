@@ -9,10 +9,6 @@ $(document).ready(function() {
 	//init isotope
 	$('.mainLeaderboard #socialWallContainer').imagesLoaded().progress( function() {
 		
-			$('.socialPost').each(function() {
-				$(this).html($('span.message').html().replace(/#([^ ]+)/g, "<span class='hashtag'>#$1</span>"));
-			});
-		
 			$('.mainLeaderboard #socialWallContainer').isotope({
 	            getSortData: {
 	                number: '[data-timestamp]'
@@ -36,10 +32,6 @@ $(document).ready(function() {
     window.startSocialWall = function() {
 	    
 	    $('.mainLeaderboard #socialWallContainer').imagesLoaded().progress( function() {
-		    
-		    $('.socialPost').each(function() {
-				$(this).html($('span.message').html().replace(/#([^ ]+)/g, "<span class='hashtag'>#$1</span>"));
-			});
 		    
 			$('.mainLeaderboard #socialWallContainer').isotope({
 	            getSortData: {
