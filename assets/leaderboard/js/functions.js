@@ -147,22 +147,24 @@ $(document).ready(function() {
 	}
     
     //Find hashtags and style appropriately
-    hashtag_regexp = /#([a-zA-Z0-9]+)/g;
+  //  hashtag_regexp = /#([a-zA-Z0-9]+)/g;
     window.replaceHashTags = function() {
-	     $('span.message').each(function() {
-	        $(this).html(spanHashtags($(this).html()));
-	    });
+	    
+	     $('span.message').html($('span.message').html().replace(/#([^ ]+)/g, "<span class='hashtag'>$1</span>");
+	    
+	    // $('span.message').each(function() {
+	    //    $(this).html(spanHashtags($(this).html()));
+	   // });
     }
     
-    hashtag_regexp = /#([a-zA-Z0-9]+)/g;
+  //  hashtag_regexp = /#([a-zA-Z0-9]+)/g;
 
 	window.spanHashtags = function(text) {
 	    return text.replace(
 	        hashtag_regexp,
 	        '<span class="hashtag">#$1</a>'
 	    );
-	}
-	new
+	}      
       
     
     //Function to trigger based on slide
