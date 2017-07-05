@@ -40,9 +40,6 @@ function getPoints(team){
               return response.points;
           }).error(function(){console.log('error grabbing points');}).complete(function(){
 
-              duplicatePointsData();
-              $(".points").digits();
-              reOrderRows();
               console.log('grabbing ' + team +' points is done now!')}) ;
     
 }	
@@ -52,7 +49,7 @@ function getScore(){
 
           .done(function(response) {
 
-              //--OVERALL--
+        //--OVERALL--
 
               $('#blPoints').attr("data-points", response.overallScores.Blue);
               $('#grPoints').attr("data-points", response.overallScores.Grey);
@@ -62,7 +59,8 @@ function getScore(){
 
 
 			//$(team).text(data);
-//---Team Rankings:--
+		
+		//---Team Rankings:--
 		var teamLeaders = response.teamLeaders
 
 
@@ -198,6 +196,10 @@ for (var x in overallLeaders){
            })
            .always(function() {
              console.log( "complete" );
+             
+             duplicatePointsData();
+             reOrderRows();
+             
            });
 
 }

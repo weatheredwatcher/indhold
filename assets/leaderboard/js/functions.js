@@ -48,7 +48,6 @@ $(document).ready(function() {
 			$(this).find('.points').html(pointValue);
 			$(this).find('.points').digits();
 		});
-		
 		console.log('duplicating points');
 	}
 	
