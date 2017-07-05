@@ -1,252 +1,149 @@
-<!DOCTYPE HTML>
-
+<!DOCTYPE html>
 <html>
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>THE EW GAMES LEADERBOARDS</title>
-	
+	<title>Enterprise World 2017 Expo</title>
+
 	<!-- Scripts -->
-	<script src="/assets/mobile/js/jquery-1.9.1.min.js"></script>
-	<script src="/assets/mobile/js/functions.js"></script>
-	<script src="/assets/mobile/js/isotope.pkgd.min.js"></script>
-	<script src="/assets/mobile/js/jquery.cycle2.min.js"></script>
-	<script src="/assets/mobile/js/jquery.cycle2.swipe.min.js"></script>
-	<script src="/assets/mobile/js/mobile-scoreboard.js"></script>
+	<script src="/assets/leaderboard/js/jquery-3.2.1.min.js"></script>
+	<script src="/assets/leaderboard/js/functions.js"></script>
+	<script src="/assets/leaderboard/js/isotope.pkgd.min.js"></script>
+	<script src="/assets/leaderboard/js/packery-mode.pkgd.js"></script>
+	<script src="/assets/leaderboard/js/jquery.cycle2.min.js"></script>
+	<script src="/assets/leaderboard/js/jquery.cycle2.scrollVert.min.js"></script>
+	<<script src="/assets/leaderboard/js/scoreboard.js"></script>
+	<script src="https://js.pusher.com/4.0/pusher.min.js"></script>
+	<script src="/assets/leaderboard/js/pusher.js"></script>
+	<!-- Tyepkit -->
+	<script src="https://use.typekit.net/oae8zyf.js"></script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script>
+
 	<!-- CSS -->
 	<link rel="stylesheet" href="/assets/mobile/css/styles.css" />
-	
+
 </head>
 
 <body>
-	
-	<!-- Title -->
-	<div id="titleBlock">
-		
-		<div id="headings">
-			<h2>LEADERBOARD</h2>
-			<h1 class="cycle-caption"></h1>
+
+<!-- Fixed Header -->
+<header><img src="/assets/leaderboard/img/ew-games-logo.png" alt="The EW Games" /></header>
+
+
+<!-- Carousel -->
+<div class="cycle-slideshow" data-cycle-fx="scrollHorz" data-cycle-slides="> div" data-cycle-pager=".pager">
+
+
+
+	<!-- Overall team rankings -->
+	<div id="overallTeam" class="cycle-slide leaderboard" data-cycle-timeout="7000">
+
+		<h1>Overall team rankings</h1>
+
+		<div class="rows">
+			<div class="row" id="rdPoints" data-points="21342134">
+				<div class="rank"></div>
+				<div class="teamIcon red"></div>
+				<div class="name">Team Red</div>
+				<div class="points"></div>
+			</div>
+
+			<div class="row" id="blPoints" data-points="345345">
+				<div class="rank"></div>
+				<div class="teamIcon blue"></div>
+				<div class="name">Team Blue</div>
+				<div class="points"></div>
+			</div>
+
+			<div class="row" id="plPoints" data-points="3434534534">
+				<div class="rank"></div>
+				<div class="teamIcon purple"></div>
+				<div class="name">Team Purple</div>
+				<div class="points"></div>
+			</div>
+
+			<div class="row" id="tlPoints" data-points="789789">
+				<div class="rank"></div>
+				<div class="teamIcon teal"></div>
+				<div class="name">Team Teal</div>
+				<div class="points"></div>
+			</div>
+
+			<div class="row" id="grPoints" data-points="78567">
+				<div class="rank"></div>
+				<div class="teamIcon grey"></div>
+				<div class="name">Team Grey</div>
+				<div class="points"></div>
+			</div>
 		</div>
-		
+
 	</div>
 
-	
-	<!-- Carousel Container for all slides on video wall -->
-	<div id="videoWall" data-cycle-fx="scrollHorz" data-cycle-manual-speed="200" data-cycle-swipe=true data-cycle-slides="> div" data-cycle-caption=".cycle-caption" data-cycle-caption-template="{{'{{cycleTitle}}'}}" data-cycle-pager="#pager">
-		
-		<!-- Overall Leaderboard -->
-		<div class="slide" data-cycle-timeout="5000" data-cycle-title="Overall by Team">
-		
-			<div class="leaderboard">
-				<div class="rankings">
-					<span>1</span>
-					<span>2</span>
-					<span>3</span>
-					<span>4</span>
-					<span>5</span>
-				</div>
-				<div class="rowAlt">
-					<span class="even"></span>
-					<span></span>
-					<span class="even"></span>
-					<span></span>
-					<span class="even"></span>
-				</div>
-				<div class="teamRow">
-					<span class="rank blue"></span>
-					<span class="icon bl"></span>
-					<span class="teamName">Team Blue</span>
-					<span class="points" id="blPoints">1000000</span>
-				</div>
-				<div class="teamRow">
-					<span class="rank purple"></span>
-					<span class="icon pl"></span>
-					<span class="teamName">Team Purple</span>
-					<span class="points" id="plPoints">1000000</span>
-				</div>
-				<div class="teamRow">
-					<span class="rank green"></span>
-					<span class="icon gr"></span>
-					<span class="teamName">Team Green</span>
-					<span class="points" id="grPoints">4000000</span>
-				</div>
-				<div class="teamRow">
-					<span class="rank orange"></span>
-					<span class="icon or"></span>
-					<span class="teamName">Team Orange</span>
-					<span class="points" id="orPoints">5000000</span>
-				</div>
-				<div class="teamRow">
-					<span class="rank teal"></span>
-					<span class="icon tl"></span>
-					<span class="teamName">Team Teal</span>
-					<span class="points" id="tlPoints">2000000</span>
-				</div>
-			</div>
-			
-		</div><!-- End Overall Leaderboard -->
-		
-		
-		
-		<!-- Individual Leaderboard -->
-		<div class="slide" data-cycle-timeout="5000" data-cycle-title="Overall by Individual">
-		
-			<div class="leaderboard" id="individualLeaderboard">
-				<div class="rankings">
-					<span>1</span>
-					<span>2</span>
-					<span>3</span>
-					<span>4</span>
-					<span>5</span>
-				</div>
-				<div class="rowAlt">
-					<span class="even"></span>
-					<span></span>
-					<span class="even"></span>
-					<span></span>
-					<span class="even"></span>
-				</div>
-				
-			</div>
-			
-		</div><!-- End Overall Leaderboard <--></-->
-		
-		
-		
-		<div class="slide" data-cycle-timeout="5000" data-cycle-title="Top Individuals on Team #BL">
-		
-			<div class="leaderboard" id="blueteam">
-				<div class="rankings">
-					<span>1</span>
-					<span>2</span>
-					<span>3</span>
-					<span>4</span>
-					<span>5</span>
-				</div>
-				<div class="rowAlt">
-					<span class="even"></span>
-					<span></span>
-					<span class="even"></span>
-					<span></span>
-					<span class="even"></span>
-				</div>
-				
-            </div>				
-		</div><!-- End slide -->
-		
-		
-		<!-- Green Leaderboard -->
-		<div class="slide" data-cycle-timeout="5000" data-cycle-title="Top Individuals on Team #GR">
-			
-			<div class="leaderboard" id="greenteam">
-				<div class="rankings">
-					<span>1</span>
-					<span>2</span>
-					<span>3</span>
-					<span>4</span>
-					<span>5</span>
-				</div>
-				<div class="rowAlt">
-					<span class="even"></span>
-					<span></span>
-					<span class="even"></span>
-					<span></span>
-					<span class="even"></span>
-				</div>
-				
-				
-			</div>
-						
-		</div><!-- End slide -->
-		
-		
-		<!-- Teal Leaderboard -->
-		<div class="slide" data-cycle-timeout="5000" data-cycle-title="Top Individuals on Team #TL">
-			
-			<div class="leaderboard" id="tealteam">
-				<div class="rankings">
-					<span>1</span>
-					<span>2</span>
-					<span>3</span>
-					<span>4</span>
-					<span>5</span>
-				</div>
-				<div class="rowAlt">
-					<span class="even"></span>
-					<span></span>
-					<span class="even"></span>
-					<span></span>
-					<span class="even"></span>
-				</div>
-							</div>
-						
-		</div><!-- End slide -->
-		
-		
-		<!-- Purple Leaderboard -->
-		<div class="slide" data-cycle-timeout="5000" data-cycle-title="Top Individuals on Team #PL">
-			
-			<div class="leaderboard" id="purpleteam">
-				<div class="rankings">
-					<span>1</span>
-					<span>2</span>
-					<span>3</span>
-					<span>4</span>
-					<span>5</span>
-				</div>
-				<div class="rowAlt">
-					<span class="even"></span>
-					<span></span>
-					<span class="even"></span>
-					<span></span>
-					<span class="even"></span>
-				</div>
-							</div>
-						
-		</div><!-- End slide -->
-		
-		
-		<!-- Orange Leaderboard -->
-		<div class="slide" data-cycle-timeout="5000" data-cycle-title="Top Individuals on Team #OR">
+	<!-- Overall individual rankings -->
+	<div id="overallIndividual" class="cycle-slide leaderboard" data-cycle-timeout="7000">
 
-			<div class="leaderboard" id="orangeteam">
-				<div class="rankings">
-					<span>1</span>
-					<span>2</span>
-					<span>3</span>
-					<span>4</span>
-					<span>5</span>
-				</div>
-				<div class="rowAlt">
-					<span class="even"></span>
-					<span></span>
-					<span class="even"></span>
-					<span></span>
-					<span class="even"></span>
-				</div>
-							</div>
-						
-		</div><!-- End slide -->
-		
-	</div><!-- End Video Wall -->
-	
-	<!-- Pager -->
-	<div id="pager">
-		
+		<h1>Overall individual rankings</h1>
+
+		<div id="individualLeaderboard" class="rows">
+
+
+		</div>
+
 	</div>
-	
-	<!-- Powered By AppWorks -->
-	<div id="appWorks">
-		
+
+	<!-- Team red rankings -->
+	<div id="teamRed" class="cycle-slide leaderboard team" data-cycle-timeout="7000">
+
+
+
 	</div>
+
+	<!-- Team blue rankings -->
+	<div id="teamBlue" class="cycle-slide leaderboard team" data-cycle-timeout="7000">
+
+
+	</div>
+
+	<!-- Team red rankings -->
+	<div id="teamPurple" class="cycle-slide leaderboard team" data-cycle-timeout="7000">
+
+
+
+	</div>
+
+	<!-- Team teal rankings -->
+	<div id="teamTeal" class="cycle-slide leaderboard team" data-cycle-timeout="7000">
+
+
+
+	</div>
+
+	<!-- Team grey rankings -->
+	<div id="teamGrey" class="cycle-slide leaderboard team" data-cycle-timeout="7000">
+
+
+
+	</div>
+
+	<!-- Award Slides -->
+    {% for slide in slides %}
+
+
+		<div class="cycle-slide imgSlide" data-cycle-timeout="8000">
+
+			<img src="/uploads/{{ slide.image }}" alt="" />
+
+		</div>
+
+    {% endfor %}
+	<!-- End Award Slides -->
+
+</div><!-- End overall carousel container -->
+
+<!-- Pager -->
+<div class="pager"></div>
+
+
 
 </body>
-<script>
-
-$(document).ready(function () {
-
-	getScore();
-	
-});
-</script>
-</html>
+<html>
