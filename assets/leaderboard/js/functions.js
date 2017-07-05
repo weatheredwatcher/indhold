@@ -144,7 +144,7 @@ $(document).ready(function() {
     
     hashtag_regexp = /#([a-zA-Z0-9]+)/g;
 
-	window.spanHashtags= function(text) {
+	window.spanHashtags = function(text) {
 	    return text.replace(
 	        hashtag_regexp,
 	        '<span class="hashtag">#$1</a>'
