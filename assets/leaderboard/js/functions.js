@@ -7,7 +7,18 @@ $(document).ready(function() {
 	getPosts();
 	
 	//init isotope
-	window.startSocialWall();
+	$('.mainLeaderboard #socialWallContainer').imagesLoaded().progress( function() {
+			$('.mainLeaderboard #socialWallContainer').isotope({
+	            getSortData: {
+	                number: '[data-timestamp]'
+	            },
+	            itemSelector: '.socialPost',
+	            layoutMode: 'packery',
+	            sortBy: 'number',
+	            sortAscending: false,
+	            percentPosition: true
+	        });
+		});
 
 
     $.fn.digits = function(){
