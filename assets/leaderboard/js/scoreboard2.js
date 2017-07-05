@@ -408,54 +408,58 @@ function spanHashtags(text) {
 }
 new
 
-//Function to trigger based on slide
-$('.cycle-slideshow').on('cycle-after', function() {
-    
-    console.log('on after triggering');
-    
-    //get current slide
-    var currentSlide = $('.cycle-slideshow').data("cycle.opts").currSlide;
-    //leaderboards starts on slide 0
-    var firstLeaderboard = 0;
-    //social wall is slide 7
-    var socialWall = 7;
-    
-    
-    if (currentSlide == firstLeaderboard) {
-	    
-	    //get posts while cycling through leaderboards
-        $('#socialWallContainer').empty();
-	    getPosts();
 
-        $('#socialWallContainer').isotope({
-            getSortData: {
-                number: '[data-timestamp]'
-            },
-            itemSelector: '.socialPost',
-            layoutMode: 'packery',
-            sortBy: 'number',
-            sortAscending: false,
-            percentPosition: true
-        });
-        
-        console.log('on after - initializing social wall while on first leaderboard');
+$(document).ready(function() {
 
-    } else if (currentSlide == socialWall) {
+	//Function to trigger based on slide
+	$('.cycle-slideshow').on('cycle-after', function() {
 	    
-	    //get scores while on social wall
-        $('#teamGrey').empty();
-        $('#teamRed').empty();
-        $('#teamPurple').empty();
-        $('#teamTeal').empty();
-        $('#teamBlue').empty();
-        $('#individualLeaderboard').empty();
-	    getScore();
+	    console.log('on after triggering');
 	    
-	    console.log('on after - initializing scoreboards while on video wall');
+	    //get current slide
+	    var currentSlide = $('.cycle-slideshow').data("cycle.opts").currSlide;
+	    //leaderboards starts on slide 0
+	    var firstLeaderboard = 0;
+	    //social wall is slide 7
+	    var socialWall = 7;
 	    
-    } else {
-	    console.log('nothing!');
-    }
-    
+	    
+	    if (currentSlide == firstLeaderboard) {
+		    
+		    //get posts while cycling through leaderboards
+	        $('#socialWallContainer').empty();
+		    getPosts();
+	
+	        $('#socialWallContainer').isotope({
+	            getSortData: {
+	                number: '[data-timestamp]'
+	            },
+	            itemSelector: '.socialPost',
+	            layoutMode: 'packery',
+	            sortBy: 'number',
+	            sortAscending: false,
+	            percentPosition: true
+	        });
+	        
+	        console.log('on after - initializing social wall while on first leaderboard');
+	
+	    } else if (currentSlide == socialWall) {
+		    
+		    //get scores while on social wall
+	        $('#teamGrey').empty();
+	        $('#teamRed').empty();
+	        $('#teamPurple').empty();
+	        $('#teamTeal').empty();
+	        $('#teamBlue').empty();
+	        $('#individualLeaderboard').empty();
+		    getScore();
+		    
+		    console.log('on after - initializing scoreboards while on video wall');
+		    
+	    } else {
+		    console.log('nothing!');
+	    }
+	    
+	});
 });
 	
