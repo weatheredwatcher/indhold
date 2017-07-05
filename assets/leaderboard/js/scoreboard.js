@@ -38,11 +38,22 @@ function getPoints(team){
    
           .done(function(response) {
               return response.points;
-          }).error(function(){console.log('error grabbing points');}).complete(function(){
+          }).error(function(){console.log('error grab-bing points');}).complete(function(){
 
               console.log('grabbing ' + team +' points is done now!')}) ;
     
-}	
+}
+
+function grabTweets(){
+
+    var jqxhr = $.getJSON(server_path + '/api/grab-tweets')
+
+        .done(function(response)
+        {
+            console.log(response);
+        });
+
+}
 function getScore(){
 
     var jqxhr = $.getJSON(server_path + "/api/get_scores")

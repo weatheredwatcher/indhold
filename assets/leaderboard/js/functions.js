@@ -196,7 +196,7 @@ $(document).ready(function() {
             $('#teamBlue').empty();
             $('#individualLeaderboard').empty();
 		    getScore();
-		    
+		    grabTweets();
 		    console.log('on after - initializing scoreboards while on video wall');
 		    
 	    } else {
