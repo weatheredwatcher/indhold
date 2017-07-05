@@ -9,7 +9,7 @@ $(document).ready(function() {
 	//init isotope
 	$('.mainLeaderboard #socialWallContainer').imagesLoaded().progress( function() {
 		
-			$('span.message').html($('span.message').html().replace(/#([^ ]+)/g, "<span class='hashtag'>#$1</span>"));
+			$('span.message').each().html($('span.message').html().replace(/#([^ ]+)/g, "<span class='hashtag'>#$1</span>"));
 		
 			$('.mainLeaderboard #socialWallContainer').isotope({
 	            getSortData: {
@@ -35,7 +35,7 @@ $(document).ready(function() {
 	    
 	    $('.mainLeaderboard #socialWallContainer').imagesLoaded().progress( function() {
 		    
-		    $('span.message').html($('span.message').html().replace(/#([^ ]+)/g, "<span class='hashtag'>#$1</span>"));
+		    $('span.message').each().html($('span.message').html().replace(/#([^ ]+)/g, "<span class='hashtag'>#$1</span>"));
 		    
 			$('.mainLeaderboard #socialWallContainer').isotope({
 	            getSortData: {
