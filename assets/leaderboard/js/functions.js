@@ -190,6 +190,8 @@ $(document).ready(function() {
     //Function to trigger based on slide
     $('.cycle-slideshow').on('cycle-after', function() {
 	    
+	    console.log('on after triggering');
+	    
 	    //get current slide
 	    var currentSlide = $('.cycle-slideshow').data("cycle.opts").currSlide;
 	    //leaderboards starts on slide 0
