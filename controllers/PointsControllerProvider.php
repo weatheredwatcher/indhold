@@ -46,7 +46,7 @@ class PointsControllerProvider implements ControllerProviderInterface
 		    switch ($_POST['team']) {
 
     	        case 'GR':
-    	             $team = "green";
+    	             $team = "grey";
     	        break;
 
     	        case 'TL':
@@ -61,8 +61,8 @@ class PointsControllerProvider implements ControllerProviderInterface
         	         $team = "purple";
     	        break;
 
-    	        case 'OR':
-    	            $team = "orange";
+    	        case 'RD':
+    	            $team = "red";
     	        break;
 		    }
 				$id    = 99;

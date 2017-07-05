@@ -150,7 +150,7 @@ $(document).ready(function() {
 
 	//SOCIAL WALL
 	
-	function initSocialWall() {
+	//function initSocialWall() {
         $('#socialWallContainer').isotope({
             getSortData: {
                 number: '[data-timestamp]'
@@ -161,7 +161,7 @@ $(document).ready(function() {
             sortAscending: false,
             percentPosition: true
         });
-    }
+    //}
     
     //Find hashtags and style appropriately
     
@@ -197,11 +197,29 @@ $(document).ready(function() {
 	    if (currentSlide == firstLeaderboard) {
 		    
 		    //get posts while cycling through leaderboards
+            $('#socialWallContainer').empty();
 		    getPosts();
-		    
+
+            $('#socialWallContainer').isotope({
+                getSortData: {
+                    number: '[data-timestamp]'
+                },
+                itemSelector: '.socialPost',
+                layoutMode: 'packery',
+                sortBy: 'number',
+                sortAscending: false,
+                percentPosition: true
+            });
+
 	    } else if (currentSlide == socialWall) {
 		    
 		    //get scores while on social wall
+            $('#teamGrey').empty();
+            $('#teamRed').empty();
+            $('#teamPurple').empty();
+            $('#teamTeal').empty();
+            $('#teamBlue').empty();
+            $('#individualLeaderboard').empty();
 		    getScore();
 		    
 	    } else {

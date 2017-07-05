@@ -276,8 +276,8 @@ function getPosts(){
            })
            .always(function() {
 
-               //initSocialWall();
-               //replaceHashTags();
+               initSocialWall();
+               replaceHashTags();
              console.log( "complete" );
            });
 	
