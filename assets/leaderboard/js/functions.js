@@ -7,7 +7,7 @@ $(document).ready(function() {
 	getPosts();
 	
 	//init isotope
-	startSocialWall();
+	window.startSocialWall();
 
 
     $.fn.digits = function(){
