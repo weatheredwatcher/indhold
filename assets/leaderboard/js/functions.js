@@ -8,8 +8,8 @@ $(document).ready(function() {
 	//INITIALIZE
 	
 	//SOCIAL WALL
-	function initSocialWall() {
-        $('#socialWallContainer').isotope({
+    function startSocialWall() {
+	    $('#socialWallContainer').isotope({
             getSortData: {
                 number: '[data-timestamp]'
             },
