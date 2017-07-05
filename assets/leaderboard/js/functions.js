@@ -154,7 +154,7 @@ $(document).ready(function() {
 
 	//SOCIAL WALL
 	
-	//function initSocialWall() {
+	function initSocialWall() {
         $('#socialWallContainer').isotope({
             getSortData: {
                 number: '[data-timestamp]'
