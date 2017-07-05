@@ -63,6 +63,8 @@ $(document).ready(function() {
 			$(this).find('.points').html(pointValue);
 			$(this).find('.points').digits();
 		});
+		
+		console.log('duplicating points');
 	}
 	
 	// Reordder the rows with highest scores at top
@@ -144,6 +146,8 @@ $(document).ready(function() {
 		    $(this).html(o++);
 		});
 		
+		console.log('re ordering rows now');
+		
 	}
 
 
@@ -210,6 +214,8 @@ $(document).ready(function() {
                 sortAscending: false,
                 percentPosition: true
             });
+            
+            console.log('on after - initializing social wall while on first leaderboard');
 
 	    } else if (currentSlide == socialWall) {
 		    
@@ -221,6 +227,8 @@ $(document).ready(function() {
             $('#teamBlue').empty();
             $('#individualLeaderboard').empty();
 		    getScore();
+		    
+		    console.log('on after - initializing scoreboards while on video wall');
 		    
 	    } else {
 		    //do nothing
