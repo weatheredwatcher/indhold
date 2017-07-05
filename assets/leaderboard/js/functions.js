@@ -1,20 +1,25 @@
 $(document).ready(function() {
 
+	//get scores for the first time
 	getScore();
 	
+	//get posts for the first time
 	getPosts();
 	
 	//init isotope
-	$('#socialWallContainer').isotope({
-	            getSortData: {
-	                number: '[data-timestamp]'
-	            },
-	            itemSelector: '.socialPost',
-	            layoutMode: 'packery',
-	            sortBy: 'number',
-	            sortAscending: false,
-	            percentPosition: true
-	        });
+	$('#socialWallContainer').imagesLoaded().progress( function() {
+		$('#socialWallContainer').isotope({
+            getSortData: {
+                number: '[data-timestamp]'
+            },
+            itemSelector: '.socialPost',
+            layoutMode: 'packery',
+            sortBy: 'number',
+            sortAscending: false,
+            percentPosition: true
+        });
+	});
+
 
     $.fn.digits = function(){
         return this.each(function(){
