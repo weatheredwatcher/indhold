@@ -43,17 +43,14 @@ $(document).ready(function() {
 	
 	// Dave Can we add these functions as a call back to your getScore(); function to execute when complete?
 	// reOrderRows();
-	 //duplicatePointsData();
+	// duplicatePointsData();
 	// $(".points").digits();
 	
 	// Dave Can we add these functions as a call back to your getPosts(); function to execute when complete?
-//	initSocialWall();
-	//replaceHashTags();
+	// initSocialWall();
+	// replaceHashTags();
 
 	//FUNCTIONS
-	
-	//Add commas to numbers
-
 	
 
 	// Move data attribute into points div
@@ -165,7 +162,7 @@ $(document).ready(function() {
             sortAscending: false,
             percentPosition: true
         });
-    //}
+    }
     
     //Find hashtags and style appropriately
     
