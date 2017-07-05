@@ -6,8 +6,6 @@ $(document).ready(function() {
 	//get posts for the first time
 	getPosts();
 	
-	$('span.message').html($('span.message').html().replace(/#([^ ]+)/g, "<span class='hashtag'>#$1</span>"));
-	
 	//init isotope
 	$('.mainLeaderboard #socialWallContainer').imagesLoaded().progress( function() {
 		
@@ -36,6 +34,9 @@ $(document).ready(function() {
     window.startSocialWall = function() {
 	    
 	    $('.mainLeaderboard #socialWallContainer').imagesLoaded().progress( function() {
+		    
+		    $('span.message').html($('span.message').html().replace(/#([^ ]+)/g, "<span class='hashtag'>#$1</span>"));
+		    
 			$('.mainLeaderboard #socialWallContainer').isotope({
 	            getSortData: {
 	                number: '[data-timestamp]'
