@@ -7,6 +7,20 @@ $(document).ready(function() {
     };
 	//INITIALIZE
 	
+	//SOCIAL WALL
+	function initSocialWall() {
+        $('#socialWallContainer').isotope({
+            getSortData: {
+                number: '[data-timestamp]'
+            },
+            itemSelector: '.socialPost',
+            layoutMode: 'packery',
+            sortBy: 'number',
+            sortAscending: false,
+            percentPosition: true
+        });
+    }
+	
 	//get posts for social wall
 	getPosts();
 	
@@ -146,23 +160,6 @@ $(document).ready(function() {
 		console.log('re ordering rows now');
 		
 	}
-
-
-
-	//SOCIAL WALL
-	
-	function initSocialWall() {
-        $('#socialWallContainer').isotope({
-            getSortData: {
-                number: '[data-timestamp]'
-            },
-            itemSelector: '.socialPost',
-            layoutMode: 'packery',
-            sortBy: 'number',
-            sortAscending: false,
-            percentPosition: true
-        });
-    }
     
     //Find hashtags and style appropriately
     
@@ -230,7 +227,7 @@ $(document).ready(function() {
 		    console.log('on after - initializing scoreboards while on video wall');
 		    
 	    } else {
-		    //do nothing
+		    console.log('nothing!');
 	    }
 	    
 	});
