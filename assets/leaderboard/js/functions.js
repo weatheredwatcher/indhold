@@ -22,19 +22,19 @@ $(document).ready(function() {
     }
 	
 	//get posts for social wall
-	getPosts();
+	//getPosts();
 	
 	//get scores for leaderboards
-    getScore();
+    //getScore();
 	
 	//duplicate scores from data attribute and populate div
-	duplicatePointsData();
+	//duplicatePointsData();
 	
 	//order rows with highest scores at top
-	reOrderRows();
+	//reOrderRows();
 	
 	//Takes the scores and adds comma separators
-	$(".points").digits();
+	//$(".points").digits();
 	
 	
 	
