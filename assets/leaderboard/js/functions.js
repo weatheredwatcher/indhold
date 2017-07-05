@@ -7,18 +7,7 @@ $(document).ready(function() {
 	getPosts();
 	
 	//init isotope
-	$('#socialWallContainer').imagesLoaded().progress( function() {
-		$('#socialWallContainer').isotope({
-            getSortData: {
-                number: '[data-timestamp]'
-            },
-            itemSelector: '.socialPost',
-            layoutMode: 'packery',
-            sortBy: 'number',
-            sortAscending: false,
-            percentPosition: true
-        });
-	});
+	startSocialWall();
 
 
     $.fn.digits = function(){
@@ -30,8 +19,8 @@ $(document).ready(function() {
 	//SOCIAL WALL
     window.startSocialWall = function() {
 	    
-	    $('#socialWallContainer').imagesLoaded().progress( function() {
-			$('#socialWallContainer').isotope({
+	    $('.mainLeaderboard #socialWallContainer').imagesLoaded().progress( function() {
+			$('.mainLeaderboard #socialWallContainer').isotope({
 	            getSortData: {
 	                number: '[data-timestamp]'
 	            },
@@ -177,7 +166,7 @@ $(document).ready(function() {
       
     
     //Function to trigger based on slide
-    $('.cycle-slideshow').on('cycle-after', function() {
+    $('.mainLeaderboard .cycle-slideshow').on('cycle-after', function() {
 	    
 	    console.log('on after triggering');
 	    
