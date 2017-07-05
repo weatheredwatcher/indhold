@@ -58,7 +58,7 @@ $(document).ready(function() {
 	
 
 	// Move data attribute into points div
-	function duplicatePointsData() {
+	window.duplicatePointsData = function() {
 		$('.row').each(function() {
 			var pointValue = $(this).attr('data-points');
 			$(this).find('.points').html(pointValue);
@@ -69,7 +69,7 @@ $(document).ready(function() {
 	}
 	
 	// Reordder the rows with highest scores at top
-	function reOrderRows() {
+	window.reOrderRows = function() {
 		// define variables
 		var overallTeam = $("#overallTeam .rows .row");
 		var overallIndividual = $("#overallIndividual .rows .row");
@@ -153,7 +153,7 @@ $(document).ready(function() {
     
     //Find hashtags and style appropriately
     hashtag_regexp = /#([a-zA-Z0-9]+)/g;
-    function replaceHashTags() {
+    window.replaceHashTags = function() {
 	     $('span.message').each(function() {
 	        $(this).html(spanHashtags($(this).html()));
 	    });
@@ -161,7 +161,7 @@ $(document).ready(function() {
     
     hashtag_regexp = /#([a-zA-Z0-9]+)/g;
 
-	function spanHashtags(text) {
+	window.spanHashtags() = function(text) {
 	    return text.replace(
 	        hashtag_regexp,
 	        '<span class="hashtag">#$1</a>'
