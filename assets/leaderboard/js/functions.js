@@ -1,5 +1,21 @@
 $(document).ready(function() {
 
+	getScore();
+	
+	getPosts();
+	
+	//init isotope
+	$('#socialWallContainer').isotope({
+	            getSortData: {
+	                number: '[data-timestamp]'
+	            },
+	            itemSelector: '.socialPost',
+	            layoutMode: 'packery',
+	            sortBy: 'number',
+	            sortAscending: false,
+	            percentPosition: true
+	        });
+
     $.fn.digits = function(){
         return this.each(function(){
             $(this).text( $(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") );
@@ -8,16 +24,19 @@ $(document).ready(function() {
 	
 	//SOCIAL WALL
     window.startSocialWall = function() {
-	    $('#socialWallContainer').isotope({
-            getSortData: {
-                number: '[data-timestamp]'
-            },
-            itemSelector: '.socialPost',
-            layoutMode: 'packery',
-            sortBy: 'number',
-            sortAscending: false,
-            percentPosition: true
-        });
+	    
+	    $('#socialWallContainer').imagesLoaded().progress( function() {
+			$('#socialWallContainer').isotope({
+	            getSortData: {
+	                number: '[data-timestamp]'
+	            },
+	            itemSelector: '.socialPost',
+	            layoutMode: 'packery',
+	            sortBy: 'number',
+	            sortAscending: false,
+	            percentPosition: true
+	        });
+		});
     }
 	
 	//KEYBOARD NAVIGATION
