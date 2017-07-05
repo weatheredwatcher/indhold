@@ -279,7 +279,7 @@ function getPosts(){
            .always(function() {
 
                startSocialWall();
-               replaceHashTags();
+               
              console.log( "complete" );
            });
 	

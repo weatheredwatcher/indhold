@@ -6,8 +6,13 @@ $(document).ready(function() {
 	//get posts for the first time
 	getPosts();
 	
+	$('span.message').html($('span.message').html().replace(/#([^ ]+)/g, "<span class='hashtag'>#$1</span>"));
+	
 	//init isotope
 	$('.mainLeaderboard #socialWallContainer').imagesLoaded().progress( function() {
+		
+			$('span.message').html($('span.message').html().replace(/#([^ ]+)/g, "<span class='hashtag'>#$1</span>"));
+		
 			$('.mainLeaderboard #socialWallContainer').isotope({
 	            getSortData: {
 	                number: '[data-timestamp]'
@@ -156,16 +161,7 @@ $(document).ready(function() {
 		console.log('re ordering rows now');
 		
 	}
-    
-    //Find hashtags and style appropriately
-    /*
-    window.replaceHashTags = function() {
-	    
-	     $('span.message').html($('span.message').html().replace(/#([^ ]+)/g, "<span class='hashtag'>$1</span>"));
-	    
-    }*/
-
-      
+     
     
     //Function to trigger based on slide
     $('.mainLeaderboard .cycle-slideshow').on('cycle-after', function() {
