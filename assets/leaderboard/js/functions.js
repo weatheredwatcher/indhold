@@ -21,23 +21,6 @@ $(document).ready(function() {
         });
     }
 	
-	//get posts for social wall
-	//getPosts();
-	
-	//get scores for leaderboards
-    //getScore();
-	
-	//duplicate scores from data attribute and populate div
-	//duplicatePointsData();
-	
-	//order rows with highest scores at top
-	//reOrderRows();
-	
-	//Takes the scores and adds comma separators
-	//$(".points").digits();
-	
-	
-	
 	//KEYBOARD NAVIGATION
 
 	//keyboard functions for testing
@@ -60,6 +43,7 @@ $(document).ready(function() {
 	// Move data attribute into points div
 	window.duplicatePointsData = function() {
 		$('.row').each(function() {
+			console.log('logging rows');
 			var pointValue = $(this).attr('data-points');
 			$(this).find('.points').html(pointValue);
 			$(this).find('.points').digits();
