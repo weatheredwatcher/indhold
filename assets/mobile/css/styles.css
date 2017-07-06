@@ -217,11 +217,13 @@ body.comingSoon h1 {
 	margin: 0 0 0 30px;
 	padding: 0;
 	font-size: 5vh;
+	line-height: 6vh;
 }
 
 h1#countdown {
 	color: #2E3D98;
 	font-size: 8vh;
+	line-height: 9vh;
 }
 
 .units {
