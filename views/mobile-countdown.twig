@@ -3,6 +3,7 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Enterprise World 2017 Expo</title>
 
 	<!-- Scripts -->
@@ -19,7 +20,7 @@
 		    // Get the element to append to
 		    var counter = document.getElementById("countdown");
 		    // Set the targetDate
-		    var targetDate = new Date("July 11, 2016 7:00");
+		    var targetDate = new Date("July 10, 2017 7:00");
 		
 		    var remainingSeconds = ~ ~((targetDate - new Date()) / 1000);
 		    
@@ -28,9 +29,9 @@
 		    var mins = (remainingSeconds % (60 * 60)) / 60;
 		    
 		    var remainingTime = {
-		        "<span class='units'>days</span>": remainingSeconds / (60 * 60 * 24),
-		        "<span class='units'>hours</span>": (remainingSeconds % (60 * 60 * 24)) / (60 * 60),
-		        "<span class='units'>mins</span>": (remainingSeconds % (60 * 60)) / 60,
+		        "<span class='units'>days</span><br/>": remainingSeconds / (60 * 60 * 24),
+		        "<span class='units'>hours</span><br/>": (remainingSeconds % (60 * 60 * 24)) / (60 * 60),
+		        "<span class='units'>mins</span><br/>": (remainingSeconds % (60 * 60)) / 60,
 		        "<span class='units'>secs</span>": remainingSeconds % 60
 		    };
 		
@@ -62,12 +63,13 @@
 
 <body>
 
+<header><img src="/assets/leaderboard/img/ew-games-logo.png" alt="The EW Games" /></header>
 
 <body class="comingSoon">
 	
-	<img src="img/ew-games-crest.png" id="comingSoonLogo"/>
+	<img src="" id="comingSoonLogo"/>
 	
-	<h1>The EW Games will <br />commence in:</h1>
+	<h1>The EW Games will commence in</h1>
 	
 	<div id="countdown"></div>
 
