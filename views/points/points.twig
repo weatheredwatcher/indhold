@@ -31,7 +31,11 @@
 <h1 class="welcome"> Hello {{ user.username }} </h1>
 	<input type="hidden" id="user_id" value={{user.id}} />
 
+<!-- Reset Button -->
 <a href="#" id="resetButton" class="secondaryButton">Reset</a>
+
+<!-- Submit button -->
+<a href="#" id="awardPointsButton" class="primaryButton">Award Points</a>
 
 <!-- Carousel Container for all slides on video wall -->
 <div id="pointGiver" data-cycle-fx="scrollHorz" data-cycle-manual-speed="400" data-cycle-slides="> div">
@@ -111,9 +115,6 @@
 		<div id="points5000" class="pointRow rowAlt" data-points=5000>
 			<span class="pointValue">5000 Points</span>
 		</div>
-
-		<!-- Submit button -->
-		<a href="#" id="awardPointsButton" class="primaryButton">Award Points</a>
 
 	</div><!-- End Choose Points -->
 

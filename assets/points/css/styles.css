@@ -72,8 +72,9 @@ header {
 
 #resetButton {
 	position: fixed;
+	left: 5%;
 	bottom: 0;
-	left: 10%
+	width: 30%;
 }
 
 #chooseType, #choosePerson {
@@ -275,6 +276,9 @@ h2 {
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
+	position: fixed;
+	width: 55%;
+	right: 5%;
 	margin-top: 300px;
 	-webkit-transition: margin-top 200ms ease-out;
     -moz-transition: margin-top 200ms ease-out;
