@@ -32,6 +32,9 @@ $(document).ready(function() {
 	    e.preventDefault(); // prevent the default action (scroll / move caret)
 	});
 	
+	
+	//Fade out awards button
+	$('#awardPointsButton').fadeOut(20);
 
 	//Carousel Functions
 	window.selectedPoints = "";
@@ -90,7 +93,7 @@ $(document).ready(function() {
 		$(this).addClass('selected');
 		window.selectedPoints = $(this).data('points');
 		console.log($(this).data('points'));
-		$('#awardPointsButton').addClass('visible');
+		$('#awardPointsButton').fadeIn("slow");
 	});
 
 

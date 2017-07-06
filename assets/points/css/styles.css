@@ -272,12 +272,11 @@ h2 {
 	text-align: center;
 }
 
-#awardPointsButton:link, #awardPointsButton:visited {
+#awardPointsButton:link {
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
 	position: fixed;
-	opacity: 0;
 	bottom: 0;
 	width: 55%;
 	right: 5%;
@@ -300,11 +299,6 @@ button[type="submit"] {
 	border: none;
     outline:none;
 }
-
-.visible {
-	opacity: 1.0;
-}
-
 /* Login elements */
 
 
