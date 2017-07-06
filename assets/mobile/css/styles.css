@@ -327,4 +327,21 @@ h1 {
 		color: #000000;
 		font-weight: bold;
 	}
+	
+/* Coming Soon */
+
+#comingSoonLogo {
+	margin-top: 5%;
+	width: 60%;
+	height: auto;
+	text-align: center;
+	margin-bottom: 0%;
+}
+
+#countdown {
+	margin-top: 7%;
+	font-size: 3vh;
+	text-align: center;
+	font-weight: 400;
+}
 
