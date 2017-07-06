@@ -7,14 +7,15 @@
 
 	<!-- Scripts -->
 	<script src="/assets/leaderboard/js/jquery-3.2.1.min.js"></script>
-	<script src="/assets/leaderboard/js/functions.js"></script>
+	<script src="/assets/leaderboard/js/functions-mobile.js"></script>
 	<script src="/assets/leaderboard/js/isotope.pkgd.min.js"></script>
 	<script src="/assets/leaderboard/js/packery-mode.pkgd.js"></script>
 	<script src="/assets/leaderboard/js/jquery.cycle2.min.js"></script>
-	<script src="/assets/leaderboard/js/jquery.cycle2.scrollVert.min.js"></script>
 	<<script src="/assets/leaderboard/js/scoreboard.js"></script>
 	<script src="https://js.pusher.com/4.0/pusher.min.js"></script>
 	<script src="/assets/leaderboard/js/pusher.js"></script>
+	
+	
 	<!-- Tyepkit -->
 	<script src="https://use.typekit.net/oae8zyf.js"></script>
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
@@ -94,27 +95,20 @@
 	<!-- Team red rankings -->
 	<div id="teamRed" class="cycle-slide leaderboard team" data-cycle-timeout="7000">
 
-
-
 	</div>
 
 	<!-- Team blue rankings -->
 	<div id="teamBlue" class="cycle-slide leaderboard team" data-cycle-timeout="7000">
-
 
 	</div>
 
 	<!-- Team red rankings -->
 	<div id="teamPurple" class="cycle-slide leaderboard team" data-cycle-timeout="7000">
 
-
-
 	</div>
 
 	<!-- Team teal rankings -->
 	<div id="teamTeal" class="cycle-slide leaderboard team" data-cycle-timeout="7000">
-
-
 
 	</div>
 
@@ -122,21 +116,8 @@
 	<div id="teamGrey" class="cycle-slide leaderboard team" data-cycle-timeout="7000">
 
 
-
 	</div>
 
-	<!-- Award Slides -->
-    {% for slide in slides %}
-
-
-		<div class="cycle-slide imgSlide" data-cycle-timeout="8000">
-
-			<img src="/uploads/{{ slide.image }}" alt="" />
-
-		</div>
-
-    {% endfor %}
-	<!-- End Award Slides -->
 
 </div><!-- End overall carousel container -->
 
