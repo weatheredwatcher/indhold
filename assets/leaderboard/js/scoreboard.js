@@ -81,7 +81,7 @@ function getScore(){
             var purpleTeamLeaders = teamLeaders.Purple;
             var blueTeamLeaders = teamLeaders.Blue;
 
-            $('#teamRed').append('<h1>Team Red Rankings</h1>');
+            $('#teamRed').append('<h1>Team Red rankings</h1>');
             $('#teamRed').append('<div class="teamBadge"></div>');
             $('#teamRed').append('<div class="rows" id="redRow">');
             for (var r in redTeamLeaders) {
@@ -92,13 +92,13 @@ function getScore(){
 
                     $('#redRow').append('<div class="row red' + r + '" data-points="' + redTeamLeaders[r].total + '">');
                     $('.red' + r).append('<div class="rank">');
-                    $('.red' + r).append('<div class="teamIcon">');
+                    $('.red' + r).append('<div class="teamIcon red">');
                     $('.red' + r).append('<div class="name">' + name + '</div>');
                     $('.red' + r).append('<div class="points">');
                 }
             }
 
-              $('#teamGrey').append('<h1>Team Grey Rankings</h1>');
+              $('#teamGrey').append('<h1>Team Grey rankings</h1>');
               $('#teamGrey').append('<div class="teamBadge"></div>');
               $('#teamGrey').append('<div class="rows" id="greyRow">');
               for (var g in greyTeamLeaders) {
@@ -109,13 +109,13 @@ function getScore(){
 
                       $('#greyRow').append('<div class="row grey' + g + '" data-points="' + greyTeamLeaders[g].total + '">');
                       $('.grey' + g).append('<div class="rank">');
-                      $('.grey' + g).append('<div class="teamIcon">');
+                      $('.grey' + g).append('<div class="teamIcon grey">');
                       $('.grey' + g).append('<div class="name">' + name + '</div>');
                       $('.grey' + g).append('<div class="points">');
                   }
               }
 
-              $('#teamTeal').append('<h1>Team Teal Rankings</h1>');
+              $('#teamTeal').append('<h1>Team Teal rankings</h1>');
               $('#teamTeal').append('<div class="teamBadge"></div>');
               $('#teamTeal').append('<div class="rows" id="tealRow">');
               for (var t in tealTeamLeaders) {
@@ -126,14 +126,14 @@ function getScore(){
 
                       $('#tealRow').append('<div class="row teal' + t + '" data-points="' + tealTeamLeaders[t].total + '">');
                       $('.teal' + t).append('<div class="rank">');
-                      $('.teal' + t).append('<div class="teamIcon">');
+                      $('.teal' + t).append('<div class="teamIcon teal">');
                       $('.teal' + t).append('<div class="name">' + name + '</div>');
                       $('.teal' + t).append('<div class="points">');
                   }
               }
 
 
-              $('#teamPurple').append('<h1>Team Purple Rankings</h1>');
+              $('#teamPurple').append('<h1>Team Purple rankings</h1>');
               $('#teamPurple').append('<div class="teamBadge"></div>');
               $('#teamPurple').append('<div class="rows" id="purpleRow">');
               for (var p in purpleTeamLeaders) {
@@ -144,13 +144,13 @@ function getScore(){
 
                       $('#purpleRow').append('<div class="row purple' + p + '" data-points="' + purpleTeamLeaders[p].total + '">');
                       $('.purple' + p).append('<div class="rank">');
-                      $('.purple' + p).append('<div class="teamIcon">');
+                      $('.purple' + p).append('<div class="teamIcon purple">');
                       $('.purple' + p).append('<div class="name">' + name + '</div>');
                       $('.purple' + p).append('<div class="points">');
                   }
               }
 
-              $('#teamBlue').append('<h1>Team Blue Rankings</h1>');
+              $('#teamBlue').append('<h1>Team Blue rankings</h1>');
               $('#teamBlue').append('<div class="teamBadge"></div>');
               $('#teamBlue').append('<div class="rows" id="blueRow">');
               for (var b in blueTeamLeaders) {
@@ -161,7 +161,7 @@ function getScore(){
 
                       $('#blueRow').append('<div class="row blue' + t + '" data-points="' + blueTeamLeaders[b].total + '">');
                       $('.blue' + b).append('<div class="rank">');
-                      $('.blue' + b).append('<div class="teamIcon">');
+                      $('.blue' + b).append('<div class="teamIcon blue">');
                       $('.blue' + b).append('<div class="name">' + name + '</div>');
                       $('.blue' + b).append('<div class="points">');
                   }
