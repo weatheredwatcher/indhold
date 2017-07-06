@@ -160,7 +160,7 @@ $(document).ready(function() {
 		$('#recipientName').val("");
 		$('.teamRow, .pointRow').removeClass('selected');
 		mainCarousel.cycle('goto', 0);
-		$('#awardPointsButton').fadeIn("slow");
+		$('#awardPointsButton').fadeOut("slow");
 	}
 
 
