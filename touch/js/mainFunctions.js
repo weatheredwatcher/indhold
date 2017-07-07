@@ -649,114 +649,114 @@ $(document).ready(function() {
 
    	
     //MAP LOCATIONS
-    var maplocation112 = 220,796;
-	var maplocation114 = 220,580;
-	var maplocation116 = 220,906;
-	var maplocation118 = 220,1064;
-	var maplocation120 = 220,1120;
-	var maplocation122 = 220,1176;
+	var maplocation112 = '220,796';
+	var maplocation114 = '220,580';
+	var maplocation116 = '220,906';
+	var maplocation118 = '220,1064';
+	var maplocation120 = '220,1120';
+	var maplocation122 = '220,1176';
 	
-	var maplocation213 = 278,796;
-	var maplocation215 = 278,580;
-	var maplocation217 = 278,906;
-	var maplocation219 = 278,1064;
-	var maplocation221 = 278,1120;
-	var maplocation223 = 278,1176;
+	var maplocation213 = '278,796';
+	var maplocation215 = '278,580';
+	var maplocation217 = '278,906';
+	var maplocation219 = '278,1064';
+	var maplocation221 = '278,1120';
+	var maplocation223 = '278,1176';
 	
-	var maplocation200 = 382,524;
-	var maplocation202 = 382,580;
-	var maplocation204 = 382,634;
-	var maplocation212 = 382,796;
-	var maplocation214 = 382,580;
-	var maplocation216 = 382,906;
-	var maplocation218 = 382,1064;
-	var maplocation222 = 382,1120;
+	var maplocation200 = '382,524';
+	var maplocation202 = '382,580';
+	var maplocation204 = '382,634';
+	var maplocation212 = '382,796';
+	var maplocation214 = '382,580';
+	var maplocation216 = '382,906';
+	var maplocation218 = '382,1064';
+	var maplocation222 = '382,1120';
 	
-	var maplocation301 = 442,524;
-	var maplocation303 = 442,580;
-	var maplocation305 = 442,634;
-	var maplocation313 = 442,796;
-	var maplocation315 = 442,580;
-	var maplocation317 = 442,906;
-	var maplocation319 = 442,1064;
-	var maplocation323 = 442,1120;
+	var maplocation301 = '442,524';
+	var maplocation303 = '442,580';
+	var maplocation305 = '442,634';
+	var maplocation313 = '442,796';
+	var maplocation315 = '442,580';
+	var maplocation317 = '442,906';
+	var maplocation319 = '442,1064';
+	var maplocation323 = '442,1120';
 	
-	var maplocation412 = 718,796;
-	var maplocation414 = 718,580;
-	var maplocation416 = 718,906;
+	var maplocation412 = '718,796';
+	var maplocation414 = '718,580';
+	var maplocation416 = '718,906';
 	
-	var maplocation513 = 778,796;
-	var maplocation515 = 778,580;
-	var maplocation517 = 778,906;
+	var maplocation513 = '778,796';
+	var maplocation515 = '778,580';
+	var maplocation517 = '778,906';
 	
-	var maplocation512 = 878,718;
-	var maplocation514 = 878,812;
-	var maplocation516 = 878,898;
+	var maplocation512 = '878,718';
+	var maplocation514 = '878,812';
+	var maplocation516 = '878,898';
 	
-	var maplocation518 = 914,1070;
+	var maplocation518 = '914,1070';
 	
-	var maplocation521 = 786,1190;
+	var maplocation521 = '786,1190';
 	
-	var maplocation613 = 946,718;
-	var maplocation615 = 946,812;
-	var maplocation617 = 946,898;
+	var maplocation613 = '946,718';
+	var maplocation615 = '946,812';
+	var maplocation617 = '946,898';
 	
-	var maplocation602 = 1058,462;
-	var maplocation604 = 1058,556; 
-	var maplocation606 = 1058,646;
-	var maplocation612 = 1046,796;
-	var maplocation614 = 1046,580;
-	var maplocation616 = 1046,906;
-	var maplocation618 = 1058,1072;
+	var maplocation602 = '1058,462';
+	var maplocation604 = '1058,556'; 
+	var maplocation606 = '1058,646';
+	var maplocation612 = '1046,796';
+	var maplocation614 = '1046,580';
+	var maplocation616 = '1046,906';
+	var maplocation618 = '1058,1072';
 	
-	var maplocation701 = 1128,462;
-	var maplocation703 = 1128,556;
-	var maplocation705 = 1128,646;
+	var maplocation701 = '1128,462';
+	var maplocation703 = '1128,556';
+	var maplocation705 = '1128,646';
 	
-	var maplocation713 = 1104,796;
-	var maplocation715 = 1104,580;
-	var maplocation717 = 1104,906;
-	var maplocation719 = 1126,1072;
+	var maplocation713 = '1104,796';
+	var maplocation715 = '1104,580';
+	var maplocation717 = '1104,906';
+	var maplocation719 = '1126,1072';
 	
-	var maplocation802 = 1400,500;
-	var maplocation804 = 1400,554;
-	var maplocation806 = 1400,610;
-	var maplocation818 = 1400,1086;
-	var maplocation820 = 1400,1142;
+	var maplocation802 = '1400,500';
+	var maplocation804 = '1400,554';
+	var maplocation806 = '1400,610';
+	var maplocation818 = '1400,1086';
+	var maplocation820 = '1400,1142';
 	
-	var maplocation901 = 1458,500;
-	var maplocation903 = 1458,554;
-	var maplocation905 = 1458,610;
-	var maplocation919 = 1458,1086;
-	var maplocation921 = 1458,1142;
+	var maplocation901 = '1458,500';
+	var maplocation903 = '1458,554';
+	var maplocation905 = '1458,610';
+	var maplocation919 = '1458,1086';
+	var maplocation921 = '1458,1142';
 	
-	var maplocation902 = 1562,462;
-	var maplocation904 = 1562,556;
-	var maplocation906 = 1562,646;
+	var maplocation902 = '1562,462';
+	var maplocation904 = '1562,556';
+	var maplocation906 = '1562,646';
 	
-	var maplocation1001 = 1630,462;
-	var maplocation1003 = 1630,556;
-	var maplocation1005 = 1630,646;
+	var maplocation1001 = '1630,462';
+	var maplocation1003 = '1630,556';
+	var maplocation1005 = '1630,646';
 	
-	var maplocation1102 = 1908,500;
-	var maplocation1104 = 1908,554;
-	var maplocation1106 = 1908,610;
-	var maplocation1112 = 1908,796;
-	var maplocation1114 = 1908,580;
-	var maplocation1116 = 1908,906;
+	var maplocation1102 = '1908,500';
+	var maplocation1104 = '1908,554';
+	var maplocation1106 = '1908,610';
+	var maplocation1112 = '1908,796';
+	var maplocation1114 = '1908,580';
+	var maplocation1116 = '1908,906';
 	
-	var maplocation1201 = 1966,500;
-	var maplocation1203 = 1966,554;
-	var maplocation1205 = 1966,610;
-	var maplocation1213 = 1966,796;
-	var maplocation1215 = 1966,580;
-	var maplocation1217 = 1966,906;
+	var maplocation1201 = '1966,500';
+	var maplocation1203 = '1966,554';
+	var maplocation1205 = '1966,610';
+	var maplocation1213 = '1966,796';
+	var maplocation1215 = '1966,580';
+	var maplocation1217 = '1966,906';
 	
-	var maplocation1202 = 2074,500;
-	var maplocation1204 = 2074,554;
+	var maplocation1202 = '2074,500';
+	var maplocation1204 = '2074,554';
 	
-	var maplocation1301 = 2132,500;
-	var maplocation1303 = 2132,554;
+	var maplocation1301 = '2132,500';
+	var maplocation1303 = '2132,554';
 
     
    	
