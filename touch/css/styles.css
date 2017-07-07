@@ -45,7 +45,7 @@ body {
 /* NOTIFICATIONS ON MAIN MENU */
  
 .notificationContainer      {  background-color: red; color: #FFFFFF; text-align: center; }
-.notificationContainer span { margin-top: -10px !important; 
+.notificationContainer span { margin-top: -10px !important; }
 .notificationBadgeHome		{  display: block; position:absolute; top:-10px; right:-10px; width: 40px; height: 34px; border-radius: 50%; padding-top:6px;}
 .notificationBadgeMenu 		{  width: 22px; height: 22px; border-radius: 50%; position: absolute; top: 6px; right: 10px; font-size: 13px; line-height: 22px; }
 
