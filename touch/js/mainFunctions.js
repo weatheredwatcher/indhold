@@ -56,7 +56,7 @@ $(document).ready(function() {
 			success: function (data) {
 				var notificationCount = data.notificationCount;
 				if (notificationCount != 0) {
-					$('.notificationContainer').html('<span>'+notificationCount+'</span>');
+					$('.notificationContainer').html(notificationCount);
 					$('.notificationContainer').css({'visibility': 'visible'});
 				} else {
 					$('.notificationContainer').css({'visibility': 'hidden'});	
