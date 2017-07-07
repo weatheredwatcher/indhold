@@ -252,6 +252,7 @@ h1 {
     line-height: 1.2vw;
     overflow: hidden;
     z-index: 1;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
 }
 
 .socialPost span.username {
