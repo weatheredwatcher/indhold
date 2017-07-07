@@ -773,8 +773,8 @@ $(document).ready(function() {
    	
    	function dropMarker(coordX,coordY) {
 
-		newX = parseInt(coordX) - 30;
-		newY = parseInt(coordY) + 60;
+		newX = (parseInt(coordX) / 2) - 30;
+		newY = (parseInt(coordY) / 2) + 60;
    		//animation functions
    		$('#marker').stop().velocity({translateY: '-92px', translateX: newX +'px' }, 0, function(){
 	   		$("#marker").css({'visibility': 'visible'});
