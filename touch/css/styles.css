@@ -651,6 +651,7 @@ h5 {
 	background-repeat: no-repeat;
 	background-image: url('../assets/expomap.png');
 	background-size: cover;
+	background-color: rgba(255,255,255,0.9);
 }
 #boothFinder { 
 	float: left;
