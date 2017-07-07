@@ -740,7 +740,7 @@ $(document).ready(function() {
 	   	mouseWheel:{ enable: false }
 	});  
 	
-	$('#section-agenda .materialTabs li.updates').click(function() {
+	$('.updateButton').click(function() {
 		$('#updatesFrame').attr('src', 'http://otew.io/touch/updates.php');
 	});
 	
@@ -757,6 +757,7 @@ $(document).ready(function() {
 	//TEAM TWEET FUNCTIONS
 	$('.menuItem-ewgames').click(function() {
 		$('#leaderboardFrame').attr('src', 'http://otew.io/leaderboard/mobile?dev=true');
+		console.log('leader board frame call');
 	});
 	
 	
