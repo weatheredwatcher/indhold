@@ -229,3 +229,49 @@ h1#countdown {
 .units {
 	color: #FFFFFF;
 }
+
+@media only screen and (min-width : 1680px) { 
+	body {
+		background: none;
+	}	
+	
+	header {
+		display: none;
+	}
+	
+	.leaderboard {
+		padding: 0% 0% 0 0%;
+	}
+	
+	h1 {
+		font-size: 2vw;
+		margin-top: 0;	
+		margin-bottom: 1.5%;
+		text-align: left;	
+	}
+
+	.pager {
+		font-size: 3.5vw;
+		margin-bottom: 0%;
+	}
+
+	.pager span {
+		margin-right: 0.5%;
+	}
+	
+	.row {
+		height: 23%;
+	}
+
+	.name, .rank, .points {
+		font-size: 3vw;
+	}
+
+	.teamIcon {
+		display: flex;
+		height: 70%;
+		width: 8%;
+
+	}
+	
+}
