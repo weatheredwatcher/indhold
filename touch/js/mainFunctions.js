@@ -741,7 +741,7 @@ $(document).ready(function() {
 	});  
 	
 	$('.updateButton').click(function() {
-		$('#updatesFrame').attr('src', 'http://otew.io/touch/updates.php');
+		$('#updateFrame').attr('src', 'http://otew.io/touch/updates.php');
 	});
 	
 	
