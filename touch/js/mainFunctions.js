@@ -120,7 +120,7 @@ $(document).ready(function() {
     function resetAllCarousels() {
 	    
 	    //sets all carousels to the first slide
-	    $('#agendaCarousel, #sponsorCarousel, #eventCarousel').cycle('goto', 0);
+	    $('#agendaCarousel, #sponsorCarousel, #eventCarousel, #ewGamesCarousel').cycle('goto', 0);
 	   
 		//sets the map carousel to the default level
 	    var currentLevel = storage.get('defLevel');
