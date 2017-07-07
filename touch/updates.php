@@ -20,30 +20,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Updates</title>
-
-<!--Scripts-->
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
-
-<!-- Tyepkit -->
-<script src="https://use.typekit.net/oae8zyf.js"></script>
-<script>try{Typekit.load({ async: true });}catch(e){}</script>
-
-<!--Stylesheet-->
-<link rel="stylesheet" href="css/updatestyles.css" type="text/css" />
-
-<script>
-$(document).ready(function() {
-	$("tr:even").css("background-color", "rgba(255, 255, 255, 0.1);");
-	$("tr:odd").css("background-color", "rgba(255, 255, 255, 0.1)");
+	<title>Updates</title>
 	
-	$(document).bind('touchmove', function(e) {
-		e.preventDefault();
+	<!--Scripts-->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+	
+	<!-- Tyepkit -->
+	<script src="https://use.typekit.net/oae8zyf.js"></script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script>
+	
+	<!--Stylesheet-->
+	<link rel="stylesheet" href="css/updatestyles.css" type="text/css" />
+	
+	<script>
+	$(document).ready(function() {
+		$("tr:even").css("background-color", "rgba(255, 255, 255, 0.1);");
+		$("tr:odd").css("background-color", "rgba(255, 255, 255, 0.1)");
+		
+		$(document).bind('touchmove', function(e) {
+			e.preventDefault();
+		});
+		
 	});
-	
-});
-	
-</script>
+		
+	</script>
 
 </head>
 
