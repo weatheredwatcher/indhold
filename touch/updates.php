@@ -23,7 +23,11 @@
 <title>Updates</title>
 
 <!--Scripts-->
-<script language="javascript" type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+
+<!-- Tyepkit -->
+<script src="https://use.typekit.net/oae8zyf.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
 
 <!--Stylesheet-->
 <link rel="stylesheet" href="css/updatestyles.css" type="text/css" />
