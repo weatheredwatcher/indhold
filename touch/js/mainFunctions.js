@@ -755,10 +755,11 @@ $(document).ready(function() {
 	
 	
 	//TEAM TWEET FUNCTIONS
-	$('.menuItem-ewgames').click(function() {
+	$('.menuItem-ewgames, .leaderboardButton').click(function() {
 		$('#leaderboardFrame').attr('src', 'http://otew.io/leaderboard/mobile?dev=true');
 		console.log('leader board frame call');
 	});
+
 	
 	
 	
