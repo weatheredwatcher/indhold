@@ -757,7 +757,6 @@ $(document).ready(function() {
 	
 	var maplocation1301 = '2132,500';
 	var maplocation1303 = '2132,554';
-
     
    	
    	$('.expoRow').click(function(){
