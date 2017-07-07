@@ -299,32 +299,26 @@ h1 {
 		border-color: #4F3690;
 	}
 	.noTeamPost {
-		border-color: #FFFFFF;
+		border-color: #09BCEF;
 	}
 	
 	/* Hashtag styles*/
 	.bluePost .hashtag {
 		color: #2E3D98;
-		font-weight: bold;
 	}
 	.redPost .hashtag {
 		color: #D92A32;
-		font-weight: bold;
 	}
 	.greyPost .hashtag {
 		color: #7E929F;
-		font-weight: bold;
 	}
 	.tealPost .hashtag {
 		color: #00B8BA;
-		font-weight: bold;
 	}
 	.purplePost .hashtag {
 		color: #4F3690;
-		font-weight: bold;
 	}
 	.noTeamPost .hashtag {
-		color: #000000;
-		font-weight: bold;
+		color: #09BCEF;
 	}
 
