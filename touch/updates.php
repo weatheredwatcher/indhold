@@ -2,6 +2,7 @@
 	
 	//Brings in the required info to connect and connects to the database	
 	require("admin/config.php");
+
 	$connection = mysqli_connect($db_host, $db_user, $db_password, $db_name);
 
 	if (!$connection) {
