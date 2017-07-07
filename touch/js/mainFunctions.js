@@ -759,9 +759,6 @@ $(document).ready(function() {
 		$('#leaderboardFrame').attr('src', 'http://otew.io/leaderboard/mobile?dev=true');
 		console.log('leader board frame call');
 	});
-
-	
-	
 	
 	
 	
