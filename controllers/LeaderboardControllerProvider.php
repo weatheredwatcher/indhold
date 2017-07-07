@@ -36,7 +36,7 @@ class LeaderboardControllerProvider implements ControllerProviderInterface
         $controllers->get('/mobile', function() use($app) {
 
             $countdown = TRUE;
-            if ($countdown) {
+            if ($countdown || $_GET['dev']) {
 
                 return $app['twig']->render('mobile-countdown.twig');
             } else {
