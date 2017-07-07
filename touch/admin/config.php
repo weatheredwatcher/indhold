@@ -1,7 +1,7 @@
 <?php
 	$db_host = "localhost";  //
-	$db_user = "weatheredwatcher"; //"leaderboard_user";
-	$db_password = "password"; //"l3@d3rB0@rd";
+	$db_user = "leaderboard_user";
+	$db_password = "l3@d3rB0@rd";
 	$db_name = "otew_points";
 	
 	function mysqli_result($res,$row=0,$col=0){
