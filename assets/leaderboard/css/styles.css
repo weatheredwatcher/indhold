@@ -181,7 +181,7 @@ h1 {
 
 .leaderboard.team .teamBadge {
 	float: left;
-	height: 39.1%;
+	height: 75.1%;
 	width: 16.7%;
 	background-color: rgba(255,255,255,0.9);
 	background-position: center center;
@@ -252,6 +252,7 @@ h1 {
     line-height: 1.2vw;
     overflow: hidden;
     z-index: 1;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
 }
 
 .socialPost span.username {
@@ -299,32 +300,25 @@ h1 {
 		border-color: #4F3690;
 	}
 	.noTeamPost {
-		border-color: #FFFFFF;
+		border-color: #09BCEF;
 	}
 	
 	/* Hashtag styles*/
 	.bluePost .hashtag {
 		color: #2E3D98;
-		font-weight: bold;
 	}
 	.redPost .hashtag {
 		color: #D92A32;
-		font-weight: bold;
 	}
 	.greyPost .hashtag {
 		color: #7E929F;
-		font-weight: bold;
 	}
 	.tealPost .hashtag {
 		color: #00B8BA;
-		font-weight: bold;
 	}
 	.purplePost .hashtag {
 		color: #4F3690;
-		font-weight: bold;
 	}
 	.noTeamPost .hashtag {
-		color: #000000;
-		font-weight: bold;
+		color: #09BCEF;
 	}
-
