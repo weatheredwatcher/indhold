@@ -229,3 +229,25 @@ h1#countdown {
 .units {
 	color: #FFFFFF;
 }
+
+@media only screen and (min-device-width : 1680px) { 
+	body {
+		background: none;
+	}	
+	
+	header {
+		display: none;
+	}
+	
+	.leaderboard {
+		padding: 0% 5% 0 5%;
+	}
+	
+	h1 {
+		font-size: 3.5vw;
+		margin-top: 0;	
+		margin-bottom: 4%;
+		text-align: left;	
+	}
+	
+}
