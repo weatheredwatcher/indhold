@@ -756,7 +756,7 @@ $(document).ready(function() {
 	
 	//TEAM TWEET FUNCTIONS
 	$('.menuItem-ewgames').click(function() {
-		$('#leaderboardFrame').attr('src', 'otew.io/leaderboard/mobile?dev=true');
+		$('#leaderboardFrame').attr('src', 'http://otew.io/leaderboard/mobile?dev=true');
 	});
 	
 	
