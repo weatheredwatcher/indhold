@@ -650,14 +650,14 @@ $(document).ready(function() {
    	
     //MAP LOCATIONS
 	var maplocation112 = '220,796';
-	var maplocation114 = '220,580';
+	var maplocation114 = '220,854';
 	var maplocation116 = '220,906';
 	var maplocation118 = '220,1064';
 	var maplocation120 = '220,1120';
 	var maplocation122 = '220,1176';
 	
 	var maplocation213 = '278,796';
-	var maplocation215 = '278,580';
+	var maplocation215 = '278,854';
 	var maplocation217 = '278,906';
 	var maplocation219 = '278,1064';
 	var maplocation221 = '278,1120';
@@ -667,7 +667,7 @@ $(document).ready(function() {
 	var maplocation202 = '382,580';
 	var maplocation204 = '382,634';
 	var maplocation212 = '382,796';
-	var maplocation214 = '382,580';
+	var maplocation214 = '382,854';
 	var maplocation216 = '382,906';
 	var maplocation218 = '382,1064';
 	var maplocation222 = '382,1120';
@@ -682,11 +682,11 @@ $(document).ready(function() {
 	var maplocation323 = '442,1120';
 	
 	var maplocation412 = '718,796';
-	var maplocation414 = '718,580';
+	var maplocation414 = '718,854';
 	var maplocation416 = '718,906';
 	
 	var maplocation513 = '778,796';
-	var maplocation515 = '778,580';
+	var maplocation515 = '778,854';
 	var maplocation517 = '778,906';
 	
 	var maplocation512 = '878,718';
@@ -705,7 +705,7 @@ $(document).ready(function() {
 	var maplocation604 = '1058,556'; 
 	var maplocation606 = '1058,646';
 	var maplocation612 = '1046,796';
-	var maplocation614 = '1046,580';
+	var maplocation614 = '1046,854';
 	var maplocation616 = '1046,906';
 	var maplocation618 = '1058,1072';
 	
@@ -714,15 +714,15 @@ $(document).ready(function() {
 	var maplocation705 = '1128,646';
 	
 	var maplocation713 = '1104,796';
-	var maplocation715 = '1104,580';
+	var maplocation715 = '1104,854';
 	var maplocation717 = '1104,906';
 	var maplocation719 = '1126,1072';
 	
-	var maplocation802 = '1400,500';
-	var maplocation804 = '1400,554';
-	var maplocation806 = '1400,610';
-	var maplocation818 = '1400,1086';
-	var maplocation820 = '1400,1142';
+	var maplocation802 = '1398,500';
+	var maplocation804 = '1398,554';
+	var maplocation806 = '1398,610';
+	var maplocation818 = '1398,1086';
+	var maplocation820 = '1398,1142';
 	
 	var maplocation901 = '1458,500';
 	var maplocation903 = '1458,554';
@@ -742,14 +742,14 @@ $(document).ready(function() {
 	var maplocation1104 = '1908,554';
 	var maplocation1106 = '1908,610';
 	var maplocation1112 = '1908,796';
-	var maplocation1114 = '1908,580';
+	var maplocation1114 = '1908,854';
 	var maplocation1116 = '1908,906';
 	
 	var maplocation1201 = '1966,500';
 	var maplocation1203 = '1966,554';
 	var maplocation1205 = '1966,610';
 	var maplocation1213 = '1966,796';
-	var maplocation1215 = '1966,580';
+	var maplocation1215 = '1966,854';
 	var maplocation1217 = '1966,906';
 	
 	var maplocation1202 = '2074,500';
@@ -773,7 +773,7 @@ $(document).ready(function() {
    	
    	function dropMarker(coordX,coordY) {
 
-		newX = (parseInt(coordX) / 2) - 25;
+		newX = (parseInt(coordX) / 2) - 23;
 		newY = (parseInt(coordY) / 2) + 62;
    		//animation functions
    		$('#marker').stop().velocity({translateY: '-92px', translateX: newX +'px' }, 0, function(){
