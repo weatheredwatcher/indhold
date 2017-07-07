@@ -1,7 +1,7 @@
 <?php
 	
 	//Brings in the required info to connect and connects to the database	
-	require("/home/otewadmin/public_html/touch/admin/config.php");
+	require("config.php");
 	$connection = mysqli_connect($db_host, $db_user, $db_password, $db_name);
 	
 	$id = addslashes($_POST["rowID"]);
