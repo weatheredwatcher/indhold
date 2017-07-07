@@ -1,8 +1,8 @@
 <?php
-	$db_host = "72.249.150.224";
-	$db_user = "otewadmi_touch";
-	$db_password = "open123!";
-	$db_name = "otewadmi_touch";
+	$db_host = "localhost";  //
+	$db_user = "leaderboard_user";
+	$db_password = "l3@d3rB0@rd";
+	$db_name = "otew_points";
 	
 	function mysqli_result($res,$row=0,$col=0){
     $numrows = mysqli_num_rows($res);
