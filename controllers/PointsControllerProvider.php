@@ -107,6 +107,32 @@ class PointsControllerProvider implements ControllerProviderInterface
 
     });
 
+    $controllers->match('/delete', function () use ($app){
+
+        if(is_set($_POST['token'])){
+
+            if($_POST['token'] == "otew17"){
+
+                $id = $_POST['id'];
+                $sql= "DELETE from points where id= ?";
+                $app['dbs']['points']->executeQuery($sql, array($id));
+                $message = "Success: Deleted points ID:" . $id;
+            } else {
+
+                $message = "Failed: Wrong token";
+            }
+
+        } else {
+
+            $message = "Failed: Something went wrong";
+        }
+
+        $statusCode = 200;
+        $response = array('status' => 'ok', 'code' => $statusCode, 'message' => $message);
+        return $app->json((object) $response, $statusCode);
+
+    });
+
         return $controllers;
     }
 }

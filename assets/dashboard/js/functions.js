@@ -41,3 +41,28 @@ location.reload();
     }).done(function(data) {  location.reload();});
 
   }
+
+function deletePoints(ID){
+
+    $.ajax({
+        type: 'POST',
+        url: '/points/delete',
+        data: { 'token':'otew17', 'id': ID},
+        dataType: 'json',
+        encode: true
+    }).done(function(data) {  location.reload();});
+
+}
+
+function deleteUser(ID){
+
+    $.ajax({
+        type: 'POST',
+        url: 'deleteuser',
+        data: { 'token':'otew17', 'id': ID},
+        dataType: 'json',
+        encode: true
+    }).done(function(data) {  location.reload();});
+
+}
+

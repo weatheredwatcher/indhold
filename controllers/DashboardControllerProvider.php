@@ -101,6 +101,33 @@ class DashboardControllerProvider implements ControllerProviderInterface
 
         });
 
+        $controllers->match('/deleteuser', function () use ($app){
+
+            if(is_set($_POST['token'])){
+
+                if($_POST['token'] == "otew17"){
+
+                    $id = $_POST['id'];
+                    $sql= "DELETE from users where id= ?";
+                    $app['dbs']['points']->executeQuery($sql, array($id));
+                    $message = "Success: Deleted points ID:" . $id;
+                } else {
+
+                    $message = "Failed: Wrong token";
+                }
+
+            } else {
+
+                $message = "Failed: Something went wrong";
+            }
+
+            $statusCode = 200;
+            $response = array('status' => 'ok', 'code' => $statusCode, 'message' => $message);
+            return $app->json((object) $response, $statusCode);
+
+        });
+
+
         $controllers->match('/addscreen', function (Application $app) {
 
             if (null === $user = $app['session']->get('user')) {
