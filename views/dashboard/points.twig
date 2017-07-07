@@ -60,7 +60,8 @@ $(document).ready(function() {
 						 <td>{{ points.email }}</td>
                          <td> {{ points.source }}</td>
 						  <td>{{ points.timestamp }}</td>
-					 	  <td> <button onclick="deletePoints({{  points.id }})">Delete</button></td>
+					 	  <td><button  class="btn btn-danger btn-xs" data-title="Delete" onclick="deletePoints({{  points.id }})" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button>
+							  </td>
 				    </tr>
 						{% else %}
 						No users have been found.

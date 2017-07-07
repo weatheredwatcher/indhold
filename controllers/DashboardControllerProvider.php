@@ -103,7 +103,7 @@ class DashboardControllerProvider implements ControllerProviderInterface
 
         $controllers->match('/deleteuser', function () use ($app){
 
-            if(is_set($_POST['token'])){
+            if(isset($_POST['token'])){
 
                 if($_POST['token'] == "otew17"){
 
