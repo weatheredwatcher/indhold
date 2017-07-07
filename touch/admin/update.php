@@ -11,7 +11,7 @@
 
 <head>
 <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no">
-<title>EW2015 Updates</title>
+<title>EW2017 Updates</title>
 
 <!--Scripts-->
 <script language="javascript" type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
@@ -63,7 +63,7 @@
 	
 		<img src="../assets/logo-otew2016.svg" style="width: 300px; margin-bottom: 20px;"/>
 		
-		<h1>EW2015 Program Updates</h1>
+		<h1>EW2017 Program Updates</h1>
 		
 		<h2>Current Updates</h2>
 		

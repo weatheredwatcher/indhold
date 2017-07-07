@@ -742,6 +742,7 @@ $(document).ready(function() {
 	
 	$('.updateButton').click(function() {
 		$('#updateFrame').attr('src', 'http://otew.io/touch/updates.php');
+		console.log('update frame call');
 	});
 	
 	

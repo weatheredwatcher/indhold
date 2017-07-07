@@ -1,55 +1,10 @@
-/* Lato Regular */
-
-@font-face {
-    font-family: 'Lato';
-    src: url('../fonts/lato-regular-webfont.eot');
-    src: url('../fonts/lato-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/lato-regular-webfont.woff') format('woff'),
-         url('../fonts/lato-regular-webfont.ttf') format('truetype'),
-         url('../fonts/lato-regular-webfont.svg#latoregular') format('svg');
-    font-weight: 300;
-    font-style: normal;
-
-}
-
-/* Lato Bold */
-
-@font-face {
-    font-family: 'Lato';
-    src: url('../fonts/lato-bold-webfont.eot');
-    src: url('../fonts/lato-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/lato-bold-webfont.woff') format('woff'),
-         url('../fonts/lato-bold-webfont.ttf') format('truetype'),
-         url('../fonts/lato-bold-webfont.svg#latobold') format('svg');
-    font-weight: 500;
-    font-style: normal;
-
-}
-
-
-/* Lato Black */
-
-@font-face {
-    font-family: 'Lato';
-    src: url('../fonts/lato-black-webfont.eot');
-    src: url('../fonts/lato-black-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/lato-black-webfont.woff') format('woff'),
-         url('../fonts/lato-black-webfont.ttf') format('truetype'),
-         url('../fonts/lato-black-webfont.svg#latoblack') format('svg');
-    font-weight: 700;
-    font-style: normal;
-
-}
-
-
 body {
-	font-family: 'Lato', sans-serif;
+	font-family: 'Arial', sans-serif;
 	margin: 10px;
 	font-style: 14px;
-	background: url("../assets/background-ew2016.jpg") no-repeat;
+	background: url("../assets/ew-background.png") no-repeat;
 	background-size: cover;
 	color: #FFFFFF;
-	background-color: #000000;
 }
 
 #wrapper {
