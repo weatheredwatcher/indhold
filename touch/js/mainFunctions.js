@@ -95,6 +95,11 @@ $(document).ready(function() {
     function resetUI() {
 		goHome();
 	    closeModal();
+	    
+	    //tracking click home
+	    ga_storage._trackPageview('/home', 'Home');
+		var homeTotal = storage.get('HomeClicks') + 1;
+		storage.set('HomeClicks',homeTotal);
     }
     
     
@@ -836,145 +841,47 @@ $(document).ready(function() {
 			
    	// Home Screen and Slide Menu button tracking
    	
-   	/*
-   	
-   	//Home Buttons
-   	$('.sideMenuHome').on('click', function() {
-		ga_storage._trackPageview('/agenda', 'Agenda');
-		var homeTotal = storage.get('HomeClicks') + 1;
-		storage.set('HomeClicks',homeTotal);
-	});
-   	
    	//Agenda Buttons
-   	$('#homemenu-agenda a, .sideMenuAgenda').on('click', function() {
+   	$('.menuItem-agenda').on('click', function() {
 		ga_storage._trackPageview('/agenda', 'Agenda');
 		var agendaTotal = storage.get('AgendaClicks') + 1;
 		storage.set('AgendaClicks',agendaTotal);
 	});
 	
-	$('#homemenu-venuemap a, .sideMenuVenueMap').on('click', function() {
+	$('menuItem-maps').on('click', function() {
 		ga_storage._trackPageview('/venueMap', 'Venue Map');
 		var venueTotal = storage.get('VenueMapClicks') + 1;
 		storage.set('VenueMapClicks',venueTotal);
 	});
    	
-   	$('#homemenu-enterpriseexpo a, .sideMenuEnterpriseExpo').on('click', function() {
+   	$('.menuItem-expo').on('click', function() {
 		ga_storage._trackPageview('/enterpriseExpo', 'Enterprise Expo');
 		var enterpriseExpoTotal = storage.get('EnterpriseExpoClicks') + 1;
 		storage.set('EnterpriseExpoClicks',enterpriseExpoTotal);
 	});
 	
-	$('#homemenu-sponsors a, .sideMenuSponsors').on('click', function() {
+	$('.menuItem-sponsors').on('click', function() {
 		ga_storage._trackPageview('/sponsors', 'Sponsors');
 		var sponsorsTotal = storage.get('SponsorsClicks') + 1;
 		storage.set('SponsorsClicks',sponsorsTotal);
 	});
 	
-	$('#homemenu-social a, .sideMenuSocial').on('click', function() {
+	$('.menuItem-social').on('click', function() {
 		ga_storage._trackPageview('/social', 'Social');
 		var socialTotal = storage.get('SocialClicks') + 1;
 		storage.set('SocialClicks',socialTotal);
 	});
 	
-	$('#homemenu-networking a, .sideMenuNetworking').on('click', function() {
+	$('.menuItem-events').on('click', function() {
 		ga_storage._trackPageview('/networking', 'Networking');
 		var networkingTotal = storage.get('NetworkingClicks') + 1;
 		storage.set('NetworkingClicks',networkingTotal);
 	});
 	
-	$('#homemenu-teamtweet a, .sideMenuTeamTweet').on('click', function() {
+	$('.menuItem-ewgames').on('click', function() {
 		ga_storage._trackPageview('/EWGames', 'Team Tweet');
 		var EWGamesTotal = storage.get('EWGamesClicks') + 1;
 		storage.set('EWGamesClicks',EWGamesTotal);
 	});
-	
-	//track sponsor clicks
-	$('#diamond').on('click', function() {
-		ga_storage._trackEvent('sponsors', 'click', 'diamond');
-	});
-	$('#emerald').on('click', function() {
-		ga_storage._trackEvent('sponsors', 'click', 'emerald');
-	});
-	$('#sapphire').on('click', function() {
-		ga_storage._trackEvent('sponsors', 'click', 'sapphire');
-	});
-	$('#pod').on('click', function() {
-		ga_storage._trackEvent('sponsors', 'click', 'pod');
-	});
-	$('#promotional').on('click', function() {
-		ga_storage._trackEvent('sponsors', 'click', 'promotional');
-	});
-	
-	//track venue clicks
-	$('#level0 a').on('click', function() {
-		ga_storage._trackEvent('venuemap', 'click', 'Level0');
-	});
-	$('#level2 a').on('click', function() {
-		ga_storage._trackEvent('venuemap', 'click', 'Level2');
-	});
-	$('#levelMPres a').on('click', function() {
-		ga_storage._trackEvent('venuemap', 'click', 'Level M Presidential');
-	});
-	$('#levelMMag a').on('click', function() {
-		ga_storage._trackEvent('venuemap', 'click', 'Level M Magnolia');
-	});
-	$('#levelAll a').on('click', function() {
-		ga_storage._trackEvent('venuemap', 'click', 'All Levels');
-	});
-	
-	
-	//track agenda clicks
-	$('#agendaHome').on('click', function() {
-		ga_storage._trackEvent('agenda', 'click', 'Home(Agenda)');
-	});
-	$('#agendaOverview').on('click', function() {
-		ga_storage._trackEvent('agenda', 'click', 'Overview');
-	});
-	$('#agendaUpdates').on('click', function() {
-		ga_storage._trackEvent('agenda', 'click', 'Updates');
-	});
-	$('#agendaSaturday').on('click', function() {
-		ga_storage._trackEvent('agenda', 'click', 'Saturday');
-	});
-	$('#agendaSunday').on('click', function() {
-		ga_storage._trackEvent('agenda', 'click', 'Sunday');
-	});
-	$('#agendaMonday').on('click', function() {
-		ga_storage._trackEvent('agenda', 'click', 'Monday');
-	});
-	$('#agendaTuesday').on('click', function() {
-		ga_storage._trackEvent('agenda', 'click', 'Tuesday');
-	});
-	$('#agendaWednesday').on('click', function() {
-		ga_storage._trackEvent('agenda', 'click', 'Wednesday');
-	});
-	$('#agendaThursday').on('click', function() {
-		ga_storage._trackEvent('agenda', 'click', 'Thursday');
-	});
-	$('#agendaInnovationLab').on('click', function() {
-		ga_storage._trackEvent('agenda', 'click', 'InnovationLab');
-	});
-	$('#agendaDeveloper').on('click', function() {
-		ga_storage._trackEvent('agenda', 'click', 'DeveloperLab');
-	});
-	
-	//track team tweet clicks
-	$('#leaderboard').on('click', function() {
-		ga_storage._trackEvent('ewgames', 'click', 'Leaderboard');
-	});
-	$('#teams').on('click', function() {
-		ga_storage._trackEvent('ewgames', 'click', 'Teams');
-	});
-	$('#howtoscore').on('click', function() {
-		ga_storage._trackEvent('ewgames', 'click', 'HowToScore');
-	});
-	$('#prizes').on('click', function() {
-		ga_storage._trackEvent('ewgames', 'click', 'Prizes');
-	});
-	$('#rules').on('click', function() {
-		ga_storage._trackEvent('ewgames', 'click', 'Rules');
-	});
-	
-	*/
-	
+		
 });
