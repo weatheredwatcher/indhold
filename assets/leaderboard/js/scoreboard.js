@@ -159,7 +159,7 @@ function getScore(){
                       name = truncateName(blueTeamLeaders[b].name);
 
 
-                      $('#blueRow').append('<div class="row blue' + t + '" data-points="' + blueTeamLeaders[b].total + '">');
+                      $('#blueRow').append('<div class="row blue' + b + '" data-points="' + blueTeamLeaders[b].total + '">');
                       $('.blue' + b).append('<div class="rank">');
                       $('.blue' + b).append('<div class="teamIcon blue">');
                       $('.blue' + b).append('<div class="name">' + name + '</div>');
