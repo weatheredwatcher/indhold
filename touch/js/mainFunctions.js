@@ -6,13 +6,12 @@ $(document).ready(function() {
 	
 	//Prevent right click context menu
 	
-	/*
+	
 	$("body").bind("contextmenu",function(){
        return false;
     }); 
     
-    */
-    
+
 	//Disable Touch Scroll
     $(document).bind('touchmove', function(e) {
 		e.preventDefault();
