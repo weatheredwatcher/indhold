@@ -163,5 +163,9 @@ $(document).ready(function() {
 		$('#awardPointsButton').fadeOut("slow");
 	}
 
+	//set window height
+    if($(window).width() > 640) { //check if screen width is less than 640px (i.e. mobile)
+        $('body').css({ 'height' : $(window).height() }); 
+    }
 
 });
