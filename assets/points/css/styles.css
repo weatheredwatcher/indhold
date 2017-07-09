@@ -333,3 +333,6 @@ input[type="text"], input[type="password"] {
 	width: 80%;
 	margin: 0 auto 0 auto;
 }
+#individualButton {
+	margin-top: 30px;
+}
