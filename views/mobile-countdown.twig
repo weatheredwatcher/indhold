@@ -29,7 +29,6 @@
 		    var mins = (remainingSeconds % (60 * 60)) / 60;
 		    
 		    var remainingTime = {
-		        "<span class='units'>day</span><br/>": remainingSeconds / (60 * 60 * 24),
 		        "<span class='units'>hours</span><br/>": (remainingSeconds % (60 * 60 * 24)) / (60 * 60),
 		        "<span class='units'>mins</span><br/>": (remainingSeconds % (60 * 60)) / 60,
 		        "<span class='units'>secs</span>": remainingSeconds % 60
