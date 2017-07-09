@@ -135,7 +135,7 @@ header {
 
 h1 {
 	font-weight: 500;
-	font-size: 3vh;
+	font-size: 5vw;
 	margin: 0;
 	padding: 0;
 	width: 100%;
@@ -165,7 +165,7 @@ h3 {
 
 h2 {
 	font-weight: 200;
-	font-size: 3.5vh;
+	font-size: 6vw;
 	margin: 2% 0;
 	padding: 0;
 	width: 100%;
