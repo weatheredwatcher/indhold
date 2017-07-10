@@ -23,6 +23,26 @@ trait ApplicationVersion {
     }
 }
 
+trait Options {
+
+
+    public static function store($option, $value)
+    {
+        $sql="INSERT INTO admin (option, value) values( ?, ?)";
+        $value=$app['dbs']['points']->fetchArray($sql);
+    }
+    public static function get($option)
+    {
+
+        $sql="SELECT value from admin WHERE option=$option";
+        $value=$app['dbs']['points']->fetchArray($sql);
+
+    }
+
+
+
+}
+
 // Usage: echo 'MyApplication ' . ApplicationVersion::get();
 
 // MyApplication v1.2.3-dev.474a1d0 (2016-11-02 14:11:22)

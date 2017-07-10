@@ -35,20 +35,13 @@ class LeaderboardControllerProvider implements ControllerProviderInterface
 
         $controllers->get('/mobile', function() use($app) {
 
-            $countdown = TRUE;
-            if (!$_GET['dev']) {
-
-                return $app['twig']->render('mobile-countdown.twig');
-            } else {
-
 
             $sql = "select * from leaderboard where active=TRUE";
 
             $request = $app['dbs']['points']->fetchAll($sql);
 
             return $app['twig']->render('mobile.twig', array('slides' => $request,));
-           }
-    
+           
         });
 
 
