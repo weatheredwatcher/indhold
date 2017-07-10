@@ -15,6 +15,12 @@ body {
 	color: #FFFFFF;
 	background: url('../img/background.jpg') no-repeat;
 	background-size: cover;
+	overflow: hidden;
+}
+
+.container { 
+	height: 100%;
+	width: 100%;
 }
 
 
@@ -347,24 +353,4 @@ input[type="text"], input[type="password"] {
 		width: 480px;
 		margin: 0 auto 0 auto;
 	}
-}
-
-
-clearfix:before,
-.clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
-}
-
-.clearfix:after {
-    clear: both;
-}
-
-/*
- * For IE 6/7 only
- * Include this rule to trigger hasLayout and contain floats.
- */
-
-.clearfix {
-    *zoom: 1;
 }
