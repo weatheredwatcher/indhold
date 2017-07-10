@@ -6,13 +6,12 @@ $(document).ready(function() {
 	
 	//Prevent right click context menu
 	
-	/*
+	
 	$("body").bind("contextmenu",function(){
        return false;
     }); 
     
-    */
-    
+
 	//Disable Touch Scroll
     $(document).bind('touchmove', function(e) {
 		e.preventDefault();
@@ -95,6 +94,11 @@ $(document).ready(function() {
     function resetUI() {
 		goHome();
 	    closeModal();
+	    
+	    //tracking click home
+	    ga_storage._trackPageview('/home', 'Home');
+		var homeTotal = storage.get('HomeClicks') + 1;
+		storage.set('HomeClicks',homeTotal);
     }
     
     
@@ -648,54 +652,115 @@ $(document).ready(function() {
 	});
 
    	
-   //MAP LOCATIONS
-   var maplocation201 = "200,584";
-   var maplocation202 = "200,566";
-   var maplocation203 = "319,604";
-   var maplocation204 = "360,604";
-   var maplocation205 = "541,604";
-   var maplocation206 = "583,604";
-   var maplocation207 = "652,604";
-   var maplocation208 = "693,604";
-   var maplocation209 = "241,119";
-   var maplocation210 = "282,119";
-   var maplocation211 = "432,228";
-   var maplocation212 = "473,228";
-   var maplocation215 = "620,119";
-   var maplocation216 = "662,119";
-   
-   var maplocation301 = "200,485";
-   var maplocation302 = "200,465";
-   var maplocation303 = "251,531";
-   var maplocation304 = "251,510";
-   var maplocation305 = "301,485";
-   var maplocation306 = "301,465";
-   var maplocation307 = "362,530";
-   var maplocation308 = "362,510";
-   var maplocation309 = "540,530";
-   var maplocation310 = "540,510";
-   var maplocation311 = "599,485";
-   var maplocation312 = "599,465";
-   var maplocation313 = "651,531";
-   var maplocation314 = "651,511";
-   var maplocation315 = "701,485";
-   var maplocation316 = "701,465";
-   
-   var maplocation401 = "200,270";
-   var maplocation402 = "200,250";
-   var maplocation403 = "251,219";
-   var maplocation404 = "251,199";
-   var maplocation405 = "301,270";
-   var maplocation406 = "301,250";
-   var maplocation409 = "540,219";
-   var maplocation410 = "540,199";
-   var maplocation411 = "599,270";
-   var maplocation412 = "599,250";
-   var maplocation413 = "651,219";
-   var maplocation414 = "651,199";
-   var maplocation415 = "701,270";
-   var maplocation416 = "701,250";
-   var maplocation417 = "362,219";
+    //MAP LOCATIONS
+	var maplocation112 = '220,796';
+	var maplocation114 = '220,854';
+	var maplocation116 = '220,906';
+	var maplocation118 = '220,1064';
+	var maplocation120 = '220,1120';
+	var maplocation122 = '220,1176';
+	
+	var maplocation213 = '278,796';
+	var maplocation215 = '278,854';
+	var maplocation217 = '278,906';
+	var maplocation219 = '278,1064';
+	var maplocation221 = '278,1120';
+	var maplocation223 = '278,1176';
+	
+	var maplocation200 = '382,524';
+	var maplocation202 = '382,580';
+	var maplocation204 = '382,634';
+	var maplocation212 = '382,796';
+	var maplocation214 = '382,854';
+	var maplocation216 = '382,906';
+	var maplocation218 = '382,1064';
+	var maplocation222 = '382,1120';
+	
+	var maplocation301 = '442,524';
+	var maplocation303 = '442,580';
+	var maplocation305 = '442,634';
+	var maplocation313 = '442,796';
+	var maplocation315 = '442,580';
+	var maplocation317 = '442,906';
+	var maplocation319 = '442,1064';
+	var maplocation323 = '442,1120';
+	
+	var maplocation412 = '718,796';
+	var maplocation414 = '718,854';
+	var maplocation416 = '718,906';
+	
+	var maplocation513 = '778,796';
+	var maplocation515 = '778,854';
+	var maplocation517 = '778,906';
+	
+	var maplocation512 = '878,718';
+	var maplocation514 = '878,812';
+	var maplocation516 = '878,898';
+	
+	var maplocation518 = '914,1070';
+	
+	var maplocation521 = '786,1190';
+	
+	var maplocation613 = '946,718';
+	var maplocation615 = '946,812';
+	var maplocation617 = '946,898';
+	
+	var maplocation602 = '1058,462';
+	var maplocation604 = '1058,556'; 
+	var maplocation606 = '1058,646';
+	var maplocation612 = '1046,796';
+	var maplocation614 = '1046,854';
+	var maplocation616 = '1046,906';
+	var maplocation618 = '1058,1072';
+	
+	var maplocation701 = '1128,462';
+	var maplocation703 = '1128,556';
+	var maplocation705 = '1128,646';
+	
+	var maplocation713 = '1104,796';
+	var maplocation715 = '1104,854';
+	var maplocation717 = '1104,906';
+	var maplocation719 = '1126,1072';
+	
+	var maplocation802 = '1398,500';
+	var maplocation804 = '1398,554';
+	var maplocation806 = '1398,610';
+	var maplocation818 = '1398,1086';
+	var maplocation820 = '1398,1142';
+	
+	var maplocation901 = '1458,500';
+	var maplocation903 = '1458,554';
+	var maplocation905 = '1458,610';
+	var maplocation919 = '1458,1086';
+	var maplocation921 = '1458,1142';
+	
+	var maplocation902 = '1562,462';
+	var maplocation904 = '1562,556';
+	var maplocation906 = '1562,646';
+	
+	var maplocation1001 = '1630,462';
+	var maplocation1003 = '1630,556';
+	var maplocation1005 = '1630,646';
+	
+	var maplocation1102 = '1908,500';
+	var maplocation1104 = '1908,554';
+	var maplocation1106 = '1908,610';
+	var maplocation1112 = '1908,796';
+	var maplocation1114 = '1908,854';
+	var maplocation1116 = '1908,906';
+	
+	var maplocation1201 = '1966,500';
+	var maplocation1203 = '1966,554';
+	var maplocation1205 = '1966,610';
+	var maplocation1213 = '1966,796';
+	var maplocation1215 = '1966,854';
+	var maplocation1217 = '1966,906';
+	
+	var maplocation1202 = '2074,500';
+	var maplocation1204 = '2074,554';
+	
+	var maplocation1301 = '2132,500';
+	var maplocation1303 = '2132,554';
     
    	
    	$('.expoRow').click(function(){
@@ -712,8 +777,8 @@ $(document).ready(function() {
    	
    	function dropMarker(coordX,coordY) {
 
-		newX = parseInt(coordX) - 30;
-		newY = parseInt(coordY) + 60;
+		newX = (parseInt(coordX) / 2) - 23;
+		newY = (parseInt(coordY) / 2) + 62;
    		//animation functions
    		$('#marker').stop().velocity({translateY: '-92px', translateX: newX +'px' }, 0, function(){
 	   		$("#marker").css({'visibility': 'visible'});
@@ -741,7 +806,8 @@ $(document).ready(function() {
 	});  
 	
 	$('.updateButton').click(function() {
-		$('#updatesFrame').attr('src', 'http://otew.io/touch/updates.php');
+		$('#updateFrame').attr('src', 'http://otew.io/touch/updates.php');
+		console.log('update frame call');
 	});
 	
 	
@@ -774,145 +840,47 @@ $(document).ready(function() {
 			
    	// Home Screen and Slide Menu button tracking
    	
-   	/*
-   	
-   	//Home Buttons
-   	$('.sideMenuHome').on('click', function() {
-		ga_storage._trackPageview('/agenda', 'Agenda');
-		var homeTotal = storage.get('HomeClicks') + 1;
-		storage.set('HomeClicks',homeTotal);
-	});
-   	
    	//Agenda Buttons
-   	$('#homemenu-agenda a, .sideMenuAgenda').on('click', function() {
+   	$('.menuItem-agenda').on('click', function() {
 		ga_storage._trackPageview('/agenda', 'Agenda');
 		var agendaTotal = storage.get('AgendaClicks') + 1;
 		storage.set('AgendaClicks',agendaTotal);
 	});
 	
-	$('#homemenu-venuemap a, .sideMenuVenueMap').on('click', function() {
+	$('menuItem-maps').on('click', function() {
 		ga_storage._trackPageview('/venueMap', 'Venue Map');
 		var venueTotal = storage.get('VenueMapClicks') + 1;
 		storage.set('VenueMapClicks',venueTotal);
 	});
    	
-   	$('#homemenu-enterpriseexpo a, .sideMenuEnterpriseExpo').on('click', function() {
+   	$('.menuItem-expo').on('click', function() {
 		ga_storage._trackPageview('/enterpriseExpo', 'Enterprise Expo');
 		var enterpriseExpoTotal = storage.get('EnterpriseExpoClicks') + 1;
 		storage.set('EnterpriseExpoClicks',enterpriseExpoTotal);
 	});
 	
-	$('#homemenu-sponsors a, .sideMenuSponsors').on('click', function() {
+	$('.menuItem-sponsors').on('click', function() {
 		ga_storage._trackPageview('/sponsors', 'Sponsors');
 		var sponsorsTotal = storage.get('SponsorsClicks') + 1;
 		storage.set('SponsorsClicks',sponsorsTotal);
 	});
 	
-	$('#homemenu-social a, .sideMenuSocial').on('click', function() {
+	$('.menuItem-social').on('click', function() {
 		ga_storage._trackPageview('/social', 'Social');
 		var socialTotal = storage.get('SocialClicks') + 1;
 		storage.set('SocialClicks',socialTotal);
 	});
 	
-	$('#homemenu-networking a, .sideMenuNetworking').on('click', function() {
+	$('.menuItem-events').on('click', function() {
 		ga_storage._trackPageview('/networking', 'Networking');
 		var networkingTotal = storage.get('NetworkingClicks') + 1;
 		storage.set('NetworkingClicks',networkingTotal);
 	});
 	
-	$('#homemenu-teamtweet a, .sideMenuTeamTweet').on('click', function() {
+	$('.menuItem-ewgames').on('click', function() {
 		ga_storage._trackPageview('/EWGames', 'Team Tweet');
 		var EWGamesTotal = storage.get('EWGamesClicks') + 1;
 		storage.set('EWGamesClicks',EWGamesTotal);
 	});
-	
-	//track sponsor clicks
-	$('#diamond').on('click', function() {
-		ga_storage._trackEvent('sponsors', 'click', 'diamond');
-	});
-	$('#emerald').on('click', function() {
-		ga_storage._trackEvent('sponsors', 'click', 'emerald');
-	});
-	$('#sapphire').on('click', function() {
-		ga_storage._trackEvent('sponsors', 'click', 'sapphire');
-	});
-	$('#pod').on('click', function() {
-		ga_storage._trackEvent('sponsors', 'click', 'pod');
-	});
-	$('#promotional').on('click', function() {
-		ga_storage._trackEvent('sponsors', 'click', 'promotional');
-	});
-	
-	//track venue clicks
-	$('#level0 a').on('click', function() {
-		ga_storage._trackEvent('venuemap', 'click', 'Level0');
-	});
-	$('#level2 a').on('click', function() {
-		ga_storage._trackEvent('venuemap', 'click', 'Level2');
-	});
-	$('#levelMPres a').on('click', function() {
-		ga_storage._trackEvent('venuemap', 'click', 'Level M Presidential');
-	});
-	$('#levelMMag a').on('click', function() {
-		ga_storage._trackEvent('venuemap', 'click', 'Level M Magnolia');
-	});
-	$('#levelAll a').on('click', function() {
-		ga_storage._trackEvent('venuemap', 'click', 'All Levels');
-	});
-	
-	
-	//track agenda clicks
-	$('#agendaHome').on('click', function() {
-		ga_storage._trackEvent('agenda', 'click', 'Home(Agenda)');
-	});
-	$('#agendaOverview').on('click', function() {
-		ga_storage._trackEvent('agenda', 'click', 'Overview');
-	});
-	$('#agendaUpdates').on('click', function() {
-		ga_storage._trackEvent('agenda', 'click', 'Updates');
-	});
-	$('#agendaSaturday').on('click', function() {
-		ga_storage._trackEvent('agenda', 'click', 'Saturday');
-	});
-	$('#agendaSunday').on('click', function() {
-		ga_storage._trackEvent('agenda', 'click', 'Sunday');
-	});
-	$('#agendaMonday').on('click', function() {
-		ga_storage._trackEvent('agenda', 'click', 'Monday');
-	});
-	$('#agendaTuesday').on('click', function() {
-		ga_storage._trackEvent('agenda', 'click', 'Tuesday');
-	});
-	$('#agendaWednesday').on('click', function() {
-		ga_storage._trackEvent('agenda', 'click', 'Wednesday');
-	});
-	$('#agendaThursday').on('click', function() {
-		ga_storage._trackEvent('agenda', 'click', 'Thursday');
-	});
-	$('#agendaInnovationLab').on('click', function() {
-		ga_storage._trackEvent('agenda', 'click', 'InnovationLab');
-	});
-	$('#agendaDeveloper').on('click', function() {
-		ga_storage._trackEvent('agenda', 'click', 'DeveloperLab');
-	});
-	
-	//track team tweet clicks
-	$('#leaderboard').on('click', function() {
-		ga_storage._trackEvent('ewgames', 'click', 'Leaderboard');
-	});
-	$('#teams').on('click', function() {
-		ga_storage._trackEvent('ewgames', 'click', 'Teams');
-	});
-	$('#howtoscore').on('click', function() {
-		ga_storage._trackEvent('ewgames', 'click', 'HowToScore');
-	});
-	$('#prizes').on('click', function() {
-		ga_storage._trackEvent('ewgames', 'click', 'Prizes');
-	});
-	$('#rules').on('click', function() {
-		ga_storage._trackEvent('ewgames', 'click', 'Rules');
-	});
-	
-	*/
-	
+		
 });

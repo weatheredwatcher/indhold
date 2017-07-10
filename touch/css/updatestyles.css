@@ -1,61 +1,5 @@
-/* Lato Light */
-
-@font-face {
-    font-family: 'Lato';
-    src: url('../fonts/lato-light-webfont.eot');
-    src: url('../fonts/lato-light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/lato-light-webfont.woff') format('woff'),
-         url('../fonts/lato-light-webfont.ttf') format('truetype'),
-         url('../fonts/lato-light-webfont.svg#latolight') format('svg');
-    font-weight: 200;
-    font-style: normal;
-
-}
-
-/* Lato Regular */
-
-@font-face {
-    font-family: 'Lato';
-    src: url('../fonts/lato-regular-webfont.eot');
-    src: url('../fonts/lato-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/lato-regular-webfont.woff') format('woff'),
-         url('../fonts/lato-regular-webfont.ttf') format('truetype'),
-         url('../fonts/lato-regular-webfont.svg#latoregular') format('svg');
-    font-weight: 300;
-    font-style: normal;
-
-}
-
-/* Lato Bold */
-
-@font-face {
-    font-family: 'Lato';
-    src: url('../fonts/lato-bold-webfont.eot');
-    src: url('../fonts/lato-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/lato-bold-webfont.woff') format('woff'),
-         url('../fonts/lato-bold-webfont.ttf') format('truetype'),
-         url('../fonts/lato-bold-webfont.svg#latobold') format('svg');
-    font-weight: 500;
-    font-style: normal;
-
-}
-
-/* Lato Black */
-
-@font-face {
-    font-family: 'Lato';
-    src: url('../fonts/lato-black-webfont.eot');
-    src: url('../fonts/lato-black-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/lato-black-webfont.woff') format('woff'),
-         url('../fonts/lato-black-webfont.ttf') format('truetype'),
-         url('../fonts/lato-black-webfont.svg#latoblack') format('svg');
-    font-weight: 700;
-    font-style: normal;
-
-}
-
 body {
-	font-family: 'Lato', sans-serif;
+	font-family: "aktiv-grotesk", Helvetica, sans-serif;
 	color: #FFFFFF;
 	font-size: 25px;
 	-moz-user-select: none;
@@ -89,16 +33,16 @@ table td {
 	margin-top: 300px;
 	margin-left: 45px;
 	background-color: rgba(255, 255, 255, 0.1);
-	color: #2DA3E0;
+	color: #FFFFFF;
 	font-size: 35px;
 	text-align: center;
 	padding: 30px;
-	width: 100%;
+	width: 90%;
 }
 
 h1 {
 	font-size: 34px;
 	font-weight: 200;
-	color: #2DA3E0;
+	color: #FFFFFF;
 	margin-left: 20px;
 }

@@ -20,7 +20,6 @@ body {
 }
 
 
-
 /* Background Image */
 
 #backgroundImage {
@@ -45,6 +44,7 @@ body {
 /* NOTIFICATIONS ON MAIN MENU */
  
 .notificationContainer      {  background-color: red; color: #FFFFFF; text-align: center; }
+.notificationContainer span { margin-top: -10px !important; }
 .notificationBadgeHome		{  display: block; position:absolute; top:-10px; right:-10px; width: 40px; height: 34px; border-radius: 50%; padding-top:6px;}
 .notificationBadgeMenu 		{  width: 22px; height: 22px; border-radius: 50%; position: absolute; top: 6px; right: 10px; font-size: 13px; line-height: 22px; }
 
@@ -464,15 +464,13 @@ rippleDrop {  100% {
 
 
 
-
-
 /* Agenda */
 
 h3 {
-	font-weight: 100;
+	font-weight: 700;
 	font-size: 40px;
 	color: #FFFFFF;
-	margin: 0 0 30px 0;	
+	margin: 15px 0 10px 0;	
 	padding: 0;	
 }
 
@@ -498,18 +496,16 @@ h3 {
 }
 
 .breakoutTable th {
-	background-color: #2DA3E0;
-	color: #FFFFFF;
+	color: #2E3D98;
 	text-align: left;
 	font-size: 20px;
-	font-weight: 200;
-	padding: 10px 10px 10px 20px;
+	font-weight: 700;
+	padding: 10px 10px 10px 0px;
 }
 
 .agendaTable th {
 	text-align: left;
 	font-size: 20px;
-	font-weight: 200;
 	padding: 20px 10px 10px 0px;
 	color: #2E3D98;
 	font-weight: 700;
@@ -545,18 +541,21 @@ h3 {
 
 .agendaDescription {
 	width: 55%;
+	vertical-align: top;
 }
 
 .cloudDescription {
 	width: 70%;
+	vertical-align: top;
 }
 
 .agendaBreakoutDescription {
-	width: 85%;
+	width: 80%;
+	vertical-align: top;
 }
 
 .agendaLocation {
-	width: 17%;
+	width: 20%;
 	
 }
 

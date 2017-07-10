@@ -71,9 +71,7 @@ header {
 }
 
 #resetButton {
-	position: fixed;
-	left: 5%;
-	bottom: 0;
+	display: inline-block;
 	width: 30%;
 }
 
@@ -137,7 +135,7 @@ header {
 
 h1 {
 	font-weight: 500;
-	font-size: 3vh;
+	font-size: 5vw;
 	margin: 0;
 	padding: 0;
 	width: 100%;
@@ -153,7 +151,7 @@ h1 {
 
 h3 {
 	font-weight: 500;
-	font-size: 5vh;
+	font-size: 7vw;
 	margin: 30px auto 40px auto;
 	padding: 0;
 	width: 80%;
@@ -167,7 +165,7 @@ h3 {
 
 h2 {
 	font-weight: 200;
-	font-size: 3.5vh;
+	font-size: 6vw;
 	margin: 2% 0;
 	padding: 0;
 	width: 100%;
@@ -275,11 +273,10 @@ h2 {
 #awardPointsButton:link {
 	margin-left: auto;
 	margin-right: auto;
-	display: block;
-	position: fixed;
-	bottom: 0;
-	width: 55%;
-	right: 5%;
+	display: inline-block;
+	display: inline-block;
+	width: 60%;
+	margin-left: 5%;
 	-webkit-transition: margin-top 200ms ease-out;
     -moz-transition: margin-top 200ms ease-out;
     -o-transition: margin-top 200ms ease-out;
@@ -331,4 +328,11 @@ input[type="text"], input[type="password"] {
 
 #password {
 	background-image: url('../img/lock.png');
+}
+.buttonContainer {
+	width: 80%;
+	margin: 0 auto 0 auto;
+}
+#individualButton {
+	margin-top: 30px;
 }
