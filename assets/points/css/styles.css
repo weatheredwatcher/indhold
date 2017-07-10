@@ -135,7 +135,7 @@ header {
 
 h1 {
 	font-weight: 500;
-	font-size: 5vw;
+	font-size: 18px;
 	margin: 0;
 	padding: 0;
 	width: 100%;
@@ -151,7 +151,7 @@ h1 {
 
 h3 {
 	font-weight: 500;
-	font-size: 7vw;
+	font-size: 20px;
 	margin: 30px auto 40px auto;
 	padding: 0;
 	width: 80%;
@@ -165,7 +165,7 @@ h3 {
 
 h2 {
 	font-weight: 200;
-	font-size: 6vw;
+	font-size: 20px;
 	margin: 2% 0;
 	padding: 0;
 	width: 100%;
@@ -335,4 +335,36 @@ input[type="text"], input[type="password"] {
 }
 #individualButton {
 	margin-top: 30px;
+}
+
+.container {
+	border: 1px solid red;
+}
+
+
+@media only screen and (min-width : 480px) { 
+	.container { 
+		width: 480px;
+		margin: 0 auto 0 auto;
+	}
+}
+
+
+clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
 }
