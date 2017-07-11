@@ -41,7 +41,7 @@ class LeaderboardControllerProvider implements ControllerProviderInterface
             $request = $app['dbs']['points']->fetchAll($sql);
 
             return $app['twig']->render('mobile.twig', array('slides' => $request,));
-           
+
         });
 
 

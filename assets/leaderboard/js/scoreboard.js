@@ -257,7 +257,7 @@ function getPosts(){
 
 	  for (var post in posts) {
               var test = posts[post].content;
-			  var unixtime = posts[post].created
+			  var unixtime = posts[post].created;
 			  unixtime = unixtime.toString().slice(0, -3);
 
 			  if(posts[post].teamId){
