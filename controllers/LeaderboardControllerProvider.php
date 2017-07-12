@@ -32,6 +32,13 @@ class LeaderboardControllerProvider implements ControllerProviderInterface
             return $app['twig']->render('index.html', array('slides' => $request,));
         });
 
+        $controllers->get('/debug', function (Application $app) {
+
+
+
+            return $app['twig']->render('debug-index.twig');
+        });
+
 
         $controllers->get('/mobile', function() use($app) {
 
