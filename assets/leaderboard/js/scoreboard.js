@@ -245,12 +245,19 @@ function getPosts(){
 
         }
                     
-                          });     
+                          }).always(function(){
+
+                            startSocialWall();
+         }
+
+
+
+                          );
      
  
  var jqxhr = $.getJSON(server_path +"/api/get_posts")
  
- //       var jqxhr = $.getJSON("http://955832fa.ngrok.io/get_posts")
+
           .done(function(response) {
 
         var posts = response.posts
@@ -288,7 +295,7 @@ function getPosts(){
            })
            .always(function() {
 
-               startSocialWall();
+              // startSocialWall();
                
              console.log( "complete" );
            });
