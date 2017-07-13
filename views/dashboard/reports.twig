@@ -1,0 +1,22 @@
+{% extends "dashboard/dashboard.twig" %}
+
+{% block title %}Main Page{% endblock %}
+{% block head %}
+    {{ parent() }}
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <script src="/assets/dashboard/js/admin.js"></script>
+{% endblock %}
+{% block content %}
+    <div class="starter-template">
+        <h1>Reports Dashboard</h1>
+        <p class="lead">These are the standard reports for the system data</p>
+    </div>
+
+    <div id="flash"></div>
+
+    <div>
+
+    </div>
+
+
+{% endblock %}
