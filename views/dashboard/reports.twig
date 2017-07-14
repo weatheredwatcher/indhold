@@ -15,7 +15,26 @@
     <div id="flash"></div>
 
     <div>
-
+        <h2>Arcade Points</h2>
+<table>
+    {% for arcade in arcade %}
+    <tr><td>Arcade Plays:</td><td>{{ arcade.plays }}</td></tr>
+    <tr><td>Arcade Points:</td><td>{{ arcade.points }}</td></tr>
+    {%  endfor %}
+</table>
+<h2>Points App</h2>
+        <table>
+    {% for app in app %}
+        <tr><td>Points App Awarded:</td><td>{{ app.points }}</td></tr>
+        <tr><td>Points App Times:</td><td>{{ app.awarded }}</td></tr>
+    {%  endfor %}
+        </table>
+<h2>Points App by Awarder</h2>
+        <table>
+            {%  for awarder in awarder %}
+        <tr><td>{{  awarder.email }}</td><td>{{ awarder.points }}</td></tr>
+    {%  endfor %}
+</table>
     </div>
 
 

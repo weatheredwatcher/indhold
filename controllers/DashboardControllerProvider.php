@@ -275,7 +275,25 @@ class DashboardControllerProvider implements ControllerProviderInterface
                 return $app->redirect('/dashboard');
             }
 
+
             return $app['twig']->render('dashboard/admin.twig', array('user' => $user));
+
+
+        });
+
+        $controllers->match('/reports', function (Application $app) {
+
+            if (null === $user = $app['session']->get('user')) {
+                return $app->redirect('/dashboard');
+            }
+
+            $sql = "SELECT sum(points) as points, count(id) as plays FROM points where  audit=99;";
+            $sql_app = "SELECT sum(points) as points, count(id) as awarded from points where source='PointsApp'";
+            $sql_points_by_awarder = "SELECT u.email, SUM(p.points) as points FROM points as p JOIN users as u where  p.audit=u.id GROUP BY audit";
+            $points_app = $app['dbs']['points']->fetchAll($sql_app);
+            $points_by_awarder = $app['dbs']['points']->fetchAll($sql_points_by_awarder);
+            $arcade = $app['dbs']['points']->fetchAll($sql);
+            return $app['twig']->render('dashboard/reports.twig', array('user' => $user, 'arcade' => $arcade, 'app' => $points_app, 'awarder' => $points_by_awarder ));
 
 
         });
