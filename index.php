@@ -1,8 +1,7 @@
 <?php
 
-namespace EnterpriseWorld;
+namespace Indhold;
 
-// web/index.php
 require_once __DIR__.'/vendor/autoload.php';
 
 date_default_timezone_set('America/New_York');
@@ -21,12 +20,12 @@ error_reporting(0);
 //ExceptionHandler::register();
 //ErrorHandler::register();
 
-class ewApp extends Application {
+class Indhold extends Application {
 
 
 }
 
-$app = new ewApp(); //Silex\Application();
+$app = new Indhold();
 
 
 //load the Services (Database, Twig etc.)
@@ -34,11 +33,6 @@ require_once __DIR__.'/config/register.php';
 //load the controllers:
 //todo: create logic to loop controllers
 
-require_once __DIR__.'/controllers/LeaderboardControllerProvider.php';
-require_once __DIR__.'/controllers/AdminControllerProvider.php';
-require_once __DIR__.'/controllers/PointsControllerProvider.php';
-require_once __DIR__.'/controllers/APIControllerProvider.php';
-require_once __DIR__.'/controllers/DashboardControllerProvider.php';
 require_once __DIR__.'/vendor/pusher/pusher-php-server/lib/Pusher.php';
 
 use Leaderboard;
@@ -52,7 +46,7 @@ $app['debug'] = true;  //set to true to turn on debugging, otherwise error messa
 
 $app->get('/', function() use($app) {
 
-    return $app->redirect('http://opentext.com');
+    return "Hello Sweetie!";
 });
 
 $app->mount('/leaderboard', new Leaderboard\LeaderboardControllerProvider());

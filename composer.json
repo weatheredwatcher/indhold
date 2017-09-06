@@ -8,12 +8,12 @@
     ],
 
     "autoload": {
-        "psr-0": {
-            "Admin": "controllers",
-            "API": "controllers",
-            "Dashboard": "controllers",
-            "Leaderboard": "controllers",
-            "Points": "controllers"
+        "psr-4": {
+            "Admin\\": "src/",
+            "API\\": "src/",
+            "Dashboard\\": "src/",
+            "Leaderboard\\": "src/",
+            "Points\\": "src/"
 
         }
     },
@@ -29,7 +29,8 @@
         "symfony/translation": "^3.1",
         "abraham/twitteroauth": "^0.6.4",
         "vlucas/phpdotenv": "^2.4",
-        "pusher/pusher-php-server": "^2.6"
+        "pusher/pusher-php-server": "^2.6",
+        "doctrine/migrations": "^1.5"
     
     },
     "require-dev": {
