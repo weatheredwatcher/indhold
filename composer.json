@@ -1,5 +1,5 @@
 {
-    "name": "weatheredwatcher/ew2016-mailer",
+    "name": "weatheredwatcher/inhold",
     "authors": [
         {
             "name": "David Duggins",
@@ -30,7 +30,9 @@
         "abraham/twitteroauth": "^0.6.4",
         "vlucas/phpdotenv": "^2.4",
         "pusher/pusher-php-server": "^2.6",
-        "doctrine/migrations": "^1.5"
+        "doctrine/migrations": "^1.5",
+        "kurl/silex-doctrine-migrations-provider": "^0.3.0",
+        "symfony/console": "^3.3"
     
     },
     "require-dev": {

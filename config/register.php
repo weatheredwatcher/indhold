@@ -40,4 +40,18 @@
 			   ));
 			   $app->register(new Silex\Provider\SessionServiceProvider(), array(
     			   'cookie_lifetime' => 216000,
-			   ));
+           ));
+
+         //register console apps:
+
+//$console = new \Symfony\Component\Console\Application();
+
+         $app['console']->register(
+           new \Kurl\Silex\Provider\DoctrineMigrationsProvider($console),
+           array(
+             'migrations.directory' => __DIR__ .'/../migrations',
+             'migrations.namespace'  => ' Doctrine\Migrations',
+           ));
+
+        // $app->boot();
+        // $console->run();
